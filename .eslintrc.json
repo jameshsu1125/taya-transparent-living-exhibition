@@ -24,13 +24,7 @@
 		"operator-linebreak": [2, "after", { "overrides": { "?": "before", ":": "before" } }],
 		"object-curly-newline": "off",
 		"react/react-in-jsx-scope": "off",
-		"react/button-has-type": [
-			0,
-			{
-				"button": 0,
-				"submit": 0,
-				"reset": 0
-			}
-		]
+		"react/button-has-type": [0, { "button": 0, "submit": 0, "reset": 0 }],
+		"react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }]
 	}
 }

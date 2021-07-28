@@ -19,7 +19,7 @@ module.exports = () => {
 
 		// 需要更多頁面時可以新增
 		entry: {
-			index: './src/index.jsx',
+			index: './src/index.js',
 		},
 
 		module: {
