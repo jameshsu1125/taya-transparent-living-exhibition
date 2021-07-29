@@ -1,16 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import ImageOnload from 'lesca-image-onload';
 import './main.less';
 
-const Home = () => {
-	useEffect(() => {}, []);
+const CommingSoon = () => {
+	const container = useRef();
+
+	useEffect(() => {
+		new ImageOnload(container.current, {
+			hideBeforeLoaded: true,
+		}).then(() => {});
+	}, []);
+
 	return (
-		<div className='Home'>
+		<div ref={container} className='CommingSoon'>
 			<div className='darken' />
-			<div className='content'>
-				<div className='logo' />
-				<div className='label' />
-				<div className='description'>即將開展</div>
-			</div>
 			<div className='footer'>
 				<div className='location'>
 					臺中國家歌劇院.
@@ -32,4 +35,4 @@ const Home = () => {
 		</div>
 	);
 };
-export default Home;
+export default CommingSoon;
