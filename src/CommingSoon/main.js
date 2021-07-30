@@ -1,34 +1,50 @@
-import { useEffect, useRef } from 'react';
-import ImageOnload from 'lesca-image-onload';
+import { useEffect, useRef, useState } from 'react';
+import Animation from './animation';
 import './main.less';
 
 const CommingSoon = () => {
 	const container = useRef();
+	const locationChtName = useRef();
+	const locationEngName = useRef();
+	const date = useRef();
+	const line = useRef();
+
+	const [startDate, setStartDate] = useState(31);
+	const [endDate, setEndDate] = useState(1);
 
 	useEffect(() => {
-		new ImageOnload(container.current, {
-			hideBeforeLoaded: true,
-		}).then(() => {});
+		const animation = new Animation({
+			locationChtName,
+			locationEngName,
+			line,
+			date,
+			startDate,
+			endDate,
+			setStartDate,
+			setEndDate,
+		});
+		container.current.style.display = 'block';
+		animation.in();
 	}, []);
 
 	return (
 		<div ref={container} className='CommingSoon'>
-			<div className='darken' />
 			<div className='footer'>
 				<div className='location'>
-					臺中國家歌劇院.
-					<br />
-					<span>National Taichung Theater</span>
+					<div ref={locationChtName}>臺中國家歌劇院.</div>
+					<div ref={locationEngName}>National Taichung Theater</div>
 				</div>
-				<div className='date'>
+				<div ref={date} className='date'>
 					<div>
 						<span>2021</span>
-						10.15
+						10.
+						{startDate}
 					</div>
-					<div />
+					<div ref={line} />
 					<div>
 						<span>2021</span>
-						11.25
+						11.
+						{endDate}
 					</div>
 				</div>
 			</div>

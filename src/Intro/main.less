@@ -1,0 +1,66 @@
+@import url('../Setting/config.less');
+
+.Intro {
+	position: absolute;
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(153, 153, 153, 0.8);
+
+	backdrop-filter: blur(5px);
+
+	.content {
+		width: 100%;
+		letter-spacing: 5px;
+
+		& > div {
+			float: left;
+			width: 100%;
+			height: 85px;
+			color: #fff;
+			text-align: center;
+			font-size: 38px;
+		}
+	}
+
+	& > button {
+		margin: 120px 0 0;
+	}
+
+	.cta {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		display: none;
+		box-sizing: border-box;
+		margin-top: -50px;
+		padding-right: 220px;
+		width: 100%;
+		height: 100px;
+		background-image: url('./img/arrow.svg');
+		background-position-x: calc(~'100% - 40px');
+		background-position-y: center;
+		background-repeat: no-repeat;
+		color: #fff;
+		text-align: right;
+		letter-spacing: 5px;
+		font-size: 40px;
+		line-height: 100px;
+		animation: cta 1s ease-in-out infinite;
+	}
+
+	@keyframes cta {
+		0% {
+			background-position-x: calc(~'100% - 35px');
+		}
+		50% {
+			background-position-x: calc(~'100% - 15px');
+		}
+		100% {
+			background-position-x: calc(~'100% - 35px');
+		}
+	}
+}
