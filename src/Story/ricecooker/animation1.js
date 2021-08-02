@@ -18,7 +18,7 @@ export default class Animation1 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 1000;
+				const duration = 3000;
 
 				new Tweener({
 					from,
@@ -57,7 +57,7 @@ export default class Animation1 {
 					new Tweener({
 						from: fromOpacity,
 						to: toOpacity,
-						duration: 1000,
+						duration: 3000,
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
 					});

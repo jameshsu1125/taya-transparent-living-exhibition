@@ -20,7 +20,7 @@ export default class Animation3 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 1000;
+				const duration = 3000;
 
 				new Tweener({
 					from,
