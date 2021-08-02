@@ -23,13 +23,14 @@ export default class Animation0 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 3000;
-				callback?.();
+				const duration = 1000;
 
+				dom.style.opacity = 1;
 				new Tweener({
 					from,
 					to,
 					duration,
+					easing: Bezier['ease-out'],
 					onUpdate: (e) => {
 						dom.style.opacity = e.opacity;
 					},
@@ -37,6 +38,7 @@ export default class Animation0 {
 						dom.style.opacity = e.opacity;
 					},
 				});
+				callback?.();
 			},
 			sweat: {
 				duration: 5000,
@@ -119,7 +121,7 @@ export default class Animation0 {
 						from: fromOpacity,
 						to: toOpacity,
 						delay,
-						duration: 2000,
+						duration: 3000,
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
 					});
@@ -140,7 +142,7 @@ export default class Animation0 {
 				tran(data = this.property) {
 					this.property = { ...this.property, ...data };
 					this.c.style.opacity = this.property.opacity;
-					this.c.style['margin-left'] = `${this.property.left}px`;
+					this.c.style['margin-left'] = `${this.property.left.toFixed(5)}px`;
 				},
 			},
 			title: {

@@ -1,5 +1,6 @@
 import ImageOnload from 'lesca-image-onload';
 import { useEffect, useRef, useState } from 'react';
+import QueryString from 'lesca-url-parameters';
 import Background from '../Background/main';
 import Intro from '../Intro/main';
 import Loading from '../Loading/main';
@@ -9,6 +10,15 @@ import Story from '../Story/main';
 import Result from '../Result/main';
 
 import './main.less';
+
+const queryState = QueryString.get('state');
+
+const queryData = {
+	normal: { intro: true, logo: true, story: false, loading: true, result: false },
+	result: { intro: false, logo: false, story: false, loading: false, result: true },
+	story: { intro: false, logo: false, story: 1, loading: false, result: false },
+};
+const queryInset = queryData[queryState] || queryData.normal;
 
 const Index = () => {
 	const container = useRef();
@@ -20,18 +30,11 @@ const Index = () => {
 	const [state, setState] = useState('loading');
 	const [read, setRead] = useState([true, false, true, true, true]);
 
-	const [intro, setIntro] = useState(true);
-	const [logo, setLogo] = useState(true);
-	const [story, setStory] = useState(false);
-	const [loading, setLoading] = useState(true);
-	const [result, setResult] = useState(false);
-
-	// const [intro, setIntro] = useState(false);
-	// const [logo, setLogo] = useState(false);
-	// const [story, setStory] = useState(1);
-	// const [loading, setLoading] = useState(false);
-
-	// const [result, setResult] = useState(true);
+	const [intro, setIntro] = useState(queryInset.intro);
+	const [logo, setLogo] = useState(queryInset.logo);
+	const [story, setStory] = useState(queryInset.story);
+	const [loading, setLoading] = useState(queryInset.loading);
+	const [result, setResult] = useState(queryInset.result);
 
 	useEffect(() => {
 		new ImageOnload(container.current, {
@@ -50,7 +53,7 @@ const Index = () => {
 
 	const loadingComplete = () => {
 		setLoading(false);
-		if (window.location.hash !== '') {
+		if (window.location.hash === '#CommingSoon') {
 			setCommingSoon(true);
 		} else {
 			setState('intro');

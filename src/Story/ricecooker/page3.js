@@ -22,8 +22,8 @@ const Page3 = (props) => {
 
 	useEffect(() => {
 		if (state === pageName) {
-			page.current.style.display = 'block';
 			animation.current.in();
+			page.current.style.display = 'block';
 		}
 	}, [state]);
 

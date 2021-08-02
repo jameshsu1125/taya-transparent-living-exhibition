@@ -24,6 +24,7 @@ const Page1 = (props) => {
 			const baseHeight = 1625;
 
 			const scale = innerHeight / baseHeight;
+			console.log(scale);
 			img.current.style.transform = `scale(${scale})`;
 		};
 
@@ -37,8 +38,8 @@ const Page1 = (props) => {
 
 	useEffect(() => {
 		if (state === pageName) {
-			page.current.style.display = 'block';
 			animation.current.in();
+			page.current.style.display = 'block';
 		}
 	}, [state]);
 

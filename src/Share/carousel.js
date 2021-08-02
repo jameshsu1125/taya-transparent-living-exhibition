@@ -14,8 +14,8 @@ const Carousel = (props) => {
 			dark.current.classList.add('on');
 			const url =
 				window.location.hostname === 'localhost'
-					? 'https://localhost:8080'
-					: 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/';
+					? 'https://localhost:8080/?state=result'
+					: 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/?state=result';
 			Facebook.share({
 				url,
 				hashtag: encodeURIComponent('透明生活展'),

@@ -14,7 +14,7 @@
 
 	.logo {
 		position: absolute;
-		top: 150px;
+		top: 130px;
 		left: 50%;
 		margin-left: 0 - image-width(@img) * 0.5 * @scale;
 		width: image-width(@img) * @scale;
@@ -28,7 +28,7 @@
 
 	.logo-label {
 		position: absolute;
-		top: 250px;
+		top: 230px;
 		left: 50%;
 		margin-left: 0 - image-width(@img) * 0.5 * @scale;
 		width: image-width(@img) * @scale;
@@ -55,15 +55,15 @@
 		@keyframes breathe {
 			0% {
 				opacity: 0.6;
-				transform: scale(1);
+				transform: scale(0.95);
 			}
 			50% {
 				opacity: 1;
-				transform: scale(0.95);
+				transform: scale(0.9);
 			}
 			100% {
 				opacity: 0.6;
-				transform: scale(1);
+				transform: scale(0.95);
 			}
 		}
 
@@ -99,7 +99,7 @@
 		position: absolute;
 		width: 100%;
 		height: auto;
-		bottom: 100px;
+		bottom: 80px;
 
 		display: flex;
 		flex-direction: column;

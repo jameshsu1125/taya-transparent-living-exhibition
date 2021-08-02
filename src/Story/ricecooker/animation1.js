@@ -18,9 +18,7 @@ export default class Animation1 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 3000;
-
-				callback?.();
+				const duration = 1000;
 
 				new Tweener({
 					from,
@@ -33,6 +31,8 @@ export default class Animation1 {
 						dom.style.opacity = e.opacity;
 					},
 				});
+
+				callback?.();
 			},
 			bg: {
 				duration: 17000,
@@ -41,11 +41,10 @@ export default class Animation1 {
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.tweener = new Tweener();
 					this.tran();
 				},
 				in() {
-					const { duration, property, delay } = this;
+					const { duration, property } = this;
 					const { opacity, left } = property;
 					const fromOpacity = { opacity };
 					const toOpacity = { opacity: 1 };
@@ -57,8 +56,7 @@ export default class Animation1 {
 					new Tweener({
 						from: fromOpacity,
 						to: toOpacity,
-						delay,
-						duration: 3000,
+						duration: 1000,
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
 					});
@@ -66,7 +64,6 @@ export default class Animation1 {
 					new Tweener({
 						from: fromLeft,
 						to: toLeft,
-						delay,
 						duration,
 						easing,
 						onUpdate: (e) => this.tran(e),

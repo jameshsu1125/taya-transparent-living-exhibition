@@ -51,10 +51,10 @@ const Ricecooker = (props) => {
 	return (
 		<div ref={container} className='Ricecooker'>
 			<div ref={colorBackgroundRef} className='color-background' />
-			<Page0 state={state} setState={setState} />
-			<Page1 state={state} setState={setState} />
-			<Page2 state={state} setState={setState} />
 			<Page3 state={state} setState={setState} fadeOut={fadeOut} />
+			<Page2 state={state} setState={setState} />
+			<Page1 state={state} setState={setState} />
+			<Page0 state={state} setState={setState} />
 		</div>
 	);
 };

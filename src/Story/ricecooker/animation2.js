@@ -20,8 +20,6 @@ export default class Animation2 {
 				const to = { opacity: 0 };
 				const duration = 1000;
 
-				callback?.();
-
 				new Tweener({
 					from,
 					to,
@@ -33,6 +31,8 @@ export default class Animation2 {
 						dom.style.opacity = e.opacity;
 					},
 				});
+
+				callback?.();
 			},
 			bg: {
 				duration: 14000,
