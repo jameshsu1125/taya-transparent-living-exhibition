@@ -124,7 +124,7 @@ module.exports = () => {
 			port: 8080,
 			hot: true,
 			host: '0.0.0.0',
-			https: false,
+			https: true,
 		},
 
 		/**

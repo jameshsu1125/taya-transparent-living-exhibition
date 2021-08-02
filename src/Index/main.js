@@ -24,13 +24,14 @@ const Index = () => {
 	const [logo, setLogo] = useState(true);
 	const [story, setStory] = useState(false);
 	const [loading, setLoading] = useState(true);
-	// const [result, setResult] = useState(false);
+	const [result, setResult] = useState(false);
 
 	// const [intro, setIntro] = useState(false);
 	// const [logo, setLogo] = useState(false);
 	// const [story, setStory] = useState(1);
 	// const [loading, setLoading] = useState(false);
-	const [result, setResult] = useState(true);
+
+	// const [result, setResult] = useState(true);
 
 	useEffect(() => {
 		new ImageOnload(container.current, {
@@ -71,7 +72,9 @@ const Index = () => {
 		if (state === 'back') {
 			const howMuchRead = read.filter((e) => e);
 			if (howMuchRead.length === read.length) {
-				console.log('all readed');
+				setTimeout(() => {
+					setResult(true);
+				}, 500);
 			}
 		}
 	}, [state, read]);
