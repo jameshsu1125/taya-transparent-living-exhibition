@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
+import Tweener from 'lesca-object-tweener';
 
 const Carousel = (props) => {
-	const { data, readed } = props;
+	const { data, readed, updateSelected } = props;
 	const { title, subtitle, index } = data;
 
 	const lighter = readed[index];
@@ -10,13 +11,26 @@ const Carousel = (props) => {
 	const headline = useRef();
 
 	useEffect(() => {
-		let opacity;
-		if (lighter) opacity = 0.7;
-		else opacity = 0;
+		if (updateSelected) {
+			let opacity;
+			if (lighter) opacity = 0.7;
+			else opacity = 0;
 
-		lighterRef.current.style.opacity = opacity;
-		headline.current.style.opacity = 1 - opacity;
-	}, [lighter]);
+			const from = { opacity: 1 - opacity };
+			const to = { opacity };
+			const duration = 1000;
+
+			new Tweener({
+				from,
+				to,
+				duration,
+				onUpdate: (e) => {
+					lighterRef.current.style.opacity = e.opacity;
+					headline.current.style.opacity = 1 - e.opacity;
+				},
+			});
+		}
+	}, [lighter, updateSelected]);
 
 	return (
 		<div className='slider-slick'>

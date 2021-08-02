@@ -41,11 +41,12 @@
 		"webpack-dev-server": "^3.7.2"
 	},
 	"dependencies": {
+		"howler": "^2.2.3",
 		"lesca-click": "^1.0.10",
 		"lesca-facebook-share": "^1.0.1",
 		"lesca-image-onload": "^2.0.2",
 		"lesca-number": "^1.2.0",
-		"lesca-object-tweener": "^2.0.4",
+		"lesca-object-tweener": "^2.0.8",
 		"lesca-react-landscape": "^1.0.1",
 		"lesca-react-loading": "^1.0.1",
 		"react": "^17.0.2",

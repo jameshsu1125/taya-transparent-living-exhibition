@@ -4,7 +4,7 @@ import { ITEMS_SELECT } from '../Setting/config';
 
 export default class Animation {
 	constructor(props) {
-		const { selectRef, setRead, read, setStore } = props;
+		const { selectRef, setRead, read, setStory } = props;
 
 		this.setRead = setRead;
 		this.read = read;
@@ -20,7 +20,8 @@ export default class Animation {
 				this.select.in();
 			},
 			out() {
-				setStore(root.selectedIndex);
+				setStory(root.selectedIndex);
+				setRead((array) => [...array]);
 			},
 			select: {
 				opacity: 0,
@@ -67,13 +68,10 @@ export default class Animation {
 				const readed = this.read[e];
 				if (!readed) {
 					this.read[e] = true;
-					this.setRead(this.read);
 					this.selectedIndex = e;
-
 					[...new Array(ITEMS_SELECT.length).keys()].forEach((index) => {
 						Click.remove(`#cover${index}`);
 					});
-
 					this.tr.out();
 				}
 			});

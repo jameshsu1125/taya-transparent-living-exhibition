@@ -17,10 +17,8 @@ const settings = {
 	initialSlide: 0,
 };
 
-const readed = [true, false, true, true, true];
-
 const Select = forwardRef((props, ref) => {
-	const { state, setStore } = props;
+	const { state, setStory, read, setRead } = props;
 
 	const animation = useRef();
 
@@ -28,21 +26,24 @@ const Select = forwardRef((props, ref) => {
 	const titleRef = useRef();
 	const sliderRef = useRef();
 
-	const [read, setRead] = useState(readed);
+	const [updateSelected, setUpdateSelected] = useState(true);
 
 	useEffect(() => {
-		animation.current = new Animation({ selectRef, titleRef, setRead, read, setStore });
+		animation.current = new Animation({ selectRef, titleRef, setRead, read, setStory });
 	}, []);
 
 	useEffect(() => {
 		if (state === 'intro') {
 			selectRef.current.style.display = 'block';
 			animation.current.in();
+		} else if (state === 'back') {
+			setUpdateSelected(true);
 		}
 	}, [state]);
 
 	useImperativeHandle(ref, () => ({
 		fadein() {
+			setUpdateSelected(false);
 			sliderRef.current.slickNext();
 			animation.current.addEvent();
 		},
@@ -56,7 +57,12 @@ const Select = forwardRef((props, ref) => {
 			<div className='slider-container'>
 				<Slider ref={sliderRef} {...settings}>
 					{ITEMS_SELECT.map((data, index) => (
-						<Carousel key={data.title} data={{ ...data, index }} readed={read} />
+						<Carousel
+							key={data.title}
+							data={{ ...data, index }}
+							readed={read}
+							updateSelected={updateSelected}
+						/>
 					))}
 				</Slider>
 			</div>

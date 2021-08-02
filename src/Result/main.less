@@ -1,0 +1,113 @@
+.Result {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: #ccc;
+	}
+
+	.logo {
+		position: absolute;
+		top: 150px;
+		left: 50%;
+		margin-left: 0 - image-width(@img) * 0.5 * @scale;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@img: './../Logo/img/logo.svg';
+		@scale: 0.7;
+	}
+
+	.logo-label {
+		position: absolute;
+		top: 250px;
+		left: 50%;
+		margin-left: 0 - image-width(@img) * 0.5 * @scale;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-image: url(@img);
+		background-size: 100%;
+
+		@img: './../Logo/img/logo-label.svg';
+		@scale: 0.7;
+	}
+
+	.headline-container {
+		position: absolute;
+		top: 50%;
+		margin-top: -520px * 0.5 - 120px;
+		width: 100%;
+		height: 520px;
+
+		& > div {
+			position: absolute;
+			left: 50%;
+		}
+
+		@keyframes breathe {
+			0% {
+				opacity: 0.6;
+				transform: scale(1);
+			}
+			50% {
+				opacity: 1;
+				transform: scale(0.95);
+			}
+			100% {
+				opacity: 0.6;
+				transform: scale(1);
+			}
+		}
+
+		.gradient {
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			border: solid 1px #fff;
+			border-radius: 50%;
+			background-image: url(@img);
+			// ! 怪怪ㄉ => background: radial-gradient(circle, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 70%);
+
+			@img: './img/gradient.png';
+
+			animation: breathe 2s ease-in-out infinite;
+		}
+
+		.text {
+			width: 100%;
+			margin-left: -50%;
+			text-align: center;
+			font-size: 24px;
+			color: #000;
+			letter-spacing: 2px;
+			top: 50%;
+			height: 90px;
+			margin-top: -45px;
+			line-height: 45px;
+		}
+	}
+
+	.buttons {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		bottom: 100px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		button {
+			background-color: rgba(153, 153, 153, 0.2);
+			margin: 10px 0;
+		}
+	}
+}

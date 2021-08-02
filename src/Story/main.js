@@ -4,8 +4,8 @@ import Ricecooker from './ricecooker';
 
 import './main.less';
 
-const Store = (props) => {
-	const { index } = props;
+const Story = (props) => {
+	const { index, setStory, setState } = props;
 
 	const [loading, setLoading] = useState(true);
 
@@ -14,7 +14,7 @@ const Store = (props) => {
 	const appendStore = () => {
 		switch (index) {
 			case index:
-				return <Ricecooker setLoading={setLoading} />;
+				return <Ricecooker setLoading={setLoading} setStory={setStory} setState={setState} />;
 
 			default:
 				return false;
@@ -22,10 +22,10 @@ const Store = (props) => {
 	};
 
 	return (
-		<div className='Store'>
+		<div className='Story'>
 			{appendStore()}
 			{loading && <Loading />}
 		</div>
 	);
 };
-export default Store;
+export default Story;

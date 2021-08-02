@@ -1,6 +1,8 @@
 /* eslint-disable no-new */
 import Tweener, { Bezier } from 'lesca-object-tweener';
+import { Howl } from 'howler';
 import Click from 'lesca-click';
+import BGM from './sounds/bgm.mp3';
 
 export default class Animation {
 	constructor(props, callback) {
@@ -120,8 +122,7 @@ export default class Animation {
 						const x = e.pageX || e.changedTouches[0].clientX;
 						const d = (x - this.property.x) * 0.5;
 
-						const dp = (d / 750) * 100;
-						this.left = dp > 0 ? 0 : dp;
+						this.left = (d / 750) * 100;
 						this.tran();
 
 						if (d <= -70) {
@@ -132,6 +133,9 @@ export default class Animation {
 							Click.ex_up = () => {};
 
 							root.tr.out();
+						} else if (d >= 40) {
+							this.property.is = false;
+							resetPosition();
 						}
 					};
 
@@ -254,6 +258,14 @@ export default class Animation {
 						this.out();
 						root.tr.content.out();
 						root.tr.ctaRef.in();
+						const sound = new Howl({
+							src: [BGM],
+							html5: true,
+							autoplay: true,
+							loop: true,
+						});
+
+						sound.play();
 					});
 				},
 			},

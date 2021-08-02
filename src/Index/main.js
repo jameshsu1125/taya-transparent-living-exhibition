@@ -5,7 +5,8 @@ import Intro from '../Intro/main';
 import Loading from '../Loading/main';
 import Logo from '../Logo/main';
 import Select from '../Select/main';
-import Store from '../Store/main';
+import Story from '../Story/main';
+import Result from '../Result/main';
 
 import './main.less';
 
@@ -17,10 +18,19 @@ const Index = () => {
 	const [process, setProcess] = useState({});
 	const [preload, setPreload] = useState(false);
 	const [state, setState] = useState('loading');
-	const [loading, setLoading] = useState(true);
-	const [logo, setLogo] = useState(true);
+	const [read, setRead] = useState([true, false, true, true, true]);
+
 	const [intro, setIntro] = useState(true);
-	const [store, setStore] = useState(false);
+	const [logo, setLogo] = useState(true);
+	const [story, setStory] = useState(false);
+	const [loading, setLoading] = useState(true);
+	// const [result, setResult] = useState(false);
+
+	// const [intro, setIntro] = useState(false);
+	// const [logo, setLogo] = useState(false);
+	// const [story, setStory] = useState(1);
+	// const [loading, setLoading] = useState(false);
+	const [result, setResult] = useState(true);
 
 	useEffect(() => {
 		new ImageOnload(container.current, {
@@ -50,21 +60,33 @@ const Index = () => {
 		selectRef.current.fadein();
 	};
 
-	const appendStore = () => {
-		if (store !== false) {
-			return <Store index={store} />;
+	const appendStory = () => {
+		if (story !== false) {
+			return <Story index={story} setStory={setStory} setState={setState} />;
 		}
 		return false;
 	};
 
+	useEffect(() => {
+		if (state === 'back') {
+			const howMuchRead = read.filter((e) => e);
+			if (howMuchRead.length === read.length) {
+				console.log('all readed');
+			}
+		}
+	}, [state, read]);
+
 	return (
 		<div ref={container} className='Index'>
 			<Background commingSoon={commingSoon} />
-			{preload && <Select ref={selectRef} state={state} setStore={setStore} />}
-			{appendStore()}
+			{preload && (
+				<Select ref={selectRef} state={state} setStory={setStory} read={read} setRead={setRead} />
+			)}
+			{appendStory()}
 			{preload && intro && <Intro state={state} setIntro={setIntro} selectFadein={selectFadein} />}
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
+			{result && <Result setResult={setResult} />}
 		</div>
 	);
 };
