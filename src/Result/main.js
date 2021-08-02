@@ -6,7 +6,7 @@ import Share from '../Share/main';
 import './main.less';
 
 const Result = (props) => {
-	const { setResult } = props;
+	const { retry } = props;
 
 	const container = useRef();
 	const animation = useRef();
@@ -39,7 +39,7 @@ const Result = (props) => {
 
 			Click.add('#back', () => {
 				animation.current.out(() => {
-					setResult(false);
+					retry();
 				});
 			});
 

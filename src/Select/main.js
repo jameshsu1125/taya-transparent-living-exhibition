@@ -25,6 +25,7 @@ const Select = forwardRef((props, ref) => {
 	const selectRef = useRef();
 	const titleRef = useRef();
 	const sliderRef = useRef();
+	const isFadein = useRef();
 
 	const [updateSelected, setUpdateSelected] = useState(true);
 
@@ -43,6 +44,9 @@ const Select = forwardRef((props, ref) => {
 
 	useImperativeHandle(ref, () => ({
 		fadein() {
+			if (isFadein.current) return;
+			isFadein.current = true;
+
 			setUpdateSelected(false);
 			sliderRef.current.slickNext();
 			animation.current.addEvent();

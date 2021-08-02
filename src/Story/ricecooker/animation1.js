@@ -29,6 +29,7 @@ export default class Animation1 {
 					},
 					onComplete: (e) => {
 						dom.style.opacity = e.opacity;
+						dom.style.display = 'none';
 					},
 				});
 

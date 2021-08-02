@@ -12,13 +12,15 @@ import Result from '../Result/main';
 import './main.less';
 
 const queryState = QueryString.get('state');
-
 const queryData = {
 	normal: { intro: true, logo: true, story: false, loading: true, result: false },
 	result: { intro: false, logo: false, story: false, loading: false, result: true },
 	story: { intro: false, logo: false, story: 1, loading: false, result: false },
 };
-const queryInset = queryData[queryState] || queryData.normal;
+
+let queryInset;
+if (!queryState) queryInset = queryData.normal;
+else queryInset = queryData[queryState.split('#')[0]];
 
 const Index = () => {
 	const container = useRef();
@@ -82,6 +84,12 @@ const Index = () => {
 		}
 	}, [state, read]);
 
+	const retry = () => {
+		setResult(false);
+		setState('intro');
+		selectFadein();
+	};
+
 	return (
 		<div ref={container} className='Index'>
 			<Background commingSoon={commingSoon} />
@@ -92,7 +100,7 @@ const Index = () => {
 			{preload && intro && <Intro state={state} setIntro={setIntro} selectFadein={selectFadein} />}
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
-			{result && <Result setResult={setResult} />}
+			{result && <Result retry={retry} />}
 		</div>
 	);
 };

@@ -32,6 +32,7 @@ export default class Animation3 {
 					},
 					onComplete: (e) => {
 						dom.style.opacity = e.opacity;
+						dom.style.display = 'none';
 						callback?.();
 					},
 				});

@@ -22,9 +22,7 @@ const Page1 = (props) => {
 		const resize = () => {
 			const { innerHeight } = window;
 			const baseHeight = 1625;
-
 			const scale = innerHeight / baseHeight;
-			console.log(scale);
 			img.current.style.transform = `scale(${scale})`;
 		};
 

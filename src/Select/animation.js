@@ -47,6 +47,10 @@ export default class Animation {
 								this.opacity = p.opacity;
 								this.tran();
 							},
+							onComplete: (p) => {
+								this.opacity = p.opacity;
+								this.tran();
+							},
 						})
 						.play();
 				},

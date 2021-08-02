@@ -36,6 +36,7 @@ export default class Animation0 {
 					},
 					onComplete: (e) => {
 						dom.style.opacity = e.opacity;
+						dom.style.display = 'none';
 					},
 				});
 				callback?.();
