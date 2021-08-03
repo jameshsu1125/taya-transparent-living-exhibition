@@ -6,7 +6,7 @@ import UserAgent from 'lesca-user-agent';
 import App from './Index/main';
 import './Setting/global.less';
 
-Facebook.install('171368189560011', {});
+Facebook.install(process.env.FB_ID);
 Click.init(true, true);
 
 render(
