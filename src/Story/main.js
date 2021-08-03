@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Loading from 'lesca-react-loading';
 import Ricecooker from './ricecooker';
 
@@ -6,10 +6,7 @@ import './main.less';
 
 const Story = (props) => {
 	const { index, setStory, setState } = props;
-
 	const [loading, setLoading] = useState(true);
-
-	useEffect(() => {}, []);
 
 	const appendStore = () => {
 		switch (index) {

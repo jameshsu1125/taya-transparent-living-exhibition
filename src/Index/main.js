@@ -11,6 +11,7 @@ import Result from '../Result/main';
 
 import './main.less';
 
+// todo => router keys
 const queryState = QueryString.get('state');
 const queryData = {
 	normal: { intro: true, logo: true, story: false, loading: true, result: false },
@@ -30,15 +31,17 @@ const Index = () => {
 	const [process, setProcess] = useState({});
 	const [preload, setPreload] = useState(false);
 	const [state, setState] = useState('loading');
-	const [read, setRead] = useState([true, false, true, true, true]);
-
 	const [intro, setIntro] = useState(queryInset.intro);
 	const [logo, setLogo] = useState(queryInset.logo);
 	const [story, setStory] = useState(queryInset.story);
 	const [loading, setLoading] = useState(queryInset.loading);
 	const [result, setResult] = useState(queryInset.result);
 
+	// todo => [讀取紀錄功能]之後改localStorage
+	const [read, setRead] = useState([true, false, true, true, true]);
+
 	useEffect(() => {
+		// 第一次框架onload
 		new ImageOnload(container.current, {
 			hideBeforeLoaded: true,
 		}).then(() => setPreload(true));
@@ -46,6 +49,7 @@ const Index = () => {
 
 	useEffect(() => {
 		if (preload) {
+			// 剩下的內容onload
 			new ImageOnload(container.current, {
 				hideBeforeLoaded: true,
 				onUpdate: (p) => setProcess(p),
@@ -54,37 +58,34 @@ const Index = () => {
 	}, [preload]);
 
 	const loadingComplete = () => {
+		// loading動畫完成
 		setLoading(false);
 		if (window.location.hash === '#CommingSoon') {
+			// todo => [CommingSoon功能]改用日期判斷
 			setCommingSoon(true);
 		} else {
+			// 進入intro page
 			setState('intro');
 		}
 	};
 
 	const selectFadein = () => {
+		// exec select page fadein
 		selectRef.current.fadein();
 	};
 
-	const appendStory = () => {
-		if (story !== false) {
-			return <Story index={story} setStory={setStory} setState={setState} />;
-		}
-		return false;
-	};
-
 	useEffect(() => {
+		// 從story回來
 		if (state === 'back') {
+			// 判斷是否全部故事讀完
 			const howMuchRead = read.filter((e) => e);
-			if (howMuchRead.length === read.length) {
-				setTimeout(() => {
-					setResult(true);
-				}, 500);
-			}
+			// 等select反白動畫 晚半秒進入result頁
+			if (howMuchRead.length === read.length) setTimeout(() => setResult(true), 500);
 		}
 	}, [state, read]);
 
 	const retry = () => {
+		// result頁讀完就從新再玩
 		setResult(false);
 		setState('intro');
 		selectFadein();
@@ -96,7 +97,7 @@ const Index = () => {
 			{preload && (
 				<Select ref={selectRef} state={state} setStory={setStory} read={read} setRead={setRead} />
 			)}
-			{appendStory()}
+			{story !== false && <Story index={story} setStory={setStory} setState={setState} />}
 			{preload && intro && <Intro state={state} setIntro={setIntro} selectFadein={selectFadein} />}
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}

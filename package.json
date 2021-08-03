@@ -42,7 +42,8 @@
 	},
 	"dependencies": {
 		"howler": "^2.2.3",
-		"lesca-click": "^1.0.10",
+		"i": "^0.3.6",
+		"lesca-click": "^1.0.11",
 		"lesca-facebook-share": "^1.0.1",
 		"lesca-image-onload": "^2.0.2",
 		"lesca-number": "^1.2.0",
@@ -51,9 +52,11 @@
 		"lesca-react-loading": "^1.0.1",
 		"lesca-url-parameters": "^1.0.0",
 		"lesca-user-agent": "^1.0.1",
+		"npm": "^7.20.3",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-slick": "^0.28.1",
+		"react-use": "^17.2.4",
 		"slick-carousel": "^1.8.1"
 	}
 }

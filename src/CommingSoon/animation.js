@@ -1,6 +1,10 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
 
 export default class Animation {
+	/**
+	 *
+	 * @param {DOMS} props
+	 */
 	constructor(props) {
 		const { locationChtName, locationEngName, date, line, setStartDate, setEndDate } = props;
 

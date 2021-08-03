@@ -1,4 +1,3 @@
-/* eslint-disable no-new */
 import Tweener, { Bezier } from 'lesca-object-tweener';
 
 export default class Animation {
@@ -45,8 +44,8 @@ export default class Animation {
 	playQueue() {
 		if (this.isqueue) return;
 		this.isqueue = true;
-		const [dom] = this.data;
 
+		const [dom] = this.data;
 		dom?.classList.add('on');
 
 		setTimeout(() => {

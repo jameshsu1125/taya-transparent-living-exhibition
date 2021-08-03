@@ -5,6 +5,11 @@ import Click from 'lesca-click';
 import BGM from './sounds/bgm.mp3';
 
 export default class Animation {
+	/**
+	 *
+	 * @param {object} props { DOMS }
+	 * @param {function} callback callback
+	 */
 	constructor(props, callback) {
 		const { contentRef, ctaRef, startButton, introRef, selectFadein } = props;
 		const root = this;
@@ -93,7 +98,6 @@ export default class Animation {
 						const to = { left: 0 };
 						const easing = Bezier.easeOutQuart;
 						const duration = Math.floor(Math.abs(left * 40));
-
 						new Tweener({
 							from,
 							to,
@@ -118,20 +122,15 @@ export default class Animation {
 
 					Click.ex_move = (e) => {
 						if (!this.property.is) return;
-
 						const x = e.pageX || e.changedTouches[0].clientX;
 						const d = (x - this.property.x) * 0.5;
-
 						this.left = (d / 750) * 100;
 						this.tran();
-
 						if (d <= -70) {
 							this.property.is = false;
-
 							Click.ex_down = () => {};
 							Click.ex_move = () => {};
 							Click.ex_up = () => {};
-
 							root.tr.out();
 						} else if (d >= 40) {
 							this.property.is = false;
@@ -264,7 +263,6 @@ export default class Animation {
 							autoplay: true,
 							loop: true,
 						});
-
 						sound.play();
 					});
 				},
@@ -290,7 +288,6 @@ export default class Animation {
 						const to = { o: 1, y: 0 };
 						const delay = this.delay + i * this.eachDelay;
 						const easing = Bezier.easeInOutQuart;
-
 						new Tweener({
 							from,
 							to,
@@ -309,7 +306,6 @@ export default class Animation {
 						const to = { left: 200 };
 						const delay = i * this.eachDelay;
 						const easing = Bezier.easeInOutQuart;
-
 						new Tweener({
 							from,
 							to,

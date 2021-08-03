@@ -15,17 +15,11 @@ const Logo = (props) => {
 	}, []);
 
 	useEffect(() => {
-		if (state === 'intro') {
-			animation.current.out(() => {
-				setLogo(false);
-			});
-		}
+		if (state === 'intro') animation.current.out(() => setLogo(false));
 	}, [state]);
 
 	useEffect(() => {
-		if (commingSoon) {
-			animation.current.in();
-		}
+		if (commingSoon) animation.current.in();
 	}, [commingSoon]);
 
 	return (
