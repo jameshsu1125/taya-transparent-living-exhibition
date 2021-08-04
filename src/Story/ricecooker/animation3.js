@@ -39,7 +39,7 @@ export default class Animation3 {
 			},
 			footer: {
 				duration: 3000,
-				delay: 1000,
+				delay: 1500,
 				property: { opacity: 0 },
 				unit: { opacity: '' },
 				init() {
