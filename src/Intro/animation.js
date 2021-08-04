@@ -377,14 +377,14 @@ export default class Animation {
 						const data = this.opacity[i];
 						const { o, y } = data;
 						e.style.opacity = o;
-						e.style.transform = `translateY(${y}px)`;
+						e.style.transform = `translateY(${y}px) scale(1, 1.1)`;
 					});
 				},
 				setStyle(dom, data) {
 					const { o, y } = data;
 					const target = dom;
 					target.style.opacity = o;
-					target.style.transform = `translateY(${y}px)`;
+					target.style.transform = `translateY(${y}px) scale(1, 1.1)`;
 				},
 				setOutStyle(dom, data) {
 					const { left } = data;
