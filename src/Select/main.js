@@ -48,6 +48,7 @@ const Select = forwardRef((props, ref) => {
 			setUpdateSelected(false);
 			sliderRef.current.slickNext();
 			animation.current.addEvent();
+			animation.current.titleIn();
 		},
 	}));
 

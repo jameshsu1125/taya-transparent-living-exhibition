@@ -4,7 +4,7 @@ import { ITEMS_SELECT } from '../Setting/config';
 
 export default class Animation {
 	constructor(props) {
-		const { selectRef, setRead, read, setStory } = props;
+		const { selectRef, titleRef, setRead, read, setStory } = props;
 
 		this.setRead = setRead;
 		this.read = read;
@@ -15,6 +15,7 @@ export default class Animation {
 		this.tr = {
 			init() {
 				this.select.init();
+				this.title.init();
 			},
 			in() {
 				this.select.in();
@@ -22,6 +23,42 @@ export default class Animation {
 			out() {
 				setStory(root.selectedIndex);
 				setRead((array) => [...array]);
+			},
+			title: {
+				duration: 1000,
+				delay: 0,
+				property: { opacity: 0 },
+				unit: { opacity: '' },
+				init() {
+					this.c = titleRef.current;
+					this.tweener = new Tweener();
+					this.tran();
+				},
+				in() {
+					const { duration, property, delay } = this;
+					const { opacity } = property;
+					const from = { opacity };
+					const to = { opacity: 1 };
+					this.tweener
+						.add({
+							from,
+							to,
+							delay,
+							duration,
+							onUpdate: (e) => this.tran(e),
+							onComplete: (e) => this.tran(e),
+						})
+						.play();
+				},
+				tran(e = this.property) {
+					this.property = { ...this.property, ...e };
+					const cssText = Object.entries(this.property).map((css) => {
+						const [key, value] = css;
+						const unit = this.unit[key] || '';
+						return `${key}:${value}${unit};`;
+					});
+					this.c.style.cssText = cssText.join('');
+				},
 			},
 			select: {
 				opacity: 0,
@@ -64,6 +101,10 @@ export default class Animation {
 
 	in() {
 		this.tr.in();
+	}
+
+	titleIn() {
+		this.tr.title.in();
 	}
 
 	addEvent() {
