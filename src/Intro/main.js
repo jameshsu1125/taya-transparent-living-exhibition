@@ -12,10 +12,11 @@ const Intro = (props) => {
 	const contentRef = useRef();
 	const ctaRef = useRef();
 	const startButton = useRef();
+	const arrow = useRef();
 
 	useEffect(() => {
 		animation.current = new Animation(
-			{ contentRef, ctaRef, startButton, introRef, selectFadein },
+			{ contentRef, ctaRef, startButton, introRef, selectFadein, arrow },
 			() => {
 				setIntro(false);
 			},
@@ -40,8 +41,9 @@ const Intro = (props) => {
 				開始聆聽故事
 			</button>
 			<div ref={ctaRef} className='cta'>
-				請滑動選擇故事
+				請左右滑動
 			</div>
+			<div ref={arrow} className='arrow' />
 		</div>
 	);
 };

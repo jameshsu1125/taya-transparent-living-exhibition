@@ -32,35 +32,38 @@
 
 	.cta {
 		position: absolute;
+		width: 100%;
 		top: 50%;
-		right: 0;
+		left: 0;
 		display: none;
 		box-sizing: border-box;
-		margin-top: -50px;
-		padding-right: 220px;
+		margin-top: -93px;
 		width: 100%;
 		height: 100px;
-		background-image: url('./img/arrow.svg');
-		background-position-x: calc(~'100% - 40px');
-		background-position-y: center;
-		background-repeat: no-repeat;
 		color: #fff;
-		text-align: right;
+		text-align: center;
 		letter-spacing: 5px;
 		font-size: 40px;
 		line-height: 100px;
-		animation: cta 1s ease-in-out infinite;
 	}
 
-	@keyframes cta {
-		0% {
-			background-position-x: calc(~'100% - 35px');
-		}
-		50% {
-			background-position-x: calc(~'100% - 15px');
-		}
-		100% {
-			background-position-x: calc(~'100% - 35px');
+	.arrow {
+		position: absolute;
+		@img: './img/arrow.svg';
+		width: 100%;
+		height: image-height(@img);
+		top: 50%;
+		margin-top: 10px;
+
+		&::after {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-image: url(@img);
+			transform: scale(-1, 1);
+			content: '';
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 	}
 }

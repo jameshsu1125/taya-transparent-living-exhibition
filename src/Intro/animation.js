@@ -11,7 +11,7 @@ export default class Animation {
 	 * @param {function} callback callback
 	 */
 	constructor(props, callback) {
-		const { contentRef, ctaRef, startButton, introRef, selectFadein } = props;
+		const { contentRef, ctaRef, startButton, introRef, arrow, selectFadein } = props;
 		const root = this;
 		this.tr = {
 			init() {
@@ -19,6 +19,7 @@ export default class Animation {
 				this.startButton.init();
 				this.introRef.init();
 				this.ctaRef.init();
+				this.arrow.init();
 			},
 			in() {
 				this.content.in();
@@ -28,6 +29,91 @@ export default class Animation {
 			out() {
 				this.ctaRef.out();
 				this.introRef.out();
+				this.arrow.out();
+			},
+			arrow: {
+				left: 100,
+				delay: 700,
+				duration: 1000,
+				property: {
+					x: 0,
+					is: false,
+				},
+				init() {
+					this.c = arrow.current;
+					this.tran();
+				},
+				in() {
+					this.c.style.display = 'block';
+					const { left, delay, duration } = this;
+					const from = { left };
+					const to = { left: 0 };
+					const easing = Bezier.easeInOutQuart;
+					new Tweener({
+						from,
+						to,
+						delay,
+						easing,
+						duration,
+						onUpdate: (data) => {
+							this.left = data.left;
+							this.tran();
+						},
+						onComplete: (data) => {
+							this.left = data.left;
+							this.tran();
+							this.in2nd();
+						},
+					});
+				},
+				in2nd() {
+					const { left } = this;
+					const from = { left };
+					const to = { left: -5 };
+					const easing = Bezier.linear;
+					new Tweener({
+						from,
+						to,
+						easing,
+						duration: 2000,
+						onUpdate: (data) => {
+							this.left = data.left;
+							this.tran();
+						},
+						onComplete: (data) => {
+							this.left = data.left;
+							this.tran();
+							root.tr.out();
+						},
+					});
+				},
+				out() {
+					const { left, duration } = this;
+					const from = { left };
+					const to = { left: -100 };
+					const easing = Bezier.easeOutQuart;
+					new Tweener({
+						from,
+						to,
+						delay: 0,
+						easing,
+						duration,
+						onStart: () => {
+							selectFadein?.();
+						},
+						onUpdate: (data) => {
+							this.left = data.left;
+							this.tran();
+						},
+						onComplete: (data) => {
+							this.left = data.left;
+							this.tran();
+						},
+					});
+				},
+				tran() {
+					this.c.style.transform = `translateX(${this.left}%)`;
+				},
 			},
 			ctaRef: {
 				left: -100,
@@ -60,14 +146,34 @@ export default class Animation {
 						onComplete: (data) => {
 							this.left = data.left;
 							this.tran();
-							this.evt();
+							this.in2nd();
+						},
+					});
+				},
+				in2nd() {
+					const { left } = this;
+					const from = { left };
+					const to = { left: 5 };
+					const easing = Bezier.linear;
+					new Tweener({
+						from,
+						to,
+						easing,
+						duration: 2000,
+						onUpdate: (data) => {
+							this.left = data.left;
+							this.tran();
+						},
+						onComplete: (data) => {
+							this.left = data.left;
+							this.tran();
 						},
 					});
 				},
 				out() {
 					const { left, duration } = this;
 					const from = { left };
-					const to = { left: -100 };
+					const to = { left: 100 };
 					const easing = Bezier.easeOutQuart;
 					new Tweener({
 						from,
@@ -90,57 +196,6 @@ export default class Animation {
 				},
 				tran() {
 					this.c.style.transform = `translateX(${this.left}%)`;
-				},
-				evt() {
-					const resetPosition = () => {
-						const { left } = this;
-						const from = { left };
-						const to = { left: 0 };
-						const easing = Bezier.easeOutQuart;
-						const duration = Math.floor(Math.abs(left * 40));
-						new Tweener({
-							from,
-							to,
-							easing,
-							duration,
-							delay: 0,
-							onUpdate: (data) => {
-								this.left = data.left;
-								this.tran();
-							},
-							onComplete: (data) => {
-								this.left = data.left;
-								this.tran();
-								this.property.is = false;
-							},
-						});
-					};
-					Click.ex_down = (e) => {
-						this.property.is = true;
-						this.property.x = e.pageX || e.changedTouches[0].clientX;
-					};
-
-					Click.ex_move = (e) => {
-						if (!this.property.is) return;
-						const x = e.pageX || e.changedTouches[0].clientX;
-						const d = (x - this.property.x) * 0.5;
-						this.left = (d / 750) * 100;
-						this.tran();
-						if (d <= -70) {
-							this.property.is = false;
-							Click.ex_down = () => {};
-							Click.ex_move = () => {};
-							Click.ex_up = () => {};
-							root.tr.out();
-						} else if (d >= 40) {
-							this.property.is = false;
-							resetPosition();
-						}
-					};
-
-					Click.ex_up = () => {
-						resetPosition();
-					};
 				},
 			},
 			introRef: {
@@ -257,6 +312,7 @@ export default class Animation {
 						this.out();
 						root.tr.content.out();
 						root.tr.ctaRef.in();
+						root.tr.arrow.in();
 						const sound = new Howl({
 							src: [BGM],
 							html5: true,
