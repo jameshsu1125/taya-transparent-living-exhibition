@@ -38,7 +38,7 @@ export default class Animation2 {
 			bg: {
 				duration: 14000,
 				delay: 0,
-				property: { opacity: 0, left: -230 },
+				property: { opacity: 0, left: -100 },
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;

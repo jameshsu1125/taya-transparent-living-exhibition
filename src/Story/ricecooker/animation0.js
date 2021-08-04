@@ -102,7 +102,7 @@ export default class Animation0 {
 			bg: {
 				duration: 24000,
 				delay: 0,
-				property: { opacity: 0, left: 150 },
+				property: { opacity: 0, left: 100 },
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
@@ -143,7 +143,7 @@ export default class Animation0 {
 				tran(data = this.property) {
 					this.property = { ...this.property, ...data };
 					this.c.style.opacity = this.property.opacity;
-					this.c.style['margin-left'] = `${this.property.left.toFixed(5)}px`;
+					this.c.style['margin-left'] = `${this.property.left}px`;
 				},
 			},
 			title: {

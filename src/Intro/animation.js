@@ -1,4 +1,3 @@
-/* eslint-disable no-new */
 import Tweener, { Bezier } from 'lesca-object-tweener';
 import { Howl } from 'howler';
 import Click from 'lesca-click';
