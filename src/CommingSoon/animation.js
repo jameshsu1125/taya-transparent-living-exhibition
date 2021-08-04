@@ -35,7 +35,7 @@ export default class Animation {
 					const { width, startDate, endDate, duration, delay } = this;
 					const tweener = new Tweener();
 					const from = { width, startDate, endDate };
-					const to = { width: 30, startDate: 15, endDate: 25 };
+					const to = { width: 30, startDate: 6, endDate: 31 };
 					const easing = Bezier.easeInOutQuart;
 					tweener
 						.add({

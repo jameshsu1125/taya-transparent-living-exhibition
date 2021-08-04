@@ -9,8 +9,8 @@ const CommingSoon = () => {
 	const date = useRef();
 	const line = useRef();
 
-	const [startDate, setStartDate] = useState(31);
-	const [endDate, setEndDate] = useState(1);
+	const [startDate, setStartDate] = useState(18);
+	const [endDate, setEndDate] = useState(18);
 
 	useEffect(() => {
 		const animation = new Animation({
@@ -43,7 +43,7 @@ const CommingSoon = () => {
 					<div ref={line} />
 					<div>
 						<span>2021</span>
-						11.
+						10.
 						{endDate}
 					</div>
 				</div>

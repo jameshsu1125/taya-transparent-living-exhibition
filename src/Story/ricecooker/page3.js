@@ -41,6 +41,15 @@ const Page3 = (props) => {
 					<Label key={e.text} data={e} />
 				))}
 			</div>
+			{/* <div
+				style={{
+					position: 'absolute',
+					width: '2px',
+					backgroundColor: 'red',
+					height: '100%',
+					left: '50%',
+				}}
+			/> */}
 		</div>
 	);
 };

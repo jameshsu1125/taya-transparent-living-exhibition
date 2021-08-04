@@ -36,15 +36,15 @@ export const STORY_RICECOOKER_PAGE1 = [
 ];
 
 export const STORY_RICECOOKER_PAGE2 = [
-	{ text: '還是沒人開口', x: -100, y: -370 },
-	{ text: '但我知道', x: 20, y: -230 },
+	{ text: '還是沒人開口', x: -300, y: -40 },
+	{ text: '但我知道', x: -180, y: 40 },
 	{ text: '桌上的那碗熱白飯', x: -250, y: 120 },
 	{ text: '就是有他支持的證明', x: -210, y: 190 },
 ];
 
 export const STORY_RICECOOKER_PAGE3 = [
-	{ text: 'CCAW', x: -240, y: -420 },
-	{ text: '不只是電飯鍋裡的漆包線線圈', x: -240, y: -350 },
-	{ text: '也乘載溫熱的支持', x: -50, y: -280 },
-	{ text: '連結每個日常', x: 67, y: -210 },
+	{ text: 'CCAW', x: -42, y: -420 },
+	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350 },
+	{ text: '也乘載溫熱的支持', x: -108, y: -280 },
+	{ text: '連結每個日常', x: -82, y: -210 },
 ];
