@@ -9,7 +9,7 @@ export default class Animation {
 			enable: false,
 		}));
 		this.callback = callback;
-		this.delay = 500;
+		this.delay = 800;
 		this.isqueue = false;
 		this.loadedIndex = 0;
 		this.isEndQueue = false;

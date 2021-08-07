@@ -31,22 +31,18 @@ export default class Animation {
 				this.arrow.out();
 			},
 			arrow: {
-				left: 100,
 				delay: 700,
 				duration: 1000,
-				property: {
-					x: 0,
-					is: false,
-				},
+				opacity: 0,
 				init() {
 					this.c = arrow.current;
 					this.tran();
 				},
 				in() {
 					this.c.style.display = 'block';
-					const { left, delay, duration } = this;
-					const from = { left };
-					const to = { left: 0 };
+					const { delay, duration, opacity } = this;
+					const from = { opacity };
+					const to = { opacity: 1 };
 					const easing = Bezier.easeInOutQuart;
 					new Tweener({
 						from,
@@ -55,82 +51,56 @@ export default class Animation {
 						easing,
 						duration,
 						onUpdate: (data) => {
-							this.left = data.left;
+							this.opacity = data.opacity;
 							this.tran();
 						},
 						onComplete: (data) => {
-							this.left = data.left;
+							this.opacity = data.opacity;
 							this.tran();
-							this.in2nd();
-						},
-					});
-				},
-				in2nd() {
-					const { left } = this;
-					const from = { left };
-					const to = { left: -5 };
-					const easing = Bezier.linear;
-					new Tweener({
-						from,
-						to,
-						easing,
-						duration: 2000,
-						onUpdate: (data) => {
-							this.left = data.left;
-							this.tran();
-						},
-						onComplete: (data) => {
-							this.left = data.left;
-							this.tran();
-							root.tr.out();
+							setTimeout(() => {
+								selectFadein?.();
+								root.tr.out();
+							}, 2000);
 						},
 					});
 				},
 				out() {
-					const { left, duration } = this;
-					const from = { left };
-					const to = { left: -100 };
+					const { opacity, duration } = this;
+					const from = { opacity };
+					const to = { opacity: 0 };
 					const easing = Bezier.easeOutQuart;
 					new Tweener({
 						from,
 						to,
-						delay: 0,
 						easing,
 						duration,
-						onStart: () => {
-							selectFadein?.();
-						},
 						onUpdate: (data) => {
-							this.left = data.left;
+							this.opacity = data.opacity;
 							this.tran();
 						},
 						onComplete: (data) => {
-							this.left = data.left;
+							this.opacity = data.opacity;
 							this.tran();
 						},
 					});
 				},
 				tran() {
-					this.c.style.transform = `translateX(${this.left}%)`;
+					this.c.style.opacity = this.opacity;
 				},
 			},
 			ctaRef: {
-				left: -100,
+				opacity: 0,
 				delay: 500,
 				duration: 1000,
-				property: {
-					x: 0,
-					is: false,
-				},
 				init() {
 					this.c = ctaRef.current;
 					this.tran();
 				},
 				in() {
 					this.c.style.display = 'block';
-					const { left, delay, duration } = this;
-					const from = { left };
-					const to = { left: 0 };
+					const { opacity, delay, duration } = this;
+					const from = { opacity };
+					const to = { opacity: 1 };
 					const easing = Bezier.easeInOutQuart;
 					new Tweener({
 						from,
@@ -139,40 +109,19 @@ export default class Animation {
 						easing,
 						duration,
 						onUpdate: (data) => {
-							this.left = data.left;
+							this.opacity = data.opacity;
 							this.tran();
 						},
 						onComplete: (data) => {
-							this.left = data.left;
-							this.tran();
-							this.in2nd();
-						},
-					});
-				},
-				in2nd() {
-					const { left } = this;
-					const from = { left };
-					const to = { left: 5 };
-					const easing = Bezier.linear;
-					new Tweener({
-						from,
-						to,
-						easing,
-						duration: 2000,
-						onUpdate: (data) => {
-							this.left = data.left;
-							this.tran();
-						},
-						onComplete: (data) => {
-							this.left = data.left;
+							this.opacity = data.opacity;
 							this.tran();
 						},
 					});
 				},
 				out() {
-					const { left, duration } = this;
-					const from = { left };
-					const to = { left: 100 };
+					const { opacity, duration } = this;
+					const from = { opacity };
+					const to = { opacity: 0 };
 					const easing = Bezier.easeOutQuart;
 					new Tweener({
 						from,
@@ -180,21 +129,18 @@ export default class Animation {
 						delay: 0,
 						easing,
 						duration,
-						onStart: () => {
-							selectFadein?.();
-						},
 						onUpdate: (data) => {
-							this.left = data.left;
+							this.opacity = data.opacity;
 							this.tran();
 						},
 						onComplete: (data) => {
-							this.left = data.left;
+							this.opacity = data.opacity;
 							this.tran();
 						},
 					});
 				},
 				tran() {
-					this.c.style.transform = `translateX(${this.left}%)`;
+					this.c.style.opacity = this.opacity;
 				},
 			},
 			introRef: {

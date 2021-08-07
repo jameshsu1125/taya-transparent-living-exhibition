@@ -39,11 +39,49 @@ export default class Animation3 {
 			},
 			footer: {
 				duration: 3000,
-				delay: 1500,
+				delay: 9000,
 				property: { opacity: 0 },
 				unit: { opacity: '' },
 				init() {
 					this.c = footer.current;
+					this.tweener = new Tweener();
+					this.tran();
+				},
+				in() {
+					const { duration, property, delay } = this;
+					const { opacity } = property;
+					const from = { opacity };
+					const to = { opacity: 1 };
+					this.tweener
+						.add({
+							from,
+							to,
+							delay,
+							duration,
+							onUpdate: (e) => this.tran(e),
+							onComplete: (e) => {
+								this.tran(e);
+								root.tr.out();
+							},
+						})
+						.play();
+				},
+				tran(e = this.property) {
+					this.property = { ...this.property, ...e };
+					const cssText = Object.entries(this.property).map((css) => {
+						const [key, value] = css;
+						const unit = this.unit[key] || '';
+						return `${key}:${value}${unit};`;
+					});
+					this.c.style.cssText = cssText.join('');
+				},
+			},
+			product: {
+				duration: 3000,
+				delay: 0,
+				property: { opacity: 0 },
+				init() {
+					this.c = product.current;
 					this.tweener = new Tweener();
 					this.tran();
 				},
@@ -65,47 +103,12 @@ export default class Animation3 {
 				},
 				tran(e = this.property) {
 					this.property = { ...this.property, ...e };
-					const cssText = Object.entries(this.property).map((css) => {
-						const [key, value] = css;
-						const unit = this.unit[key] || '';
-						return `${key}:${value}${unit};`;
-					});
-					this.c.style.cssText = cssText.join('');
-				},
-			},
-			product: {
-				duration: 3000,
-				delay: 0,
-				property: { x: 750 },
-				init() {
-					this.c = product.current;
-					this.tweener = new Tweener();
-					this.tran();
-				},
-				in() {
-					const { duration, property, delay } = this;
-					const { x } = property;
-					const from = { x };
-					const to = { x: 0 };
-					this.tweener
-						.add({
-							from,
-							to,
-							delay,
-							duration,
-							onUpdate: (e) => this.tran(e),
-							onComplete: (e) => this.tran(e),
-						})
-						.play();
-				},
-				tran(e = this.property) {
-					this.property = { ...this.property, ...e };
-					this.c.style.transform = `translateX(${this.property.x}px)`;
+					this.c.style.opacity = this.property.opacity;
 				},
 			},
 			labels: {
 				duration: 2000,
-				delay: 3000,
+				delay: 1500,
 				delayEach: 2000,
 				init() {
 					this.c = labels.current;
@@ -131,9 +134,6 @@ export default class Animation3 {
 							onUpdate: (data) => this.tranEach(dom, data),
 							onComplete: (data) => {
 								this.tranEach(dom, data);
-								if (i === this.c.children.length - 1) {
-									root.tr.out();
-								}
 							},
 						});
 					});

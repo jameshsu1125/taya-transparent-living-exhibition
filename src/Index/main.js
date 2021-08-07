@@ -11,7 +11,7 @@ import Result from '../Result/main';
 
 import './main.less';
 
-// todo => router keys
+// todo => custom router
 const queryState = QueryString.get('state');
 const queryData = {
 	normal: { intro: true, logo: true, story: false, loading: true, result: false },
