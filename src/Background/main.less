@@ -6,6 +6,31 @@
 	background-image: url('./img/bg-material.png');
 	background-position: calc(~'50% + 20px') calc(~'50% - 50px');
 
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+
+	.glow {
+		position: absolute;
+		width: image-width(@img) * @scale;
+		height: image-height(@img) * @scale;
+		background-color: rgba(0, 0, 0, 0);
+		background-image: url(@img);
+		transform: rotate();
+		left: -500px * @scale;
+		background-size: 100%;
+		top: 50%;
+		margin-top: 0 - image-height(@img) * 0.5 * @scale;
+		transform-origin: 200px 250px;
+
+		@img: './img/light-glow.png';
+		@scale: 0.7;
+	}
+
 	.darken {
 		position: absolute;
 		width: 100%;

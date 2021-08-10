@@ -7,15 +7,17 @@ const Background = (props) => {
 	const { commingSoon } = props;
 
 	const container = useRef();
+	const glow = useRef();
 	const animation = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ container });
+		animation.current = new Animation({ container, glow });
 		animation.current.in();
 	}, []);
 
 	return (
 		<div ref={container} className='Background'>
+			<div ref={glow} className='glow' />
 			{commingSoon && <div className='darken' />}
 		</div>
 	);
