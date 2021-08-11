@@ -10,13 +10,13 @@ export default class Animation {
 				this.container.init();
 				this.glow.init();
 				this.glow2.init();
-				this.glow3.init();
+				// this.glow3.init();
 			},
 			in() {
 				this.container.in();
 				this.glow.in();
 				this.glow2.in();
-				this.glow3.in();
+				// this.glow3.in();
 			},
 			glow3: {
 				delay: 0,
@@ -52,7 +52,7 @@ export default class Animation {
 						const [key, value] = css;
 						const unit = this.unit[key] || '';
 						if (key === 'rotate') return `transform:rotate(${value}${unit});`;
-						if (key === 'opacity') return `opacity:${value - this.blank - Math.random() * 0.2};`;
+						if (key === 'opacity') return `opacity:${value - this.blank - Math.random() * 0.1};`;
 						return `${key}:${value}${unit};`;
 					});
 
@@ -64,7 +64,7 @@ export default class Animation {
 				property: { opacity: 1, rotate: 0 },
 				unit: { opacity: '', rotate: 'deg' },
 				easing: Bezier.linear,
-				blank: 0.2,
+				blank: 0.5,
 				init() {
 					this.c = glow2.current;
 					this.tweener = new Tweener();
