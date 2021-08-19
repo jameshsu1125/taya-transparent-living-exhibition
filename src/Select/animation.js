@@ -117,7 +117,6 @@ export default class Animation {
 		[...new Array(ITEMS_SELECT.length).keys()].forEach((e) => {
 			Click.add(`#cover${e}`, () => {
 				const readed = this.read[e];
-				console.log(this.read, readed);
 				if (!readed) {
 					this.read[e] = true;
 					this.selectedIndex = e;
