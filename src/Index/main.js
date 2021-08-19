@@ -81,6 +81,7 @@ const Index = () => {
 	};
 
 	useEffect(() => {
+		console.log(state);
 		// 從story回來
 		if (state === 'back') {
 			// 判斷是否全部故事讀完
@@ -113,9 +114,16 @@ const Index = () => {
 
 	return (
 		<div ref={container} className='Index'>
-			<Background commingSoon={commingSoon} />
+			{state === 'loading' && <Background commingSoon={commingSoon} />}
 			{preload && (
-				<Select ref={selectRef} state={state} setStory={setStory} read={read} setRead={setRead} />
+				<Select
+					ref={selectRef}
+					state={state}
+					setState={setState}
+					setStory={setStory}
+					read={read}
+					setRead={setRead}
+				/>
 			)}
 			{story !== false && (
 				<Story

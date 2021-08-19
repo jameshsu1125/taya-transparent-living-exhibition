@@ -45,7 +45,7 @@ export default class Animation1 {
 				callback?.();
 			},
 			trash2: {
-				delay: 2000,
+				delay: 0,
 				property: { frame: 0 },
 				unit: { opacity: '' },
 				easing: Bezier.linear,
@@ -90,7 +90,7 @@ export default class Animation1 {
 				},
 			},
 			trash1: {
-				delay: 2000,
+				delay: 0,
 				property: { frame: 100 },
 				unit: { opacity: '' },
 				easing: Bezier.linear,
@@ -137,7 +137,7 @@ export default class Animation1 {
 				},
 			},
 			trash0: {
-				delay: 2000,
+				delay: 0,
 				property: { frame: 0 },
 				unit: { opacity: '' },
 				easing: Bezier.linear,

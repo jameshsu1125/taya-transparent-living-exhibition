@@ -37,6 +37,7 @@ const Chargingpile = (props) => {
 			duration,
 			onStart: () => {
 				colorBackgroundRef.current.classList.remove('fadein');
+				setRootState('storyEnd');
 			},
 			onUpdate: (e) => {
 				dom.style.opacity = e.opacity;

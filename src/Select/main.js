@@ -18,7 +18,7 @@ const settings = {
 };
 
 const Select = forwardRef((props, ref) => {
-	const { state, setStory, read, setRead } = props;
+	const { state, setStory, read, setRead, setState } = props;
 
 	const animation = useRef();
 
@@ -30,7 +30,7 @@ const Select = forwardRef((props, ref) => {
 	const [updateSelected, setUpdateSelected] = useState(true);
 
 	useEffect(() => {
-		animation.current = new Animation({ selectRef, titleRef, setRead, read, setStory });
+		animation.current = new Animation({ selectRef, titleRef, setRead, read, setStory, setState });
 	}, []);
 
 	useEffect(() => {
@@ -45,6 +45,14 @@ const Select = forwardRef((props, ref) => {
 		} else if (state === 'reset') {
 			animation.current.reset();
 			setUpdateSelected(true);
+		} else if (state === 'story') {
+			selectRef.current.style.display = 'none';
+		} else if (state === 'storyEnd') {
+			selectRef.current.style.opacity = 0;
+			selectRef.current.style.display = 'block';
+			setTimeout(() => {
+				selectRef.current.style.opacity = 1;
+			}, 50);
 		}
 	}, [state]);
 

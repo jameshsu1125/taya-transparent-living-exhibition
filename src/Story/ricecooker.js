@@ -16,6 +16,16 @@ const Ricecooker = (props) => {
 	const [state, setState] = useState('loading');
 	const [domReady, setDomReady] = useState(false);
 
+	useEffect(() => {
+		if (audioLoad !== false && domReady) {
+			setTimeout(() => {
+				setLoading(false);
+				colorBackgroundRef.current.classList.add('fadein');
+				setState('page0');
+			}, 1000);
+		}
+	}, [audioLoad, domReady]);
+
 	const fadeOut = () => {
 		const dom = colorBackgroundRef.current;
 		const from = { opacity: 1 };
@@ -27,6 +37,7 @@ const Ricecooker = (props) => {
 			duration,
 			onStart: () => {
 				colorBackgroundRef.current.classList.remove('fadein');
+				setRootState('storyEnd');
 			},
 			onUpdate: (e) => {
 				dom.style.opacity = e.opacity;
@@ -38,16 +49,6 @@ const Ricecooker = (props) => {
 			},
 		});
 	};
-
-	useEffect(() => {
-		if (audioLoad !== false && domReady) {
-			setTimeout(() => {
-				setLoading(false);
-				colorBackgroundRef.current.classList.add('fadein');
-				setState('page0');
-			}, 1000);
-		}
-	}, [audioLoad, domReady]);
 
 	useEffect(() => {
 		new ImageOnload(container.current, { hideBeforeLoaded: true }).then(() => {
