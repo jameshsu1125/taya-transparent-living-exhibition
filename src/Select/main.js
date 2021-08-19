@@ -42,6 +42,9 @@ const Select = forwardRef((props, ref) => {
 		} else if (state === 'select') {
 			setUpdateSelected(false);
 			animation.current.addEvent();
+		} else if (state === 'reset') {
+			animation.current.reset();
+			setUpdateSelected(true);
 		}
 	}, [state]);
 

@@ -5,7 +5,7 @@ import BGM from './sounds/bgm.mp3';
 import Ricecooker from './sounds/ricecooker.mp3';
 import Chargingpile from './sounds/chargingpile.mp3';
 
-const easing = Bezier['ease-out'];
+const easing = Bezier.linear;
 
 const Audio = (props) => {
 	const { state, onload } = props;

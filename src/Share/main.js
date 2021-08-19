@@ -7,7 +7,7 @@ import './main.less';
 
 const settings = {
 	dots: true,
-	speed: 500,
+	speed: 200,
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	arrows: false,

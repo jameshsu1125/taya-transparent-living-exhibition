@@ -6,8 +6,10 @@ export default class Animation {
 	constructor(props) {
 		const { selectRef, titleRef, setRead, read, setStory } = props;
 
+		this.defaultRead = [...read];
+
 		this.setRead = setRead;
-		this.read = read;
+		this.read = [...read];
 		this.selectedIndex = 0;
 
 		const root = this;
@@ -107,10 +109,15 @@ export default class Animation {
 		this.tr.title.in();
 	}
 
+	reset() {
+		this.read = [...this.defaultRead];
+	}
+
 	addEvent() {
 		[...new Array(ITEMS_SELECT.length).keys()].forEach((e) => {
 			Click.add(`#cover${e}`, () => {
 				const readed = this.read[e];
+				console.log(this.read, readed);
 				if (!readed) {
 					this.read[e] = true;
 					this.selectedIndex = e;

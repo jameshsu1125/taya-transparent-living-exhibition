@@ -101,9 +101,9 @@ const Index = () => {
 		// todo => 重新再玩reset localStorage
 		setRead(() => [...defaultReadData]);
 		setResult(false);
-		setState('back');
+		setState('reset');
 		setTimeout(() => {
-			selectFadein();
+			setState('select');
 		}, 500);
 	};
 
