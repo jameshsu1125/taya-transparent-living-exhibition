@@ -6,6 +6,7 @@ import Ricecooker from './sounds/ricecooker.mp3';
 import Chargingpile from './sounds/chargingpile.mp3';
 
 const easing = Bezier.linear;
+const duration = 3000;
 
 const Audio = (props) => {
 	const { state, onload } = props;
@@ -26,7 +27,7 @@ const Audio = (props) => {
 				new Tweener({
 					from: { vol: BGMVol },
 					to: { vol: 0 },
-					duration: 1000,
+					duration,
 					easing,
 					onUpdate: (data) => setBGMVol(data.vol),
 					onComplete: (data) => setBGMVol(data.vol),
@@ -39,7 +40,7 @@ const Audio = (props) => {
 				new Tweener({
 					from: { vol: BGMVol },
 					to: { vol: 0 },
-					duration: 1000,
+					duration,
 					easing,
 					onUpdate: (data) => setBGMVol(data.vol),
 					onComplete: (data) => setBGMVol(data.vol),
@@ -55,7 +56,7 @@ const Audio = (props) => {
 				new Tweener({
 					from: { vol: BGMVol },
 					to: { vol: 1 },
-					duration: 2000,
+					duration,
 					easing,
 					onUpdate: (data) => setBGMVol(data.vol),
 					onComplete: (data) => setBGMVol(data.vol),
