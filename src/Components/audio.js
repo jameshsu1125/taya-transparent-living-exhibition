@@ -2,8 +2,8 @@ import Tweener, { Bezier } from 'lesca-object-tweener';
 import { useEffect, useState } from 'react';
 import ReactHowler from 'react-howler';
 import BGM from './sounds/bgm.mp3';
-import Ricecooker from './sounds/ricecooker_vo.mp3';
-import Chargingpile from './sounds/chargingpile_vo.mp3';
+import Ricecooker from './sounds/ricecooker.mp3';
+import Chargingpile from './sounds/chargingpile.mp3';
 
 const easing = Bezier['ease-out'];
 

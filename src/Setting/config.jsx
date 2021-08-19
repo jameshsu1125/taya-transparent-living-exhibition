@@ -45,12 +45,12 @@ export const STORY_RICECOOKER_PAGE2 = [
 	{ text: '就是有他支持的證明', x: -210, y: 190, delay: 3000 },
 ];
 
-// export const STORY_RICECOOKER_PAGE3 = [
-// 	{ text: 'CCAW', x: -42, y: -420, delay: 0 },
-// 	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350, delay: 2500 },
-// 	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 3500 },
-// 	{ text: '連結每個日常', x: -82, y: -210, delay: 2500 },
-// ];
+export const STORY_RICECOOKER_PAGE3 = [
+	{ text: 'CCAW', x: -42, y: -420, delay: 0 },
+	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350, delay: 2500 },
+	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 3500 },
+	{ text: '連結每個日常', x: -82, y: -210, delay: 2500 },
+];
 
 export const STORY_CHARGIINGPILE_PAGE0 = [
 	{ text: '呼吸，是主要生命徵象之一', x: -290, y: -1090, delay: 0 },
@@ -87,23 +87,23 @@ export const STORY_CHARGIINGPILE_PAGE2 = [
 	{ text: '帶自己出發去「呼吸」了一下', x: -240, y: 330, delay: 1200 },
 ];
 
-// export const STORY_CHARGIINGPILE_PAGE3 = [
-// 	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
-// 	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 3500 },
-// 	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 3500 },
-// 	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
-// ];
-
 export const STORY_CHARGIINGPILE_PAGE3 = [
 	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
-	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 0 },
-	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 0 },
-	{ text: '連結每個日常', x: -82, y: -280, delay: 0 },
+	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 3500 },
+	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 3500 },
+	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
 ];
 
-export const STORY_RICECOOKER_PAGE3 = [
-	{ text: 'CCAW', x: -42, y: -420, delay: 0 },
-	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350, delay: 0 },
-	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 0 },
-	{ text: '連結每個日常', x: -82, y: -210, delay: 0 },
-];
+// export const STORY_CHARGIINGPILE_PAGE3 = [
+// 	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
+// 	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 0 },
+// 	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 0 },
+// 	{ text: '連結每個日常', x: -82, y: -280, delay: 0 },
+// ];
+
+// export const STORY_RICECOOKER_PAGE3 = [
+// 	{ text: 'CCAW', x: -42, y: -420, delay: 0 },
+// 	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350, delay: 0 },
+// 	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 0 },
+// 	{ text: '連結每個日常', x: -82, y: -210, delay: 0 },
+// ];
