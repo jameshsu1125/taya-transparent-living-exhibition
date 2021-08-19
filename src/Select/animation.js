@@ -22,7 +22,7 @@ export default class Animation {
 			},
 			out() {
 				setStory(root.selectedIndex);
-				setRead((array) => [...array]);
+				setRead(() => [...root.read]);
 			},
 			title: {
 				duration: 1000,

@@ -1,5 +1,7 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
 
+const { parseInt } = window;
+
 export default class Animation1 {
 	constructor(props, callback) {
 		const { page, bg, labels } = props;
@@ -18,7 +20,7 @@ export default class Animation1 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 3000;
+				const duration = 2000;
 
 				new Tweener({
 					from,
@@ -42,6 +44,14 @@ export default class Animation1 {
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
+					this.duration =
+						root.tr.labels.delay +
+						root.tr.labels.duration +
+						root.tr.labels.fadeOutDelay +
+						4000 +
+						[...labels.current.children]
+							.map((dom) => parseInt(dom.dataset.delay))
+							.reduce((duration, delay) => duration + delay);
 					this.tran();
 				},
 				in() {
@@ -68,10 +78,7 @@ export default class Animation1 {
 						duration,
 						easing,
 						onUpdate: (e) => this.tran(e),
-						onComplete: (e) => {
-							this.tran(e);
-							root.tr.out();
-						},
+						onComplete: (e) => this.tran(e),
 					});
 				},
 				tran(data = this.property) {
@@ -83,29 +90,40 @@ export default class Animation1 {
 			labels: {
 				duration: 3000,
 				delay: 1000,
-				delayEach: 3000,
+				fadeOutDelay: 1000,
 				init() {
 					this.c = labels.current;
 					this.property = [...this.c.children].map(() => ({ opacity: 0 }));
 					this.tran();
 				},
 				in() {
-					const { duration, delay, delayEach, property } = this;
+					let timeResync = this.delay;
+					const { duration, property, fadeOutDelay } = this;
 					[...this.c.children].forEach((e, i) => {
 						const dom = e;
+
+						const { delay } = e.dataset;
+
 						const p = property[i];
 						const { opacity } = p;
 
 						const from = { opacity };
 						const to = { opacity: 1 };
-						const d = delay + i * delayEach;
+						timeResync += parseInt(delay);
 
 						new Tweener({
 							from,
 							to,
 							duration,
-							delay: d,
+							delay: timeResync,
 							onUpdate: (data) => this.tranEach(dom, data),
+							onComplete: () => {
+								if (i === this.c.children.length - 1) {
+									setTimeout(() => {
+										root.tr.out();
+									}, fadeOutDelay);
+								}
+							},
 						});
 					});
 				},

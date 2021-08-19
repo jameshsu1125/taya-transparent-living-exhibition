@@ -14,7 +14,7 @@
 		background-color: rgba(0, 0, 0, 0.3);
 	}
 
-	.glow2 {
+	.glow-slow {
 		position: absolute;
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
@@ -29,27 +29,6 @@
 
 		@img: './img/light-glow2.png';
 		@scale: 0.7;
-	}
-
-	.glow3 {
-		position: absolute;
-		width: image-width(@img) * @scale;
-		height: image-height(@img) * @scale;
-		background-color: rgba(0, 0, 0, 0);
-		background-image: url(@img);
-		transform: rotate();
-		left: -300px * @scale;
-		background-size: 100%;
-		top: 50%;
-		margin-top: 0 - image-height(@img) * 0.5 * @scale;
-		transform-origin: 330px 250px;
-
-		mix-blend-mode: color-burn;
-
-		@img: './img/light-glow.png';
-		@scale: 1;
-
-		display: none;
 	}
 
 	.glow {

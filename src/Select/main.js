@@ -37,7 +37,12 @@ const Select = forwardRef((props, ref) => {
 		if (state === 'intro') {
 			selectRef.current.style.display = 'block';
 			animation.current.in();
-		} else if (state === 'back') setUpdateSelected(true);
+		} else if (state === 'back') {
+			setUpdateSelected(true);
+		} else if (state === 'select') {
+			setUpdateSelected(false);
+			animation.current.addEvent();
+		}
 	}, [state]);
 
 	useImperativeHandle(ref, () => ({

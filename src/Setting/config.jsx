@@ -6,6 +6,8 @@ export const ITEMS_SELECT = [
 	{ title: '無線耳機', subtitle: 'Earphone', category: '上班前的儀式' },
 	{ title: '家庭用泵浦', subtitle: 'Pump', category: '深夜的熱水澡' },
 	{ title: '手機', subtitle: 'Phone', category: '我愛你' },
+	{ title: '充電樁', subtitle: 'Phone', category: '去海裡呼吸' },
+	{ title: '高壓電纜', subtitle: 'Phone', category: '再讓我試試' },
 ];
 
 export const INTRO_TITLE = [
@@ -18,33 +20,90 @@ export const INTRO_TITLE = [
 ];
 
 export const STORY_RICECOOKER_PAGE0 = [
-	{ text: '我不被理解，但我理解', x: -30, y: -960 },
-	{ text: '誰願意讓寶貝女兒冒這種風險', x: -30, y: -890 },
-	{ text: '簡單安全的不做，非要奔往前線', x: -30, y: -810 },
-	{ text: '不管兔寶寶裝有多悶多熱都得穿著', x: -170, y: -490 },
-	{ text: '不管口罩壓痕有多深都要繼續', x: -100, y: -420 },
-	{ text: '因為我明白多一個人分擔', x: 20, y: -260 },
-	{ text: '就少一個人崩潰', x: 170, y: -190 },
+	{ text: '我不被理解，但我理解', x: -30, y: -960, delay: 0 },
+	{ text: '誰願意讓寶貝女兒冒這種風險', x: -30, y: -890, delay: 3500 },
+	{ text: '簡單安全的不做，非要奔往前線', x: -30, y: -810, delay: 3800 },
+	{ text: '不管兔寶寶裝有多悶多熱都得穿著', x: -120, y: -560, delay: 6000 },
+	{ text: '不管口罩壓痕有多深都要繼續', x: -140, y: -490, delay: 6500 },
+	{ text: '感受每個繃緊神經奮鬥的壓力', x: -40, y: -420, delay: 6000 },
+	{ text: '因為我明白多一個人分擔', x: -20, y: -260, delay: 4500 },
+	{ text: '就少一個人崩潰', x: 170, y: -190, delay: 4500 },
 ];
 
 export const STORY_RICECOOKER_PAGE1 = [
-	{ text: '冷戰兩週回家的那天', x: -320, y: -340 },
-	{ text: '看見爸爸站在電飯鍋前', x: -320, y: -270 },
-	{ text: '把飯匙舀下的第一勺，放進了我的碗', x: -320, y: -200 },
-	{ text: '因為最上層的飯', x: -170, y: 30 },
-	{ text: '是從小到大喜歡的偏硬口感', x: -130, y: 100 },
+	{ text: '冷戰兩週回家的那天', x: -320, y: -340, delay: 0 },
+	{ text: '看見爸爸站在電飯鍋前', x: -320, y: -270, delay: 3500 },
+	{ text: '把飯匙舀下的第一勺，放進了我的碗', x: -320, y: -200, delay: 3500 },
+	{ text: '因為最上層的飯', x: -170, y: 30, delay: 6000 },
+	{ text: '是從小到大喜歡的偏硬口感', x: -130, y: 100, delay: 2000 },
 ];
 
 export const STORY_RICECOOKER_PAGE2 = [
-	{ text: '還是沒人開口', x: -300, y: -40 },
-	{ text: '但我知道', x: -180, y: 40 },
-	{ text: '桌上的那碗熱白飯', x: -250, y: 120 },
-	{ text: '就是有他支持的證明', x: -210, y: 190 },
+	{ text: '還是沒人開口', x: -300, y: -40, delay: 0 },
+	{ text: '但我知道', x: -180, y: 40, delay: 2500 },
+	{ text: '桌上的那碗熱白飯', x: -250, y: 120, delay: 3000 },
+	{ text: '就是有他支持的證明', x: -210, y: 190, delay: 3000 },
+];
+
+// export const STORY_RICECOOKER_PAGE3 = [
+// 	{ text: 'CCAW', x: -42, y: -420, delay: 0 },
+// 	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350, delay: 2500 },
+// 	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 3500 },
+// 	{ text: '連結每個日常', x: -82, y: -210, delay: 2500 },
+// ];
+
+export const STORY_CHARGIINGPILE_PAGE0 = [
+	{ text: '呼吸，是主要生命徵象之一', x: -290, y: -1090, delay: 0 },
+	{ text: '對多數城市人來說，生存，向來是撐著一口氣', x: -290, y: -1020, delay: 4000 },
+	{ text: '天才正要亮，他早早起床', x: -330, y: -920, delay: 7500 },
+	{ text: '不像其他人的週末日常', x: -260, y: -850, delay: 4500 },
+	{ text: '睡到飽從來就不是一個好好休息的選項', x: -140, y: -780, delay: 3000 },
+	{ text: '開往七十二公里外的目的地', x: -80, y: -710, delay: 5000 },
+	{ text: '車安靜地行駛著', x: 70, y: -610, delay: 3000 },
+	{ text: '他搖下車窗，將冷氣轉小', x: 50, y: -540, delay: 3500 },
+	{ text: '任春風透進車內', x: 50, y: -470, delay: 3200 },
+	{ text: '溫溫的打在臉上，已經不覺得那麼冷', x: -270, y: -220, delay: 4000 },
+	{ text: '海潮的氣味慢慢滲進鼻腔裡，到海邊了', x: -160, y: -150, delay: 4500 },
+];
+
+export const STORY_CHARGIINGPILE_PAGE1 = [
+	{ text: '朋友總笑他「又下海啊」', x: -290, y: -480, delay: 0 },
+	// { text: '仍然得撐著一口氣面對自己的人生', x: -120, y: -180, delay: 3000 },
+	{ text: '這是今年第二十次', x: -30, y: -60, delay: 3500 },
+	{ text: '只要有空，他一定下海', x: 40, y: 10, delay: 3000 },
+	{ text: '清理人們遺留下的垃圾', x: -320, y: 80, delay: 3000 },
+	{ text: '抱著我不下海誰下海的心情', x: -320, y: 150, delay: 3000 },
+	{ text: '對自己真正在意的事，費點力也不算什麼', x: -320, y: 220, delay: 4000 },
+	{ text: '「比起在陸地，我在海裡更能呼吸」', x: -130, y: 440, delay: 6500 },
+];
+
+export const STORY_CHARGIINGPILE_PAGE2 = [
+	{ text: '上岸後，順著原路回到家裡', x: -290, y: -570, delay: 0 },
+	{ text: '仍然得撐著一口氣面對自己的人生', x: -220, y: -500, delay: 4000 },
+	{ text: '但還好', x: 50, y: -430, delay: 4000 },
+	{ text: '車開了，海就到了', x: 100, y: -360, delay: 2000 },
+	{ text: '他為車子掛上充電樁', x: -240, y: -170, delay: 3000 },
+	{ text: '謝謝它', x: -240, y: -100, delay: 3000 },
+	{ text: '帶自己出發去「呼吸」了一下', x: -240, y: 330, delay: 1200 },
+];
+
+// export const STORY_CHARGIINGPILE_PAGE3 = [
+// 	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
+// 	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 3500 },
+// 	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 3500 },
+// 	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
+// ];
+
+export const STORY_CHARGIINGPILE_PAGE3 = [
+	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
+	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 0 },
+	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 0 },
+	{ text: '連結每個日常', x: -82, y: -280, delay: 0 },
 ];
 
 export const STORY_RICECOOKER_PAGE3 = [
-	{ text: 'CCAW', x: -42, y: -420 },
-	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350 },
-	{ text: '也乘載溫熱的支持', x: -108, y: -280 },
-	{ text: '連結每個日常', x: -82, y: -210 },
+	{ text: 'CCAW', x: -42, y: -420, delay: 0 },
+	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350, delay: 0 },
+	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 0 },
+	{ text: '連結每個日常', x: -82, y: -210, delay: 0 },
 ];

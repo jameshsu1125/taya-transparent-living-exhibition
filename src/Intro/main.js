@@ -4,7 +4,7 @@ import Animation from './animation';
 import './main.less';
 
 const Intro = (props) => {
-	const { state, setIntro, selectFadein } = props;
+	const { state, setIntro, selectFadein, setAudioState } = props;
 
 	const animation = useRef();
 
@@ -16,7 +16,7 @@ const Intro = (props) => {
 
 	useEffect(() => {
 		animation.current = new Animation(
-			{ contentRef, ctaRef, startButton, introRef, selectFadein, arrow },
+			{ contentRef, ctaRef, startButton, introRef, selectFadein, arrow, setAudioState },
 			() => {
 				setIntro(false);
 			},

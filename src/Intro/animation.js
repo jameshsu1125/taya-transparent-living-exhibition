@@ -1,7 +1,5 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
-import { Howl } from 'howler';
 import Click from 'lesca-click';
-import BGM from './sounds/bgm.mp3';
 
 export default class Animation {
 	/**
@@ -10,7 +8,7 @@ export default class Animation {
 	 * @param {function} callback callback
 	 */
 	constructor(props, callback) {
-		const { contentRef, ctaRef, startButton, introRef, arrow, selectFadein } = props;
+		const { contentRef, ctaRef, startButton, introRef, arrow, selectFadein, setAudioState } = props;
 		const root = this;
 		this.tr = {
 			init() {
@@ -258,13 +256,7 @@ export default class Animation {
 						root.tr.content.out();
 						root.tr.ctaRef.in();
 						root.tr.arrow.in();
-						const sound = new Howl({
-							src: [BGM],
-							html5: true,
-							autoplay: true,
-							loop: true,
-						});
-						sound.play();
+						setAudioState('bgm');
 					});
 				},
 			},

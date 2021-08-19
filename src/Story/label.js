@@ -2,10 +2,10 @@ import './label.less';
 
 const Label = (props) => {
 	const { data } = props;
-	const { text, x, y } = data;
+	const { text, x, y, delay } = data;
 
 	return (
-		<div className='Label' style={{ top: `${y}px`, left: `${x}px` }}>
+		<div data-delay={delay} className='Label' style={{ top: `${y}px`, left: `${x}px` }}>
 			{text}
 		</div>
 	);

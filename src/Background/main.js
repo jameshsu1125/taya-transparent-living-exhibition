@@ -8,20 +8,18 @@ const Background = (props) => {
 
 	const container = useRef();
 	const glow = useRef();
-	const glow2 = useRef();
-	const glow3 = useRef();
+	const glowShow = useRef();
 	const animation = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ container, glow, glow2, glow3 });
+		animation.current = new Animation({ container, glow, glowShow });
 		animation.current.in();
 	}, []);
 
 	return (
 		<div ref={container} className='Background'>
 			<div ref={glow} className='glow' />
-			<div ref={glow2} className='glow2' />
-			<div ref={glow3} className='glow3' />
+			<div ref={glowShow} className='glow-slow' />
 			{commingSoon && <div className='darken' />}
 		</div>
 	);

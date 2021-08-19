@@ -1,21 +1,22 @@
-import Tweener from 'lesca-object-tweener';
+import Tweener, { Bezier } from 'lesca-object-tweener';
 
 const { parseInt } = window;
 
-export default class Animation3 {
+export default class Animation2 {
 	constructor(props, callback) {
-		const { page, product, labels, footer } = props;
+		const { page, bg, labels, cloud } = props;
 
 		const root = this;
 		this.tr = {
 			init() {
+				this.bg.init();
 				this.labels.init();
-				this.product.init();
-				this.footer.init();
+				this.cloud.init();
 			},
 			in() {
+				this.bg.in();
 				this.labels.in();
-				this.product.in();
+				this.cloud.in();
 			},
 			out() {
 				const dom = page.current;
@@ -23,49 +24,52 @@ export default class Animation3 {
 				const to = { opacity: 0 };
 				const duration = 2000;
 
+				dom.style.opacity = 1;
 				new Tweener({
 					from,
 					to,
 					duration,
+					easing: Bezier['ease-out'],
 					onUpdate: (e) => {
 						dom.style.opacity = e.opacity;
 					},
 					onComplete: (e) => {
 						dom.style.opacity = e.opacity;
 						dom.style.display = 'none';
-						callback?.();
 					},
 				});
+				callback?.();
 			},
-			footer: {
-				duration: 3000,
-				delay: 0,
-				property: { opacity: 0 },
-				unit: { opacity: '' },
-				fadeOutDelay: 2000,
+			cloud: {
+				delay: -400,
+				property: { 'background-position-x': 0 },
+				unit: { 'background-position-x': 'px' },
+				easing: Bezier.linear,
 				init() {
-					this.c = footer.current;
+					this.c = cloud.current;
+					this.duration =
+						root.tr.labels.delay +
+						root.tr.labels.fadeOutDelay +
+						[...labels.current.children]
+							.map((dom) => parseInt(dom.dataset.delay))
+							.reduce((duration, delay) => duration + delay);
+
 					this.tweener = new Tweener();
 					this.tran();
 				},
 				in() {
-					const { duration, property, delay, fadeOutDelay } = this;
-					const { opacity } = property;
-					const from = { opacity };
-					const to = { opacity: 1 };
+					const { duration, delay, easing } = this;
+					const from = { 'background-position-x': this.property['background-position-x'] };
+					const to = { 'background-position-x': 300 };
 					this.tweener
 						.add({
 							from,
 							to,
 							delay,
+							easing,
 							duration,
 							onUpdate: (e) => this.tran(e),
-							onComplete: (e) => {
-								this.tran(e);
-								setTimeout(() => {
-									root.tr.out();
-								}, fadeOutDelay);
-							},
+							onComplete: (e) => this.tran(e),
 						})
 						.play();
 				},
@@ -76,43 +80,63 @@ export default class Animation3 {
 						const unit = this.unit[key] || '';
 						return `${key}:${value}${unit};`;
 					});
+
 					this.c.style.cssText = cssText.join('');
 				},
 			},
-			product: {
-				duration: 3000,
+			bg: {
 				delay: 0,
-				property: { opacity: 0 },
+				property: { opacity: 0, left: -100 },
+				unit: { opacity: '', left: 'px' },
 				init() {
-					this.c = product.current;
-					this.tweener = new Tweener();
+					this.c = bg.current;
+					this.duration =
+						root.tr.labels.delay +
+						[...labels.current.children]
+							.map((dom) => parseInt(dom.dataset.delay))
+							.reduce((duration, delay) => duration + delay);
+
 					this.tran();
 				},
 				in() {
 					const { duration, property, delay } = this;
-					const { opacity } = property;
-					const from = { opacity };
-					const to = { opacity: 1 };
-					this.tweener
-						.add({
-							from,
-							to,
-							delay,
-							duration,
-							onUpdate: (e) => this.tran(e),
-							onComplete: (e) => this.tran(e),
-						})
-						.play();
+					const { opacity, left } = property;
+					const fromOpacity = { opacity };
+					const toOpacity = { opacity: 1 };
+					const easing = Bezier.linear;
+
+					const fromLeft = { left };
+					const toLeft = { left: 0 };
+
+					new Tweener({
+						from: fromOpacity,
+						to: toOpacity,
+						delay,
+						duration: 3000,
+						onUpdate: (e) => this.tran(e),
+						onComplete: (e) => this.tran(e),
+					});
+
+					new Tweener({
+						from: fromLeft,
+						to: toLeft,
+						delay,
+						duration,
+						easing,
+						onUpdate: (e) => this.tran(e),
+						onComplete: (e) => this.tran(e),
+					});
 				},
-				tran(e = this.property) {
-					this.property = { ...this.property, ...e };
+				tran(data = this.property) {
+					this.property = { ...this.property, ...data };
 					this.c.style.opacity = this.property.opacity;
+					this.c.style['margin-left'] = `${this.property.left}px`;
 				},
 			},
 			labels: {
-				duration: 2000,
+				duration: 3000,
 				delay: 1500,
-				fadeOutDelay: 3000,
+				fadeOutDelay: 0,
 				init() {
 					this.c = labels.current;
 					this.property = [...this.c.children].map(() => ({ opacity: 0 }));
@@ -139,11 +163,10 @@ export default class Animation3 {
 							duration,
 							delay: timeResync,
 							onUpdate: (data) => this.tranEach(dom, data),
-							onComplete: (data) => {
-								this.tranEach(dom, data);
+							onComplete: () => {
 								if (i === this.c.children.length - 1) {
 									setTimeout(() => {
-										root.tr.footer.in();
+										root.tr.out();
 									}, fadeOutDelay);
 								}
 							},
@@ -164,7 +187,6 @@ export default class Animation3 {
 				},
 			},
 		};
-
 		this.tr.init();
 	}
 

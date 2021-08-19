@@ -8,6 +8,7 @@ import Logo from '../Logo/main';
 import Select from '../Select/main';
 import Story from '../Story/main';
 import Result from '../Result/main';
+import Audio from '../Components/audio';
 
 import './main.less';
 
@@ -16,7 +17,7 @@ const queryState = QueryString.get('state');
 const queryData = {
 	normal: { intro: true, logo: true, story: false, loading: true, result: false },
 	result: { intro: false, logo: false, story: false, loading: false, result: true },
-	story: { intro: false, logo: false, story: 1, loading: false, result: false },
+	story: { intro: false, logo: false, story: 5, loading: false, result: false },
 };
 
 let queryInset;
@@ -36,9 +37,11 @@ const Index = () => {
 	const [story, setStory] = useState(queryInset.story);
 	const [loading, setLoading] = useState(queryInset.loading);
 	const [result, setResult] = useState(queryInset.result);
+	const [audioState, setAudioState] = useState('muted');
+	const [audioLoad, setAudioLoad] = useState(false);
 
 	// todo => [讀取紀錄功能]之後改localStorage
-	const [read, setRead] = useState([true, false, true, true, true]);
+	const [read, setRead] = useState([true, false, true, true, true, false, true]);
 
 	useEffect(() => {
 		// 第一次框架onload
@@ -71,6 +74,7 @@ const Index = () => {
 
 	const selectFadein = () => {
 		// exec select page fadein
+		setState('select');
 		selectRef.current.fadein();
 	};
 
@@ -80,7 +84,13 @@ const Index = () => {
 			// 判斷是否全部故事讀完
 			const howMuchRead = read.filter((e) => e);
 			// 等select反白動畫 晚半秒進入result頁
-			if (howMuchRead.length === read.length) setTimeout(() => setResult(true), 500);
+			setTimeout(() => {
+				setState('select');
+				if (howMuchRead.length === read.length) setResult(true);
+			}, 500);
+
+			// 播放音樂
+			setAudioState('back');
 		}
 	}, [state, read]);
 
@@ -91,17 +101,37 @@ const Index = () => {
 		selectFadein();
 	};
 
+	const onAudioLoaded = (e) => {
+		setAudioLoad(e);
+	};
+
 	return (
 		<div ref={container} className='Index'>
 			<Background commingSoon={commingSoon} />
 			{preload && (
 				<Select ref={selectRef} state={state} setStory={setStory} read={read} setRead={setRead} />
 			)}
-			{story !== false && <Story index={story} setStory={setStory} setState={setState} />}
-			{preload && intro && <Intro state={state} setIntro={setIntro} selectFadein={selectFadein} />}
+			{story !== false && (
+				<Story
+					index={story}
+					setStory={setStory}
+					setState={setState}
+					setAudioState={setAudioState}
+					audioLoad={audioLoad}
+				/>
+			)}
+			{preload && intro && (
+				<Intro
+					state={state}
+					setIntro={setIntro}
+					setAudioState={setAudioState}
+					selectFadein={selectFadein}
+				/>
+			)}
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
 			{result && <Result retry={retry} />}
+			<Audio state={audioState} onload={onAudioLoaded} />
 		</div>
 	);
 };

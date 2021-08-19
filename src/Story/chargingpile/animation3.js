@@ -112,7 +112,7 @@ export default class Animation3 {
 			labels: {
 				duration: 2000,
 				delay: 1500,
-				fadeOutDelay: 3000,
+				fadeOutDelay: 1000,
 				init() {
 					this.c = labels.current;
 					this.property = [...this.c.children].map(() => ({ opacity: 0 }));

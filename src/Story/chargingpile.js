@@ -1,13 +1,13 @@
 import Tweener from 'lesca-object-tweener';
 import { useEffect, useRef, useState } from 'react';
 import ImageOnload from 'lesca-image-onload';
-import Page0 from './ricecooker/page0';
-import Page1 from './ricecooker/page1';
-import Page2 from './ricecooker/page2';
-import Page3 from './ricecooker/page3';
-import './ricecooker.less';
+import Page0 from './chargingpile/page0';
+import Page1 from './chargingpile/page1';
+import Page2 from './chargingpile/page2';
+import Page3 from './chargingpile/page3';
+import './chargingpile.less';
 
-const Ricecooker = (props) => {
+const Chargingpile = (props) => {
 	const { setLoading, setStory, setState: setRootState, setAudioState, audioLoad } = props;
 
 	const container = useRef();
@@ -15,6 +15,16 @@ const Ricecooker = (props) => {
 
 	const [state, setState] = useState('loading');
 	const [domReady, setDomReady] = useState(false);
+
+	useEffect(() => {
+		if (audioLoad !== false && domReady) {
+			setTimeout(() => {
+				setLoading(false);
+				colorBackgroundRef.current.classList.add('fadein');
+				setState('page3');
+			}, 1000);
+		}
+	}, [audioLoad, domReady]);
 
 	const fadeOut = () => {
 		const dom = colorBackgroundRef.current;
@@ -40,24 +50,14 @@ const Ricecooker = (props) => {
 	};
 
 	useEffect(() => {
-		if (audioLoad !== false && domReady) {
-			setTimeout(() => {
-				setLoading(false);
-				colorBackgroundRef.current.classList.add('fadein');
-				setState('page3');
-			}, 1000);
-		}
-	}, [audioLoad, domReady]);
-
-	useEffect(() => {
 		new ImageOnload(container.current, { hideBeforeLoaded: true }).then(() => {
 			setDomReady(true);
-			setAudioState('ricecooker');
+			setAudioState('chargingpile');
 		});
 	}, []);
 
 	return (
-		<div ref={container} className='Ricecooker'>
+		<div ref={container} className='Chargingpile'>
 			<div ref={colorBackgroundRef} className='color-background' />
 			<Page3 state={state} setState={setState} fadeOut={fadeOut} />
 			<Page2 state={state} setState={setState} />
@@ -66,4 +66,4 @@ const Ricecooker = (props) => {
 		</div>
 	);
 };
-export default Ricecooker;
+export default Chargingpile;
