@@ -24,6 +24,8 @@ let queryInset;
 if (!queryState) queryInset = queryData.normal;
 else queryInset = queryData[queryState.split('#')[0]];
 
+const defaultReadData = [true, false, true, true, true, false, true];
+
 const Index = () => {
 	const container = useRef();
 	const selectRef = useRef();
@@ -41,7 +43,7 @@ const Index = () => {
 	const [audioLoad, setAudioLoad] = useState(false);
 
 	// todo => [讀取紀錄功能]之後改localStorage
-	const [read, setRead] = useState([true, false, true, true, true, false, true]);
+	const [read, setRead] = useState([...defaultReadData]);
 
 	useEffect(() => {
 		// 第一次框架onload
@@ -96,9 +98,13 @@ const Index = () => {
 
 	const retry = () => {
 		// result頁讀完就從新再玩
+		// todo => 重新再玩reset localStorage
+		setRead(() => [...defaultReadData]);
 		setResult(false);
-		setState('intro');
-		selectFadein();
+		setState('back');
+		setTimeout(() => {
+			selectFadein();
+		}, 500);
 	};
 
 	const onAudioLoaded = (e) => {

@@ -93,17 +93,3 @@ export const STORY_CHARGIINGPILE_PAGE3 = [
 	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 3500 },
 	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
 ];
-
-// export const STORY_CHARGIINGPILE_PAGE3 = [
-// 	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
-// 	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 0 },
-// 	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 0 },
-// 	{ text: '連結每個日常', x: -82, y: -280, delay: 0 },
-// ];
-
-// export const STORY_RICECOOKER_PAGE3 = [
-// 	{ text: 'CCAW', x: -42, y: -420, delay: 0 },
-// 	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350, delay: 0 },
-// 	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 0 },
-// 	{ text: '連結每個日常', x: -82, y: -210, delay: 0 },
-// ];

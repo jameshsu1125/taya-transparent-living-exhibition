@@ -44,7 +44,7 @@ const Ricecooker = (props) => {
 			setTimeout(() => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
-				setState('page3');
+				setState('page0');
 			}, 1000);
 		}
 	}, [audioLoad, domReady]);
