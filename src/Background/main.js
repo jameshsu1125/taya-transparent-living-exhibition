@@ -12,14 +12,18 @@ const Background = (props) => {
 	const animation = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ container, glow, glowShow });
-		animation.current.in();
-	}, []);
+		if (!commingSoon) {
+			animation.current = new Animation({ container, glow, glowShow });
+			animation.current.in();
+		} else {
+			animation.current?.stop();
+		}
+	}, [commingSoon]);
 
 	return (
 		<div ref={container} className='Background'>
-			<div ref={glow} className='glow' />
-			<div ref={glowShow} className='glow-slow' />
+			{!commingSoon && <div ref={glow} className='glow' />}
+			{!commingSoon && <div ref={glowShow} className='glow-slow' />}
 			{commingSoon && <div className='darken' />}
 		</div>
 	);

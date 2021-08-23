@@ -52,7 +52,7 @@ const Select = forwardRef((props, ref) => {
 			selectRef.current.style.display = 'block';
 			setTimeout(() => {
 				selectRef.current.style.opacity = 1;
-			}, 50);
+			}, 100);
 		}
 	}, [state]);
 

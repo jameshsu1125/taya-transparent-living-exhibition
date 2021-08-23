@@ -16,6 +16,11 @@ export default class Animation {
 				this.glow.in();
 				this.glowShow.in();
 			},
+			stop() {
+				this.glowShow.tweener.stop();
+				this.glow.tweener.stop();
+				this.container.tweener.stop();
+			},
 			glowShow: {
 				delay: 0,
 				property: { opacity: 1, rotate: 0 },
@@ -137,5 +142,9 @@ export default class Animation {
 
 	in() {
 		this.tr.in();
+	}
+
+	stop() {
+		this.tr.stop();
 	}
 }
