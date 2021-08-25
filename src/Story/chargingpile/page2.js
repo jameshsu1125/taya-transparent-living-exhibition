@@ -9,11 +9,9 @@ const Page2 = (props) => {
 	const { state, setState } = props;
 
 	const animation = useRef();
-
 	const page = useRef();
 	const bg = useRef();
 	const cloud = useRef();
-
 	const img = useRef();
 	const labels = useRef();
 
@@ -28,7 +26,6 @@ const Page2 = (props) => {
 			const scale = innerHeight / baseHeight;
 			img.current.style.transform = `scale(${scale})`;
 		};
-
 		window.addEventListener('resize', resize);
 		resize();
 

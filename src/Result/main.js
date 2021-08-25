@@ -1,8 +1,8 @@
+import Click from 'lesca-click';
 import ImageOnload from 'lesca-image-onload';
 import { useEffect, useRef, useState } from 'react';
-import Click from 'lesca-click';
-import Animation from './animation';
 import Share from '../Share/main';
+import Animation from './animation';
 import './main.less';
 
 const Result = (props) => {

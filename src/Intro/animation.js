@@ -1,5 +1,5 @@
-import Tweener, { Bezier } from 'lesca-object-tweener';
 import Click from 'lesca-click';
+import Tweener, { Bezier } from 'lesca-object-tweener';
 
 export default class Animation {
 	/**

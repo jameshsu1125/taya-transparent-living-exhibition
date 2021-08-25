@@ -93,7 +93,6 @@ export default class Animation0 {
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-
 					this.duration =
 						root.tr.labels.delay +
 						root.tr.labels.fadeOutDelay +
@@ -101,7 +100,6 @@ export default class Animation0 {
 						[...labels.current.children]
 							.map((dom) => parseInt(dom.dataset.delay))
 							.reduce((duration, delay) => duration + delay);
-
 					this.tran();
 				},
 				in() {
@@ -110,10 +108,8 @@ export default class Animation0 {
 					const fromOpacity = { opacity };
 					const toOpacity = { opacity: 1 };
 					const easing = Bezier.linear;
-
 					const fromLeft = { left };
 					const toLeft = { left: 0 };
-
 					new Tweener({
 						from: fromOpacity,
 						to: toOpacity,
@@ -122,7 +118,6 @@ export default class Animation0 {
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
 					});
-
 					new Tweener({
 						from: fromLeft,
 						to: toLeft,
@@ -189,16 +184,12 @@ export default class Animation0 {
 					const { duration, property, fadeOutDelay } = this;
 					[...this.c.children].forEach((e, i) => {
 						const dom = e;
-
 						const { delay } = e.dataset;
-
 						const p = property[i];
 						const { opacity } = p;
-
 						const from = { opacity };
 						const to = { opacity: 1 };
 						timeResync += parseInt(delay);
-
 						new Tweener({
 							from,
 							to,

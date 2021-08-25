@@ -1,44 +1,44 @@
 .Share {
 	position: absolute;
+	display: none;
 	width: 100%;
 	height: 100%;
-	display: none;
 
 	.share-backgrouund {
 		position: absolute;
+		top: 0;
 		width: 100%;
 		height: 100%;
-		top: 0;
 		background-color: rgba(0, 0, 0, 0.5);
 		opacity: 0;
 	}
 
 	.content {
 		position: absolute;
+		bottom: -1030px;
 		width: 100%;
 		height: 1000px;
-		background-color: #fff;
-		bottom: -1030px;
 		border-top-left-radius: 80px;
 		border-top-right-radius: 80px;
+		background-color: #fff;
 
 		.handle {
 			position: absolute;
+			top: -27px;
+			left: 50%;
+			margin-left: -116px * 0.5;
 			width: 116px;
 			height: 12px;
 			border-radius: 6px;
 			background-color: #fff;
-			left: 50%;
-			margin-left: -116px * 0.5;
-			top: -27px;
 			pointer-events: none;
 		}
 
 		.title {
+			margin: 80px 0 50px;
 			width: 100%;
 			text-align: center;
 			font-size: 24px;
-			margin: 80px 0 50px;
 			transform: scale(1, 1.1);
 		}
 
@@ -48,39 +48,39 @@
 			height: 700px;
 
 			.slider {
+				margin-left: 25px;
 				width: 400px;
 				height: 600px;
-				margin-left: 25px;
 
 				.headline {
 					position: relative;
+					margin: 15px 0;
 					width: 100%;
+					color: #999;
 					text-align: center;
 					font-size: 50px;
-					color: #999;
-					margin: 15px 0;
 					transform: scale(1, 1.1);
 				}
 
 				.cover {
 					position: relative;
+					overflow: hidden;
 					width: 100%;
 					height: 426px;
-					background-color: #ccc;
 					border-radius: 40px;
+					background-color: #ccc;
 					background-repeat: no-repeat;
-					overflow: hidden;
 
 					.title {
 						position: absolute;
-						width: 100%;
-						font-size: 30px;
-						text-align: center;
 						bottom: 0px;
-						letter-spacing: 2px;
-						pointer-events: none;
-						transform: scale(1, 1.1);
 						margin-left: 1px;
+						width: 100%;
+						text-align: center;
+						letter-spacing: 2px;
+						font-size: 30px;
+						transform: scale(1, 1.1);
+						pointer-events: none;
 					}
 
 					.on {
@@ -93,8 +93,8 @@
 						height: 100%;
 						background-color: rgba(0, 0, 0, 0.5);
 						opacity: 0;
-						pointer-events: none;
 						transition: 0.5s;
+						pointer-events: none;
 					}
 				}
 

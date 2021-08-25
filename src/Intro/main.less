@@ -11,9 +11,9 @@
 	background-color: rgba(153, 153, 153, 1);
 
 	.content {
+		margin-left: 2.5px;
 		width: 100%;
 		letter-spacing: 5px;
-		margin-left: 2.5px;
 
 		& > div {
 			float: left;
@@ -31,12 +31,12 @@
 
 	.cta {
 		position: absolute;
-		width: 100%;
 		top: 50%;
 		left: 0;
 		display: none;
 		box-sizing: border-box;
 		margin-top: -93px;
+		width: 100%;
 		width: 100%;
 		height: 100px;
 		color: #fff;
@@ -49,22 +49,22 @@
 
 	.arrow {
 		position: absolute;
-		@img: './img/arrow.svg';
-		width: 100%;
-		height: image-height(@img);
 		top: 50%;
 		margin-top: 10px;
+		width: 100%;
+		height: image-height(@img);
+
+		@img: './img/arrow.svg';
 
 		&::after {
 			position: absolute;
 			width: 100%;
 			height: 100%;
 			background-image: url(@img);
-			transform: scale(-1, 1);
-			content: '';
-			background-repeat: no-repeat;
 			background-position: center;
-
+			background-repeat: no-repeat;
+			content: '';
+			transform: scale(-1, 1);
 			animation: arrow 2s ease-in-out infinite;
 		}
 	}

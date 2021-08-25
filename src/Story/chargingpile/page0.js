@@ -9,11 +9,9 @@ const Page0 = (props) => {
 	const { state, setState } = props;
 
 	const animation = useRef();
-
 	const page = useRef();
 	const bg = useRef();
 	const cloud = useRef();
-
 	const title = useRef();
 	const labels = useRef();
 

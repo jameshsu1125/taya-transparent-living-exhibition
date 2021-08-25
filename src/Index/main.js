@@ -1,15 +1,14 @@
 import ImageOnload from 'lesca-image-onload';
-import { useEffect, useRef, useState } from 'react';
 import QueryString from 'lesca-url-parameters';
+import { useEffect, useRef, useState } from 'react';
 import Background from '../Background/main';
+import Audio from '../Components/audio';
 import Intro from '../Intro/main';
 import Loading from '../Loading/main';
 import Logo from '../Logo/main';
+import Result from '../Result/main';
 import Select from '../Select/main';
 import Story from '../Story/main';
-import Result from '../Result/main';
-import Audio from '../Components/audio';
-
 import './main.less';
 
 // todo => custom router

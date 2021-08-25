@@ -2,12 +2,12 @@ export default {};
 
 export const ITEMS_SELECT = [
 	{ title: '電動機車', subtitle: 'Electric Motorcycle', category: '奈米煩惱' },
-	{ title: '電飯鍋', subtitle: 'Ricecooker', category: '溫熱的支持' },
-	{ title: '無線耳機', subtitle: 'Earphone', category: '上班前的儀式' },
-	{ title: '家庭用泵浦', subtitle: 'Pump', category: '深夜的熱水澡' },
-	{ title: '手機', subtitle: 'Phone', category: '我愛你' },
-	{ title: '充電樁', subtitle: 'Phone', category: '去海裡呼吸' },
-	{ title: '高壓電纜', subtitle: 'Phone', category: '再讓我試試' },
+	{ title: '電飯鍋', subtitle: 'Electric Rice Cooker', category: '溫熱的支持' },
+	{ title: '無線耳機', subtitle: 'Wireless Earphone', category: '上班前的儀式' },
+	{ title: '泵浦', subtitle: 'Pump', category: '深夜的熱水澡' },
+	{ title: '手機', subtitle: 'Mobile Phone', category: '我愛你' },
+	{ title: '充電樁', subtitle: 'EV Charger', category: '去海裡呼吸' },
+	{ title: '高壓電纜', subtitle: 'High-Voltage Cable', category: '再讓我試試' },
 ];
 
 export const INTRO_TITLE = [

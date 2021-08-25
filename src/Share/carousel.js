@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
 import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
+import { useEffect, useRef } from 'react';
 import './main.less';
 
 const Carousel = (props) => {

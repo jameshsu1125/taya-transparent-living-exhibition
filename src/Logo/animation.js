@@ -1,5 +1,5 @@
-import Tweener, { Bezier } from 'lesca-object-tweener';
 import { Pad } from 'lesca-number';
+import Tweener, { Bezier } from 'lesca-object-tweener';
 
 export default class Animation {
 	constructor(props) {

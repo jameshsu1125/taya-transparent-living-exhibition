@@ -66,7 +66,6 @@ export default class Animation {
 				},
 				tran(e = this.property) {
 					this.property = { ...this.property, ...e };
-
 					this.c.style.opacity = this.property.opacity;
 					this.c.style.transform = `scale(${this.property.scale})`;
 				},
@@ -88,7 +87,6 @@ export default class Animation {
 						const from = { opacity };
 						const to = { opacity: 1 };
 						const easing = Bezier.easeInOutQuart;
-
 						new Tweener({
 							from,
 							to,
@@ -104,7 +102,6 @@ export default class Animation {
 					const target = dom;
 					const { opacity } = data;
 					this.property[index] = data;
-
 					target.style.opacity = opacity;
 				},
 				tran(e = this.property) {

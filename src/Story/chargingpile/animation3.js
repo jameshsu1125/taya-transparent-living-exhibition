@@ -22,7 +22,6 @@ export default class Animation3 {
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
 				const duration = 2000;
-
 				new Tweener({
 					from,
 					to,
@@ -123,16 +122,12 @@ export default class Animation3 {
 					const { duration, property, fadeOutDelay } = this;
 					[...this.c.children].forEach((e, i) => {
 						const dom = e;
-
 						const { delay } = e.dataset;
-
 						const p = property[i];
 						const { opacity } = p;
-
 						const from = { opacity };
 						const to = { opacity: 1 };
 						timeResync += parseInt(delay);
-
 						new Tweener({
 							from,
 							to,

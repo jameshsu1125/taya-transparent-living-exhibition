@@ -1,5 +1,5 @@
-import Tweener from 'lesca-object-tweener';
 import Click from 'lesca-click';
+import Tweener from 'lesca-object-tweener';
 
 export default class Animation {
 	constructor(props, setShareDialog) {

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import Animation from './animation';
 import CommingSoon from '../CommingSoon/main';
+import Animation from './animation';
 import './main.less';
 
 const Logo = (props) => {

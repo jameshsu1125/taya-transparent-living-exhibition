@@ -27,7 +27,6 @@ export default class Animation1 {
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
 				const duration = 2000;
-
 				dom.style.opacity = 1;
 				new Tweener({
 					from,
@@ -83,7 +82,6 @@ export default class Animation1 {
 					this.property = { ...this.property, ...e };
 					const { radius } = this;
 					const { frame } = this.property;
-
 					const x = Math.cos((Math.PI / 180) * frame) * radius;
 					const y = Math.sin((Math.PI / 180) * frame * 2) * radius;
 					this.c.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${x * 0.01}deg)`;
@@ -97,7 +95,6 @@ export default class Animation1 {
 				radius: 30,
 				init() {
 					this.c = trash1.current;
-
 					this.duration =
 						root.tr.labels.delay +
 						root.tr.labels.fadeOutDelay +
@@ -105,7 +102,6 @@ export default class Animation1 {
 						[...labels.current.children]
 							.map((dom) => parseInt(dom.dataset.delay))
 							.reduce((duration, delay) => duration + delay);
-
 					this.tweener = new Tweener();
 					this.tran();
 				},
@@ -130,7 +126,6 @@ export default class Animation1 {
 					this.property = { ...this.property, ...e };
 					const { radius } = this;
 					const { frame } = this.property;
-
 					const x = Math.cos((Math.PI / 180) * frame) * radius;
 					const y = Math.sin((Math.PI / 180) * frame * 3) * radius;
 					this.c.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${y * 0.1}deg)`;
@@ -144,7 +139,6 @@ export default class Animation1 {
 				radius: 50,
 				init() {
 					this.c = trash0.current;
-
 					this.duration =
 						root.tr.labels.delay +
 						root.tr.labels.fadeOutDelay +
@@ -152,7 +146,6 @@ export default class Animation1 {
 						[...labels.current.children]
 							.map((dom) => parseInt(dom.dataset.delay))
 							.reduce((duration, delay) => duration + delay);
-
 					this.tweener = new Tweener();
 					this.tran();
 				},
@@ -177,7 +170,6 @@ export default class Animation1 {
 					this.property = { ...this.property, ...e };
 					const { radius } = this;
 					const { frame } = this.property;
-
 					const x = Math.cos((Math.PI / 180) * frame) * radius;
 					const y = Math.sin((Math.PI / 180) * frame * 2) * radius;
 					this.c.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${y * 0.1}deg)`;
@@ -195,7 +187,6 @@ export default class Animation1 {
 						[...labels.current.children]
 							.map((dom) => parseInt(dom.dataset.delay))
 							.reduce((duration, delay) => duration + delay);
-
 					this.tran();
 				},
 				in() {
@@ -204,10 +195,8 @@ export default class Animation1 {
 					const fromOpacity = { opacity };
 					const toOpacity = { opacity: 1 };
 					const easing = Bezier.linear;
-
 					const fromLeft = { left };
 					const toLeft = { left: 0 };
-
 					new Tweener({
 						from: fromOpacity,
 						to: toOpacity,
@@ -216,7 +205,6 @@ export default class Animation1 {
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
 					});
-
 					new Tweener({
 						from: fromLeft,
 						to: toLeft,
@@ -247,16 +235,12 @@ export default class Animation1 {
 					const { duration, property, fadeOutDelay } = this;
 					[...this.c.children].forEach((e, i) => {
 						const dom = e;
-
 						const { delay } = e.dataset;
-
 						const p = property[i];
 						const { opacity } = p;
-
 						const from = { opacity };
 						const to = { opacity: 1 };
 						timeResync += parseInt(delay);
-
 						new Tweener({
 							from,
 							to,
