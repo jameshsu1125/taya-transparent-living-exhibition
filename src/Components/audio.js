@@ -2,8 +2,9 @@ import Tweener, { Bezier } from 'lesca-object-tweener';
 import { useEffect, useState } from 'react';
 import ReactHowler from 'react-howler';
 import BGM from './sounds/bgm.mp3';
-import Chargingpile from './sounds/chargingpile.mp3';
+import Evcharger from './sounds/evcharger.mp3';
 import Ricecooker from './sounds/ricecooker.mp3';
+import Motorcycle from './sounds/motorcycle.mp3';
 
 const easing = Bezier.linear;
 const duration = 3000;
@@ -15,7 +16,19 @@ const Audio = (props) => {
 	const [BGMVol, setBGMVol] = useState(1);
 
 	const [RicecookerState, setRicecookerState] = useState(false);
-	const [ChargingpileState, setChargingpileState] = useState(false);
+	const [EvchargerState, setEvchargerState] = useState(false);
+	const [MotorcycleState, setMotorcycleState] = useState(false);
+
+	const tweenVolume = (vol) => {
+		new Tweener({
+			from: { vol: BGMVol },
+			to: { vol },
+			duration,
+			easing,
+			onUpdate: (data) => setBGMVol(data.vol),
+			onComplete: (data) => setBGMVol(data.vol),
+		});
+	};
 
 	useEffect(() => {
 		switch (state) {
@@ -24,43 +37,25 @@ const Audio = (props) => {
 				break;
 
 			case 'ricecooker':
-				new Tweener({
-					from: { vol: BGMVol },
-					to: { vol: 0 },
-					duration,
-					easing,
-					onUpdate: (data) => setBGMVol(data.vol),
-					onComplete: (data) => setBGMVol(data.vol),
-				});
-
+				tweenVolume(0);
 				setRicecookerState(true);
 				break;
 
-			case 'chargingpile':
-				new Tweener({
-					from: { vol: BGMVol },
-					to: { vol: 0 },
-					duration,
-					easing,
-					onUpdate: (data) => setBGMVol(data.vol),
-					onComplete: (data) => setBGMVol(data.vol),
-				});
+			case 'evcharger':
+				tweenVolume(0);
+				setEvchargerState(true);
+				break;
 
-				setChargingpileState(true);
+			case 'motorcycle':
+				tweenVolume(0);
+				setMotorcycleState(true);
 				break;
 
 			case 'back':
 				setRicecookerState(false);
-				setChargingpileState(false);
+				setEvchargerState(false);
 				setBGMState(true);
-				new Tweener({
-					from: { vol: BGMVol },
-					to: { vol: 1 },
-					duration,
-					easing,
-					onUpdate: (data) => setBGMVol(data.vol),
-					onComplete: (data) => setBGMVol(data.vol),
-				});
+				tweenVolume(1);
 				break;
 
 			case 'muted':
@@ -82,10 +77,18 @@ const Audio = (props) => {
 					loop={false}
 				/>
 			)}
-			{ChargingpileState && (
+			{EvchargerState && (
 				<ReactHowler
-					src={Chargingpile}
+					src={Evcharger}
 					onLoad={() => onSoundsLoad('ricecooker')}
+					playing
+					loop={false}
+				/>
+			)}
+			{MotorcycleState && (
+				<ReactHowler
+					src={Motorcycle}
+					onLoad={() => onSoundsLoad('motorcycle')}
 					playing
 					loop={false}
 				/>
@@ -93,4 +96,5 @@ const Audio = (props) => {
 		</>
 	);
 };
+
 export default Audio;

@@ -19,6 +19,50 @@ export const INTRO_TITLE = [
 	'讓生活得以連結',
 ];
 
+export const STORY_MOTORCYCLE_PAGE0 = [
+	{ text: '大家是這麼調侃我的工作', x: -290, y: -1090, delay: 0 },
+	{ text: '擅長為不是自己的錯道歉', x: -200, y: -1020, delay: 4000 },
+	{ text: '說來諷刺但又真實', x: -150, y: -950, delay: 7500 },
+	{ text: '我告訴自己不用太在意', x: -100, y: -880, delay: 4500 },
+
+	{ text: '下班從二段到五段的距離', x: -340, y: -760, delay: 3000 },
+	{ text: '表定三十分鐘，一定會被我拉到五十', x: -240, y: -690, delay: 5000 },
+
+	{ text: '我在車上看著高樓大廈閃過', x: -220, y: -570, delay: 3000 },
+	{ text: '停紅綠燈時抬頭望著天空，放空', x: -110, y: -500, delay: 3500 },
+	{ text: '我的思緒開始漫遊', x: 80, y: -430, delay: 3200 },
+];
+
+export const STORY_MOTORCYCLE_PAGE1 = [
+	{ text: '這個世界好大', x: -310, y: -480, delay: 0 },
+	{ text: '好多事還沒做過，好多地方還沒去過', x: -310, y: -410, delay: 3500 },
+
+	{ text: '這個世界好大', x: -150, y: -290, delay: 3000 },
+	{ text: '我好小，在我裡面的煩惱又更小', x: -150, y: -220, delay: 3000 },
+
+	{ text: '比起這棟高樓、這座城市、這個世界', x: -320, y: 110, delay: 3000 },
+	{ text: '我的煩惱是奈米煩惱', x: -10, y: 180, delay: 4000 },
+
+	{ text: '想了一想', x: -130, y: 390, delay: 6500 },
+	{ text: '有些事真的不是那麼重要', x: -50, y: 460, delay: 6500 },
+];
+
+export const STORY_MOTORCYCLE_PAGE2 = [
+	{ text: '然後我開始往家的方向騎', x: -150, y: -540, delay: 0 },
+
+	{ text: '剛剛與街景交換的心底秘密', x: -300, y: -430, delay: 4000 },
+	{ text: '洗滌我的身心、充電', x: -100, y: -360, delay: 4000 },
+
+	{ text: '然後回家', x: 150, y: -240, delay: 2000 },
+];
+
+export const STORY_MOTORCYCLE_PAGE3 = [
+	{ text: 'EAIW、IFDW', x: -93, y: -490, delay: 0 },
+	{ text: '不只是電動機車裡的漆包線線圈', x: -186, y: -420, delay: 3500 },
+	{ text: '也將疲憊的自己推動向前', x: -146, y: -350, delay: 3500 },
+	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
+];
+
 export const STORY_RICECOOKER_PAGE0 = [
 	{ text: '我不被理解，但我理解', x: -30, y: -960, delay: 0 },
 	{ text: '誰願意讓寶貝女兒冒這種風險', x: -30, y: -890, delay: 3500 },
@@ -52,7 +96,7 @@ export const STORY_RICECOOKER_PAGE3 = [
 	{ text: '連結每個日常', x: -82, y: -210, delay: 2500 },
 ];
 
-export const STORY_CHARGIINGPILE_PAGE0 = [
+export const STORY_EVCHARAGER_PAGE0 = [
 	{ text: '呼吸，是主要生命徵象之一', x: -290, y: -1090, delay: 0 },
 	{ text: '對多數城市人來說，生存，向來是撐著一口氣', x: -290, y: -1020, delay: 4000 },
 	{ text: '天才正要亮，他早早起床', x: -330, y: -920, delay: 7500 },
@@ -66,9 +110,8 @@ export const STORY_CHARGIINGPILE_PAGE0 = [
 	{ text: '海潮的氣味慢慢滲進鼻腔裡，到海邊了', x: -160, y: -150, delay: 4500 },
 ];
 
-export const STORY_CHARGIINGPILE_PAGE1 = [
+export const STORY_EVCHARAGER_PAGE1 = [
 	{ text: '朋友總笑他「又下海啊」', x: -290, y: -480, delay: 0 },
-	// { text: '仍然得撐著一口氣面對自己的人生', x: -120, y: -180, delay: 3000 },
 	{ text: '這是今年第二十次', x: -30, y: -60, delay: 3500 },
 	{ text: '只要有空，他一定下海', x: 40, y: 10, delay: 3000 },
 	{ text: '清理人們遺留下的垃圾', x: -320, y: 80, delay: 3000 },
@@ -77,7 +120,7 @@ export const STORY_CHARGIINGPILE_PAGE1 = [
 	{ text: '「比起在陸地，我在海裡更能呼吸」', x: -130, y: 440, delay: 6500 },
 ];
 
-export const STORY_CHARGIINGPILE_PAGE2 = [
+export const STORY_EVCHARAGER_PAGE2 = [
 	{ text: '上岸後，順著原路回到家裡', x: -290, y: -570, delay: 0 },
 	{ text: '仍然得撐著一口氣面對自己的人生', x: -220, y: -500, delay: 4000 },
 	{ text: '但還好', x: 50, y: -430, delay: 4000 },
@@ -87,7 +130,7 @@ export const STORY_CHARGIINGPILE_PAGE2 = [
 	{ text: '帶自己出發去「呼吸」了一下', x: -240, y: 330, delay: 1200 },
 ];
 
-export const STORY_CHARGIINGPILE_PAGE3 = [
+export const STORY_EVCHARAGER_PAGE3 = [
 	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
 	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 3500 },
 	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 3500 },

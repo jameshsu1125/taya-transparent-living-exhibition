@@ -1,30 +1,29 @@
 import { useEffect, useRef } from 'react';
-import { STORY_CHARGIINGPILE_PAGE1 } from '../../Setting/config';
+import { STORY_MOTORCYCLE_PAGE2 } from '../../Setting/config';
 import Label from '../label';
-import Animation from './animation1';
+import Animation from './animation2';
 
-const pageName = 'page1';
+const pageName = 'page2';
 
-const Page1 = (props) => {
+const Page2 = (props) => {
 	const { state, setState } = props;
 
 	const animation = useRef();
 	const page = useRef();
 	const bg = useRef();
-	const trash0 = useRef();
-	const trash1 = useRef();
-	const trash2 = useRef();
+	const cloud = useRef();
+	const white = useRef();
 	const img = useRef();
 	const labels = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, labels, trash0, trash1, trash2 }, () => {
-			setState('page2');
+		animation.current = new Animation({ page, bg, cloud, labels, white }, () => {
+			setState('page3');
 		});
 
 		const resize = () => {
 			const { innerHeight } = window;
-			const baseHeight = 1779;
+			const baseHeight = 2292;
 			const scale = innerHeight / baseHeight;
 			img.current.style.transform = `scale(${scale})`;
 		};
@@ -44,20 +43,19 @@ const Page1 = (props) => {
 	}, [state]);
 
 	return (
-		<div ref={page} className='page page1'>
+		<div ref={page} className='page page2'>
+			<div ref={white} className='white-color' />
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
-					<div ref={trash0} className='trash0' />
-					<div ref={trash1} className='trash1' />
-					<div ref={trash2} className='trash2' />
+					<div ref={cloud} className='cloud' />
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_CHARGIINGPILE_PAGE1.map((e) => (
+				{STORY_MOTORCYCLE_PAGE2.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>
 		</div>
 	);
 };
-export default Page1;
+export default Page2;

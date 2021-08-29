@@ -1,6 +1,7 @@
 import ImageOnload from 'lesca-image-onload';
 import QueryString from 'lesca-url-parameters';
 import { useEffect, useRef, useState } from 'react';
+import Storage from 'lesca-local-storage';
 import Background from '../Background/main';
 import Audio from '../Components/audio';
 import Intro from '../Intro/main';
@@ -13,17 +14,28 @@ import './main.less';
 
 // todo => custom router
 const queryState = QueryString.get('state');
+const queryStoryIndex = QueryString.get('storyIndex');
 const queryData = {
 	normal: { intro: true, logo: true, story: false, loading: true, result: false },
 	result: { intro: false, logo: false, story: false, loading: false, result: true },
-	story: { intro: false, logo: false, story: 5, loading: false, result: false },
+	story: {
+		intro: false,
+		logo: false,
+		story: queryStoryIndex ? window.parseInt(queryStoryIndex) : 0,
+		loading: false,
+		result: false,
+	},
 };
 
 let queryInset;
 if (!queryState) queryInset = queryData.normal;
 else queryInset = queryData[queryState.split('#')[0]];
 
-const defaultReadData = [true, false, true, true, true, false, true];
+// const defaultReadData = [true, false, true, true, true, false, true];
+const defaultReadData = [...new Array(7).keys()].map(() => false);
+
+// ! debug
+Storage.clear();
 
 const Index = () => {
 	const container = useRef();
@@ -49,6 +61,10 @@ const Index = () => {
 		new ImageOnload(container.current, {
 			hideBeforeLoaded: true,
 		}).then(() => setPreload(true));
+
+		const { data } = Storage.get('readData');
+		if (!data) setRead(defaultReadData);
+		else setRead(data.read);
 	}, []);
 
 	useEffect(() => {
@@ -80,9 +96,8 @@ const Index = () => {
 	};
 
 	useEffect(() => {
-		console.log(state);
-		// 從story回來
 		if (state === 'back') {
+			// 從story回來
 			// 判斷是否全部故事讀完
 			const howMuchRead = read.filter((e) => e);
 			// 等select反白動畫 晚半秒進入result頁
@@ -95,6 +110,10 @@ const Index = () => {
 			setAudioState('back');
 		}
 	}, [state, read]);
+
+	useEffect(() => {
+		Storage.set('readData', { read });
+	}, [read]);
 
 	const retry = () => {
 		// result頁讀完就從新再玩

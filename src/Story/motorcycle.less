@@ -1,0 +1,282 @@
+.Motorcycle {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.color-background {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #ccc;
+		opacity: 1;
+	}
+
+	.fadein {
+		animation: fadeIn 0.2s ease-out forwards;
+	}
+
+	.page {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		width: 100%;
+		height: 100%;
+	}
+
+	.page3 {
+		.align {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			.product {
+				position: absolute;
+				top: 80px;
+				margin-top: 0 - image-height(@img) * 0.5;
+				margin-left: 0 - image-width(@img) * 0.5;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
+
+				@img: './img/motorcycle/product.png';
+			}
+
+			.footer {
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+				justify-content: center;
+				margin-top: 430px;
+				margin-left: -280px;
+				width: 560px;
+				height: 60px;
+
+				& > div {
+					box-sizing: border-box;
+					width: 50%;
+					height: 100%;
+				}
+
+				.headline {
+					border-right: solid 1px #000;
+					text-align: center;
+					letter-spacing: 5px;
+					font-size: 36px;
+					line-height: 60px;
+					transform: scale(1, 1.1);
+				}
+
+				.logo {
+					position: relative;
+					&::after {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						margin-top: 0 - image-height(@img) * @scale * 0.5 + 5px;
+						margin-left: 0 - image-width(@img) * @scale * 0.5;
+						width: image-width(@img) * @scale;
+						height: image-height(@img) * @scale;
+						background-image: url(@img);
+						background-size: 100%;
+						content: '';
+
+						@scale: 2.5;
+						@img: './img/logo.svg';
+					}
+				}
+			}
+		}
+
+		.labels {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+	}
+
+	.page2 {
+		.labels {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+
+		.white-color {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			background-color: #fff;
+		}
+
+		.bg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			.img {
+				position: absolute;
+				left: 100px;
+				margin-top: 0 - image-height(@img) * 0.5;
+				margin-left: -1176.5px;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
+				transform: scale(0.82);
+
+				@img: './img/motorcycle/bg2.jpg';
+
+				.cloud {
+					position: absolute;
+					top: 5%;
+					left: 0%;
+					width: 100%;
+					height: 100%;
+					background-image: url(@img);
+					background-position-x: 0px;
+					background-size: 100%;
+					background-repeat: repeat-x;
+					background-position-y: top;
+
+					@img: './img/motorcycle/cloud.png';
+				}
+			}
+		}
+	}
+
+	.page1 {
+		.labels {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+
+		.bg {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			@keyframes smoking {
+				0% {
+					opacity: 0;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			.img {
+				position: absolute;
+				left: 100px;
+				margin-top: 0 - image-height(@img) * 0.5;
+				margin-left: 0 - image-width(@img) * 0.5;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
+				transform: scale(0.82);
+
+				@img: './img/motorcycle/bg1.jpg';
+
+				.smoke0 {
+					position: absolute;
+					top: 0%;
+					left: 0%;
+					width: image-width(@img);
+					height: image-height(@img);
+					background-image: url(@img);
+
+					animation: smoking 5s ease-out infinite;
+
+					@img: './img/motorcycle/smoke0.png';
+				}
+
+				.smoke1 {
+					position: absolute;
+					top: 0%;
+					left: 0%;
+					width: image-width(@img);
+					height: image-height(@img);
+					background-image: url(@img);
+
+					animation: smoking 3s ease-out infinite;
+
+					@img: './img/motorcycle/smoke1.png';
+				}
+			}
+		}
+	}
+
+	.page0 {
+		.title {
+			position: absolute;
+			bottom: 1120px;
+			left: 50%;
+			margin-left: -330px;
+			color: #333;
+			white-space: nowrap;
+			font-size: 62px;
+			transform: scale(1, 1.1);
+
+			sub {
+				margin: 0 -10px;
+				font-size: normal !important;
+			}
+		}
+
+		.labels {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+		}
+
+		.bg {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+
+			.img {
+				position: absolute;
+				left: 350px;
+				margin-top: 0 - image-height(@img);
+				margin-left: 0 - image-width(@img) * 0.5;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
+				transform: scale(0.8);
+				transform-origin: center bottom;
+
+				@img: './img/motorcycle/bg0.jpg';
+
+				& > div {
+					position: absolute;
+				}
+
+				.cloud {
+					top: 0%;
+					left: 0%;
+					width: image-width(@img);
+					height: image-height(@img);
+					background-image: url(@img);
+					background-position-x: 0px;
+					opacity: 1;
+
+					@img: './img/motorcycle/cloud.png';
+				}
+			}
+		}
+	}
+}

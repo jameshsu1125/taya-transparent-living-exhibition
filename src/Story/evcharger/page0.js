@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { STORY_RICECOOKER_PAGE0 } from '../../Setting/config';
+import { STORY_EVCHARAGER_PAGE0 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation0';
 
@@ -9,16 +9,14 @@ const Page0 = (props) => {
 	const { categroyName, state, setState } = props;
 
 	const animation = useRef();
-
 	const page = useRef();
 	const bg = useRef();
-	const eyes = useRef();
-	const sweat = useRef();
+	const cloud = useRef();
 	const title = useRef();
 	const labels = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, eyes, sweat, title, labels }, () => {
+		animation.current = new Animation({ page, bg, cloud, title, labels }, () => {
 			setState('page1');
 		});
 	}, []);
@@ -34,8 +32,7 @@ const Page0 = (props) => {
 		<div ref={page} className='page page0'>
 			<div ref={bg} className='bg'>
 				<div className='img'>
-					<div ref={eyes} className='eyes' />
-					<div ref={sweat} className='sweat' />
+					<div ref={cloud} className='cloud' />
 				</div>
 			</div>
 			<div ref={title} className='title'>
@@ -43,7 +40,7 @@ const Page0 = (props) => {
 				<sub>。</sub>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_RICECOOKER_PAGE0.map((e) => (
+				{STORY_EVCHARAGER_PAGE0.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>

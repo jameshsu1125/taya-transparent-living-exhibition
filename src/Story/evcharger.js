@@ -1,13 +1,13 @@
 import Tweener from 'lesca-object-tweener';
 import { useEffect, useRef, useState } from 'react';
 import ImageOnload from 'lesca-image-onload';
-import Page0 from './ricecooker/page0';
-import Page1 from './ricecooker/page1';
-import Page2 from './ricecooker/page2';
-import Page3 from './ricecooker/page3';
-import './ricecooker.less';
+import Page0 from './evcharger/page0';
+import Page1 from './evcharger/page1';
+import Page2 from './evcharger/page2';
+import Page3 from './evcharger/page3';
+import './evcharger.less';
 
-const Ricecooker = (props) => {
+const Evcharger = (props) => {
 	const {
 		categroyName,
 		setLoading,
@@ -60,12 +60,12 @@ const Ricecooker = (props) => {
 	useEffect(() => {
 		new ImageOnload(container.current, { hideBeforeLoaded: true }).then(() => {
 			setDomReady(true);
-			setAudioState('ricecooker');
+			setAudioState('evcharger');
 		});
 	}, []);
 
 	return (
-		<div ref={container} className='Ricecooker'>
+		<div ref={container} className='Evcharger'>
 			<div ref={colorBackgroundRef} className='color-background' />
 			<Page3 {...{ state, setState, fadeOut }} />
 			<Page2 {...{ state, setState }} />
@@ -74,4 +74,4 @@ const Ricecooker = (props) => {
 		</div>
 	);
 };
-export default Ricecooker;
+export default Evcharger;

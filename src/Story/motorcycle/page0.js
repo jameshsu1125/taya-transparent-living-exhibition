@@ -1,13 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { STORY_CHARGIINGPILE_PAGE0 } from '../../Setting/config';
+import { STORY_MOTORCYCLE_PAGE0 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation0';
 
 const pageName = 'page0';
 
 const Page0 = (props) => {
-	const { state, setState } = props;
-
+	const { categroyName, state, setState } = props;
 	const animation = useRef();
 	const page = useRef();
 	const bg = useRef();
@@ -36,11 +35,11 @@ const Page0 = (props) => {
 				</div>
 			</div>
 			<div ref={title} className='title'>
-				去海裡呼吸
+				{categroyName}
 				<sub>。</sub>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_CHARGIINGPILE_PAGE0.map((e) => (
+				{STORY_MOTORCYCLE_PAGE0.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>

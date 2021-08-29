@@ -14,7 +14,7 @@ const settings = {
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	arrows: false,
-	initialSlide: 0,
+	initialSlide: -1,
 };
 
 const Select = forwardRef((props, ref) => {

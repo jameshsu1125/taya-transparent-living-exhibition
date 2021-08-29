@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { STORY_CHARGIINGPILE_PAGE2 } from '../../Setting/config';
+import { STORY_EVCHARAGER_PAGE2 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation2';
 
@@ -49,7 +49,7 @@ const Page2 = (props) => {
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_CHARGIINGPILE_PAGE2.map((e) => (
+				{STORY_EVCHARAGER_PAGE2.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>

@@ -46,6 +46,7 @@
 		"lesca-click": "^1.0.12",
 		"lesca-facebook-share": "^1.0.3",
 		"lesca-image-onload": "^2.0.2",
+		"lesca-local-storage": "^1.0.0",
 		"lesca-number": "^1.2.0",
 		"lesca-object-tweener": "^2.0.8",
 		"lesca-react-landscape": "^1.0.1",
