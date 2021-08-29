@@ -1,13 +1,13 @@
+import ImageOnload from 'lesca-image-onload';
 import Tweener from 'lesca-object-tweener';
 import { useEffect, useRef, useState } from 'react';
-import ImageOnload from 'lesca-image-onload';
-import Page0 from './motorcycle/page0';
-import Page1 from './motorcycle/page1';
-import Page2 from './motorcycle/page2';
-import Page3 from './motorcycle/page3';
-import './motorcycle.less';
+import './earphone.less';
+import Page0 from './earphone/page0';
+import Page1 from './earphone/page1';
+import Page2 from './earphone/page2';
+import Page3 from './earphone/page3';
 
-const Motorcycle = (props) => {
+const Earphone = (props) => {
 	const {
 		categroyName,
 		setLoading,
@@ -15,7 +15,6 @@ const Motorcycle = (props) => {
 		setState: setRootState,
 		setAudioState,
 		audioLoad,
-		audioRef,
 	} = props;
 
 	const container = useRef();
@@ -23,31 +22,13 @@ const Motorcycle = (props) => {
 
 	const [state, setState] = useState('loading');
 	const [domReady, setDomReady] = useState(false);
-	const [timer, setTimer] = useState({});
 
 	useEffect(() => {
 		if (audioLoad !== false && domReady) {
 			setTimeout(() => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
-
-				const pageKey = 'page3';
-
-				setState(pageKey);
-
-				const pageDurations = Object.entries(timer).sort();
-				const beginDuration = pageDurations.filter((e) => {
-					const a = window.parseInt(pageKey.slice(4));
-					const b = window.parseInt(e[0].slice(4));
-					if (a > b) return true;
-					return false;
-				});
-
-				if (beginDuration.length > 0) {
-					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
-
-					audioRef.current.seek(audioSeekTime);
-				}
+				setState('page3');
 			}, 1000);
 		}
 	}, [audioLoad, domReady]);
@@ -79,22 +60,18 @@ const Motorcycle = (props) => {
 	useEffect(() => {
 		new ImageOnload(container.current, { hideBeforeLoaded: true }).then(() => {
 			setDomReady(true);
-			setAudioState('motorcycle');
+			setAudioState('earphone');
 		});
 	}, []);
 
-	const collectTimer = (key, duration) => {
-		setTimer((obj) => ({ ...obj, [key]: duration }));
-	};
-
 	return (
-		<div ref={container} className='Motorcycle'>
+		<div ref={container} className='Earphone'>
 			<div ref={colorBackgroundRef} className='color-background' />
-			<Page3 {...{ state, setState, fadeOut, collectTimer }} />
-			<Page2 {...{ state, setState, collectTimer }} />
-			<Page1 {...{ state, setState, collectTimer }} />
-			<Page0 {...{ state, setState, categroyName, collectTimer }} />
+			<Page3 {...{ state, setState, fadeOut }} />
+			<Page2 {...{ state, setState }} />
+			<Page1 {...{ state, setState }} />
+			<Page0 {...{ state, setState, categroyName }} />
 		</div>
 	);
 };
-export default Motorcycle;
+export default Earphone;

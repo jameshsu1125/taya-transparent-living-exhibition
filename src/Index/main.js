@@ -40,6 +40,7 @@ Storage.clear();
 const Index = () => {
 	const container = useRef();
 	const selectRef = useRef();
+	const audioRef = useRef();
 
 	const [commingSoon, setCommingSoon] = useState(false);
 	const [process, setProcess] = useState({});
@@ -150,6 +151,7 @@ const Index = () => {
 					setState={setState}
 					setAudioState={setAudioState}
 					audioLoad={audioLoad}
+					audioRef={audioRef}
 				/>
 			)}
 			{preload && intro && (
@@ -163,7 +165,7 @@ const Index = () => {
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
 			{result && <Result retry={retry} />}
-			<Audio state={audioState} onload={onAudioLoaded} />
+			<Audio ref={audioRef} state={audioState} onload={onAudioLoaded} />
 		</div>
 	);
 };

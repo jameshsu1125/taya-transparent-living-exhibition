@@ -1,31 +1,28 @@
 import { useEffect, useRef } from 'react';
-import { STORY_MOTORCYCLE_PAGE2 } from '../../Setting/config';
+import { STORY_EVCHARAGER_PAGE2 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation2';
 
 const pageName = 'page2';
 
 const Page2 = (props) => {
-	const { state, setState, collectTimer } = props;
+	const { state, setState } = props;
 
 	const animation = useRef();
 	const page = useRef();
 	const bg = useRef();
 	const cloud = useRef();
-	const white = useRef();
 	const img = useRef();
 	const labels = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, cloud, labels, white }, () => {
+		animation.current = new Animation({ page, bg, cloud, labels }, () => {
 			setState('page3');
 		});
 
-		collectTimer(pageName, animation.current.totalTime);
-
 		const resize = () => {
 			const { innerHeight } = window;
-			const baseHeight = 2292;
+			const baseHeight = 1807;
 			const scale = innerHeight / baseHeight;
 			img.current.style.transform = `scale(${scale})`;
 		};
@@ -46,15 +43,13 @@ const Page2 = (props) => {
 
 	return (
 		<div ref={page} className='page page2'>
-			<div ref={white} className='white-color' />
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
 					<div ref={cloud} className='cloud' />
-					<div className='wheel' />
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_MOTORCYCLE_PAGE2.map((e) => (
+				{STORY_EVCHARAGER_PAGE2.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>

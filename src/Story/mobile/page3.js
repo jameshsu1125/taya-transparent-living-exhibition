@@ -6,7 +6,7 @@ import Label from '../label';
 const pageName = 'page3';
 
 const Page3 = (props) => {
-	const { state, fadeOut, collectTimer } = props;
+	const { state, fadeOut } = props;
 
 	const animation = useRef();
 	const page = useRef();
@@ -18,8 +18,6 @@ const Page3 = (props) => {
 		animation.current = new Animation({ page, labels, product, footer }, () => {
 			fadeOut();
 		});
-
-		collectTimer(pageName, animation.current.totalTime);
 	}, []);
 
 	useEffect(() => {

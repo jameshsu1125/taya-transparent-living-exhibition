@@ -19,32 +19,33 @@ export const INTRO_TITLE = [
 	'讓生活得以連結',
 ];
 
+// Motorcycle 0
 export const STORY_MOTORCYCLE_PAGE0 = [
-	{ text: '大家是這麼調侃我的工作', x: -290, y: -1090, delay: 0 },
-	{ text: '擅長為不是自己的錯道歉', x: -200, y: -1020, delay: 4000 },
-	{ text: '說來諷刺但又真實', x: -150, y: -950, delay: 7500 },
-	{ text: '我告訴自己不用太在意', x: -100, y: -880, delay: 4500 },
+	{ text: '大家是這麼調侃我的工作', x: -290, y: -420, delay: 5000 },
+	{ text: '擅長為不是自己的錯道歉', x: -200, y: -420 + 70, delay: 4000 },
+	{ text: '說來諷刺但又真實', x: -150, y: -420 + 70 + 70, delay: 4500 },
+	{ text: '我告訴自己不用太在意', x: -100, y: -420 + 70 + 70 + 70, delay: 3000 },
 
-	{ text: '下班從二段到五段的距離', x: -340, y: -760, delay: 3000 },
-	{ text: '表定三十分鐘，一定會被我拉到五十', x: -240, y: -690, delay: 5000 },
+	{ text: '下班從二段到五段的距離', x: -340, y: -90, delay: 3500 },
+	{ text: '表定三十分鐘，一定會被我拉到五十', x: -240, y: -20, delay: 4000 },
 
-	{ text: '我在車上看著高樓大廈閃過', x: -220, y: -570, delay: 3000 },
-	{ text: '停紅綠燈時抬頭望著天空，放空', x: -110, y: -500, delay: 3500 },
-	{ text: '我的思緒開始漫遊', x: 80, y: -430, delay: 3200 },
+	{ text: '我在車上看著高樓大廈閃過', x: -220, y: 130, delay: 5000 },
+	{ text: '停紅綠燈時抬頭望著天空，放空', x: -110, y: 200, delay: 4000 },
+	{ text: '我的思緒開始漫遊', x: 80, y: 270, delay: 3500 },
 ];
 
 export const STORY_MOTORCYCLE_PAGE1 = [
 	{ text: '這個世界好大', x: -310, y: -480, delay: 0 },
-	{ text: '好多事還沒做過，好多地方還沒去過', x: -310, y: -410, delay: 3500 },
+	{ text: '好多事還沒做過，好多地方還沒去過', x: -310, y: -410, delay: 3000 },
 
-	{ text: '這個世界好大', x: -150, y: -290, delay: 3000 },
+	{ text: '這個世界好大', x: -150, y: -290, delay: 7500 },
 	{ text: '我好小，在我裡面的煩惱又更小', x: -150, y: -220, delay: 3000 },
 
-	{ text: '比起這棟高樓、這座城市、這個世界', x: -320, y: 110, delay: 3000 },
-	{ text: '我的煩惱是奈米煩惱', x: -10, y: 180, delay: 4000 },
+	{ text: '比起這棟高樓、這座城市、這個世界', x: -320, y: 110, delay: 6000 },
+	{ text: '我的煩惱是奈米煩惱', x: -10, y: 180, delay: 6000 },
 
-	{ text: '想了一想', x: -130, y: 390, delay: 6500 },
-	{ text: '有些事真的不是那麼重要', x: -50, y: 460, delay: 6500 },
+	{ text: '想了一想', x: -130, y: 390, delay: 3000 },
+	{ text: '有些事真的不是那麼重要', x: -50, y: 460, delay: 1500 },
 ];
 
 export const STORY_MOTORCYCLE_PAGE2 = [
@@ -53,7 +54,7 @@ export const STORY_MOTORCYCLE_PAGE2 = [
 	{ text: '剛剛與街景交換的心底秘密', x: -300, y: -430, delay: 4000 },
 	{ text: '洗滌我的身心、充電', x: -100, y: -360, delay: 4000 },
 
-	{ text: '然後回家', x: 150, y: -240, delay: 2000 },
+	{ text: '然後回家', x: 150, y: -240, delay: 3000 },
 ];
 
 export const STORY_MOTORCYCLE_PAGE3 = [
@@ -62,6 +63,8 @@ export const STORY_MOTORCYCLE_PAGE3 = [
 	{ text: '也將疲憊的自己推動向前', x: -146, y: -350, delay: 3500 },
 	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
 ];
+
+// rice cooker 1
 
 export const STORY_RICECOOKER_PAGE0 = [
 	{ text: '我不被理解，但我理解', x: -30, y: -960, delay: 0 },
@@ -95,6 +98,49 @@ export const STORY_RICECOOKER_PAGE3 = [
 	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 3500 },
 	{ text: '連結每個日常', x: -82, y: -210, delay: 2500 },
 ];
+
+// ear phone
+export const STORY_EARPHONE_PAGE0 = [
+	{ text: '「手機、鑰匙、錢包」', x: -110, y: -340, delay: 0 },
+	{ text: '在心裡默念完邁向門口後', x: -40, y: -270, delay: 3500 },
+	{ text: '又轉了一圈回頭', x: 110, y: -200, delay: 3800 },
+
+	{ text: '「耳機。耳機，還好有想起來」', x: -350, y: 190, delay: 6000 },
+];
+
+export const STORY_EARPHONE_PAGE1 = [
+	{ text: '習慣在心理跟生理都不算輕鬆的上班路程', x: -240, y: -280, delay: 0 },
+	{ text: '為自己準備一個小小的儀式', x: -60, y: -210, delay: 3500 },
+	{ text: '零四分的公車', x: 0, y: -140, delay: 3800 },
+	{ text: '我會準時在零零分就抵達', x: 60, y: -70, delay: 6000 },
+
+	{ text: '在那四分鐘的時間戴上耳機', x: -250, y: 220, delay: 6500 },
+	{ text: '綜合評估心境', x: -50, y: 290, delay: 6000 },
+
+	{ text: '慎重地選擇最符合的一首', x: 60, y: 450, delay: 4500 },
+];
+
+export const STORY_EARPHONE_PAGE2 = [
+	{ text: '自煩雜的膠著狀態抽離', x: -290, y: -1190, delay: 0 },
+	{ text: '讓音樂傳進耳朵，歌詞佔據思緒', x: -230, y: -1120, delay: 4000 },
+
+	{ text: '隔絕外界聲音，進入一個只有自己的空間裡', x: -150, y: -1000, delay: 7500 },
+	{ text: '隔絕腦內還沒被整理的想法', x: -150, y: -930, delay: 4500 },
+	{ text: '隔絕老闆，又或是隔絕自己對自己的期待', x: -150, y: -860, delay: 3000 },
+
+	{ text: '在上班之前，再逃離一下', x: -210, y: -740, delay: 5000 },
+	{ text: '隨著音樂的遞進', x: -50, y: -670, delay: 3000 },
+	{ text: '慢慢、好好地開啟新的一天', x: 40, y: -600, delay: 3500 },
+];
+
+export const STORY_EARPHONE_PAGE3 = [
+	{ text: 'UEW', x: -34, y: -490, delay: 0 },
+	{ text: '不只是無線耳機裡的漆包線線圈', x: -175, y: -420, delay: 3500 },
+	{ text: '更讓每次播放傳遞好的開始', x: -146, y: -350, delay: 3500 },
+	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
+];
+
+// ev charager 5
 
 export const STORY_EVCHARAGER_PAGE0 = [
 	{ text: '呼吸，是主要生命徵象之一', x: -290, y: -1090, delay: 0 },
