@@ -33,7 +33,7 @@ const Earphone = (props) => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
 
-				const pageKey = 'page3';
+				const pageKey = 'page0';
 				setState(pageKey);
 
 				const beginDuration = Object.entries(timer)
