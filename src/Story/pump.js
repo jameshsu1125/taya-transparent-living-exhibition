@@ -7,6 +7,8 @@ import Page1 from './pump/page1';
 import Page2 from './pump/page2';
 import Page3 from './pump/page3';
 
+const { parseInt } = window;
+
 const Pump = (props) => {
 	const {
 		categroyName,
@@ -15,6 +17,7 @@ const Pump = (props) => {
 		setState: setRootState,
 		setAudioState,
 		audioLoad,
+		audioRef,
 	} = props;
 
 	const container = useRef();
@@ -22,13 +25,25 @@ const Pump = (props) => {
 
 	const [state, setState] = useState('loading');
 	const [domReady, setDomReady] = useState(false);
+	const [timer, setTimer] = useState({});
 
 	useEffect(() => {
 		if (audioLoad !== false && domReady) {
 			setTimeout(() => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
-				setState('page0');
+
+				const pageKey = 'page0';
+				setState(pageKey);
+
+				const beginDuration = Object.entries(timer)
+					.sort()
+					.filter((e) => parseInt(pageKey.slice(4)) > parseInt(e[0].slice(4)));
+
+				if (beginDuration.length > 0) {
+					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
+					audioRef.current.seek(audioSeekTime);
+				}
 			}, 1000);
 		}
 	}, [audioLoad, domReady]);
@@ -64,13 +79,17 @@ const Pump = (props) => {
 		});
 	}, []);
 
+	const collectTimer = (key, duration) => {
+		setTimer((obj) => ({ ...obj, [key]: duration }));
+	};
+
 	return (
 		<div ref={container} className='Pump'>
 			<div ref={colorBackgroundRef} className='color-background' />
-			<Page3 {...{ state, setState, fadeOut }} />
-			<Page2 {...{ state, setState }} />
-			<Page1 {...{ state, setState }} />
-			<Page0 {...{ state, setState, categroyName }} />
+			<Page3 {...{ state, setState, fadeOut, collectTimer }} />
+			<Page2 {...{ state, setState, collectTimer }} />
+			<Page1 {...{ state, setState, collectTimer }} />
+			<Page0 {...{ state, setState, categroyName, collectTimer }} />
 		</div>
 	);
 };

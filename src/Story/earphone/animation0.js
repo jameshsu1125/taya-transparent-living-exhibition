@@ -7,7 +7,7 @@ export default class Animation0 {
 		const { page, bg, title, labels } = props;
 
 		const beginDelay = 1000;
-		const fadeOutDelay = 0;
+		const fadeOutDelay = 1000;
 		const labelDuration = 3000;
 		this.totalTime =
 			(beginDelay +

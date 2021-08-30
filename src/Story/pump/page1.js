@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { STORY_MOTORCYCLE_PAGE1 } from '../../Setting/config';
+import { STORY_EARPHONE_PAGE1 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation1';
 
 const pageName = 'page1';
 
 const Page1 = (props) => {
-	const { state, setState } = props;
+	const { state, setState, collectTimer } = props;
 
 	const animation = useRef();
 	const page = useRef();
@@ -18,6 +18,8 @@ const Page1 = (props) => {
 		animation.current = new Animation({ page, bg, labels }, () => {
 			setState('page2');
 		});
+
+		collectTimer(pageName, animation.current.totalTime);
 
 		const resize = () => {
 			const { innerHeight } = window;
@@ -49,7 +51,7 @@ const Page1 = (props) => {
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_MOTORCYCLE_PAGE1.map((e) => (
+				{STORY_EARPHONE_PAGE1.map((e) => (
 					<Label key={`${e.text}${e.x}`} data={e} />
 				))}
 			</div>

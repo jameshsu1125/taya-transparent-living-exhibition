@@ -84,6 +84,12 @@ const Audio = forwardRef((props, ref) => {
 			case 'back':
 				setRicecookerState(false);
 				setEvchargerState(false);
+				setMotorcycleState(false);
+				setEarphoneState(false);
+				setPumpState(false);
+				setMobileState(false);
+				setCableState(false);
+
 				setBGMState(true);
 				tweenVolume(1);
 				break;

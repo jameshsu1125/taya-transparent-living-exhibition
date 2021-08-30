@@ -6,7 +6,7 @@ import Animation from './animation2';
 const pageName = 'page2';
 
 const Page2 = (props) => {
-	const { state, setState } = props;
+	const { state, setState, collectTimer } = props;
 
 	const animation = useRef();
 	const page = useRef();
@@ -20,6 +20,8 @@ const Page2 = (props) => {
 		animation.current = new Animation({ page, bg, cloud, labels, white }, () => {
 			setState('page3');
 		});
+
+		collectTimer(pageName, animation.current.totalTime);
 
 		const resize = () => {
 			const { innerHeight } = window;
@@ -48,6 +50,7 @@ const Page2 = (props) => {
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
 					<div ref={cloud} className='cloud' />
+					<div className='wheel' />
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
