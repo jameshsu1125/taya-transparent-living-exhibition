@@ -21,6 +21,14 @@
 		opacity: 1;
 	}
 
+	.whiteBackgroundColor {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: #fff;
+	}
+
 	.fadein {
 		animation: fadeIn 0.2s ease-out forwards;
 	}
@@ -44,12 +52,12 @@
 				position: absolute;
 				top: 80px;
 				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5 + 113px;
+				margin-left: 0 - image-width(@img) * 0.5 + 0px;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
 
-				@img: './img/evcharger/product.png';
+				@img: './img/pump/product.png';
 			}
 
 			.footer {
@@ -119,30 +127,15 @@
 
 			.img {
 				position: absolute;
-				left: 100px;
+				left: 0px;
 				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: -1176.5px;
+				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
 				transform: scale(0.82);
 
-				@img: './img/evcharger/bg2.jpg';
-
-				.cloud {
-					position: absolute;
-					top: -6%;
-					left: 0%;
-					width: 100%;
-					height: 100%;
-					background-image: url(@img);
-					background-position-x: 0px;
-					background-size: 50%;
-					background-repeat: repeat-x;
-					background-position-y: top;
-
-					@img: './img/evcharger/cloud0.png';
-				}
+				@img: './img/pump/bg2.jpg';
 			}
 		}
 	}
@@ -161,7 +154,7 @@
 
 			.img {
 				position: absolute;
-				left: 100px;
+				left: 0px;
 				margin-top: 0 - image-height(@img) * 0.5;
 				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
@@ -169,41 +162,7 @@
 				background-image: url(@img);
 				transform: scale(0.82);
 
-				@img: './img/evcharger/bg1.jpg';
-
-				.trash0 {
-					position: absolute;
-					top: 54%;
-					left: 0%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-
-					@img: './img/evcharger/trash0.png';
-				}
-
-				.trash1 {
-					position: absolute;
-					top: 47%;
-					left: 55%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-
-					@img: './img/evcharger/trash1.png';
-				}
-
-				.trash2 {
-					position: absolute;
-					top: 62%;
-					left: 63%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-
-					@img: './img/evcharger/trash2.png';
-					mix-blend-mode: multiply;
-				}
+				@img: './img/pump/bg1.jpg';
 			}
 		}
 	}
@@ -211,9 +170,10 @@
 	.page0 {
 		.title {
 			position: absolute;
-			bottom: 1120px;
+			top: 50%;
 			left: 50%;
 			margin-left: -290px;
+			margin-top: -600px;
 			color: #333;
 			white-space: nowrap;
 			font-size: 62px;
@@ -227,42 +187,28 @@
 
 		.labels {
 			position: absolute;
-			bottom: 0;
+			top: 50%;
 			left: 50%;
 		}
 
 		.bg {
 			position: absolute;
-			bottom: 0;
+			top: 50%;
 			left: 50%;
 
 			.img {
 				position: absolute;
-				left: 350px;
-				margin-top: 0 - image-height(@img);
-				margin-left: 0 - image-width(@img) * 0.5;
+				left: 0px;
+				margin-top: 0 - image-height(@img) * 0.5 + 80px;
+				margin-left: 0 - image-width(@img) * 0.5 + 10px;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.8);
-				transform-origin: center bottom;
 
-				@img: './img/evcharger/bg0.jpg';
+				@img: './img/pump/bg0.jpg';
 
 				& > div {
 					position: absolute;
-				}
-
-				.cloud {
-					top: 0%;
-					left: 0%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-					background-position-x: 0px;
-					opacity: 1;
-
-					@img: './img/evcharger/cloud0.png';
 				}
 			}
 		}

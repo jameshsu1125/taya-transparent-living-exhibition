@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { STORY_EARPHONE_PAGE1 } from '../../Setting/config';
+import { STORY_PUMP_PAGE1 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation1';
 
@@ -23,7 +23,7 @@ const Page1 = (props) => {
 
 		const resize = () => {
 			const { innerHeight } = window;
-			const baseHeight = 1754;
+			const baseHeight = 1711;
 			const scale = innerHeight / baseHeight;
 			img.current.style.transform = `scale(${scale})`;
 		};
@@ -51,7 +51,7 @@ const Page1 = (props) => {
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_EARPHONE_PAGE1.map((e) => (
+				{STORY_PUMP_PAGE1.map((e) => (
 					<Label key={`${e.text}${e.x}`} data={e} />
 				))}
 			</div>

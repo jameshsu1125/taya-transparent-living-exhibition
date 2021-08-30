@@ -4,10 +4,10 @@ const { parseInt } = window;
 
 export default class Animation0 {
 	constructor(props, callback) {
-		const { page, bg, title, labels } = props;
+		const { page, bg, title, labels, whiteBackgroundColor } = props;
 
 		const beginDelay = 1000;
-		const fadeOutDelay = 0;
+		const fadeOutDelay = 3000;
 		const labelDuration = 3000;
 		this.totalTime =
 			(beginDelay +
@@ -31,6 +31,7 @@ export default class Animation0 {
 			in() {
 				this.bg.in();
 				this.title.in();
+				whiteBackgroundColor.current.classList.add('fadein');
 				this.labels.in();
 			},
 			out() {

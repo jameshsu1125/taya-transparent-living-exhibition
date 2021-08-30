@@ -140,6 +140,56 @@ export const STORY_EARPHONE_PAGE3 = [
 	{ text: '連結每個日常', x: -82, y: -280, delay: 3500 },
 ];
 
+// pump 3
+export const STORY_PUMP_PAGE0 = [
+	{ text: '架設浪貓照護站的計畫開始至今', x: -130, y: -470, delay: 1500 },
+	{ text: '她總是台中台北兩地跑', x: 50, y: -400, delay: 4000 },
+
+	{ text: '在街頭與抗議居民處久了', x: -300, y: 0, delay: 3000 },
+	{ text: '終於有機會回到西屯家裡', x: -200, y: 70, delay: 3300 },
+	{ text: '她小心翼翼地拿出包包裡的鑰匙', x: -340, y: 140, delay: 3500 },
+	{ text: '輕輕插入鑰匙孔', x: -340, y: 210, delay: 5000 },
+	{ text: '盡量將動作放到最小', x: -300, y: 280, delay: 2800 },
+
+	{ text: '深怕把家人吵醒，又是一陣沒完沒了的關心', x: -190, y: 450, delay: 4200 },
+];
+
+export const STORY_PUMP_PAGE1 = [
+	{ text: '這時天還未亮', x: -210, y: -530, delay: 500 },
+	{ text: '隔壁賣菜的一家子已經擠在發財車上', x: -180, y: -460, delay: 3500 },
+	{ text: '準備前往市場', x: 100, y: -390, delay: 4500 },
+
+	{ text: '車的引擎發動轟隆轟隆', x: 40, y: -60, delay: 4000 },
+	{ text: '她有時挺羨慕那種擁擠', x: -50, y: 10, delay: 3800 },
+
+	{ text: '或許真的太常一個人面對了', x: -330, y: 180, delay: 4500 },
+	{ text: '不論是理想上的還是生活', x: -220, y: 250, delay: 3500 },
+
+	{ text: '「一起扛著總比一個人扛著還要容易一點吧」', x: -220, y: 360, delay: 4200 },
+	{ text: '她看著發愣', x: 180, y: 430, delay: 5000 },
+];
+
+export const STORY_PUMP_PAGE2 = [
+	{ text: '撐到天快亮時，她才去洗澡', x: -290, y: -570, delay: 0 },
+	{ text: '泵浦馬達運轉響起陣陣抽水聲', x: -230, y: -500, delay: 4500 },
+
+	{ text: '當熱水沖向肩膀時', x: -110, y: -110, delay: 5000 },
+	{ text: '無力的感受', x: -50, y: -40, delay: 3000 },
+	{ text: '隨著洗澡水流進排水孔裡', x: 0, y: 30, delay: 2000 },
+
+	{ text: '洗完澡，又是全新的一個人', x: -310, y: 230, delay: 4500 },
+
+	{ text: '明天，繼續回到街上', x: -200, y: 440, delay: 5000 },
+	{ text: '為動物的生存權努力', x: -50, y: 510, delay: 3500 },
+];
+
+export const STORY_PUMP_PAGE3 = [
+	{ text: 'PEW', x: -34, y: -490, delay: 0 },
+	{ text: '不只是家用泵浦裡的漆包線線圈', x: -187, y: -420, delay: 2000 },
+	{ text: '也為勞累的身心注滿力量', x: -146, y: -350, delay: 3000 },
+	{ text: '連結每個日常', x: -82, y: -280, delay: 3500 },
+];
+
 // ev charager 5
 
 export const STORY_EVCHARAGER_PAGE0 = [
