@@ -7,6 +7,8 @@ import Page2 from './motorcycle/page2';
 import Page3 from './motorcycle/page3';
 import './motorcycle.less';
 
+const { parseInt } = window;
+
 const Motorcycle = (props) => {
 	const {
 		categroyName,
@@ -31,21 +33,14 @@ const Motorcycle = (props) => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
 
-				const pageKey = 'page3';
-
+				const pageKey = 'page0';
 				setState(pageKey);
 
-				const pageDurations = Object.entries(timer).sort();
-				const beginDuration = pageDurations.filter((e) => {
-					const a = window.parseInt(pageKey.slice(4));
-					const b = window.parseInt(e[0].slice(4));
-					if (a > b) return true;
-					return false;
-				});
-
+				const beginDuration = Object.entries(timer)
+					.sort()
+					.filter((e) => parseInt(pageKey.slice(4)) > parseInt(e[0].slice(4)));
 				if (beginDuration.length > 0) {
 					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
-
 					audioRef.current.seek(audioSeekTime);
 				}
 			}, 1000);

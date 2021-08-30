@@ -1,31 +1,30 @@
 import { useEffect, useRef } from 'react';
-import { STORY_EARPHONE_PAGE2 } from '../../Setting/config';
+import { STORY_MOTORCYCLE_PAGE0 } from '../../Setting/config';
 import Label from '../label';
-import Animation from './animation2';
+import Animation from './animation0';
 
-const pageName = 'page2';
+const pageName = 'page0';
 
-const Page2 = (props) => {
-	const { state, setState, collectTimer } = props;
-
+const Page0 = (props) => {
+	const { categroyName, state, setState, collectTimer } = props;
 	const animation = useRef();
 	const page = useRef();
 	const bg = useRef();
 	const cloud = useRef();
-	const white = useRef();
-	const img = useRef();
+	const title = useRef();
 	const labels = useRef();
+	const img = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, cloud, labels, white }, () => {
-			setState('page3');
+		animation.current = new Animation({ page, bg, cloud, title, labels }, () => {
+			setState('page1');
 		});
 
 		collectTimer(pageName, animation.current.totalTime);
 
 		const resize = () => {
 			const { innerHeight } = window;
-			const baseHeight = 2292;
+			const baseHeight = 1725;
 			const scale = innerHeight / baseHeight;
 			img.current.style.transform = `scale(${scale})`;
 		};
@@ -45,20 +44,22 @@ const Page2 = (props) => {
 	}, [state]);
 
 	return (
-		<div ref={page} className='page page2'>
-			<div ref={white} className='white-color' />
+		<div ref={page} className='page page0'>
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
 					<div ref={cloud} className='cloud' />
-					<div className='wheel' />
 				</div>
 			</div>
+			<div ref={title} className='title'>
+				{categroyName}
+				<sub>。</sub>
+			</div>
 			<div ref={labels} className='labels'>
-				{STORY_EARPHONE_PAGE2.map((e) => (
+				{STORY_MOTORCYCLE_PAGE0.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>
 		</div>
 	);
 };
-export default Page2;
+export default Page0;

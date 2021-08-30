@@ -6,23 +6,25 @@ import Animation from './animation0';
 const pageName = 'page0';
 
 const Page0 = (props) => {
-	const { categroyName, state, setState } = props;
+	const { categroyName, state, setState, collectTimer } = props;
 	const animation = useRef();
 	const page = useRef();
 	const bg = useRef();
-
+	const cloud = useRef();
 	const title = useRef();
 	const labels = useRef();
 	const img = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, title, labels }, () => {
+		animation.current = new Animation({ page, bg, cloud, title, labels }, () => {
 			setState('page1');
 		});
 
+		collectTimer(pageName, animation.current.totalTime);
+
 		const resize = () => {
 			const { innerHeight } = window;
-			const baseHeight = 1779;
+			const baseHeight = 1725;
 			const scale = innerHeight / baseHeight;
 			img.current.style.transform = `scale(${scale})`;
 		};
@@ -45,7 +47,7 @@ const Page0 = (props) => {
 		<div ref={page} className='page page0'>
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
-					<div className='tail' />
+					<div ref={cloud} className='cloud' />
 				</div>
 			</div>
 			<div ref={title} className='title'>

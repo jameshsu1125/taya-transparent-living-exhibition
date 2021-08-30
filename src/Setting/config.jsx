@@ -49,12 +49,12 @@ export const STORY_MOTORCYCLE_PAGE1 = [
 ];
 
 export const STORY_MOTORCYCLE_PAGE2 = [
-	{ text: '然後我開始往家的方向騎', x: -150, y: -540, delay: 0 },
+	{ text: '然後我開始往家的方向騎', x: -150, y: -540, delay: 1000 },
 
 	{ text: '剛剛與街景交換的心底秘密', x: -300, y: -430, delay: 4000 },
 	{ text: '洗滌我的身心、充電', x: -100, y: -360, delay: 4000 },
 
-	{ text: '然後回家', x: 150, y: -240, delay: 3000 },
+	{ text: '然後回家', x: 150, y: -240, delay: 2000 },
 ];
 
 export const STORY_MOTORCYCLE_PAGE3 = [
@@ -99,22 +99,22 @@ export const STORY_RICECOOKER_PAGE3 = [
 	{ text: '連結每個日常', x: -82, y: -210, delay: 2500 },
 ];
 
-// ear phone
+// ear phone 2
 export const STORY_EARPHONE_PAGE0 = [
 	{ text: '「手機、鑰匙、錢包」', x: -110, y: -340, delay: 0 },
-	{ text: '在心裡默念完邁向門口後', x: -40, y: -270, delay: 3500 },
-	{ text: '又轉了一圈回頭', x: 110, y: -200, delay: 3800 },
+	{ text: '在心裡默念完邁向門口後', x: -40, y: -270, delay: 4000 },
+	{ text: '又轉了一圈回頭', x: 110, y: -200, delay: 3500 },
 
-	{ text: '「耳機。耳機，還好有想起來」', x: -350, y: 190, delay: 6000 },
+	{ text: '「耳機。耳機，還好有想起來」', x: -350, y: 190, delay: 2800 },
 ];
 
 export const STORY_EARPHONE_PAGE1 = [
 	{ text: '習慣在心理跟生理都不算輕鬆的上班路程', x: -240, y: -280, delay: 0 },
-	{ text: '為自己準備一個小小的儀式', x: -60, y: -210, delay: 3500 },
-	{ text: '零四分的公車', x: 0, y: -140, delay: 3800 },
-	{ text: '我會準時在零零分就抵達', x: 60, y: -70, delay: 6000 },
+	{ text: '為自己準備一個小小的儀式', x: -60, y: -210, delay: 5000 },
+	{ text: '零四分的公車', x: 0, y: -140, delay: 4000 },
+	{ text: '我會準時在零零分就抵達', x: 60, y: -70, delay: 3000 },
 
-	{ text: '在那四分鐘的時間戴上耳機', x: -250, y: 220, delay: 6500 },
+	{ text: '在那四分鐘的時間戴上耳機', x: -250, y: 220, delay: 3500 },
 	{ text: '綜合評估心境', x: -50, y: 290, delay: 6000 },
 
 	{ text: '慎重地選擇最符合的一首', x: 60, y: 450, delay: 4500 },
