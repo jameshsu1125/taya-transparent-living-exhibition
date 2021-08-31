@@ -137,6 +137,15 @@
 
 				@img: './img/motorcycle/bg2.jpg';
 
+				@keyframes clouds {
+					0% {
+						background-position-x: 0px;
+					}
+					100% {
+						background-position-x: -2000px;
+					}
+				}
+
 				.cloud {
 					position: absolute;
 					top: 5%;
@@ -148,6 +157,8 @@
 					background-position-y: top;
 					background-size: 100%;
 					background-repeat: repeat-x;
+
+					animation: clouds 30s linear infinite;
 
 					@img: './img/motorcycle/cloud.png';
 				}
@@ -294,14 +305,24 @@
 					position: absolute;
 				}
 
+				@keyframes cloud {
+					0% {
+						background-position-x: 0%;
+					}
+					100% {
+						background-position-x: -1000%;
+					}
+				}
+
 				.cloud {
 					top: 0%;
 					left: 0%;
-					width: image-width(@img);
+					width: 100%;
 					height: image-height(@img);
 					background-image: url(@img);
-					background-position-x: 0px;
+					background-position-x: 0%;
 					opacity: 1;
+					animation: cloud 40s linear infinite;
 
 					@img: './img/motorcycle/cloud.png';
 				}

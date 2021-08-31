@@ -7,7 +7,7 @@ export default class Animation0 {
 		const { page, bg, title, labels } = props;
 
 		const beginDelay = 1000;
-		const fadeOutDelay = 0;
+		const fadeOutDelay = 500;
 		const labelDuration = 3000;
 		this.totalTime =
 			(beginDelay +
@@ -57,17 +57,11 @@ export default class Animation0 {
 			},
 			bg: {
 				delay: 0,
-				property: { opacity: 0, left: -200 },
+				property: { opacity: 0, left: -220 },
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
 				},
 				in() {
@@ -77,7 +71,8 @@ export default class Animation0 {
 					const toOpacity = { opacity: 1 };
 					const easing = Bezier.linear;
 					const fromLeft = { left };
-					const toLeft = { left: 0 };
+					const toLeft = { left: 20 };
+
 					new Tweener({
 						from: fromOpacity,
 						to: toOpacity,

@@ -46,8 +46,7 @@ const Page1 = (props) => {
 		<div ref={page} className='page page1'>
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
-					<div className='smoke0' />
-					<div className='smoke1' />
+					<div className='led' />
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
