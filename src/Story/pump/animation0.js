@@ -24,21 +24,21 @@ export default class Animation0 {
 		const root = this;
 		this.tr = {
 			init() {
-				this.bg.init();
+				// this.bg.init();
 				this.title.init();
 				this.labels.init();
 			},
 			in() {
-				this.bg.in();
-				this.title.in();
 				whiteBackgroundColor.current.classList.add('fadein');
+				// this.bg.in();
+				this.title.in();
 				this.labels.in();
 			},
 			out() {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 2000;
+				const duration = 1000;
 				dom.style.opacity = 1;
 				new Tweener({
 					from,
@@ -58,17 +58,11 @@ export default class Animation0 {
 			},
 			bg: {
 				delay: 0,
-				property: { opacity: 0, left: -200 },
+				property: { opacity: 0, left: 0 },
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
 				},
 				in() {

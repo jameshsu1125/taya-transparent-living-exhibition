@@ -24,18 +24,18 @@ export default class Animation2 {
 		const root = this;
 		this.tr = {
 			init() {
-				this.bg.init();
+				// this.bg.init();
 				this.labels.init();
 			},
 			in() {
-				this.bg.in();
+				// this.bg.in();
 				this.labels.in();
 			},
 			out() {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 2000;
+				const duration = 1000;
 				dom.style.opacity = 1;
 				new Tweener({
 					from,
@@ -55,15 +55,11 @@ export default class Animation2 {
 			},
 			bg: {
 				delay: 0,
-				property: { opacity: 0, left: 100 },
+				property: { opacity: 0, left: 0 },
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.duration =
-						root.tr.labels.delay +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
 				},
 				in() {
@@ -73,7 +69,7 @@ export default class Animation2 {
 					const toOpacity = { opacity: 1 };
 					const easing = Bezier.linear;
 					const fromLeft = { left };
-					const toLeft = { left: 260 };
+					const toLeft = { left: 0 };
 					new Tweener({
 						from: fromOpacity,
 						to: toOpacity,
