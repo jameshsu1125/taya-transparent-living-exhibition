@@ -4,7 +4,7 @@ const { parseInt } = window;
 
 export default class Animation0 {
 	constructor(props, callback) {
-		const { page, bg, title, labels } = props;
+		const { page, bg, title, labels, light } = props;
 
 		const beginDelay = 1000;
 		const fadeOutDelay = 1000;
@@ -27,11 +27,13 @@ export default class Animation0 {
 				this.bg.init();
 				this.title.init();
 				this.labels.init();
+				this.light.init();
 			},
 			in() {
 				this.bg.in();
 				this.title.in();
 				this.labels.in();
+				this.light.in();
 			},
 			out() {
 				const dom = page.current;
@@ -55,19 +57,43 @@ export default class Animation0 {
 					onStart: () => callback?.(),
 				});
 			},
+			light: {
+				delay: 0,
+				property: { opacity: 0 },
+				unit: { opacity: '' },
+				init() {
+					this.c = light.current;
+					this.tweener = new Tweener();
+					this.duration = root.totalTime * 1000 + 1000;
+					this.tran();
+				},
+				in() {
+					const { duration, property, delay } = this;
+					const { opacity } = property;
+					const from = { opacity };
+					const to = { opacity: 1 };
+					this.tweener
+						.add({
+							from,
+							to,
+							delay,
+							duration,
+							onUpdate: (e) => this.tran(e),
+							onComplete: (e) => this.tran(e),
+						})
+						.play();
+				},
+				tran() {
+					this.c.style.opacity = 0.5 + Math.random() * 0.5;
+				},
+			},
 			bg: {
 				delay: 0,
-				property: { opacity: 0, left: -200 },
+				property: { opacity: 0, left: -100 },
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
 				},
 				in() {

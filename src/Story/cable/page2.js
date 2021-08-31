@@ -11,13 +11,13 @@ const Page2 = (props) => {
 	const animation = useRef();
 	const page = useRef();
 	const bg = useRef();
-	const cloud = useRef();
+
 	const white = useRef();
 	const img = useRef();
 	const labels = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, cloud, labels, white }, () => {
+		animation.current = new Animation({ page, bg, labels, white }, () => {
 			setState('page3');
 		});
 
@@ -49,8 +49,7 @@ const Page2 = (props) => {
 			<div ref={white} className='white-color' />
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
-					<div ref={cloud} className='cloud' />
-					<div className='wheel' />
+					<div className='eyes' />
 				</div>
 			</div>
 			<div ref={labels} className='labels'>

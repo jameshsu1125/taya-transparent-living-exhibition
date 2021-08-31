@@ -127,6 +127,39 @@
 				background-image: url(@img);
 
 				@img: './img/cable/bg2.jpg';
+
+				@keyframes eyes {
+					0% {
+						opacity: 0;
+					}
+					40% {
+						opacity: 0;
+					}
+					41% {
+						opacity: 1;
+					}
+					50% {
+						opacity: 1;
+					}
+					51% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 0;
+					}
+				}
+
+				.eyes {
+					position: absolute;
+					@img: './img/cable/eyes.png';
+					background-image: url(@img);
+					width: image-width(@img);
+					height: image-height(@img);
+					top: 42%;
+					left: 46.5%;
+
+					animation: eye 5s linear infinite;
+				}
 			}
 		}
 	}
@@ -153,6 +186,39 @@
 				background-image: url(@img);
 
 				@img: './img/cable/bg1.jpg';
+
+				@keyframes eye {
+					0% {
+						opacity: 0;
+					}
+					40% {
+						opacity: 0;
+					}
+					41% {
+						opacity: 1;
+					}
+					50% {
+						opacity: 1;
+					}
+					51% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 0;
+					}
+				}
+
+				.eye {
+					position: absolute;
+					@img: './img/cable/eye.png';
+					background-image: url(@img);
+					width: image-width(@img);
+					height: image-height(@img);
+					top: 76.6%;
+					left: 64%;
+
+					animation: eye 5s linear infinite;
+				}
 			}
 		}
 	}
@@ -196,6 +262,16 @@
 				background-image: url(@img);
 
 				@img: './img/cable/bg0.jpg';
+
+				.light {
+					position: absolute;
+					@img: './img/cable/light0.png';
+					background-image: url(@img);
+					width: image-width(@img);
+					height: image-height(@img);
+					top: 0%;
+					left: 14%;
+				}
 			}
 		}
 	}

@@ -10,13 +10,14 @@ const Page0 = (props) => {
 	const animation = useRef();
 	const page = useRef();
 	const bg = useRef();
-	const cloud = useRef();
+
 	const title = useRef();
 	const labels = useRef();
 	const img = useRef();
+	const light = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, cloud, title, labels }, () => {
+		animation.current = new Animation({ page, bg, title, labels, light }, () => {
 			setState('page1');
 		});
 
@@ -47,7 +48,7 @@ const Page0 = (props) => {
 		<div ref={page} className='page page0'>
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
-					<div ref={cloud} className='cloud' />
+					<div ref={light} className='light' />
 				</div>
 			</div>
 			<div ref={title} className='title'>
