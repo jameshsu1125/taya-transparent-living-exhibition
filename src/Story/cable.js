@@ -33,7 +33,7 @@ const Cable = (props) => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
 
-				const pageKey = 'page2';
+				const pageKey = 'page0';
 				setState(pageKey);
 
 				const beginDuration = Object.entries(timer)
