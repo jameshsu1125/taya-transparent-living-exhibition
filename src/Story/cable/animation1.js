@@ -4,23 +4,32 @@ const { parseInt } = window;
 
 export default class Animation1 {
 	constructor(props, callback) {
-		const { page, bg, labels, trash0, trash1, trash2 } = props;
+		const { page, bg, labels } = props;
+
+		const beginDelay = 1000;
+		const fadeOutDelay = 1000;
+		const labelDuration = 3000;
+		this.totalTime =
+			(beginDelay +
+				fadeOutDelay +
+				labelDuration +
+				[...labels.current.children]
+					.map((e) => {
+						const { delay } = e.dataset;
+						return parseInt(delay);
+					})
+					.reduce((a, b) => a + b)) /
+			1000;
 
 		const root = this;
 		this.tr = {
 			init() {
 				this.bg.init();
 				this.labels.init();
-				this.trash0.init();
-				this.trash1.init();
-				this.trash2.init();
 			},
 			in() {
 				this.bg.in();
 				this.labels.in();
-				this.trash0.in();
-				this.trash1.in();
-				this.trash2.in();
 			},
 			out() {
 				const dom = page.current;
@@ -32,6 +41,7 @@ export default class Animation1 {
 					from,
 					to,
 					duration,
+					delay: fadeOutDelay,
 					easing: Bezier['ease-out'],
 					onUpdate: (e) => {
 						dom.style.opacity = e.opacity;
@@ -43,141 +53,9 @@ export default class Animation1 {
 				});
 				callback?.();
 			},
-			trash2: {
-				delay: 0,
-				property: { frame: 0 },
-				unit: { opacity: '' },
-				easing: Bezier.linear,
-				radius: 100,
-				init() {
-					this.c = trash2.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
-					this.tweener = new Tweener();
-					this.tran();
-				},
-				in() {
-					const { duration, property, delay, easing } = this;
-					const { frame } = property;
-					const from = { frame };
-					const to = { frame: 200 };
-					this.tweener
-						.add({
-							from,
-							to,
-							delay,
-							easing,
-							duration,
-							onUpdate: (e) => this.tran(e),
-							onComplete: (e) => this.tran(e),
-						})
-						.play();
-				},
-				tran(e = this.property) {
-					this.property = { ...this.property, ...e };
-					const { radius } = this;
-					const { frame } = this.property;
-					const x = Math.cos((Math.PI / 180) * frame) * radius;
-					const y = Math.sin((Math.PI / 180) * frame * 2) * radius;
-					this.c.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${x * 0.01}deg)`;
-				},
-			},
-			trash1: {
-				delay: 0,
-				property: { frame: 100 },
-				unit: { opacity: '' },
-				easing: Bezier.linear,
-				radius: 30,
-				init() {
-					this.c = trash1.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
-					this.tweener = new Tweener();
-					this.tran();
-				},
-				in() {
-					const { duration, property, delay, easing } = this;
-					const { frame } = property;
-					const from = { frame };
-					const to = { frame: 200 };
-					this.tweener
-						.add({
-							from,
-							to,
-							delay,
-							easing,
-							duration,
-							onUpdate: (e) => this.tran(e),
-							onComplete: (e) => this.tran(e),
-						})
-						.play();
-				},
-				tran(e = this.property) {
-					this.property = { ...this.property, ...e };
-					const { radius } = this;
-					const { frame } = this.property;
-					const x = Math.cos((Math.PI / 180) * frame) * radius;
-					const y = Math.sin((Math.PI / 180) * frame * 3) * radius;
-					this.c.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${y * 0.1}deg)`;
-				},
-			},
-			trash0: {
-				delay: 0,
-				property: { frame: 0 },
-				unit: { opacity: '' },
-				easing: Bezier.linear,
-				radius: 50,
-				init() {
-					this.c = trash0.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
-					this.tweener = new Tweener();
-					this.tran();
-				},
-				in() {
-					const { duration, property, delay, easing } = this;
-					const { frame } = property;
-					const from = { frame };
-					const to = { frame: 200 };
-					this.tweener
-						.add({
-							from,
-							to,
-							delay,
-							easing,
-							duration,
-							onUpdate: (e) => this.tran(e),
-							onComplete: (e) => this.tran(e),
-						})
-						.play();
-				},
-				tran(e = this.property) {
-					this.property = { ...this.property, ...e };
-					const { radius } = this;
-					const { frame } = this.property;
-					const x = Math.cos((Math.PI / 180) * frame) * radius;
-					const y = Math.sin((Math.PI / 180) * frame * 2) * radius;
-					this.c.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${y * 0.1}deg)`;
-				},
-			},
 			bg: {
 				delay: 0,
-				property: { opacity: 0, left: -100 },
+				property: { opacity: 0, left: 60 },
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
@@ -196,7 +74,7 @@ export default class Animation1 {
 					const toOpacity = { opacity: 1 };
 					const easing = Bezier.linear;
 					const fromLeft = { left };
-					const toLeft = { left: 0 };
+					const toLeft = { left: -100 };
 					new Tweener({
 						from: fromOpacity,
 						to: toOpacity,
@@ -222,17 +100,14 @@ export default class Animation1 {
 				},
 			},
 			labels: {
-				duration: 3000,
-				delay: 2000,
-				fadeOutDelay: 2000,
 				init() {
 					this.c = labels.current;
 					this.property = [...this.c.children].map(() => ({ opacity: 0 }));
 					this.tran();
 				},
 				in() {
-					let timeResync = this.delay;
-					const { duration, property, fadeOutDelay } = this;
+					let timeResync = beginDelay;
+					const { property } = this;
 					[...this.c.children].forEach((e, i) => {
 						const dom = e;
 						const { delay } = e.dataset;
@@ -244,14 +119,12 @@ export default class Animation1 {
 						new Tweener({
 							from,
 							to,
-							duration,
+							duration: labelDuration,
 							delay: timeResync,
 							onUpdate: (data) => this.tranEach(dom, data),
 							onComplete: () => {
 								if (i === this.c.children.length - 1) {
-									setTimeout(() => {
-										root.tr.out();
-									}, fadeOutDelay);
+									root.tr.out();
 								}
 							},
 						});

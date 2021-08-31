@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { STORY_MOTORCYCLE_PAGE2 } from '../../Setting/config';
+import { STORY_MOBILE_PAGE2 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation2';
 
 const pageName = 'page2';
 
 const Page2 = (props) => {
-	const { state, setState } = props;
+	const { state, setState, collectTimer } = props;
 
 	const animation = useRef();
 	const page = useRef();
@@ -21,9 +21,11 @@ const Page2 = (props) => {
 			setState('page3');
 		});
 
+		collectTimer(pageName, animation.current.totalTime);
+
 		const resize = () => {
 			const { innerHeight } = window;
-			const baseHeight = 2292;
+			const baseHeight = 1486;
 			const scale = innerHeight / baseHeight;
 			img.current.style.transform = `scale(${scale})`;
 		};
@@ -48,10 +50,11 @@ const Page2 = (props) => {
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
 					<div ref={cloud} className='cloud' />
+					<div className='wheel' />
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_MOTORCYCLE_PAGE2.map((e) => (
+				{STORY_MOBILE_PAGE2.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>
