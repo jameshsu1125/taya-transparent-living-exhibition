@@ -128,6 +128,51 @@
 				transform: scale(0.82);
 
 				@img: './img/mobile/bg2.jpg';
+
+				@keyframes hightSpeed {
+					0% {
+						opacity: 0;
+					}
+
+					45% {
+						opacity: 0;
+					}
+					50% {
+						opacity: 1;
+					}
+					51% {
+						opacity: 0;
+					}
+
+					60% {
+						opacity: 0;
+					}
+					65% {
+						opacity: 1;
+					}
+					70% {
+						opacity: 0;
+					}
+
+					95% {
+						opacity: 0;
+					}
+					100% {
+						opacity: 1;
+					}
+				}
+
+				.speed {
+					position: absolute;
+					@img: './img/mobile/speed.png';
+					background-image: url(@img);
+					width: image-width(@img);
+					height: image-height(@img);
+					top: 5.4%;
+					left: 14.2%;
+
+					animation: hightSpeed 4s linear infinite;
+				}
 			}
 		}
 	}
@@ -155,6 +200,28 @@
 				transform: scale(0.82);
 
 				@img: './img/mobile/bg1.jpg';
+
+				@keyframes rain {
+					0% {
+						background-position-y: 0px;
+					}
+					100% {
+						background-position-y: 5000px;
+					}
+				}
+
+				.rain {
+					position: absolute;
+					@img: './img/mobile/rain.png';
+					background-image: url(@img);
+					width: image-width(@img);
+					height: image-height(@img);
+
+					right: 2%;
+					top: 0.4%;
+
+					animation: rain 2s steps(5) infinite;
+				}
 			}
 		}
 	}
@@ -198,8 +265,32 @@
 
 				@img: './img/mobile/bg0.jpg';
 
-				& > div {
+				@keyframes tears {
+					0% {
+						opacity: 0;
+						transform: translateY(-30px);
+					}
+					60% {
+						opacity: 1;
+						transform: translateY(0px);
+					}
+					100% {
+						opacity: 0;
+						transform: translateY(10px);
+					}
+				}
+
+				.tears {
 					position: absolute;
+					@img: './img/mobile/tears.png';
+					background-image: url(@img);
+					width: image-width(@img);
+					height: image-height(@img);
+					left: 17%;
+					top: 54.8%;
+					opacity: 0;
+
+					animation: tears 3s ease-out infinite;
 				}
 			}
 		}

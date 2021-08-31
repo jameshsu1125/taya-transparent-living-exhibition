@@ -35,7 +35,7 @@ export default class Animation2 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 2000;
+				const duration = 1000;
 				dom.style.opacity = 1;
 				new Tweener({
 					from,
@@ -59,11 +59,7 @@ export default class Animation2 {
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.duration =
-						root.tr.labels.delay +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
 				},
 				in() {

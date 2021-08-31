@@ -47,7 +47,7 @@ const Page0 = (props) => {
 		<div ref={page} className='page page0'>
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
-					<div />
+					<div className='tears' />
 				</div>
 			</div>
 			<div ref={title} className='title'>

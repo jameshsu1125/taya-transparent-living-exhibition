@@ -33,7 +33,7 @@ const Mobile = (props) => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
 
-				const pageKey = 'page0';
+				const pageKey = 'page2';
 				setState(pageKey);
 
 				const beginDuration = Object.entries(timer)
