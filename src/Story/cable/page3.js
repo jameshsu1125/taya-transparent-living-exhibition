@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { STORY_MOTORCYCLE_PAGE3 } from '../../Setting/config';
+import { STORY_CABLE_PAGE3 } from '../../Setting/config';
 import Animation from './animation3';
 import Label from '../label';
 
@@ -39,7 +39,7 @@ const Page3 = (props) => {
 				</div>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_MOTORCYCLE_PAGE3.map((e) => (
+				{STORY_CABLE_PAGE3.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>

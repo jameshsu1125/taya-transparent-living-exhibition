@@ -43,13 +43,13 @@
 			.product {
 				position: absolute;
 				top: 80px;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5 + 113px;
+				margin-top: 0 - image-height(@img) * 0.5 + 30px;
+				margin-left: 0 - image-width(@img) * 0.5 - 10px;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
 
-				@img: './img/evcharger/product.png';
+				@img: './img/cable/product.png';
 			}
 
 			.footer {
@@ -118,31 +118,15 @@
 			left: 50%;
 
 			.img {
+				left: -250px;
 				position: absolute;
-				left: 100px;
 				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: -1176.5px;
+				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.82);
 
-				@img: './img/evcharger/bg2.jpg';
-
-				.cloud {
-					position: absolute;
-					top: -6%;
-					left: 0%;
-					width: 100%;
-					height: 100%;
-					background-image: url(@img);
-					background-position-x: 0px;
-					background-size: 50%;
-					background-repeat: repeat-x;
-					background-position-y: top;
-
-					@img: './img/evcharger/cloud0.png';
-				}
+				@img: './img/cable/bg2.jpg';
 			}
 		}
 	}
@@ -161,49 +145,14 @@
 
 			.img {
 				position: absolute;
-				left: 100px;
+				left: 70px;
 				margin-top: 0 - image-height(@img) * 0.5;
 				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.82);
 
-				@img: './img/evcharger/bg1.jpg';
-
-				.trash0 {
-					position: absolute;
-					top: 54%;
-					left: 0%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-
-					@img: './img/evcharger/trash0.png';
-				}
-
-				.trash1 {
-					position: absolute;
-					top: 47%;
-					left: 55%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-
-					@img: './img/evcharger/trash1.png';
-				}
-
-				.trash2 {
-					position: absolute;
-					top: 62%;
-					left: 63%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-
-					@img: './img/evcharger/trash2.png';
-					mix-blend-mode: multiply;
-				}
+				@img: './img/cable/bg1.jpg';
 			}
 		}
 	}
@@ -211,13 +160,14 @@
 	.page0 {
 		.title {
 			position: absolute;
-			bottom: 1120px;
+			top: 70px;
 			left: 50%;
-			margin-left: -290px;
+			margin-left: -320px;
 			color: #333;
 			white-space: nowrap;
 			font-size: 62px;
 			transform: scale(1, 1.1);
+			text-shadow: 0 0 30px rgba(255, 255, 255, 1);
 
 			sub {
 				margin: 0 -10px;
@@ -227,43 +177,25 @@
 
 		.labels {
 			position: absolute;
-			bottom: 0;
+			top: 50%;
 			left: 50%;
 		}
 
 		.bg {
 			position: absolute;
-			bottom: 0;
+			top: 50%;
 			left: 50%;
 
 			.img {
 				position: absolute;
-				left: 350px;
-				margin-top: 0 - image-height(@img);
+				left: 30px;
+				margin-top: 0 - image-height(@img) * 0.5;
 				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.8);
-				transform-origin: center bottom;
 
-				@img: './img/evcharger/bg0.jpg';
-
-				& > div {
-					position: absolute;
-				}
-
-				.cloud {
-					top: 0%;
-					left: 0%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-					background-position-x: 0px;
-					opacity: 1;
-
-					@img: './img/evcharger/cloud0.png';
-				}
+				@img: './img/cable/bg0.jpg';
 			}
 		}
 	}

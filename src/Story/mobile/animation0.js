@@ -52,8 +52,8 @@ export default class Animation0 {
 						dom.style.opacity = e.opacity;
 						dom.style.display = 'none';
 					},
+					onStart: () => callback?.(),
 				});
-				callback?.();
 			},
 			bg: {
 				delay: 0,

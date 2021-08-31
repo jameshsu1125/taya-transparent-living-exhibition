@@ -10,6 +10,8 @@ import Logo from '../Logo/main';
 import Result from '../Result/main';
 import Select from '../Select/main';
 import Story from '../Story/main';
+import { EXHIBITION_DATE_LINE } from '../Setting/config';
+
 import './main.less';
 
 // todo => custom router
@@ -81,7 +83,12 @@ const Index = () => {
 	const loadingComplete = () => {
 		// loading動畫完成
 		setLoading(false);
-		if (window.location.hash === '#CommingSoon') {
+
+		const now = new Date().getTime();
+		const exhibitionDate = EXHIBITION_DATE_LINE.getTime();
+		if (queryState === 'normal') {
+			setState('intro');
+		} else if (now < exhibitionDate) {
 			// todo => [CommingSoon功能]改用日期判斷
 			setCommingSoon(true);
 		} else {
@@ -134,16 +141,7 @@ const Index = () => {
 	return (
 		<div ref={container} className='Index'>
 			{state === 'loading' && <Background commingSoon={commingSoon} />}
-			{preload && (
-				<Select
-					ref={selectRef}
-					state={state}
-					setState={setState}
-					setStory={setStory}
-					read={read}
-					setRead={setRead}
-				/>
-			)}
+			{preload && <Select ref={selectRef} {...{ state, setState, setStory, read, setRead }} />}
 			{story !== false && (
 				<Story
 					index={story}

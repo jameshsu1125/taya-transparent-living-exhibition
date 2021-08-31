@@ -42,15 +42,16 @@
 		color: #fff;
 		text-align: center;
 		letter-spacing: 5px;
-		font-size: 40px;
+		font-size: 50px;
 		line-height: 100px;
 		transform: scale(1, 1.1);
+		text-indent: 2.5px;
 	}
 
 	.arrow {
 		position: absolute;
 		top: 50%;
-		margin-top: 10px;
+		margin-top: -50px;
 		width: 100%;
 		height: image-height(@img);
 
@@ -58,19 +59,33 @@
 
 		&::after {
 			position: absolute;
-			width: 100%;
+			width: 45%;
 			height: 100%;
 			background-image: url(@img);
 			background-position: center;
 			background-repeat: no-repeat;
 			content: '';
-			transform: scale(-1, 1);
-			animation: arrow 2s ease-in-out infinite;
+			transform: scale(-0.6, 0.6);
+			margin-left: -5%;
+			animation: arrowLeft 2s ease-in-out infinite;
+		}
+
+		&::before {
+			position: absolute;
+			width: 45%;
+			height: 100%;
+			background-image: url(@img);
+			background-position: center;
+			background-repeat: no-repeat;
+			content: '';
+			transform: scale(0.6, 0.6);
+			animation: arrowRight 2s ease-in-out infinite;
+			margin-right: -5%;
 		}
 	}
 }
 
-@keyframes arrow {
+@keyframes arrowLeft {
 	0% {
 		left: 20px;
 	}
@@ -79,5 +94,17 @@
 	}
 	100% {
 		left: 20px;
+	}
+}
+
+@keyframes arrowRight {
+	0% {
+		right: 20px;
+	}
+	50% {
+		right: -20px;
+	}
+	100% {
+		right: 20px;
 	}
 }

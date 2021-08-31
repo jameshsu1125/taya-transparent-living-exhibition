@@ -7,7 +7,7 @@ export default class Animation0 {
 		const { page, bg, title, labels } = props;
 
 		const beginDelay = 1000;
-		const fadeOutDelay = 0;
+		const fadeOutDelay = 1000;
 		const labelDuration = 3000;
 		this.totalTime =
 			(beginDelay +
@@ -37,7 +37,7 @@ export default class Animation0 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 2000;
+				const duration = 1000;
 				dom.style.opacity = 1;
 				new Tweener({
 					from,
@@ -52,8 +52,8 @@ export default class Animation0 {
 						dom.style.opacity = e.opacity;
 						dom.style.display = 'none';
 					},
+					onStart: () => callback?.(),
 				});
-				callback?.();
 			},
 			bg: {
 				delay: 0,

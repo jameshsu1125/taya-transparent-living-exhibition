@@ -24,11 +24,11 @@ export default class Animation2 {
 		const root = this;
 		this.tr = {
 			init() {
-				// this.bg.init();
+				this.bg.init();
 				this.labels.init();
 			},
 			in() {
-				// this.bg.in();
+				this.bg.in();
 				this.labels.in();
 			},
 			out() {
@@ -50,8 +50,8 @@ export default class Animation2 {
 						dom.style.opacity = e.opacity;
 						dom.style.display = 'none';
 					},
+					onStart: () => callback?.(),
 				});
-				callback?.();
 			},
 			bg: {
 				delay: 0,

@@ -9,7 +9,7 @@ export default class Animation3 {
 		const beginDelay = 1000;
 		const fadeOutDelay = 0;
 		const labelDuration = 3000;
-		const footerFadeOutDelay = 2000;
+		const footerFadeOutDelay = 3500;
 		this.totalTime =
 			(beginDelay +
 				fadeOutDelay +

@@ -6,7 +6,7 @@ export default class Animation1 {
 	constructor(props, callback) {
 		const { page, bg, labels } = props;
 
-		const beginDelay = 1000;
+		const beginDelay = 0;
 		const fadeOutDelay = 1000;
 		const labelDuration = 3000;
 		this.totalTime =
@@ -50,8 +50,8 @@ export default class Animation1 {
 						dom.style.opacity = e.opacity;
 						dom.style.display = 'none';
 					},
+					onStart: () => callback?.(),
 				});
-				callback?.();
 			},
 			bg: {
 				delay: 0,

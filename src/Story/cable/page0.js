@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { STORY_MOTORCYCLE_PAGE0 } from '../../Setting/config';
+import { STORY_CABLE_PAGE0 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation0';
 
@@ -24,7 +24,7 @@ const Page0 = (props) => {
 
 		const resize = () => {
 			const { innerHeight } = window;
-			const baseHeight = 1725;
+			const baseHeight = 1675;
 			const scale = innerHeight / baseHeight;
 			img.current.style.transform = `scale(${scale})`;
 		};
@@ -55,7 +55,7 @@ const Page0 = (props) => {
 				<sub>。</sub>
 			</div>
 			<div ref={labels} className='labels'>
-				{STORY_MOTORCYCLE_PAGE0.map((e) => (
+				{STORY_CABLE_PAGE0.map((e) => (
 					<Label key={e.text} data={e} />
 				))}
 			</div>

@@ -1,5 +1,7 @@
 export default {};
 
+export const EXHIBITION_DATE_LINE = new Date(2021, 9, 5, 23, 59, 59);
+
 export const ITEMS_SELECT = [
 	{ title: '電動機車', subtitle: 'Electric Motorcycle', category: '奈米煩惱' },
 	{ title: '電飯鍋', subtitle: 'Electric Rice Cooker', category: '溫熱的支持' },
@@ -277,4 +279,52 @@ export const STORY_EVCHARAGER_PAGE3 = [
 	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 3500 },
 	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 3500 },
 	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
+];
+
+// cable 6
+export const STORY_CABLE_PAGE0 = [
+	{ text: '在全校都走後', x: -270, y: -440, delay: 5000 },
+	{ text: '亮著燈的那間是我的教室', x: -210, y: -370, delay: 2000 },
+	{ text: '數學跟不太上的巴奈坐在第一排的座位', x: -170, y: -300, delay: 4000 },
+
+	{ text: '「老師，你是不是很累了？」他抬頭問我', x: -310, y: 160, delay: 4100 },
+
+	{ text: '「你慢慢寫沒關係」我答道', x: -240, y: 280, delay: 5700 },
+	{ text: '一邊為了他的懂事感到心疼', x: -90, y: 350, delay: 4500 },
+];
+
+export const STORY_CABLE_PAGE1 = [
+	{ text: '但是，累嗎？', x: -250, y: -580, delay: 0 },
+	{ text: '不必多問自己，內心也早有答案', x: -200, y: -510, delay: 2500 },
+	{ text: '跟在都市不同', x: 70, y: -440, delay: 4500 },
+
+	{ text: '他們確實比同齡的孩子辛苦許多', x: -70, y: -350, delay: 3000 },
+	{ text: '要在寫數學跟洗衣服中間做選擇', x: -20, y: -280, delay: 4000 },
+	{ text: '靠自己的力量補足天生家庭功能較弱的缺欠', x: -210, y: -210, delay: 4400 },
+	{ text: '也表示，需要老師們花上更多心力教育與陪伴', x: -170, y: -140, delay: 5000 },
+
+	{ text: '我常常懷疑自己「做這麼多究竟是為了什麼？」', x: -330, y: 50, delay: 7300 },
+	{ text: '也不會否認腦中出現「就回家吧」的聲音', x: -190, y: 120, delay: 6500 },
+
+	{ text: '但在抬頭看到巴奈', x: -320, y: 240, delay: 5000 },
+	{ text: '那麼努力的嘗試解出那道數學題', x: -320, y: 310, delay: 2000 },
+
+	{ text: '並在我問他「要不要我幫幫你？」時', x: -320, y: 420, delay: 3500 },
+	{ text: '他回答我「再讓我試試」', x: -120, y: 490, delay: 4000 },
+	{ text: '我就知道，這些都只是非常一時的念頭', x: -120, y: 560, delay: 4500 },
+];
+
+export const STORY_CABLE_PAGE2 = [
+	{ text: '即使不容易', x: -220, y: -460, delay: 0 },
+	{ text: '他的堅持還是像頭上的日光燈一般炙熱', x: -180, y: -400, delay: 2000 },
+
+	{ text: '即使不容易', x: -260, y: 10, delay: 5000 },
+	{ text: '也讓我對於自己想改善教育不平等的念頭更堅定', x: -230, y: 80, delay: 2000 },
+];
+
+export const STORY_CABLE_PAGE3 = [
+	{ text: '高壓電纜', x: -57, y: -490, delay: 800 },
+	{ text: '不只是串聯電廠的一條傳輸線', x: -175, y: -420, delay: 2000 },
+	{ text: '為偏鄉供電也穩定了信念', x: -146, y: -350, delay: 3000 },
+	{ text: '連結每個日常', x: -82, y: -280, delay: 3500 },
 ];
