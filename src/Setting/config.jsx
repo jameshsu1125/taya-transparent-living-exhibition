@@ -1,7 +1,6 @@
 export default {};
 
 export const EXHIBITION_DATE_LINE = new Date(2021, 9, 4, 23, 59, 59);
-console.log(EXHIBITION_DATE_LINE);
 
 export const ITEMS_SELECT = [
 	{ title: '電動機車', subtitle: 'Electric Motorcycle', category: '奈米煩惱' },
