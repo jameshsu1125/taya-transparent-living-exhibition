@@ -12,6 +12,7 @@ import Ricecooker from './sounds/ricecooker.mp3';
 
 const easing = Bezier.linear;
 const duration = 3000;
+const tweenPreset = { index: 0 };
 
 const Audio = forwardRef((props, ref) => {
 	const { state, onload } = props;
@@ -35,8 +36,13 @@ const Audio = forwardRef((props, ref) => {
 			to: { vol },
 			duration,
 			easing,
-			onUpdate: (data) => setBGMVol(data.vol),
-			onComplete: (data) => setBGMVol(data.vol),
+			onUpdate: (data) => {
+				tweenPreset.index += 1;
+				if (tweenPreset.index % 10 === 0) setBGMVol(data.vol);
+			},
+			onComplete: (data) => {
+				setBGMVol(data.vol);
+			},
 		});
 	};
 

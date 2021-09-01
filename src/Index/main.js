@@ -37,7 +37,7 @@ else queryInset = queryData[queryState.split('#')[0]];
 const defaultReadData = [...new Array(7).keys()].map(() => false);
 
 // ! debug
-Storage.clear();
+// Storage.clear();
 
 const Index = () => {
 	const container = useRef();
