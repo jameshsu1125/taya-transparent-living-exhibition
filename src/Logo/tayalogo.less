@@ -1,0 +1,42 @@
+.TayaLogo {
+	position: absolute;
+	@img: './img/taya-logo.svg';
+
+	width: image-width(@img);
+	height: image-height(@img);
+
+	left: 50%;
+	margin-left: 0 - image-width(@img) * 0.5;
+	bottom: 80px;
+	opacity: 0;
+
+	.mark {
+		position: absolute;
+		width: image-width(@img) * 0.57;
+		height: 100%;
+		left: 0;
+		background-image: url(@img);
+	}
+
+	.text {
+		position: absolute;
+		width: image-width(@img) * (1 - 0.57);
+		height: 100%;
+		right: 0;
+
+		mask-image: url(@img);
+		mask-position: right top;
+
+		background-color: #000;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.TayaLogo {
+		left: 0%;
+		margin-left: 40px;
+		top: 40px;
+		transform: scale(0.7);
+		transform-origin: left top;
+	}
+}

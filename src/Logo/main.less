@@ -15,7 +15,7 @@
 
 	.description {
 		position: absolute;
-		top: 50%;
+		top: 43%;
 		margin: 50px 0;
 		width: 100%;
 		color: #fff;
@@ -60,6 +60,17 @@
 
 			@img: './img/logo-label.svg';
 			mask-image: url(@img);
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.Logo {
+		.description {
+			transform: scale(0.7);
+		}
+		.content {
+			transform: scale(0.7);
 		}
 	}
 }

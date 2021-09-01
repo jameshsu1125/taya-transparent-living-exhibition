@@ -18,7 +18,7 @@ export default class Animation {
 	}
 
 	fadeout() {
-		const from = { top: 280 };
+		const from = { top: this.container.clientHeight };
 		const to = { top: 0 };
 		const duration = 1000;
 		const easing = Bezier.easeInOutQuart;

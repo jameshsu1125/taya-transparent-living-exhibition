@@ -162,7 +162,7 @@ export default class Animation {
 				in() {
 					const { height, opacity } = this;
 					const from = { height, opacity };
-					const to = { height: 80, opacity: 1 };
+					const to = { height: 70, opacity: 1 };
 					const duration = 1200;
 					const easing = Bezier.easeInOutQuart;
 					this.tweener

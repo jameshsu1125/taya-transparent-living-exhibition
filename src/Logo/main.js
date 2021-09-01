@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import CommingSoon from '../CommingSoon/main';
 import Animation from './animation';
+import TayaLogo from './tayalogo';
 import './main.less';
 
 const Logo = (props) => {
@@ -30,6 +31,7 @@ const Logo = (props) => {
 			</div>
 			{commingSoon && <div className='description'>即將開展</div>}
 			{commingSoon && <CommingSoon />}
+			<TayaLogo commingSoon={commingSoon} />
 		</div>
 	);
 };
