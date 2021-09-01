@@ -4,9 +4,9 @@ import { ITEMS_SELECT } from '../Setting/config';
 
 export default class Animation {
 	constructor(props) {
-		const { selectRef, titleRef, setRead, read, setStory, setState } = props;
+		const { selectRef, titleRef, setRead, read, setStory, setState, defaultReadData } = props;
 
-		this.defaultRead = [...read];
+		this.defaultRead = defaultReadData;
 
 		this.setRead = setRead;
 		this.read = [...read];
@@ -111,7 +111,7 @@ export default class Animation {
 	}
 
 	reset() {
-		this.read = [...this.defaultRead];
+		this.read = this.defaultRead;
 	}
 
 	addEvent() {

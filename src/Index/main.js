@@ -33,7 +33,7 @@ let queryInset;
 if (!queryState) queryInset = queryData.normal;
 else queryInset = queryData[queryState.split('#')[0]];
 
-// const defaultReadData = [true, false, true, true, true, false, true];
+// const defaultReadData = [true, true, true, true, true, true, true];
 const defaultReadData = [...new Array(7).keys()].map(() => false);
 
 // ! debug
@@ -80,6 +80,12 @@ const Index = () => {
 		}
 	}, [preload]);
 
+	const selectFadein = () => {
+		// exec select page fadein
+		setState('select');
+		selectRef.current.fadein();
+	};
+
 	const loadingComplete = () => {
 		// loading動畫完成
 		setLoading(false);
@@ -87,7 +93,9 @@ const Index = () => {
 		const now = new Date().getTime();
 		const exhibitionDate = EXHIBITION_DATE_LINE.getTime();
 		if (queryState === 'normal') {
-			if (userAgent.get() === 'mobile') setState('intro');
+			if (userAgent.get() === 'mobile') {
+				setState('intro');
+			}
 		} else if (now < exhibitionDate) {
 			// todo => [CommingSoon功能]改用日期判斷
 			setCommingSoon(true);
@@ -95,12 +103,6 @@ const Index = () => {
 			// 進入intro page
 			setState('intro');
 		}
-	};
-
-	const selectFadein = () => {
-		// exec select page fadein
-		setState('select');
-		selectRef.current.fadein();
 	};
 
 	useEffect(() => {
@@ -116,10 +118,16 @@ const Index = () => {
 
 			// 播放音樂
 			setAudioState('back');
+		} else if (state === 'select') {
+			const howMuchRead = read.filter((e) => e);
+			if (howMuchRead.length === read.length) {
+				setResult(true);
+			}
 		}
 	}, [state, read]);
 
 	useEffect(() => {
+		console.log(read);
 		Storage.set('readData', { read });
 	}, [read]);
 
@@ -141,7 +149,12 @@ const Index = () => {
 	return (
 		<div ref={container} className='Index'>
 			{state === 'loading' && <Background commingSoon={commingSoon} />}
-			{preload && <Select ref={selectRef} {...{ state, setState, setStory, read, setRead }} />}
+			{preload && (
+				<Select
+					ref={selectRef}
+					{...{ state, setState, setStory, read, setRead, defaultReadData }}
+				/>
+			)}
 			{story !== false && (
 				<Story
 					index={story}

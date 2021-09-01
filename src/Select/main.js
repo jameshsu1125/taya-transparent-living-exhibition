@@ -18,7 +18,7 @@ const settings = {
 };
 
 const Select = forwardRef((props, ref) => {
-	const { state, setStory, read, setRead, setState } = props;
+	const { state, setStory, read, setRead, setState, defaultReadData } = props;
 
 	const animation = useRef();
 
@@ -30,7 +30,15 @@ const Select = forwardRef((props, ref) => {
 	const [updateSelected, setUpdateSelected] = useState(true);
 
 	useEffect(() => {
-		animation.current = new Animation({ selectRef, titleRef, setRead, read, setStory, setState });
+		animation.current = new Animation({
+			selectRef,
+			titleRef,
+			setRead,
+			read,
+			setStory,
+			setState,
+			defaultReadData,
+		});
 	}, []);
 
 	useEffect(() => {
