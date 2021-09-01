@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'Ogilvy Serif';
+	src: url('./OgilvySerif-Regular.woff2') format('woff2'),
+		url('./OgilvySerif-Regular.woff') format('woff'),
+		url('./OgilvySerif-Regular.ttf') format('truetype'),
+		url('./OgilvySerif-Regular.svg#OgilvySerif-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

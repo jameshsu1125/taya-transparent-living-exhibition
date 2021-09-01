@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
 import { useEffect, useRef } from 'react';
@@ -5,7 +6,7 @@ import './main.less';
 
 const Carousel = (props) => {
 	const { data, index } = props;
-	const { title, category } = data;
+	const { title, category, subtitle } = data;
 
 	const dark = useRef();
 
@@ -27,10 +28,12 @@ const Carousel = (props) => {
 	return (
 		<div className='slider'>
 			<div id={`share${index}`} className='cover'>
-				<div className='title'>{title}</div>
+				<div className='title'>
+					{title} {subtitle}
+				</div>
 				<div ref={dark} className='dark' />
+				<div className='headline'>{category}</div>
 			</div>
-			<div className='headline'>{category}</div>
 		</div>
 	);
 };

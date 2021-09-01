@@ -127,7 +127,6 @@ const Index = () => {
 	}, [state, read]);
 
 	useEffect(() => {
-		console.log(read);
 		Storage.set('readData', { read });
 	}, [read]);
 

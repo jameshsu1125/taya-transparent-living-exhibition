@@ -41,7 +41,7 @@ const Share = (props) => {
 		<div ref={container} className='Share'>
 			<div ref={background} className='share-backgrouund' />
 			<div ref={content} className='content'>
-				<div className='title'>分享你最喜歡的一則故事</div>
+				<div className='title'>分享你最喜歡的故事</div>
 				<div className='slide-container'>
 					<Slider {...settings}>
 						{ITEMS_SELECT.map((data, index) => (
