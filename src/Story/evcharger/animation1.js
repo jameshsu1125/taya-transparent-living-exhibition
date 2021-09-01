@@ -6,6 +6,21 @@ export default class Animation1 {
 	constructor(props, callback) {
 		const { page, bg, labels, trash0, trash1, trash2 } = props;
 
+		const beginDelay = 1000;
+		const fadeOutDelay = 2000;
+		const labelDuration = 3000;
+		this.totalTime =
+			(beginDelay +
+				fadeOutDelay +
+				labelDuration +
+				[...labels.current.children]
+					.map((e) => {
+						const { delay } = e.dataset;
+						return parseInt(delay);
+					})
+					.reduce((a, b) => a + b)) /
+			1000;
+
 		const root = this;
 		this.tr = {
 			init() {
@@ -26,12 +41,13 @@ export default class Animation1 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 2000;
+				const duration = 1000;
 				dom.style.opacity = 1;
 				new Tweener({
 					from,
 					to,
 					duration,
+					delay: fadeOutDelay,
 					easing: Bezier['ease-out'],
 					onUpdate: (e) => {
 						dom.style.opacity = e.opacity;
@@ -40,8 +56,8 @@ export default class Animation1 {
 						dom.style.opacity = e.opacity;
 						dom.style.display = 'none';
 					},
+					onStart: () => callback?.(),
 				});
-				callback?.();
 			},
 			trash2: {
 				delay: 0,
@@ -51,13 +67,7 @@ export default class Animation1 {
 				radius: 100,
 				init() {
 					this.c = trash2.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tweener = new Tweener();
 					this.tran();
 				},
@@ -95,13 +105,7 @@ export default class Animation1 {
 				radius: 30,
 				init() {
 					this.c = trash1.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tweener = new Tweener();
 					this.tran();
 				},
@@ -139,13 +143,7 @@ export default class Animation1 {
 				radius: 50,
 				init() {
 					this.c = trash0.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						4000 +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tweener = new Tweener();
 					this.tran();
 				},
@@ -181,12 +179,7 @@ export default class Animation1 {
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
 				},
 				in() {
@@ -222,17 +215,14 @@ export default class Animation1 {
 				},
 			},
 			labels: {
-				duration: 3000,
-				delay: 2000,
-				fadeOutDelay: 2000,
 				init() {
 					this.c = labels.current;
 					this.property = [...this.c.children].map(() => ({ opacity: 0 }));
 					this.tran();
 				},
 				in() {
-					let timeResync = this.delay;
-					const { duration, property, fadeOutDelay } = this;
+					let timeResync = beginDelay;
+					const { property } = this;
 					[...this.c.children].forEach((e, i) => {
 						const dom = e;
 						const { delay } = e.dataset;
@@ -244,14 +234,12 @@ export default class Animation1 {
 						new Tweener({
 							from,
 							to,
-							duration,
+							duration: labelDuration,
 							delay: timeResync,
 							onUpdate: (data) => this.tranEach(dom, data),
 							onComplete: () => {
 								if (i === this.c.children.length - 1) {
-									setTimeout(() => {
-										root.tr.out();
-									}, fadeOutDelay);
+									root.tr.out();
 								}
 							},
 						});

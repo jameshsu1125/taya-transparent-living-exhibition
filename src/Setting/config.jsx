@@ -91,7 +91,7 @@ export const STORY_RICECOOKER_PAGE2 = [
 	{ text: '還是沒人開口', x: -300, y: -40, delay: 0 },
 	{ text: '但我知道', x: -180, y: 40, delay: 2500 },
 	{ text: '桌上的那碗熱白飯', x: -250, y: 120, delay: 3000 },
-	{ text: '就是有他支持的證明', x: -210, y: 190, delay: 3000 },
+	{ text: '就是有他支持的證明', x: -210, y: 190, delay: 2200 },
 ];
 
 export const STORY_RICECOOKER_PAGE3 = [

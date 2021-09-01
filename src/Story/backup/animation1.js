@@ -59,12 +59,7 @@ export default class Animation1 {
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.duration =
-						root.tr.labels.delay +
-						root.tr.labels.fadeOutDelay +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
 				},
 				in() {

@@ -6,7 +6,7 @@ import Animation from './animation0';
 const pageName = 'page0';
 
 const Page0 = (props) => {
-	const { categroyName, state, setState } = props;
+	const { categroyName, state, setState, collectTimer } = props;
 
 	const animation = useRef();
 
@@ -21,6 +21,8 @@ const Page0 = (props) => {
 		animation.current = new Animation({ page, bg, eyes, sweat, title, labels }, () => {
 			setState('page1');
 		});
+
+		collectTimer(pageName, animation.current.totalTime);
 	}, []);
 
 	useEffect(() => {

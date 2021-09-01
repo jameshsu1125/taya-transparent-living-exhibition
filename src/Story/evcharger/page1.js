@@ -6,7 +6,7 @@ import Animation from './animation1';
 const pageName = 'page1';
 
 const Page1 = (props) => {
-	const { state, setState } = props;
+	const { state, setState, collectTimer } = props;
 
 	const animation = useRef();
 	const page = useRef();
@@ -21,6 +21,8 @@ const Page1 = (props) => {
 		animation.current = new Animation({ page, bg, labels, trash0, trash1, trash2 }, () => {
 			setState('page2');
 		});
+
+		collectTimer(pageName, animation.current.totalTime);
 
 		const resize = () => {
 			const { innerHeight } = window;

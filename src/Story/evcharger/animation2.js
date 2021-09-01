@@ -6,6 +6,21 @@ export default class Animation2 {
 	constructor(props, callback) {
 		const { page, bg, labels, cloud } = props;
 
+		const beginDelay = 1500;
+		const fadeOutDelay = 2000;
+		const labelDuration = 3000;
+		this.totalTime =
+			(beginDelay +
+				fadeOutDelay +
+				labelDuration +
+				[...labels.current.children]
+					.map((e) => {
+						const { delay } = e.dataset;
+						return parseInt(delay);
+					})
+					.reduce((a, b) => a + b)) /
+			1000;
+
 		const root = this;
 		this.tr = {
 			init() {
@@ -22,12 +37,13 @@ export default class Animation2 {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
-				const duration = 2000;
+				const duration = 1000;
 				dom.style.opacity = 1;
 				new Tweener({
 					from,
 					to,
 					duration,
+					delay: fadeOutDelay,
 					easing: Bezier['ease-out'],
 					onUpdate: (e) => {
 						dom.style.opacity = e.opacity;
@@ -36,8 +52,8 @@ export default class Animation2 {
 						dom.style.opacity = e.opacity;
 						dom.style.display = 'none';
 					},
+					onStart: () => callback?.(),
 				});
-				callback?.();
 			},
 			cloud: {
 				delay: -400,
@@ -87,11 +103,7 @@ export default class Animation2 {
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
-					this.duration =
-						root.tr.labels.delay +
-						[...labels.current.children]
-							.map((dom) => parseInt(dom.dataset.delay))
-							.reduce((duration, delay) => duration + delay);
+					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
 				},
 				in() {
@@ -127,17 +139,14 @@ export default class Animation2 {
 				},
 			},
 			labels: {
-				duration: 3000,
-				delay: 1500,
-				fadeOutDelay: 0,
 				init() {
 					this.c = labels.current;
 					this.property = [...this.c.children].map(() => ({ opacity: 0 }));
 					this.tran();
 				},
 				in() {
-					let timeResync = this.delay;
-					const { duration, property, fadeOutDelay } = this;
+					let timeResync = beginDelay;
+					const { property } = this;
 					[...this.c.children].forEach((e, i) => {
 						const dom = e;
 						const { delay } = e.dataset;
@@ -149,14 +158,12 @@ export default class Animation2 {
 						new Tweener({
 							from,
 							to,
-							duration,
+							duration: labelDuration,
 							delay: timeResync,
 							onUpdate: (data) => this.tranEach(dom, data),
 							onComplete: () => {
 								if (i === this.c.children.length - 1) {
-									setTimeout(() => {
-										root.tr.out();
-									}, fadeOutDelay);
+									root.tr.out();
 								}
 							},
 						});

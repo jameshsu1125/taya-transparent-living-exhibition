@@ -6,7 +6,7 @@ export default class Animation2 {
 	constructor(props, callback) {
 		const { page, bg, labels } = props;
 
-		const beginDelay = 1000;
+		const beginDelay = 0;
 		const fadeOutDelay = 0;
 		const labelDuration = 3000;
 		this.totalTime =
