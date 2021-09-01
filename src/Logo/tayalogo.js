@@ -16,7 +16,7 @@ const TayaLogo = (props) => {
 
 	useEffect(() => {
 		if (commingSoon) {
-			animation.current.in();
+			animation.current.in(3500);
 		}
 	}, [commingSoon]);
 

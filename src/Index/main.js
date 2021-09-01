@@ -1,7 +1,8 @@
 import ImageOnload from 'lesca-image-onload';
-import QueryString from 'lesca-url-parameters';
-import { useEffect, useRef, useState } from 'react';
 import Storage from 'lesca-local-storage';
+import QueryString from 'lesca-url-parameters';
+import userAgent from 'lesca-user-agent';
+import { useEffect, useRef, useState } from 'react';
 import Background from '../Background/main';
 import Audio from '../Components/audio';
 import Intro from '../Intro/main';
@@ -9,9 +10,8 @@ import Loading from '../Loading/main';
 import Logo from '../Logo/main';
 import Result from '../Result/main';
 import Select from '../Select/main';
-import Story from '../Story/main';
 import { EXHIBITION_DATE_LINE } from '../Setting/config';
-
+import Story from '../Story/main';
 import './main.less';
 
 // todo => custom router
@@ -87,7 +87,7 @@ const Index = () => {
 		const now = new Date().getTime();
 		const exhibitionDate = EXHIBITION_DATE_LINE.getTime();
 		if (queryState === 'normal') {
-			setState('intro');
+			if (userAgent.get() === 'mobile') setState('intro');
 		} else if (now < exhibitionDate) {
 			// todo => [CommingSoon功能]改用日期判斷
 			setCommingSoon(true);

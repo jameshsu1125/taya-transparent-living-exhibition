@@ -11,8 +11,8 @@ export default class Animation {
 				this.logo.init();
 				this.textRef.init();
 			},
-			in() {
-				this.logo.in();
+			in(delay) {
+				this.logo.in(delay);
 				this.textRef.in();
 			},
 			textRef: {
@@ -93,8 +93,8 @@ export default class Animation {
 					this.tran();
 					if (UserAgent.get() === 'desktop') this.in();
 				},
-				in() {
-					const { duration, property, delay } = this;
+				in(delay = this.delay) {
+					const { duration, property } = this;
 					const { opacity } = property;
 					const from = { opacity };
 					const to = { opacity: 1 };
@@ -124,7 +124,7 @@ export default class Animation {
 		this.tr.init();
 	}
 
-	in() {
-		this.tr.in();
+	in(delay) {
+		this.tr.in(delay);
 	}
 }
