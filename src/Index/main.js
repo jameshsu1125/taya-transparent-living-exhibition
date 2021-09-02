@@ -87,7 +87,7 @@ const Index = () => {
 	};
 
 	const loadingComplete = () => {
-		// loading動畫完成
+		// ? => loading動畫完成
 		setLoading(false);
 
 		const now = new Date().getTime();
@@ -107,9 +107,11 @@ const Index = () => {
 
 	useEffect(() => {
 		if (state === 'back') {
-			// 從story回來
+			// ? => 從story回來
+
 			// 判斷是否全部故事讀完
 			const howMuchRead = read.filter((e) => e);
+
 			// 等select反白動畫 晚半秒進入result頁
 			setTimeout(() => {
 				setState('select');
@@ -118,6 +120,9 @@ const Index = () => {
 
 			// 播放音樂
 			setAudioState('back');
+
+			// save data into ls
+			Storage.set('readData', { read });
 		} else if (state === 'select') {
 			const howMuchRead = read.filter((e) => e);
 			if (howMuchRead.length === read.length) {
@@ -126,12 +131,8 @@ const Index = () => {
 		}
 	}, [state, read]);
 
-	useEffect(() => {
-		Storage.set('readData', { read });
-	}, [read]);
-
 	const retry = () => {
-		// result頁讀完就從新再玩
+		// ? => result頁讀完就從新再玩
 		// todo => 重新再玩reset localStorage
 		setRead(() => [...defaultReadData]);
 		setResult(false);
