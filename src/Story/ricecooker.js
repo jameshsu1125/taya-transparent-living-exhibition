@@ -89,6 +89,7 @@ const Ricecooker = (props) => {
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />
+			<div className='return' />
 		</div>
 	);
 };

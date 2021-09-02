@@ -33,7 +33,8 @@ const Pump = (props) => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
 
-				const pageKey = 'page0';
+				const pageKey = 'page3';
+
 				setState(pageKey);
 
 				const beginDuration = Object.entries(timer)
@@ -90,6 +91,7 @@ const Pump = (props) => {
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />
+			<div className='return' />
 		</div>
 	);
 };

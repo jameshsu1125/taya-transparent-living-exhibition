@@ -26,13 +26,13 @@ export default class Animation0 {
 			init() {
 				// this.bg.init();
 				this.title.init();
-				this.labels.init();
+				// this.labels.init();
 			},
 			in() {
 				whiteBackgroundColor.current.classList.add('fadein');
 				// this.bg.in();
 				this.title.in();
-				this.labels.in();
+				// this.labels.in();
 			},
 			out() {
 				const dom = page.current;
