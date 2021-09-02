@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
 import { useEffect, useRef } from 'react';
@@ -11,25 +10,28 @@ const Carousel = (props) => {
 	const dark = useRef();
 
 	useEffect(() => {
-		Click.add(`#share${index}`, () => {
-			dark.current.classList.add('on');
-			const url =
-				window.location.hostname === 'localhost'
-					? 'https://localhost:8080/'
-					: 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/';
-			Facebook.share({
-				url,
-				hashtag: '透明生活展',
-				redirect_uri: `${url}?state=result`,
+		setTimeout(() => {
+			Click.add(`#share${index}`, () => {
+				dark.current.classList.add('on');
+				const url =
+					window.location.hostname === 'localhost'
+						? 'https://localhost:8080/'
+						: 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/';
+				Facebook.share({
+					url,
+					hashtag: '透明生活展',
+					redirect_uri: `${url}?state=result`,
+				});
 			});
-		});
+		}, 500);
 	}, []);
 
 	return (
 		<div className='slider'>
 			<div id={`share${index}`} className='cover'>
 				<div className='title'>
-					{title} {subtitle}
+					{title}
+					<span>{subtitle}</span>
 				</div>
 				<div ref={dark} className='dark' />
 				<div className='headline'>{category}</div>

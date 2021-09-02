@@ -41,7 +41,7 @@ const Ricecooker = (props) => {
 					.filter((e) => parseInt(pageKey.slice(4)) > parseInt(e[0].slice(4)));
 				if (beginDuration.length > 0) {
 					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
-					audioRef.current.seek(audioSeekTime);
+					audioRef.current.seek(audioSeekTime + 1);
 				}
 			}, 1000);
 		}

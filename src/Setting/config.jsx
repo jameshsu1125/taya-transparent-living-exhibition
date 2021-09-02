@@ -41,10 +41,10 @@ export const STORY_MOTORCYCLE_PAGE1 = [
 	{ text: '好多事還沒做過，好多地方還沒去過', x: -310, y: -410, delay: 3000 },
 
 	{ text: '這個世界好大', x: -150, y: -290, delay: 7500 },
-	{ text: '我好小，在我裡面的煩惱又更小', x: -150, y: -220, delay: 3000 },
+	{ text: '我好小，在我裡面的煩惱又更小', x: -150, y: -220, delay: 2200 },
 
-	{ text: '比起這棟高樓、這座城市、這個世界', x: -320, y: 110, delay: 6000 },
-	{ text: '我的煩惱是奈米煩惱', x: -10, y: 180, delay: 6000 },
+	{ text: '比起這棟高樓、這座城市、這個世界', x: -320, y: 110, delay: 6300 },
+	{ text: '我的煩惱是奈米煩惱', x: -10, y: 180, delay: 5500 },
 
 	{ text: '想了一想', x: -130, y: 390, delay: 3000 },
 	{ text: '有些事真的不是那麼重要', x: -50, y: 460, delay: 1500 },
@@ -53,15 +53,15 @@ export const STORY_MOTORCYCLE_PAGE1 = [
 export const STORY_MOTORCYCLE_PAGE2 = [
 	{ text: '然後我開始往家的方向騎', x: -150, y: -540, delay: 1000 },
 
-	{ text: '剛剛與街景交換的心底秘密', x: -300, y: -430, delay: 4000 },
-	{ text: '洗滌我的身心、充電', x: -100, y: -360, delay: 4000 },
+	{ text: '剛剛與街景交換的心底秘密', x: -300, y: -430, delay: 5000 },
+	{ text: '洗滌我的身心、充電', x: -100, y: -360, delay: 3900 },
 
 	{ text: '然後回家', x: 150, y: -240, delay: 2000 },
 ];
 
 export const STORY_MOTORCYCLE_PAGE3 = [
 	{ text: 'EAIW、IFDW', x: -93, y: -490, delay: 0 },
-	{ text: '不只是電動機車裡的漆包線線圈', x: -186, y: -420, delay: 3500 },
+	{ text: '不只是電動機車裡的漆包線線圈', x: -186, y: -420, delay: 3400 },
 	{ text: '也將疲憊的自己推動向前', x: -146, y: -350, delay: 3500 },
 	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
 ];
@@ -221,19 +221,19 @@ export const STORY_MOBILE_PAGE1 = [
 ];
 
 export const STORY_MOBILE_PAGE2 = [
-	{ text: '掛上電話', x: -310, y: -510, delay: 1500 },
+	{ text: '掛上電話', x: -310, y: -510, delay: 1000 },
 	{ text: '高鐵也正好進入隧道', x: -253, y: -440, delay: 2200 },
 
 	{ text: '我看著自己在窗戶裡的倒影覺得好笑', x: -270, y: -160, delay: 4000 },
 	{ text: '漲紅的臉還有哭花了的眼妝', x: -50, y: -90, delay: 5000 },
 
-	{ text: '但也很感謝自己', x: -180, y: 160, delay: 4800 },
+	{ text: '但也很感謝自己', x: -180, y: 160, delay: 4500 },
 	{ text: '有辦法好好說出心底話', x: -90, y: 230, delay: 2300 },
 ];
 
 export const STORY_MOBILE_PAGE3 = [
-	{ text: 'UEW + SB', x: -67, y: -490, delay: 500 },
-	{ text: '不只是手機裡的漆包線線圈', x: -160, y: -420, delay: 4500 },
+	{ text: 'UEW + SB', x: -67, y: -490, delay: 1200 },
+	{ text: '不只是手機裡的漆包線線圈', x: -160, y: -420, delay: 3700 },
 	{ text: '更讓想說的話能被傳達', x: -134, y: -350, delay: 3000 },
 	{ text: '連結每個日常', x: -82, y: -280, delay: 3200 },
 ];
@@ -278,7 +278,7 @@ export const STORY_EVCHARAGER_PAGE3 = [
 	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
 	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 3500 },
 	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 3500 },
-	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
+	{ text: '連結每個日常', x: -82, y: -280, delay: 3800 },
 ];
 
 // cable 6

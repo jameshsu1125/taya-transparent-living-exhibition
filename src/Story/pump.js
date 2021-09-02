@@ -42,7 +42,7 @@ const Pump = (props) => {
 
 				if (beginDuration.length > 0) {
 					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
-					audioRef.current.seek(audioSeekTime);
+					audioRef.current.seek(audioSeekTime + 1);
 				}
 			}, 1000);
 		}

@@ -31,7 +31,7 @@ const CommingSoon = () => {
 		<div ref={container} className='CommingSoon'>
 			<div className='footer'>
 				<div className='location'>
-					<div ref={locationChtName}>臺中國家歌劇院.</div>
+					<div ref={locationChtName}>臺中國家歌劇院</div>
 					<div ref={locationEngName}>National Taichung Theater</div>
 				</div>
 				<div ref={date} className='date'>
