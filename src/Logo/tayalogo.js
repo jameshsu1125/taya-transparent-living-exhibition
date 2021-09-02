@@ -1,6 +1,6 @@
+import Click from 'lesca-click';
 import { useEffect, useRef } from 'react';
 import Animation from './tayaAnimation';
-
 import './tayalogo.less';
 
 const TayaLogo = (props) => {
@@ -12,6 +12,9 @@ const TayaLogo = (props) => {
 
 	useEffect(() => {
 		animation.current = new Animation({ logo, textRef });
+		Click.add('.TayaLogo', () => {
+			window.open('https://www.taya.com.tw/');
+		});
 	}, []);
 
 	useEffect(() => {
