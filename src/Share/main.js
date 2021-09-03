@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import Gtag from 'lesca-gtag';
 import Slider from 'react-slick';
 import { ITEMS_SELECT } from '../Setting/config';
 import Carousel from './carousel';
@@ -32,8 +33,10 @@ const Share = (props) => {
 	useEffect(() => {
 		if (shareDialog === 'open') {
 			animation.current.open();
+			Gtag.pv('分享頁');
 		} else {
 			animation.current.close();
+			Gtag.pv('結果頁');
 		}
 	}, [shareDialog]);
 

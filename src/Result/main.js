@@ -1,4 +1,5 @@
 import Click from 'lesca-click';
+import Gtag from 'lesca-gtag';
 import ImageOnload from 'lesca-image-onload';
 import { useEffect, useRef, useState } from 'react';
 import Share from '../Share/main';
@@ -12,6 +13,7 @@ const Result = (props) => {
 	const animation = useRef();
 	const background = useRef();
 	const logo = useRef();
+
 	const logoLabel = useRef();
 	const buttons = useRef();
 	const headline = useRef();
@@ -41,15 +43,24 @@ const Result = (props) => {
 				animation.current.out(() => {
 					retry();
 				});
+				Gtag.event('結果頁', '重新聆聽故事');
 			});
 
 			Click.add('#about', () => {
-				window.open('https://www.taya.com.tw/');
+				setTimeout(() => {
+					window.open('https://www.taya.com.tw/');
+				}, 300);
+				Gtag.event('結果頁', '了解大亞');
 			});
 
 			Click.add('#facebook', () => {
-				window.open('https://www.facebook.com/TAIWANTAYA/');
+				setTimeout(() => {
+					window.open('https://www.facebook.com/TAIWANTAYA/');
+				}, 300);
+				Gtag.event('結果頁', '大亞FB');
 			});
+
+			Gtag.pv('結果頁');
 		});
 	}, []);
 

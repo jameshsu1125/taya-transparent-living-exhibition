@@ -1,11 +1,12 @@
+import Gtag from 'lesca-gtag';
+import ImageOnload from 'lesca-image-onload';
 import Tweener from 'lesca-object-tweener';
 import { useEffect, useRef, useState } from 'react';
-import ImageOnload from 'lesca-image-onload';
+import './evcharger.less';
 import Page0 from './evcharger/page0';
 import Page1 from './evcharger/page1';
 import Page2 from './evcharger/page2';
 import Page3 from './evcharger/page3';
-import './evcharger.less';
 
 const { parseInt } = window;
 
@@ -44,6 +45,8 @@ const Evcharger = (props) => {
 					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
 					audioRef.current.seek(audioSeekTime + 1);
 				}
+
+				Gtag.pv(`故事頁-${categroyName}`);
 			}, 1000);
 		}
 	}, [audioLoad, domReady]);

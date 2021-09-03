@@ -1,11 +1,12 @@
+import Gtag from 'lesca-gtag';
+import ImageOnload from 'lesca-image-onload';
 import Tweener from 'lesca-object-tweener';
 import { useEffect, useRef, useState } from 'react';
-import ImageOnload from 'lesca-image-onload';
+import './ricecooker.less';
 import Page0 from './ricecooker/page0';
 import Page1 from './ricecooker/page1';
 import Page2 from './ricecooker/page2';
 import Page3 from './ricecooker/page3';
-import './ricecooker.less';
 
 const { parseInt } = window;
 
@@ -43,6 +44,8 @@ const Ricecooker = (props) => {
 					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
 					audioRef.current.seek(audioSeekTime + 1);
 				}
+
+				Gtag.pv(`故事頁-${categroyName}`);
 			}, 1000);
 		}
 	}, [audioLoad, domReady]);

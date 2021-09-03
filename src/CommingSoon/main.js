@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Gtag from 'lesca-gtag';
 import Animation from './animation';
 import './main.less';
 
@@ -25,6 +26,7 @@ const CommingSoon = () => {
 		});
 		container.current.style.display = 'block';
 		animation.in();
+		Gtag.pv('預告頁');
 	}, []);
 
 	return (

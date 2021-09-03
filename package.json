@@ -45,6 +45,7 @@
 		"i": "^0.3.6",
 		"lesca-click": "^1.0.12",
 		"lesca-facebook-share": "^1.0.3",
+		"lesca-gtag": "^1.0.2",
 		"lesca-image-onload": "^2.0.2",
 		"lesca-local-storage": "^1.0.0",
 		"lesca-number": "^1.2.0",

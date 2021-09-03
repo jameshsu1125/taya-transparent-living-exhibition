@@ -1,11 +1,12 @@
+import Gtag from 'lesca-gtag';
+import ImageOnload from 'lesca-image-onload';
 import Tweener from 'lesca-object-tweener';
 import { useEffect, useRef, useState } from 'react';
-import ImageOnload from 'lesca-image-onload';
+import './motorcycle.less';
 import Page0 from './motorcycle/page0';
 import Page1 from './motorcycle/page1';
 import Page2 from './motorcycle/page2';
 import Page3 from './motorcycle/page3';
-import './motorcycle.less';
 
 const { parseInt } = window;
 
@@ -43,6 +44,8 @@ const Motorcycle = (props) => {
 					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
 					audioRef.current.seek(audioSeekTime + 1);
 				}
+
+				Gtag.pv(`故事頁-${categroyName}`);
 			}, 1000);
 		}
 	}, [audioLoad, domReady]);

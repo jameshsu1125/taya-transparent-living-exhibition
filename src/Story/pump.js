@@ -1,3 +1,4 @@
+import Gtag from 'lesca-gtag';
 import ImageOnload from 'lesca-image-onload';
 import Tweener from 'lesca-object-tweener';
 import { useEffect, useRef, useState } from 'react';
@@ -33,7 +34,7 @@ const Pump = (props) => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
 
-				const pageKey = 'page3';
+				const pageKey = 'page0';
 
 				setState(pageKey);
 
@@ -45,6 +46,8 @@ const Pump = (props) => {
 					const audioSeekTime = beginDuration.reduce((a, b) => a + b[1], 0);
 					audioRef.current.seek(audioSeekTime + 1);
 				}
+
+				Gtag.pv(`故事頁-${categroyName}`);
 			}, 1000);
 		}
 	}, [audioLoad, domReady]);

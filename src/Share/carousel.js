@@ -1,5 +1,6 @@
 import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
+import Gtag from 'lesca-gtag';
 import { useEffect, useRef } from 'react';
 import './main.less';
 
@@ -13,15 +14,18 @@ const Carousel = (props) => {
 		setTimeout(() => {
 			Click.add(`#share${index}`, () => {
 				dark.current.classList.add('on');
-				const url =
-					window.location.hostname === 'localhost'
-						? 'https://localhost:8080/'
-						: 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/';
-				Facebook.share({
-					url,
-					hashtag: '透明生活展',
-					redirect_uri: `${url}?state=result`,
-				});
+				Gtag.event('分享頁', category);
+				setTimeout(() => {
+					const url =
+						window.location.hostname === 'localhost'
+							? 'https://localhost:8080/'
+							: 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/';
+					Facebook.share({
+						url,
+						hashtag: '透明生活展',
+						redirect_uri: url,
+					});
+				}, 500);
 			});
 		}, 500);
 	}, []);

@@ -1,5 +1,6 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import Slider from 'react-slick';
+import Gtag from 'lesca-gtag';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import { ITEMS_SELECT } from '../Setting/config';
@@ -50,6 +51,7 @@ const Select = forwardRef((props, ref) => {
 		} else if (state === 'select') {
 			setUpdateSelected(false);
 			animation.current.addEvent();
+			Gtag.pv('選擇頁');
 		} else if (state === 'reset') {
 			animation.current.reset();
 			setUpdateSelected(true);

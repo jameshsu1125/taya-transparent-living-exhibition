@@ -3,6 +3,7 @@ import Storage from 'lesca-local-storage';
 import QueryString from 'lesca-url-parameters';
 import userAgent from 'lesca-user-agent';
 import { useEffect, useRef, useState } from 'react';
+import Gtag from 'lesca-gtag';
 import Background from '../Background/main';
 import Audio from '../Components/audio';
 import Intro from '../Intro/main';
@@ -68,6 +69,8 @@ const Index = () => {
 		const { data } = Storage.get('readData');
 		if (!data) setRead(defaultReadData);
 		else setRead(data.read);
+
+		Gtag.pv('首頁');
 	}, []);
 
 	useEffect(() => {

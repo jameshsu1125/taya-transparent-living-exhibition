@@ -1,3 +1,4 @@
+import Gtag from 'lesca-gtag';
 import { useEffect, useRef } from 'react';
 import { INTRO_TITLE } from '../Setting/config';
 import Animation from './animation';
@@ -27,6 +28,7 @@ const Intro = (props) => {
 		if (state === 'intro') {
 			introRef.current.style.display = 'flex';
 			animation.current.in();
+			Gtag.pv('簡介頁');
 		}
 	}, [state]);
 
