@@ -1,5 +1,7 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
+import QueryString from 'lesca-url-parameters';
 
+const debug = QueryString.get('debug') === 'true';
 const { parseInt } = window;
 
 export default class Animation2 {
@@ -221,10 +223,10 @@ export default class Animation2 {
 				},
 			},
 		};
-		this.tr.init();
+		if (!debug) this.tr.init();
 	}
 
 	in() {
-		this.tr.in();
+		if (!debug) this.tr.in();
 	}
 }
