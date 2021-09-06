@@ -124,11 +124,13 @@ const Index = () => {
 				setRead((data) => [...data]);
 				setStory(false);
 				setAudioState('back');
+				setAudioLoad(false);
 				break;
 
 			case 'giveUp':
 				setStory(false);
 				setAudioState('back');
+				setAudioLoad(false);
 				break;
 
 			default:
