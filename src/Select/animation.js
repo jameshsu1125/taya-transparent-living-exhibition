@@ -25,7 +25,6 @@ export default class Animation {
 			out() {
 				setStory(root.selectedIndex);
 				setState('story');
-				setRead(() => [...root.read]);
 			},
 			title: {
 				duration: 1000,
@@ -117,15 +116,8 @@ export default class Animation {
 	addEvent() {
 		[...new Array(ITEMS_SELECT.length).keys()].forEach((e) => {
 			Click.add(`#cover${e}`, () => {
-				const readed = this.read[e];
-				if (!readed) {
-					this.read[e] = true;
-					this.selectedIndex = e;
-					[...new Array(ITEMS_SELECT.length).keys()].forEach((index) => {
-						Click.remove(`#cover${index}`);
-					});
-					this.tr.out();
-				}
+				this.selectedIndex = e;
+				this.tr.out();
 			});
 		});
 	}

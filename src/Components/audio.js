@@ -88,6 +88,7 @@ const Audio = forwardRef((props, ref) => {
 				break;
 
 			case 'back':
+			case 'giveUp':
 				setRicecookerState(false);
 				setEvchargerState(false);
 				setMotorcycleState(false);

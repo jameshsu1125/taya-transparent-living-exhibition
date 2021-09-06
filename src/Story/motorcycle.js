@@ -1,6 +1,8 @@
+import Click from 'lesca-click';
 import Gtag from 'lesca-gtag';
 import ImageOnload from 'lesca-image-onload';
 import Tweener from 'lesca-object-tweener';
+import QueryString from 'lesca-url-parameters';
 import { useEffect, useRef, useState } from 'react';
 import './motorcycle.less';
 import Page0 from './motorcycle/page0';
@@ -9,12 +11,12 @@ import Page2 from './motorcycle/page2';
 import Page3 from './motorcycle/page3';
 
 const { parseInt } = window;
+const pageNumber = QueryString.get('page');
 
 const Motorcycle = (props) => {
 	const {
 		categroyName,
 		setLoading,
-		setStory,
 		setState: setRootState,
 		setAudioState,
 		audioLoad,
@@ -23,6 +25,7 @@ const Motorcycle = (props) => {
 
 	const container = useRef();
 	const colorBackgroundRef = useRef();
+	const returnRef = useRef();
 
 	const [state, setState] = useState('loading');
 	const [domReady, setDomReady] = useState(false);
@@ -34,7 +37,7 @@ const Motorcycle = (props) => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
 
-				const pageKey = 'page0';
+				const pageKey = `page${pageNumber === false ? '0' : pageNumber}`;
 				setState(pageKey);
 
 				const beginDuration = Object.entries(timer)
@@ -50,7 +53,7 @@ const Motorcycle = (props) => {
 		}
 	}, [audioLoad, domReady]);
 
-	const fadeOut = () => {
+	const fadeOut = (stateString = 'back') => {
 		const dom = colorBackgroundRef.current;
 		const from = { opacity: 1 };
 		const to = { opacity: 0 };
@@ -61,6 +64,7 @@ const Motorcycle = (props) => {
 			duration,
 			onStart: () => {
 				colorBackgroundRef.current.classList.remove('fadein');
+				returnRef.current.style.display = 'none';
 				setRootState('storyEnd');
 			},
 			onUpdate: (e) => {
@@ -68,8 +72,7 @@ const Motorcycle = (props) => {
 			},
 			onComplete: (e) => {
 				dom.style.opacity = e.opacity;
-				setStory(false);
-				setRootState('back');
+				setRootState(stateString);
 			},
 		});
 	};
@@ -78,7 +81,30 @@ const Motorcycle = (props) => {
 		new ImageOnload(container.current, { hideBeforeLoaded: true }).then(() => {
 			setDomReady(true);
 			setAudioState('motorcycle');
+
+			Click.add('.return', () => {
+				Click.remove('.return');
+				const { current } = container;
+				new Tweener({
+					from: { opacity: 1 },
+					to: { opacity: 0 },
+					duration: 2000,
+					onStart: () => {
+						setRootState('storyEnd');
+					},
+					onUpdate: (e) => {
+						current.style.opacity = e.opacity;
+					},
+					onComplete: (e) => {
+						current.style.opacity = e.opacity;
+						setRootState('giveUp');
+					},
+				});
+			});
 		});
+		return () => {
+			Click.remove('.return');
+		};
 	}, []);
 
 	const collectTimer = (key, duration) => {
@@ -92,7 +118,7 @@ const Motorcycle = (props) => {
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />
-			<div className='return' />
+			<div ref={returnRef} className='return' />
 		</div>
 	);
 };

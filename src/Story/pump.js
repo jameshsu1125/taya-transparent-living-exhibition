@@ -1,6 +1,8 @@
+import Click from 'lesca-click';
 import Gtag from 'lesca-gtag';
 import ImageOnload from 'lesca-image-onload';
 import Tweener from 'lesca-object-tweener';
+import QueryString from 'lesca-url-parameters';
 import { useEffect, useRef, useState } from 'react';
 import './pump.less';
 import Page0 from './pump/page0';
@@ -9,12 +11,12 @@ import Page2 from './pump/page2';
 import Page3 from './pump/page3';
 
 const { parseInt } = window;
+const pageNumber = QueryString.get('page');
 
 const Pump = (props) => {
 	const {
 		categroyName,
 		setLoading,
-		setStory,
 		setState: setRootState,
 		setAudioState,
 		audioLoad,
@@ -23,6 +25,7 @@ const Pump = (props) => {
 
 	const container = useRef();
 	const colorBackgroundRef = useRef();
+	const returnRef = useRef();
 
 	const [state, setState] = useState('loading');
 	const [domReady, setDomReady] = useState(false);
@@ -34,8 +37,7 @@ const Pump = (props) => {
 				setLoading(false);
 				colorBackgroundRef.current.classList.add('fadein');
 
-				const pageKey = 'page0';
-
+				const pageKey = `page${pageNumber === false ? '0' : pageNumber}`;
 				setState(pageKey);
 
 				const beginDuration = Object.entries(timer)
@@ -52,7 +54,7 @@ const Pump = (props) => {
 		}
 	}, [audioLoad, domReady]);
 
-	const fadeOut = () => {
+	const fadeOut = (stateString = 'back') => {
 		const dom = colorBackgroundRef.current;
 		const from = { opacity: 1 };
 		const to = { opacity: 0 };
@@ -63,6 +65,7 @@ const Pump = (props) => {
 			duration,
 			onStart: () => {
 				colorBackgroundRef.current.classList.remove('fadein');
+				returnRef.current.style.display = 'none';
 				setRootState('storyEnd');
 			},
 			onUpdate: (e) => {
@@ -70,8 +73,7 @@ const Pump = (props) => {
 			},
 			onComplete: (e) => {
 				dom.style.opacity = e.opacity;
-				setStory(false);
-				setRootState('back');
+				setRootState(stateString);
 			},
 		});
 	};
@@ -80,7 +82,30 @@ const Pump = (props) => {
 		new ImageOnload(container.current, { hideBeforeLoaded: true }).then(() => {
 			setDomReady(true);
 			setAudioState('pump');
+
+			Click.add('.return', () => {
+				Click.remove('.return');
+				const { current } = container;
+				new Tweener({
+					from: { opacity: 1 },
+					to: { opacity: 0 },
+					duration: 2000,
+					onStart: () => {
+						setRootState('storyEnd');
+					},
+					onUpdate: (e) => {
+						current.style.opacity = e.opacity;
+					},
+					onComplete: (e) => {
+						current.style.opacity = e.opacity;
+						setRootState('giveUp');
+					},
+				});
+			});
 		});
+		return () => {
+			Click.remove('.return');
+		};
 	}, []);
 
 	const collectTimer = (key, duration) => {
@@ -94,7 +119,7 @@ const Pump = (props) => {
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />
-			<div className='return' />
+			<div ref={returnRef} className='return' />
 		</div>
 	);
 };

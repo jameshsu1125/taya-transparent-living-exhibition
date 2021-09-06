@@ -41,6 +41,7 @@ export default class Animation3 {
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
 				const duration = 2000;
+				if (!dom) return;
 				new Tweener({
 					from,
 					to,

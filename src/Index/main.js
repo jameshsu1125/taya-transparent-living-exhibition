@@ -34,10 +34,10 @@ let queryInset;
 if (!queryState) queryInset = queryData.normal;
 else queryInset = queryData[queryState.split('#')[0]];
 
-// const defaultReadData = [true, true, true, true, true, true, true];
 const defaultReadData = [...new Array(7).keys()].map(() => false);
 
 // ! debug
+// const defaultReadData = [false, true, true, true, true, true, true];
 // Storage.clear();
 
 const Index = () => {
@@ -109,30 +109,31 @@ const Index = () => {
 	};
 
 	useEffect(() => {
-		if (state === 'back') {
-			// ? => 從story回來
-
-			// 判斷是否全部故事讀完
-			const howMuchRead = read.filter((e) => e);
-
-			// 等select反白動畫 晚半秒進入result頁
-			setTimeout(() => {
-				setState('select');
-				if (howMuchRead.length === read.length) setResult(true);
-			}, 500);
-
-			// 播放音樂
-			setAudioState('back');
-
-			// save data into ls
+		const howMuchRead = read.filter((e) => e);
+		setTimeout(() => {
+			setState('select');
+			if (howMuchRead.length === read.length) setResult(true);
 			Storage.set('readData', { read });
-		} else if (state === 'select') {
-			const howMuchRead = read.filter((e) => e);
-			if (howMuchRead.length === read.length) {
-				setResult(true);
-			}
+		}, 500);
+	}, [read]);
+
+	useEffect(() => {
+		switch (state) {
+			case 'back':
+				read[story] = true;
+				setRead((data) => [...data]);
+				setStory(false);
+				setAudioState('back');
+				break;
+
+			case 'giveUp':
+				setStory(false);
+				setAudioState('back');
+				break;
+
+			default:
 		}
-	}, [state, read]);
+	}, [state]);
 
 	const retry = () => {
 		// ? => result頁讀完就從新再玩
@@ -140,9 +141,6 @@ const Index = () => {
 		setRead(() => [...defaultReadData]);
 		setResult(false);
 		setState('reset');
-		setTimeout(() => {
-			setState('select');
-		}, 500);
 	};
 
 	const onAudioLoaded = (e) => {

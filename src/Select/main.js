@@ -46,11 +46,11 @@ const Select = forwardRef((props, ref) => {
 		if (state === 'intro') {
 			selectRef.current.style.display = 'block';
 			animation.current.in();
+			setUpdateSelected(true);
 		} else if (state === 'back') {
 			setUpdateSelected(true);
 		} else if (state === 'select') {
 			setUpdateSelected(false);
-			animation.current.addEvent();
 			Gtag.pv('選擇頁');
 		} else if (state === 'reset') {
 			animation.current.reset();

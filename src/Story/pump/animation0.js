@@ -28,19 +28,20 @@ export default class Animation0 {
 			init() {
 				// this.bg.init();
 				this.title.init();
-				// this.labels.init();
+				this.labels.init();
 			},
 			in() {
 				whiteBackgroundColor.current.classList.add('fadein');
 				// this.bg.in();
 				this.title.in();
-				// this.labels.in();
+				this.labels.in();
 			},
 			out() {
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
 				const duration = 1000;
+				if (!dom) return;
 				dom.style.opacity = 1;
 				new Tweener({
 					from,

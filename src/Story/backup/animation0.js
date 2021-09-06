@@ -183,4 +183,8 @@ export default class Animation0 {
 	in() {
 		this.tr.in();
 	}
+
+	stop() {
+		this.tr.stop();
+	}
 }

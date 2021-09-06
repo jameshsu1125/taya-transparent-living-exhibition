@@ -43,6 +43,7 @@ export default class Animation0 {
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };
 				const duration = 1000;
+				if (!dom) return;
 				dom.style.opacity = 1;
 				new Tweener({
 					from,
