@@ -111,7 +111,7 @@ const Index = () => {
 	useEffect(() => {
 		const howMuchRead = read.filter((e) => e);
 		setTimeout(() => {
-			setState('select');
+			if (state !== 'loading') setState('select');
 			if (howMuchRead.length === read.length) setResult(true);
 			Storage.set('readData', { read });
 		}, 500);

@@ -84,14 +84,14 @@ const Motorcycle = (props) => {
 
 			Click.add('.return', () => {
 				Click.remove('.return');
+				setRootState('storyEnd');
+
 				const { current } = container;
 				new Tweener({
 					from: { opacity: 1 },
 					to: { opacity: 0 },
 					duration: 2000,
-					onStart: () => {
-						setRootState('storyEnd');
-					},
+					delay: 100,
 					onUpdate: (e) => {
 						current.style.opacity = e.opacity;
 					},
