@@ -109,6 +109,7 @@ const Index = () => {
 	};
 
 	useEffect(() => {
+		// 紀錄資料到Storage
 		const howMuchRead = read.filter((e) => e);
 		setTimeout(() => {
 			if (state !== 'loading') setState('select');
@@ -145,9 +146,7 @@ const Index = () => {
 		setState('reset');
 	};
 
-	const onAudioLoaded = (e) => {
-		setAudioLoad(e);
-	};
+	const onAudioLoaded = (e) => setAudioLoad(e);
 
 	return (
 		<div ref={container} className='Index'>

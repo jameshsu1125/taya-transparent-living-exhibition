@@ -59,7 +59,7 @@ export default class Animation2 {
 			},
 			bg: {
 				delay: 0,
-				property: { opacity: 0, left: 100 },
+				property: { opacity: 0, left: 60 },
 				unit: { opacity: '', left: 'px' },
 				init() {
 					this.c = bg.current;
@@ -73,7 +73,7 @@ export default class Animation2 {
 					const toOpacity = { opacity: 1 };
 					const easing = Bezier.linear;
 					const fromLeft = { left };
-					const toLeft = { left: 260 };
+					const toLeft = { left: -60 };
 					new Tweener({
 						from: fromOpacity,
 						to: toOpacity,
