@@ -1,12 +1,17 @@
+import Gtag from 'lesca-gtag';
+import UserAgnet from 'lesca-user-agent';
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import Slider from 'react-slick';
-import Gtag from 'lesca-gtag';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
 import { ITEMS_SELECT } from '../Setting/config';
 import Animation from './animation';
+import Arrow from './arrow';
 import Carousel from './carousel';
 import './main.less';
+import Nav from './nav';
+
+const device = UserAgnet.get() === 'mobile';
 
 const settings = {
 	dots: true,
@@ -22,7 +27,6 @@ const Select = forwardRef((props, ref) => {
 	const { state, setStory, read, setRead, setState, defaultReadData } = props;
 
 	const animation = useRef();
-
 	const selectRef = useRef();
 	const titleRef = useRef();
 	const sliderRef = useRef();
@@ -41,6 +45,16 @@ const Select = forwardRef((props, ref) => {
 			defaultReadData,
 		});
 	}, []);
+
+	if (!device) {
+		settings.infinite = true;
+		settings.initialSlide = 0;
+		settings.slidesToShow = 3;
+		settings.slidesToScroll = 1;
+		settings.arrows = true;
+		settings.nextArrow = <Arrow direct='next' click={() => sliderRef.current.slickNext()} />;
+		settings.prevArrow = <Arrow direct='prev' click={() => sliderRef.current.slickPrev()} />;
+	}
 
 	useEffect(() => {
 		if (state === 'intro') {
@@ -72,7 +86,7 @@ const Select = forwardRef((props, ref) => {
 			isFadein.current = true;
 
 			setUpdateSelected(false);
-			sliderRef.current.slickNext();
+			if (device) sliderRef.current.slickNext();
 			animation.current.addEvent();
 			animation.current.titleIn();
 		},
@@ -80,9 +94,6 @@ const Select = forwardRef((props, ref) => {
 
 	return (
 		<div ref={selectRef} className='Select'>
-			<div ref={titleRef} className='title'>
-				選擇故事
-			</div>
 			<div className='slider-container'>
 				<Slider ref={sliderRef} {...settings}>
 					{ITEMS_SELECT.map((data, index) => (
@@ -95,6 +106,10 @@ const Select = forwardRef((props, ref) => {
 					))}
 				</Slider>
 			</div>
+			<div ref={titleRef} className='title'>
+				選擇故事
+			</div>
+			{!device && <Nav />}
 		</div>
 	);
 });

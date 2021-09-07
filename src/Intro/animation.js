@@ -1,5 +1,6 @@
 import Click from 'lesca-click';
 import Tweener, { Bezier } from 'lesca-object-tweener';
+import UserAgent from 'lesca-user-agent';
 
 export default class Animation {
 	/**
@@ -9,6 +10,8 @@ export default class Animation {
 	 */
 	constructor(props, callback) {
 		const { contentRef, ctaRef, startButton, introRef, arrow, selectFadein, setAudioState } = props;
+		const MobileDevice = UserAgent.get() === 'mobile';
+
 		const root = this;
 		this.tr = {
 			init() {
@@ -254,9 +257,12 @@ export default class Animation {
 						Click.remove('.startButton');
 						this.out();
 						root.tr.content.out();
-						root.tr.ctaRef.in();
-						root.tr.arrow.in();
 						setAudioState('bgm');
+
+						if (MobileDevice) {
+							root.tr.ctaRef.in();
+							root.tr.arrow.in();
+						}
 					});
 				},
 			},
@@ -306,7 +312,13 @@ export default class Animation {
 							easing,
 							duration: 1000,
 							onUpdate: (p) => this.setOutStyle(e, p),
-							onComplete: (p) => this.setOutStyle(e, p),
+							onComplete: (p) => {
+								this.setOutStyle(e, p);
+								if (!MobileDevice) {
+									selectFadein?.();
+									callback();
+								}
+							},
 						});
 					});
 				},

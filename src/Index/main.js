@@ -96,11 +96,10 @@ const Index = () => {
 		const now = new Date().getTime();
 		const exhibitionDate = EXHIBITION_DATE_LINE.getTime();
 		if (queryState === 'normal') {
-			if (userAgent.get() === 'mobile') {
-				setState('intro');
-			}
+			if (userAgent.get() === 'mobile') setState('intro');
+			else setState('intro');
 		} else if (now < exhibitionDate) {
-			// todo => [CommingSoon功能]改用日期判斷
+			// to comming Soon
 			setCommingSoon(true);
 		} else {
 			// 進入intro page
