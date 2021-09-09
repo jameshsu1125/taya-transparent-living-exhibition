@@ -42,7 +42,7 @@
 
 			.product {
 				position: absolute;
-				top: 80px;
+
 				margin-top: 0 - image-height(@img) * 0.5;
 				margin-left: 0 - image-width(@img) * 0.5 + 113px;
 				width: image-width(@img);
@@ -119,13 +119,11 @@
 
 			.img {
 				position: absolute;
-				left: 100px;
 				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: -1176.5px;
+				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.82);
 
 				@img: './img/evcharger/bg2.jpg';
 
@@ -161,13 +159,11 @@
 
 			.img {
 				position: absolute;
-				left: 100px;
 				margin-top: 0 - image-height(@img) * 0.5;
 				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.82);
 
 				@img: './img/evcharger/bg1.jpg';
 
@@ -229,25 +225,22 @@
 
 		.labels {
 			position: absolute;
-			bottom: 0;
+			top: 50%;
 			left: 50%;
 		}
 
 		.bg {
 			position: absolute;
-			bottom: 0;
+			top: 50%;
 			left: 50%;
 
 			.img {
 				position: absolute;
-				left: 350px;
-				margin-top: 0 - image-height(@img);
+				margin-top: 0 - image-height(@img) * 0.5;
 				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.8);
-				transform-origin: center bottom;
 
 				@img: './img/evcharger/bg0.jpg';
 

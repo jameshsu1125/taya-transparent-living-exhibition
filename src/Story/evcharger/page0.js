@@ -1,14 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { STORY_EVCHARAGER_PAGE0 } from '../../Setting/config';
 import Label from '../label';
+import { SET_SIZE } from '../setSize';
 import Animation from './animation0';
 
 const pageName = 'page0';
+const imageSize = { width: 1481, height: 1779, scale: 1 };
 
 const Page0 = (props) => {
 	const { categroyName, state, setState, collectTimer } = props;
 
 	const animation = useRef();
+	const img = useRef();
 	const page = useRef();
 	const bg = useRef();
 	const cloud = useRef();
@@ -16,11 +19,18 @@ const Page0 = (props) => {
 	const labels = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, cloud, title, labels }, () => {
+		const [listener, scale] = SET_SIZE({ ...imageSize, img });
+		imageSize.scale = scale;
+
+		animation.current = new Animation({ page, bg, cloud, title, labels, imageSize }, () => {
 			setState('page1');
 		});
 
 		collectTimer(pageName, animation.current.totalTime);
+
+		return () => {
+			listener();
+		};
 	}, []);
 
 	useEffect(() => {
@@ -33,7 +43,7 @@ const Page0 = (props) => {
 	return (
 		<div ref={page} className='page page0'>
 			<div ref={bg} className='bg'>
-				<div className='img'>
+				<div ref={img} className='img'>
 					<div ref={cloud} className='cloud' />
 				</div>
 			</div>

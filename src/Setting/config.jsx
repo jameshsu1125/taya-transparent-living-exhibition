@@ -1,3 +1,7 @@
+import UserAgent from 'lesca-user-agent';
+
+const device = UserAgent.get();
+
 export default {};
 
 export const EXHIBITION_DATE_LINE = new Date(2021, 9, 4, 23, 59, 59);
@@ -21,42 +25,149 @@ export const INTRO_TITLE = [
 	'讓生活得以連結',
 ];
 
+const r = { mobile: { b: 60 }, desktop: { b: 35 } };
+
 // Motorcycle 0
 export const STORY_MOTORCYCLE_PAGE0 = [
-	{ text: '大家是這麼調侃我的工作', x: -290 + 70, y: -420, delay: 5000 },
-	{ text: '擅長為不是自己的錯道歉', x: -200 + 70, y: -420 + 70, delay: 4000 },
-	{ text: '說來諷刺但又真實', x: -150 + 70, y: -420 + 70 + 70, delay: 4500 },
-	{ text: '我告訴自己不用太在意', x: -100, y: -420 + 70 + 70 + 70, delay: 3000 },
+	{
+		text: '大家是這麼調侃我的工作',
+		mobile: { x: -220, y: -350 },
+		desktop: { x: -190, y: -170 },
+		delay: 5000,
+	},
+	{
+		text: '擅長為不是自己的錯道歉',
+		mobile: { x: -200 + 70, y: -350 + r[device].b },
+		desktop: { x: -130, y: -170 + r[device].b },
+		delay: 4000,
+	},
+	{
+		text: '說來諷刺但又真實',
+		mobile: { x: -30, y: -350 + r[device].b * 2 },
+		desktop: { x: -100, y: -170 + r[device].b * 2 },
+		delay: 4500,
+	},
+	{
+		text: '我告訴自己不用太在意',
+		mobile: { x: 30, y: -350 + r[device].b * 3 },
+		desktop: { x: -60, y: -170 + r[device].b * 3 },
+		delay: 3000,
+	},
 
-	{ text: '下班從二段到五段的距離', x: -340, y: -90, delay: 3500 },
-	{ text: '表定三十分鐘，一定會被我拉到五十', x: -240, y: -20, delay: 4000 },
+	{
+		text: '下班從二段到五段的距離',
+		mobile: { x: -290, y: -50 + r[device].b * 0 },
+		desktop: { x: -180, y: 20 + r[device].b * 0 },
+		delay: 3500,
+	},
+	{
+		text: '表定三十分鐘，一定會被我拉到五十',
+		mobile: { x: -190, y: -50 + r[device].b * 1 },
+		desktop: { x: -120, y: 20 + r[device].b * 1 },
+		delay: 4000,
+	},
 
-	{ text: '我在車上看著高樓大廈閃過', x: -220, y: 130, delay: 5000 },
-	{ text: '停紅綠燈時抬頭望著天空，放空', x: -110, y: 200, delay: 4000 },
-	{ text: '我的思緒開始漫遊', x: 80, y: 270, delay: 3500 },
+	{
+		text: '我在車上看著高樓大廈閃過',
+		mobile: { x: -150, y: 150 + r[device].b * 0 },
+		desktop: { x: 0, y: 150 + r[device].b * 0 },
+		delay: 5000,
+	},
+	{
+		text: '停紅綠燈時抬頭望著天空，放空',
+		mobile: { x: -70, y: 150 + r[device].b * 1 },
+		desktop: { x: 60, y: 150 + r[device].b * 1 },
+		delay: 4000,
+	},
+	{
+		text: '我的思緒開始漫遊',
+		mobile: { x: 80, y: 150 + r[device].b * 2 },
+		desktop: { x: 170, y: 150 + r[device].b * 2 },
+		delay: 3500,
+	},
 ];
 
 export const STORY_MOTORCYCLE_PAGE1 = [
-	{ text: '這個世界好大', x: -310 + 70, y: -480 + 20, delay: 0 },
-	{ text: '好多事還沒做過，好多地方還沒去過', x: -310 + 70, y: -410 + 20, delay: 3000 },
+	{
+		text: '這個世界好大',
+		mobile: { x: -290, y: -430 },
+		desktop: { x: -80, y: -240 },
+		delay: 0,
+	},
+	{
+		text: '好多事還沒做過，好多地方還沒去過',
+		mobile: { x: -290, y: -430 + r[device].b },
+		desktop: { x: -80, y: -240 + r[device].b },
+		delay: 3000,
+	},
 
-	{ text: '這個世界好大', x: -150, y: -290 + 20, delay: 7500 },
-	{ text: '我好小，在我裡面的煩惱又更小', x: -150, y: -220 + 20, delay: 2200 },
+	{
+		text: '這個世界好大',
+		mobile: { x: -140, y: -280 },
+		desktop: { x: 20, y: -240 + r[device].b * 2 },
+		delay: 7500,
+	},
+	{
+		text: '我好小，在我裡面的煩惱又更小',
+		mobile: { x: -140, y: -280 + r[device].b },
+		desktop: { x: 20, y: -240 + r[device].b * 3 },
+		delay: 2200,
+	},
 
-	{ text: '比起這棟高樓、這座城市、這個世界', x: -320, y: 110, delay: 6300 },
-	{ text: '我的煩惱是奈米煩惱', x: -10, y: 180, delay: 5500 },
+	{
+		text: '比起這棟高樓、這座城市、這個世界',
+		mobile: { x: -290, y: 70 },
+		desktop: { x: -110, y: 70 },
+		delay: 6300,
+	},
+	{
+		text: '我的煩惱是奈米煩惱',
+		mobile: { x: -10, y: 70 + r[device].b },
+		desktop: { x: 70, y: 70 + r[device].b },
+		delay: 5500,
+	},
 
-	{ text: '想了一想', x: -130, y: 390, delay: 3000 },
-	{ text: '有些事真的不是那麼重要', x: -50, y: 460, delay: 1500 },
+	{
+		text: '想了一想',
+		mobile: { x: -70, y: 420 + r[device].b * 0 },
+		desktop: { x: 150, y: 180 + r[device].b * 0 },
+		delay: 3000,
+	},
+	{
+		text: '有些事真的不是那麼重要',
+		mobile: { x: 10, y: 420 + r[device].b * 1 },
+		desktop: { x: 200, y: 180 + r[device].b * 1 },
+		delay: 1500,
+	},
 ];
 
 export const STORY_MOTORCYCLE_PAGE2 = [
-	{ text: '然後我開始往家的方向騎', x: -150, y: -540, delay: 1000 },
+	{
+		text: '然後我開始往家的方向騎',
+		mobile: { x: -140, y: -430 },
+		desktop: { x: -80, y: -240 },
+		delay: 1000,
+	},
 
-	{ text: '剛剛與街景交換的心底秘密', x: -300 + 40, y: -430, delay: 5000 },
-	{ text: '洗滌我的身心、充電', x: -100, y: -360, delay: 3900 },
+	{
+		text: '剛剛與街景交換的心底秘密',
+		mobile: { x: -230, y: -340 },
+		desktop: { x: 10, y: -165 + r[device].b * 0 },
+		delay: 5000,
+	},
+	{
+		text: '洗滌我的身心、充電',
+		mobile: { x: -50, y: -340 + r[device].b * 1 },
+		desktop: { x: 120, y: -165 + r[device].b * 1 },
+		delay: 3900,
+	},
 
-	{ text: '然後回家', x: 150, y: -240, delay: 2000 },
+	{
+		text: '然後回家',
+		mobile: { x: 180, y: -190 + r[device].b * 0 },
+		desktop: { x: 250, y: -30 },
+		delay: 2000,
+	},
 ];
 
 export const STORY_MOTORCYCLE_PAGE3 = [

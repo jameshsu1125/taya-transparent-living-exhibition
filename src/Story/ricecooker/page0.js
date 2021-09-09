@@ -1,15 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { STORY_RICECOOKER_PAGE0 } from '../../Setting/config';
 import Label from '../label';
+import { SET_SIZE } from '../setSize';
 import Animation from './animation0';
 
 const pageName = 'page0';
+const imageSize = { width: 1719, height: 1565, scale: 1 };
 
 const Page0 = (props) => {
 	const { categroyName, state, setState, collectTimer } = props;
 
 	const animation = useRef();
-
+	const img = useRef();
 	const page = useRef();
 	const bg = useRef();
 	const eyes = useRef();
@@ -18,11 +20,18 @@ const Page0 = (props) => {
 	const labels = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, eyes, sweat, title, labels }, () => {
+		const [listener, scale] = SET_SIZE({ ...imageSize, img });
+		imageSize.scale = scale;
+
+		animation.current = new Animation({ page, bg, eyes, sweat, title, labels, imageSize }, () => {
 			setState('page1');
 		});
 
 		collectTimer(pageName, animation.current.totalTime);
+
+		return () => {
+			listener();
+		};
 	}, []);
 
 	useEffect(() => {
@@ -35,7 +44,7 @@ const Page0 = (props) => {
 	return (
 		<div ref={page} className='page page0'>
 			<div ref={bg} className='bg'>
-				<div className='img'>
+				<div ref={img} className='img'>
 					<div ref={eyes} className='eyes' />
 					<div ref={sweat} className='sweat' />
 				</div>

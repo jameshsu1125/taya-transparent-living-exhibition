@@ -1,12 +1,15 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
 import QueryString from 'lesca-url-parameters';
+import userAgent from 'lesca-user-agent';
+import { POSITION } from '../setSize';
 
 const debug = QueryString.get('debug') === 'true';
 const { parseInt } = window;
+const device = userAgent.get();
 
 export default class Animation0 {
 	constructor(props, callback) {
-		const { page, bg, title, labels, whiteBackgroundColor } = props;
+		const { page, bg, title, labels, whiteBackgroundColor, imageSize } = props;
 
 		const beginDelay = 1000;
 		const fadeOutDelay = 3000;
@@ -61,12 +64,18 @@ export default class Animation0 {
 			},
 			bg: {
 				delay: 0,
-				property: { opacity: 0, left: 0 },
-				unit: { opacity: '', left: 'px' },
+				property: { opacity: 0, top: 0, left: 0 },
+				unit: { opacity: '' },
+				offset: {
+					mobile: { from: { left: 0, top: 0 }, to: { left: 0, top: 0 } },
+					desktop: { from: { left: 0, top: 0 }, to: { left: 0, top: 0 } },
+				},
 				init() {
 					this.c = bg.current;
 					this.duration = root.totalTime * 1000 + 1000;
 					this.tran();
+					this.offset = POSITION(imageSize, this.offset[device]);
+					this.tranOffset(this.offset.from);
 				},
 				in() {
 					const { duration, property, delay } = this;

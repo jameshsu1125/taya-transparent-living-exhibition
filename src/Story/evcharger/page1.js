@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { STORY_EVCHARAGER_PAGE1 } from '../../Setting/config';
 import Label from '../label';
+import { SET_SIZE } from '../setSize';
 import Animation from './animation1';
 
 const pageName = 'page1';
+const imageSize = { width: 1481, height: 1779, scale: 1 };
 
 const Page1 = (props) => {
 	const { state, setState, collectTimer } = props;
@@ -18,23 +20,20 @@ const Page1 = (props) => {
 	const labels = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, labels, trash0, trash1, trash2 }, () => {
-			setState('page2');
-		});
+		const [listener, scale] = SET_SIZE({ ...imageSize, img });
+		imageSize.scale = scale;
+
+		animation.current = new Animation(
+			{ page, bg, labels, trash0, trash1, trash2, imageSize },
+			() => {
+				setState('page2');
+			},
+		);
 
 		collectTimer(pageName, animation.current.totalTime);
 
-		const resize = () => {
-			const { innerHeight } = window;
-			const baseHeight = 1779;
-			const scale = innerHeight / baseHeight;
-			img.current.style.transform = `scale(${scale})`;
-		};
-		window.addEventListener('resize', resize);
-		resize();
-
 		return () => {
-			window.removeEventListener('resize', resize);
+			listener();
 		};
 	}, []);
 

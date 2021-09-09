@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { STORY_MOBILE_PAGE2 } from '../../Setting/config';
 import Label from '../label';
+import { SET_SIZE } from '../setSize';
 import Animation from './animation2';
 
 const pageName = 'page2';
+const imageSize = { width: 1634, height: 1486, scale: 1 };
 
 const Page2 = (props) => {
 	const { state, setState, collectTimer } = props;
@@ -16,23 +18,17 @@ const Page2 = (props) => {
 	const labels = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, labels }, () => {
+		const [listener, scale] = SET_SIZE({ ...imageSize, img });
+		imageSize.scale = scale;
+
+		animation.current = new Animation({ page, bg, labels, imageSize }, () => {
 			setState('page3');
 		});
 
 		collectTimer(pageName, animation.current.totalTime);
 
-		const resize = () => {
-			const { innerHeight } = window;
-			const baseHeight = 1486;
-			const scale = innerHeight / baseHeight;
-			img.current.style.transform = `scale(${scale})`;
-		};
-		window.addEventListener('resize', resize);
-		resize();
-
 		return () => {
-			window.removeEventListener('resize', resize);
+			listener();
 		};
 	}, []);
 

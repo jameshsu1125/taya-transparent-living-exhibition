@@ -127,9 +127,8 @@
 
 			.img {
 				position: absolute;
-				left: 100px;
 				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: -1176.5px;
+				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
@@ -224,7 +223,6 @@
 
 			.img {
 				position: absolute;
-				left: 100px;
 				margin-top: 0 - image-height(@img) * 0.5;
 				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
@@ -266,12 +264,12 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			margin-left: -260px;
+			margin-left: -290px;
 			color: #333;
 			white-space: nowrap;
 			font-size: 62px;
 			transform: scale(1, 1.1);
-			margin-top: -550px;
+			margin-top: -450px;
 
 			sub {
 				position: absolute;
@@ -294,13 +292,11 @@
 
 			.img {
 				position: absolute;
-				left: 120px;
 				margin-top: 0 - image-height(@img) * 0.5;
 				margin-left: 0 - image-width(@img) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.82);
 
 				@img: './img/motorcycle/bg0.jpg';
 
@@ -329,6 +325,17 @@
 
 					@img: './img/motorcycle/cloud.png';
 				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.Motorcycle {
+		.page0 {
+			.title {
+				font-size: 36px;
+				margin-top: -250px;
 			}
 		}
 	}

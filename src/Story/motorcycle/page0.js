@@ -1,38 +1,35 @@
 import { useEffect, useRef } from 'react';
 import { STORY_MOTORCYCLE_PAGE0 } from '../../Setting/config';
 import Label from '../label';
+import { SET_SIZE } from '../setSize';
 import Animation from './animation0';
 
 const pageName = 'page0';
+const imageSize = { width: 1612, height: 1725, scale: 1 };
 
 const Page0 = (props) => {
 	const { categroyName, state, setState, collectTimer } = props;
+
 	const animation = useRef();
-	const page = useRef();
 	const bg = useRef();
 	const cloud = useRef();
+	const page = useRef();
 	const title = useRef();
 	const labels = useRef();
 	const img = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, cloud, title, labels }, () => {
+		const [listener, scale] = SET_SIZE({ ...imageSize, img });
+		imageSize.scale = scale;
+
+		animation.current = new Animation({ page, bg, cloud, title, labels, imageSize }, () => {
 			setState('page1');
 		});
 
 		collectTimer(pageName, animation.current.totalTime);
 
-		const resize = () => {
-			const { innerHeight } = window;
-			const baseHeight = 1725;
-			const scale = innerHeight / baseHeight;
-			img.current.style.transform = `scale(${scale})`;
-		};
-		window.addEventListener('resize', resize);
-		resize();
-
 		return () => {
-			window.removeEventListener('resize', resize);
+			listener();
 		};
 	}, []);
 

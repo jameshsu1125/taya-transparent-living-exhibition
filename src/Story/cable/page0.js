@@ -1,9 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { STORY_CABLE_PAGE0 } from '../../Setting/config';
 import Label from '../label';
+import { SET_SIZE } from '../setSize';
 import Animation from './animation0';
 
 const pageName = 'page0';
+const imageSize = { width: 1423, height: 1675, scale: 1 };
 
 const Page0 = (props) => {
 	const { categroyName, state, setState, collectTimer } = props;
@@ -17,23 +19,17 @@ const Page0 = (props) => {
 	const light = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, bg, title, labels, light }, () => {
+		const [listener, scale] = SET_SIZE({ ...imageSize, img });
+		imageSize.scale = scale;
+
+		animation.current = new Animation({ page, bg, title, labels, light, imageSize }, () => {
 			setState('page1');
 		});
 
 		collectTimer(pageName, animation.current.totalTime);
 
-		const resize = () => {
-			const { innerHeight } = window;
-			const baseHeight = 1675;
-			const scale = innerHeight / baseHeight;
-			img.current.style.transform = `scale(${scale})`;
-		};
-		window.addEventListener('resize', resize);
-		resize();
-
 		return () => {
-			window.removeEventListener('resize', resize);
+			listener();
 		};
 	}, []);
 

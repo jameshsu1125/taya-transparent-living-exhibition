@@ -1,12 +1,15 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
 import QueryString from 'lesca-url-parameters';
+import userAgent from 'lesca-user-agent';
+import { POSITION } from '../setSize';
 
 const debug = QueryString.get('debug') === 'true';
 const { parseInt } = window;
+const device = userAgent.get();
 
 export default class Animation2 {
 	constructor(props, callback) {
-		const { page, bg, labels } = props;
+		const { page, bg, labels, imageSize } = props;
 
 		const beginDelay = 2000;
 		const fadeOutDelay = 0;
@@ -58,39 +61,49 @@ export default class Animation2 {
 			},
 			bg: {
 				delay: 0,
-				property: { opacity: 0, left: -100 },
-				unit: { opacity: '', left: 'px' },
+				property: { opacity: 0, top: 0, left: 0 },
+				unit: { opacity: '' },
+				offset: {
+					mobile: { from: { left: -120, top: 0 }, to: { left: -30, top: 0 } },
+					desktop: { from: { left: 0, top: 150 }, to: { left: 0, top: -250 } },
+				},
 				init() {
 					this.c = bg.current;
 					this.duration = root.totalTime * 1000 + 1000;
 					this.tweener = new Tweener();
 					this.tran();
+					this.offset = POSITION(imageSize, this.offset[device]);
+					this.tranOffset(this.offset.from);
 				},
 				in() {
-					const { duration, property, delay } = this;
-					const { opacity, left } = property;
-					const fromOpacity = { opacity };
-					const toOpacity = { opacity: 1 };
+					this.tweenOpacity();
+					this.tweenOffset();
+				},
+				tweenOffset() {
+					const { duration, delay, offset } = this;
+					const { from, to } = offset;
 					const easing = Bezier.linear;
 
-					const fromLeft = { left };
-					const toLeft = { left: 0 };
-
 					new Tweener({
-						from: fromOpacity,
-						to: toOpacity,
-						delay,
-						duration: 3000,
-						onUpdate: (e) => this.tran(e),
-						onComplete: (e) => this.tran(e),
-					});
-
-					new Tweener({
-						from: fromLeft,
-						to: toLeft,
+						from,
+						to,
 						delay,
 						duration,
 						easing,
+						onUpdate: (e) => this.tranOffset(e),
+						onComplete: (e) => this.tranOffset(e),
+					});
+				},
+				tweenOpacity() {
+					const { property, delay } = this;
+					const { opacity } = property;
+					const from = { opacity };
+					const to = { opacity: 1 };
+					new Tweener({
+						from,
+						to,
+						delay,
+						duration: 3000,
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
 					});
@@ -98,7 +111,12 @@ export default class Animation2 {
 				tran(data = this.property) {
 					this.property = { ...this.property, ...data };
 					this.c.style.opacity = this.property.opacity;
-					this.c.style['margin-left'] = `${this.property.left}px`;
+				},
+				tranOffset(data = this.property) {
+					this.property = { ...this.property, ...data };
+					const { left, top } = this.property;
+					this.c.style['margin-top'] = `${top}px`;
+					this.c.style['margin-left'] = `${left}px`;
 				},
 			},
 			labels: {
