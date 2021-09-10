@@ -180,29 +180,114 @@ export const STORY_MOTORCYCLE_PAGE3 = [
 // rice cooker 1
 
 export const STORY_RICECOOKER_PAGE0 = [
-	{ text: '我不被理解，但我理解', x: -30, y: -960, delay: 0 },
-	{ text: '誰願意讓寶貝女兒冒這種風險', x: -30, y: -890, delay: 3500 },
-	{ text: '簡單安全的不做，非要奔往前線', x: -30, y: -810, delay: 3800 },
-	{ text: '不管兔寶寶裝有多悶多熱都得穿著', x: -120, y: -560, delay: 6000 },
-	{ text: '不管口罩壓痕有多深都要繼續', x: -140, y: -490, delay: 6500 },
-	{ text: '感受每個繃緊神經奮鬥的壓力', x: -40, y: -420, delay: 6000 },
-	{ text: '因為我明白多一個人分擔', x: -20, y: -260, delay: 4500 },
-	{ text: '就少一個人崩潰', x: 170, y: -190, delay: 4500 },
+	{
+		text: '我不被理解，但我理解',
+		mobile: { x: -70, y: -330 + r[device].b * 0 },
+		desktop: { x: 260, y: -240 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '誰願意讓寶貝女兒冒這種風險',
+		mobile: { x: -70, y: -330 + r[device].b * 1 },
+		desktop: { x: 260, y: -240 + r[device].b * 1 },
+		delay: 3500,
+	},
+	{
+		text: '簡單安全的不做，非要奔往前線',
+		mobile: { x: -70, y: -330 + r[device].b * 2 },
+		desktop: { x: 260, y: -240 + r[device].b * 2 },
+		delay: 3800,
+	},
+	{
+		text: '不管兔寶寶裝有多悶多熱都得穿著',
+		mobile: { x: -90, y: 50 + r[device].b * 0 },
+		desktop: { x: 80, y: 30 + r[device].b * 0 },
+		delay: 6000,
+	},
+	{
+		text: '不管口罩壓痕有多深都要繼續',
+		mobile: { x: -120, y: 50 + r[device].b * 1 },
+		desktop: { x: 70, y: 30 + r[device].b * 1 },
+		delay: 6500,
+	},
+	{
+		text: '感受每個繃緊神經奮鬥的壓力',
+		mobile: { x: -40, y: 50 + r[device].b * 2 },
+		desktop: { x: 140, y: 30 + r[device].b * 2 },
+		delay: 6000,
+	},
+	{
+		text: '因為我明白多一個人分擔',
+		mobile: { x: -60, y: 330 + r[device].b * 0 },
+		desktop: { x: 190, y: 190 + r[device].b * 0 },
+		delay: 4500,
+	},
+	{
+		text: '就少一個人崩潰',
+		mobile: { x: 110, y: 330 + r[device].b * 1 },
+		desktop: { x: 300, y: 190 + r[device].b * 1 },
+		delay: 4500,
+	},
 ];
 
 export const STORY_RICECOOKER_PAGE1 = [
-	{ text: '冷戰兩週回家的那天', x: -320, y: -340, delay: 0 },
-	{ text: '看見爸爸站在電飯鍋前', x: -320, y: -270, delay: 3500 },
-	{ text: '把飯匙舀下的第一勺，放進了我的碗', x: -320, y: -200, delay: 3500 },
-	{ text: '因為最上層的飯', x: -170, y: 30, delay: 6000 },
-	{ text: '是從小到大喜歡的偏硬口感', x: -130, y: 100, delay: 2000 },
+	{
+		text: '冷戰兩週回家的那天',
+		mobile: { x: -250, y: -280 + r[device].b * 0 },
+		desktop: { x: 100, y: -240 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '看見爸爸站在電飯鍋前',
+		mobile: { x: -250, y: -280 + r[device].b * 1 },
+		desktop: { x: 100, y: -240 + r[device].b * 1 },
+		delay: 3500,
+	},
+	{
+		text: '把飯匙舀下的第一勺，放進了我的碗',
+		mobile: { x: -250, y: -280 + r[device].b * 2 },
+		desktop: { x: 100, y: -240 + r[device].b * 2 },
+		delay: 3500,
+	},
+	{
+		text: '因為最上層的飯',
+		mobile: { x: -230, y: 50 + r[device].b * 0 },
+		desktop: { x: 110, y: 50 + r[device].b * 0 },
+		delay: 6000,
+	},
+	{
+		text: '是從小到大喜歡的偏硬口感',
+		mobile: { x: -150, y: 50 + r[device].b * 1 },
+		desktop: { x: 147, y: 50 + r[device].b * 1 },
+		delay: 2000,
+	},
 ];
 
 export const STORY_RICECOOKER_PAGE2 = [
-	{ text: '還是沒人開口', x: -300, y: -40, delay: 0 },
-	{ text: '但我知道', x: -180, y: 40, delay: 2500 },
-	{ text: '桌上的那碗熱白飯', x: -250, y: 120, delay: 3000 },
-	{ text: '就是有他支持的證明', x: -210, y: 190, delay: 2200 },
+	{
+		text: '還是沒人開口',
+		mobile: { x: -290, y: -60 + r[device].b * 0 },
+		desktop: { x: -250, y: -160 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '但我知道',
+		mobile: { x: -230, y: -60 + r[device].b * 1 },
+		desktop: { x: -210, y: -160 + r[device].b * 1 },
+		delay: 2500,
+	},
+	{
+		text: '桌上的那碗熱白飯',
+		mobile: { x: -270, y: -60 + r[device].b * 2 },
+		desktop: { x: -187, y: -160 + r[device].b * 2 },
+		delay: 3000,
+	},
+	{
+		text: '就是有他支持的證明',
+		mobile: { x: -210, y: -60 + r[device].b * 3 },
+		desktop: { x: -150, y: -160 + r[device].b * 3 },
+		delay: 2200,
+	},
 ];
 
 export const STORY_RICECOOKER_PAGE3 = [
@@ -214,36 +299,131 @@ export const STORY_RICECOOKER_PAGE3 = [
 
 // ear phone 2
 export const STORY_EARPHONE_PAGE0 = [
-	{ text: '「手機、鑰匙、錢包」', x: -110, y: -340, delay: 0 },
-	{ text: '在心裡默念完邁向門口後', x: -40, y: -270, delay: 4000 },
-	{ text: '又轉了一圈回頭', x: 110, y: -200, delay: 3500 },
+	{
+		text: '「手機、鑰匙、錢包」',
+		mobile: { x: -120, y: -260 + r[device].b * 0 },
+		desktop: { x: -400, y: -30 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '在心裡默念完邁向門口後',
+		mobile: { x: -40, y: -260 + r[device].b * 1 },
+		desktop: { x: -350, y: -30 + r[device].b * 1 },
+		delay: 4000,
+	},
+	{
+		text: '又轉了一圈回頭',
+		mobile: { x: 110, y: -260 + r[device].b * 2 },
+		desktop: { x: -260, y: -30 + r[device].b * 2 },
+		delay: 3500,
+	},
 
-	{ text: '「耳機。耳機，還好有想起來」', x: -350, y: 190, delay: 2800 },
+	{
+		text: '「耳機。耳機，還好有想起來」',
+		mobile: { x: -290, y: 160 + r[device].b * 0 },
+		desktop: { x: -200, y: 190 + r[device].b * 0 },
+		delay: 2800,
+	},
 ];
 
 export const STORY_EARPHONE_PAGE1 = [
-	{ text: '習慣在心理跟生理都不算輕鬆的上班路程', x: -240, y: -280, delay: 0 },
-	{ text: '為自己準備一個小小的儀式', x: -60, y: -210, delay: 5000 },
-	{ text: '零四分的公車', x: 0, y: -140, delay: 4000 },
-	{ text: '我會準時在零零分就抵達', x: 60, y: -70, delay: 2000 },
+	{
+		text: '習慣在心理跟生理都不算輕鬆的上班路程',
+		mobile: { x: -290, y: -300 + r[device].b * 0 },
+		desktop: { x: -50, y: -180 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '為自己準備一個小小的儀式',
+		mobile: { x: -110, y: -300 + r[device].b * 1 },
+		desktop: { x: 60, y: -180 + r[device].b * 1 },
+		delay: 5000,
+	},
+	{
+		text: '零四分的公車',
+		mobile: { x: -40, y: -300 + r[device].b * 2 },
+		desktop: { x: 100, y: -180 + r[device].b * 2 },
+		delay: 4000,
+	},
+	{
+		text: '我會準時在零零分就抵達',
+		mobile: { x: 10, y: -300 + r[device].b * 3 },
+		desktop: { x: 140, y: -180 + r[device].b * 3 },
+		delay: 2000,
+	},
 
-	{ text: '在那四分鐘的時間戴上耳機', x: -250, y: 220, delay: 3500 },
-	{ text: '綜合評估心境', x: -50, y: 290, delay: 3000 },
+	{
+		text: '在那四分鐘的時間戴上耳機',
+		mobile: { x: -290, y: 210 + r[device].b * 0 },
+		desktop: { x: 80, y: 60 + r[device].b * 0 },
+		delay: 3500,
+	},
+	{
+		text: '綜合評估心境',
+		mobile: { x: -100, y: 210 + r[device].b * 1 },
+		desktop: { x: 200, y: 60 + r[device].b * 1 },
+		delay: 3000,
+	},
 
-	{ text: '慎重地選擇最符合的一首', x: 60, y: 450, delay: 2000 },
+	{
+		text: '慎重地選擇最符合的一首',
+		mobile: { x: 10, y: 410 + r[device].b * 0 },
+		desktop: { x: 230, y: 180 + r[device].b * 0 },
+		delay: 2000,
+	},
 ];
 
 export const STORY_EARPHONE_PAGE2 = [
-	{ text: '從煩雜的狀態抽離', x: -290 + 70, y: -1190 + 70, delay: 0 },
-	{ text: '讓音樂傳進耳朵，歌詞佔據思緒', x: -230 + 80, y: -1120 + 70, delay: 3000 },
+	{
+		text: '從煩雜的狀態抽離',
+		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		desktop: { x: -350, y: -230 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '讓音樂傳進耳朵，歌詞佔據思緒',
+		mobile: { x: -230, y: -440 + r[device].b * 1 },
+		desktop: { x: -350, y: -230 + r[device].b * 1 },
+		delay: 3000,
+	},
 
-	{ text: '隔絕外界聲音，進入一個只有自己的空間裡', x: -150, y: -1000 + 70, delay: 5000 },
-	{ text: '隔絕腦內還沒被整理的想法', x: -150, y: -930 + 70, delay: 5000 },
-	{ text: '隔絕老闆，又或是隔絕自己對自己的期待', x: -150, y: -860 + 70, delay: 4000 },
+	{
+		text: '隔絕外界聲音，進入一個只有自己的空間裡',
+		mobile: { x: -190, y: -280 + r[device].b * 0 },
+		desktop: { x: -50, y: -100 + r[device].b * 0 },
+		delay: 5000,
+	},
+	{
+		text: '隔絕腦內還沒被整理的想法',
+		mobile: { x: -190, y: -280 + r[device].b * 1 },
+		desktop: { x: -50, y: -100 + r[device].b * 1 },
+		delay: 5000,
+	},
+	{
+		text: '隔絕老闆，又或是隔絕自己對自己的期待',
+		mobile: { x: -190, y: -280 + r[device].b * 2 },
+		desktop: { x: -50, y: -100 + r[device].b * 2 },
+		delay: 4000,
+	},
 
-	{ text: '在上班之前，再逃離一下', x: -210, y: -740 + 70, delay: 6500 },
-	{ text: '隨著音樂的遞進', x: -50, y: -670 + 70, delay: 4000 },
-	{ text: '慢慢、好好地開啟新的一天', x: 40, y: -600 + 70, delay: 2000 },
+	{
+		text: '在上班之前，再逃離一下',
+		mobile: { x: -290, y: -30 + r[device].b * 0 },
+		desktop: { x: -100, y: 160 + r[device].b * 0 },
+		delay: 6500,
+	},
+	{
+		text: '隨著音樂的遞進',
+		mobile: { x: -140, y: -30 + r[device].b * 1 },
+		desktop: { x: -10, y: 160 + r[device].b * 1 },
+		delay: 4000,
+	},
+	{
+		text: '慢慢、好好地開啟新的一天',
+		mobile: { x: -50, y: -30 + r[device].b * 2 },
+		desktop: { x: 40, y: 160 + r[device].b * 2 },
+		delay: 2000,
+	},
 ];
 
 export const STORY_EARPHONE_PAGE3 = [
@@ -255,45 +435,170 @@ export const STORY_EARPHONE_PAGE3 = [
 
 // pump 3
 export const STORY_PUMP_PAGE0 = [
-	{ text: '架設浪貓照護站的計畫開始至今', x: -130, y: -470 + 50, delay: 1500 },
-	{ text: '她總是台中台北兩地跑', x: 50, y: -400 + 50, delay: 4000 },
+	{
+		text: '架設浪貓照護站的計畫開始至今',
+		mobile: { x: -130, y: -320 + r[device].b * 0 },
+		desktop: { x: 7, y: -170 + r[device].b * 0 },
+		delay: 1500,
+	},
+	{
+		text: '她總是台中台北兩地跑',
+		mobile: { x: 30, y: -320 + r[device].b * 1 },
+		desktop: { x: 112, y: -170 + r[device].b * 1 },
+		delay: 4000,
+	},
 
-	{ text: '在街頭與抗議居民處久了', x: -300, y: 0, delay: 3000 },
-	{ text: '終於有機會回到西屯家裡', x: -200, y: 70, delay: 3300 },
-	{ text: '她小心翼翼地拿出包包裡的鑰匙', x: -340, y: 140, delay: 3500 },
-	{ text: '輕輕插入鑰匙孔', x: -340, y: 210, delay: 5000 },
-	{ text: '盡量將動作放到最小', x: -300, y: 280, delay: 2800 },
+	{
+		text: '在街頭與抗議居民處久了',
+		mobile: { x: -240, y: -100 + r[device].b * 0 },
+		desktop: { x: 7, y: -80 + r[device].b * 0 },
+		delay: 3000,
+	},
+	{
+		text: '終於有機會回到西屯家裡',
+		mobile: { x: -120, y: -100 + r[device].b * 1 },
+		desktop: { x: 67, y: -80 + r[device].b * 1 },
+		delay: 3300,
+	},
+	{
+		text: '她小心翼翼地拿出包包裡的鑰匙',
+		mobile: { x: -290, y: -100 + r[device].b * 2 },
+		desktop: { x: -3, y: -80 + r[device].b * 2 },
+		delay: 3500,
+	},
+	{
+		text: '輕輕插入鑰匙孔',
+		mobile: { x: -290, y: -100 + r[device].b * 3 },
+		desktop: { x: -3, y: -80 + r[device].b * 3 },
+		delay: 5000,
+	},
+	{
+		text: '盡量將動作放到最小',
+		mobile: { x: -240, y: -100 + r[device].b * 4 },
+		desktop: { x: -37, y: -80 + r[device].b * 4 },
+		delay: 2800,
+	},
 
-	{ text: '深怕把家人吵醒，又是一陣沒完沒了的關心', x: -190, y: 450, delay: 4200 },
+	{
+		text: '深怕把家人吵醒，又是一陣沒完沒了的關心',
+		mobile: { x: -220, y: 420 + r[device].b * 0 },
+		desktop: { x: -67, y: 170 + r[device].b * 0 },
+		delay: 4200,
+	},
 ];
 
 export const STORY_PUMP_PAGE1 = [
-	{ text: '這時天還未亮', x: -210, y: -530, delay: 500 },
-	{ text: '隔壁賣菜的一家子已經擠在發財車上', x: -180, y: -460, delay: 3500 },
-	{ text: '準備前往市場', x: 100, y: -390, delay: 4500 },
+	{
+		text: '這時天還未亮',
+		mobile: { x: -200, y: -440 + r[device].b * 0 },
+		desktop: { x: -380, y: -190 + r[device].b * 0 },
+		delay: 500,
+	},
+	{
+		text: '隔壁賣菜的一家子已經擠在發財車上',
+		mobile: { x: -170, y: -440 + r[device].b * 1 },
+		desktop: { x: -360, y: -190 + r[device].b * 1 },
+		delay: 3500,
+	},
+	{
+		text: '準備前往市場',
+		mobile: { x: 100, y: -440 + r[device].b * 2 },
+		desktop: { x: -200, y: -190 + r[device].b * 2 },
+		delay: 4500,
+	},
 
-	{ text: '車的引擎發動轟隆轟隆', x: 40, y: -60, delay: 4000 },
-	{ text: '她有時挺羨慕那種擁擠', x: -50, y: 10, delay: 3800 },
+	{
+		text: '車的引擎發動轟隆轟隆',
+		mobile: { x: 30, y: -50 + r[device].b * 0 },
+		desktop: { x: -180, y: -50 + r[device].b * 0 },
+		delay: 4000,
+	},
+	{
+		text: '她有時挺羨慕那種擁擠',
+		mobile: { x: -50, y: -50 + r[device].b * 1 },
+		desktop: { x: -130, y: -50 + r[device].b * 1 },
+		delay: 3800,
+	},
 
-	{ text: '或許真的太常一個人面對了', x: -330, y: 180, delay: 4500 },
-	{ text: '不論是理想上的還是生活', x: -220, y: 250, delay: 3500 },
+	{
+		text: '或許真的太常一個人面對了',
+		mobile: { x: -290, y: 140 + r[device].b * 0 },
+		desktop: { x: -270, y: 70 + r[device].b * 0 },
+		delay: 4500,
+	},
+	{
+		text: '不論是理想上的還是生活',
+		mobile: { x: -220, y: 140 + r[device].b * 1 },
+		desktop: { x: -220, y: 70 + r[device].b * 1 },
+		delay: 3500,
+	},
 
-	{ text: '「一起扛著總比一個人扛著還要容易一點吧」', x: -220, y: 360, delay: 4200 },
-	{ text: '她看著發愣', x: 180, y: 430, delay: 5000 },
+	{
+		text: '「一起扛著總比一個人扛著還要容易一點吧」',
+		mobile: { x: -220, y: 310 + r[device].b * 0 },
+		desktop: { x: -290, y: 200 + r[device].b * 0 },
+		delay: 4200,
+	},
+	{
+		text: '她看著發愣',
+		mobile: { x: 160, y: 310 + r[device].b * 1 },
+		desktop: { x: -50, y: 200 + r[device].b * 1 },
+		delay: 5000,
+	},
 ];
 
 export const STORY_PUMP_PAGE2 = [
-	{ text: '撐到天快亮時，她才去洗澡', x: -290 + 50, y: -570 + 50, delay: 0 },
-	{ text: '泵浦馬達運轉響起陣陣抽水聲', x: -230 + 50, y: -500 + 50, delay: 4500 },
+	{
+		text: '撐到天快亮時，她才去洗澡',
+		mobile: { x: -200, y: -440 + r[device].b * 0 },
+		desktop: { x: -130, y: -190 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '泵浦馬達運轉響起陣陣抽水聲',
+		mobile: { x: -80, y: -440 + r[device].b * 1 },
+		desktop: { x: -60, y: -190 + r[device].b * 1 },
+		delay: 4500,
+	},
 
-	{ text: '當熱水沖向肩膀時', x: -110, y: -110, delay: 5000 },
-	{ text: '無力的感受', x: -50, y: -40, delay: 3000 },
-	{ text: '隨著洗澡水流進排水孔裡', x: 0, y: 30, delay: 2000 },
+	{
+		text: '當熱水沖向肩膀時',
+		mobile: { x: -100, y: -100 + r[device].b * 0 },
+		desktop: { x: 20, y: -100 + r[device].b * 0 },
+		delay: 5000,
+	},
+	{
+		text: '無力的感受',
+		mobile: { x: -100, y: -100 + r[device].b * 1 },
+		desktop: { x: 50, y: -100 + r[device].b * 1 },
+		delay: 3000,
+	},
+	{
+		text: '隨著洗澡水流進排水孔裡',
+		mobile: { x: 0, y: -100 + r[device].b * 2 },
+		desktop: { x: 80, y: -100 + r[device].b * 2 },
+		delay: 2000,
+	},
 
-	{ text: '洗完澡，又是全新的一個人', x: -310, y: 230, delay: 4500 },
+	{
+		text: '洗完澡，又是全新的一個人',
+		mobile: { x: -270, y: 220 + r[device].b * 0 },
+		desktop: { x: -20, y: 90 + r[device].b * 0 },
+		delay: 4500,
+	},
 
-	{ text: '明天，繼續回到街上', x: -200, y: 440, delay: 5000 },
-	{ text: '為動物的生存權努力', x: -50, y: 510, delay: 3500 },
+	{
+		text: '明天，繼續回到街上',
+		mobile: { x: -210, y: 420 + r[device].b * 0 },
+		desktop: { x: 100, y: 170 + r[device].b * 0 },
+		delay: 5000,
+	},
+	{
+		text: '為動物的生存權努力',
+		mobile: { x: -210, y: 420 + r[device].b * 1 },
+		desktop: { x: 180, y: 170 + r[device].b * 1 },
+		delay: 3500,
+	},
 ];
 
 export const STORY_PUMP_PAGE3 = [

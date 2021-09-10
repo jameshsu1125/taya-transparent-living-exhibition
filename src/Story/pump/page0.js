@@ -5,7 +5,7 @@ import { SET_SIZE } from '../setSize';
 import Animation from './animation0';
 
 const pageName = 'page0';
-const imageSize = { width: 2500, height: 1683, scale: 1 };
+const imageSize = { width: 3800, height: 1883, scale: 1 };
 
 const Page0 = (props) => {
 	const { categroyName, state, setState, collectTimer } = props;
