@@ -227,13 +227,12 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			margin-left: -250px;
 			color: #333;
 			white-space: nowrap;
 			font-size: 62px;
 			transform: scale(1, 1.1);
-			text-shadow: 0 0 30px rgba(255, 255, 255, 1);
-			margin-top: -510px;
+			margin-top: -450px;
+			margin-left: -290px;
 
 			sub {
 				position: absolute;
@@ -272,6 +271,22 @@
 					height: image-height(@img);
 					top: 0%;
 					left: 14%;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.Cable {
+		.page0 {
+			.title {
+				font-size: 36px;
+				margin-top: -250px;
+				margin-left: -480px;
+				sub {
+					padding-top: 17px;
+					margin: 0 -5px;
 				}
 			}
 		}

@@ -169,12 +169,32 @@ export const STORY_MOTORCYCLE_PAGE2 = [
 		delay: 2000,
 	},
 ];
-
+// x: -82, y: -280,
 export const STORY_MOTORCYCLE_PAGE3 = [
-	{ text: 'EAIW、IFDW', x: -93, y: -490, delay: 0 },
-	{ text: '不只是電動機車裡的漆包線線圈', x: -186, y: -420, delay: 3400 },
-	{ text: '也將疲憊的自己推動向前', x: -146, y: -350, delay: 3500 },
-	{ text: '連結每個日常', x: -82, y: -280, delay: 4000 },
+	{
+		text: 'EAIW、IFDW',
+		mobile: { x: -93, y: -440 + r[device].b * 0 },
+		desktop: { x: -80, y: -240 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '不只是電動機車裡的漆包線線圈',
+		mobile: { x: -186, y: -440 + r[device].b * 1 },
+		desktop: { x: -80, y: -240 + r[device].b * 1 },
+		delay: 3400,
+	},
+	{
+		text: '也將疲憊的自己推動向前',
+		mobile: { x: -146, y: -440 + r[device].b * 2 },
+		desktop: { x: -80, y: -240 + r[device].b * 2 },
+		delay: 3500,
+	},
+	{
+		text: '連結每個日常',
+		mobile: { x: -82, y: -440 + r[device].b * 3 },
+		desktop: { x: -82, y: -240 + r[device].b * 3 },
+		delay: 4000,
+	},
 ];
 
 // rice cooker 1
@@ -933,43 +953,163 @@ export const STORY_EVCHARAGER_PAGE3 = [
 
 // cable 6
 export const STORY_CABLE_PAGE0 = [
-	{ text: '在全校都走後', x: -270 + 20, y: -440 + 40, delay: 5000 },
-	{ text: '亮著燈的那間是我的教室', x: -210 + 10, y: -370 + 40, delay: 2000 },
-	{ text: '數學跟不太上的巴奈坐在第一排的座位', x: -170 + 10, y: -300 + 40, delay: 4000 },
+	{
+		text: '在全校都走後',
+		mobile: { x: -240, y: -320 + r[device].b * 0 },
+		desktop: { x: -450, y: -170 + r[device].b * 0 },
+		delay: 5000,
+	},
+	{
+		text: '亮著燈的那間是我的教室',
+		mobile: { x: -190, y: -320 + r[device].b * 1 },
+		desktop: { x: -410, y: -170 + r[device].b * 1 },
+		delay: 2000,
+	},
+	{
+		text: '數學跟不太上的巴奈坐在第一排的座位',
+		mobile: { x: -150, y: -320 + r[device].b * 2 },
+		desktop: { x: -380, y: -170 + r[device].b * 2 },
+		delay: 4000,
+	},
 
-	{ text: '「老師，你是不是很累了？」他抬頭問我', x: -310, y: 160, delay: 4100 },
+	{
+		text: '「老師，你是不是很累了？」他抬頭問我',
+		mobile: { x: -260, y: 120 + r[device].b * 0 },
+		desktop: { x: -390, y: 60 + r[device].b * 0 },
+		delay: 4100,
+	},
 
-	{ text: '「你慢慢寫沒關係」我答道', x: -240, y: 280, delay: 5700 },
-	{ text: '一邊為了他的懂事感到心疼', x: -90, y: 350, delay: 4500 },
+	{
+		text: '「你慢慢寫沒關係」我答道',
+		mobile: { x: -170, y: 320 + r[device].b * 0 },
+		desktop: { x: -110, y: 190 + r[device].b * 0 },
+		delay: 5700,
+	},
+	{
+		text: '一邊為了他的懂事感到心疼',
+		mobile: { x: -20, y: 320 + r[device].b * 1 },
+		desktop: { x: -20, y: 190 + r[device].b * 1 },
+		delay: 4500,
+	},
 ];
 
 export const STORY_CABLE_PAGE1 = [
-	{ text: '但是，累嗎？', x: -250, y: -580 + 70, delay: 0 },
-	{ text: '不必多問自己，內心也早有答案', x: -200, y: -510 + 70, delay: 2500 },
-	{ text: '跟在都市不同', x: 70, y: -440 + 70, delay: 4500 },
+	{
+		text: '但是，累嗎？',
+		mobile: { x: -250, y: -440 + r[device].b * 0 },
+		desktop: { x: -500, y: -250 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '不必多問自己，內心也早有答案',
+		mobile: { x: -190, y: -440 + r[device].b * 1 },
+		desktop: { x: -470, y: -250 + r[device].b * 1 },
+		delay: 2500,
+	},
+	{
+		text: '跟在都市不同',
+		mobile: { x: 70, y: -440 + r[device].b * 2 },
+		desktop: { x: -310, y: -250 + r[device].b * 2 },
+		delay: 4500,
+	},
 
-	{ text: '他們確實比同齡的孩子辛苦許多', x: -70, y: -350 + 90, delay: 3000 },
-	{ text: '要在寫數學跟洗衣服中間做選擇', x: -20, y: -280 + 90, delay: 4000 },
-	{ text: '靠自己的力量補足天生家庭功能較弱的缺欠', x: -210, y: -210 + 90, delay: 4400 },
-	{ text: '也表示，需要老師們花上更多心力教育與陪伴', x: -170, y: -140 + 90, delay: 5000 },
+	{
+		text: '他們確實比同齡的孩子辛苦許多',
+		mobile: { x: -110, y: -230 + r[device].b * 0 },
+		desktop: { x: -390, y: -130 + r[device].b * 0 },
+		delay: 3000,
+	},
+	{
+		text: '要在寫數學跟洗衣服中間做選擇',
+		mobile: { x: -70, y: -230 + r[device].b * 1 },
+		desktop: { x: -370, y: -130 + r[device].b * 1 },
+		delay: 4000,
+	},
+	{
+		text: '靠自己的力量補足天生家庭功能較弱的缺欠',
+		mobile: { x: -230, y: -230 + r[device].b * 2 },
+		desktop: { x: -480, y: -130 + r[device].b * 2 },
+		delay: 4400,
+	},
+	{
+		text: '也表示，需要老師們花上更多心力教育與陪伴',
+		mobile: { x: -220, y: -230 + r[device].b * 3 },
+		desktop: { x: -440, y: -130 + r[device].b * 3 },
+		delay: 5000,
+	},
 
-	{ text: '我常常懷疑自己「做這麼多究竟是為了什麼？」', x: -330, y: 50, delay: 7300 },
-	{ text: '也不會否認腦中出現「就回家吧」的聲音', x: -190, y: 120, delay: 6500 },
+	{
+		text: '我常常懷疑自己「做這麼多究竟是為了什麼？」',
+		mobile: { x: -290, y: 80 + r[device].b * 0 },
+		desktop: { x: -500, y: 30 + r[device].b * 0 },
+		delay: 7300,
+	},
+	{
+		text: '也不會否認腦中出現「就回家吧」的聲音',
+		mobile: { x: -170, y: 80 + r[device].b * 1 },
+		desktop: { x: -420, y: 30 + r[device].b * 1 },
+		delay: 6500,
+	},
 
-	{ text: '但在抬頭看到巴奈', x: -320, y: 240 - 20, delay: 5000 },
-	{ text: '那麼努力的嘗試解出那道數學題', x: -320, y: 310 - 20, delay: 2000 },
+	{
+		text: '但在抬頭看到巴奈',
+		mobile: { x: -290, y: 260 + r[device].b * 0 },
+		desktop: { x: -140, y: 130 + r[device].b * 0 },
+		delay: 5000,
+	},
+	{
+		text: '那麼努力的嘗試解出那道數學題',
+		mobile: { x: -290, y: 260 + r[device].b * 1 },
+		desktop: { x: -140, y: 130 + r[device].b * 1 },
+		delay: 2000,
+	},
 
-	{ text: '並在我問他「要不要我幫幫你？」時', x: -320, y: 420 - 40, delay: 3500 },
-	{ text: '他回答我「再讓我試試」', x: -120, y: 490 - 40, delay: 4000 },
-	{ text: '我就知道，這些都只是非常一時的念頭', x: -120, y: 560 - 40, delay: 4500 },
+	{
+		text: '並在我問他「要不要我幫幫你？」時',
+		mobile: { x: -290, y: 420 + r[device].b * 0 },
+		desktop: { x: -140, y: 220 + r[device].b * 0 },
+		delay: 3500,
+	},
+	{
+		text: '他回答我「再讓我試試」',
+		mobile: { x: -100, y: 420 + r[device].b * 1 },
+		desktop: { x: -30, y: 220 + r[device].b * 1 },
+		delay: 4000,
+	},
+	{
+		text: '我就知道，這些都只是非常一時的念頭',
+		mobile: { x: -290, y: 420 + r[device].b * 2 },
+		desktop: { x: -140, y: 220 + r[device].b * 2 },
+		delay: 4500,
+	},
 ];
 
 export const STORY_CABLE_PAGE2 = [
-	{ text: '即使不容易', x: -220, y: -460, delay: 0 },
-	{ text: '他的堅持還是像頭上的日光燈一般炙熱', x: -180, y: -400, delay: 2000 },
+	{
+		text: '即使不容易',
+		mobile: { x: -220, y: -410 + r[device].b * 0 },
+		desktop: { x: -500, y: -170 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '他的堅持還是像頭上的日光燈一般炙熱',
+		mobile: { x: -170, y: -410 + r[device].b * 1 },
+		desktop: { x: -500, y: -170 + r[device].b * 1 },
+		delay: 2000,
+	},
 
-	{ text: '即使不容易', x: -260, y: 10, delay: 5000 },
-	{ text: '也讓我對於自己想改善教育不平等的念頭更堅定', x: -230, y: 80, delay: 2000 },
+	{
+		text: '即使不容易',
+		mobile: { x: -220, y: 40 + r[device].b * 0 },
+		desktop: { x: -410, y: 30 + r[device].b * 0 },
+		delay: 5000,
+	},
+	{
+		text: '也讓我對於自己想改善教育不平等的念頭更堅定',
+		mobile: { x: -260, y: 40 + r[device].b * 1 },
+		desktop: { x: -390, y: 30 + r[device].b * 1 },
+		delay: 2000,
+	},
 ];
 
 export const STORY_CABLE_PAGE3 = [

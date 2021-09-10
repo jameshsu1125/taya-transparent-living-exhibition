@@ -50,7 +50,7 @@ const Page2 = (props) => {
 			</div>
 			<div ref={labels} className='labels'>
 				{STORY_CABLE_PAGE2.map((e) => (
-					<Label key={`${e.text}${e.x}`} data={e} />
+					<Label key={`${e.text}${e.delay}`} data={e} />
 				))}
 			</div>
 		</div>
