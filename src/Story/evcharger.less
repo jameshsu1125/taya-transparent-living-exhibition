@@ -207,13 +207,14 @@
 	.page0 {
 		.title {
 			position: absolute;
-			bottom: 1030px;
+			top: 50%;
 			left: 50%;
-			margin-left: -240px;
 			color: #333;
 			white-space: nowrap;
 			font-size: 62px;
 			transform: scale(1, 1.1);
+			margin-top: -450px;
+			margin-left: -290px;
 
 			sub {
 				position: absolute;
@@ -258,6 +259,22 @@
 					opacity: 1;
 
 					@img: './img/evcharger/cloud0.png';
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.Evcharger {
+		.page0 {
+			.title {
+				font-size: 36px;
+				margin-top: -250px;
+				margin-left: -340px;
+				sub {
+					padding-top: 17px;
+					margin: 0 -5px;
 				}
 			}
 		}

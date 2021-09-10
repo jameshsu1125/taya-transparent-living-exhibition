@@ -762,38 +762,166 @@ export const STORY_MOBILE_PAGE3 = [
 // ev charager 5
 
 export const STORY_EVCHARAGER_PAGE0 = [
-	{ text: '呼吸，是主要生命徵象之一', x: -290 + 50, y: -1090 + 100, delay: 0 },
-	{ text: '對多數城市人來說，生存，向來是撐著一口氣', x: -290 + 50, y: -1020 + 100, delay: 4000 },
+	{
+		text: '呼吸，是主要生命徵象之一',
+		mobile: { x: -290, y: -340 + r[device].b * 0 },
+		desktop: { x: -100, y: -230 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '對多數城市人來說，生存，向來是撐著一口氣',
+		mobile: { x: -290, y: -340 + r[device].b * 1 },
+		desktop: { x: -100, y: -230 + r[device].b * 1 },
+		delay: 4000,
+	},
 
-	{ text: '天才正要亮，他早早起床', x: -330, y: -920 + 80, delay: 7500 },
-	{ text: '不像其他人的週末日常', x: -260, y: -850 + 80, delay: 4500 },
-	{ text: '睡到飽從來就不是一個好好休息的選項', x: -140, y: -780 + 80, delay: 3000 },
-	{ text: '開往七十二公里外的目的地', x: -80, y: -710 + 80, delay: 5000 },
-	{ text: '車安靜地行駛著', x: 70, y: -610 + 80, delay: 3000 },
-	{ text: '他搖下車窗，將冷氣轉小', x: 50, y: -540 + 80, delay: 3500 },
-	{ text: '任春風透進車內', x: 50, y: -470 + 80, delay: 3200 },
-	{ text: '溫溫的打在臉上，已經不覺得那麼冷', x: -270, y: -220, delay: 4000 },
-	{ text: '海潮的氣味慢慢滲進鼻腔裡，到海邊了', x: -160, y: -150, delay: 4500 },
+	{
+		text: '天才正要亮，他早早起床',
+		mobile: { x: -290, y: -190 + r[device].b * 0 },
+		desktop: { x: -140, y: -120 + r[device].b * 0 },
+		delay: 7500,
+	},
+	{
+		text: '不像其他人的週末日常',
+		mobile: { x: -240, y: -190 + r[device].b * 1 },
+		desktop: { x: -110, y: -120 + r[device].b * 1 },
+		delay: 4500,
+	},
+	{
+		text: '睡到飽從來就不是一個好好休息的選項',
+		mobile: { x: -140, y: -190 + r[device].b * 2 },
+		desktop: { x: -30, y: -120 + r[device].b * 2 },
+		delay: 3000,
+	},
+	{
+		text: '開往七十二公里外的目的地',
+		mobile: { x: -80, y: -190 + r[device].b * 3 },
+		desktop: { x: 0, y: -120 + r[device].b * 3 },
+		delay: 5000,
+	},
+
+	{
+		text: '車安靜地行駛著',
+		mobile: { x: -10, y: 140 + r[device].b * 0 },
+		desktop: { x: -170, y: 80 + r[device].b * 0 },
+		delay: 3000,
+	},
+	{
+		text: '他搖下車窗，將冷氣轉小',
+		mobile: { x: 10, y: 140 + r[device].b * 1 },
+		desktop: { x: -150, y: 80 + r[device].b * 1 },
+		delay: 3500,
+	},
+	{
+		text: '任春風透進車內',
+		mobile: { x: -40, y: 140 + r[device].b * 2 },
+		desktop: { x: -180, y: 80 + r[device].b * 2 },
+		delay: 3200,
+	},
+	{
+		text: '溫溫的打在臉上，已經不覺得那麼冷',
+		mobile: { x: -270, y: 430 + r[device].b * 0 },
+		desktop: { x: -60, y: 230 + r[device].b * 0 },
+		delay: 4000,
+	},
+	{
+		text: '海潮的氣味慢慢滲進鼻腔裡，到海邊了',
+		mobile: { x: -180, y: 430 + r[device].b * 1 },
+		desktop: { x: -10, y: 230 + r[device].b * 1 },
+		delay: 4500,
+	},
 ];
 
 export const STORY_EVCHARAGER_PAGE1 = [
-	{ text: '朋友總笑他「又下海啊」', x: -290 + 50, y: -480, delay: 0 },
-	{ text: '這是今年第二十次', x: -30, y: -60, delay: 3500 },
-	{ text: '只要有空，他一定下海', x: 40, y: 10, delay: 3000 },
-	{ text: '清理人們遺留下的垃圾', x: -320, y: 80, delay: 3000 },
-	{ text: '抱著我不下海誰下海的心情', x: -320, y: 150, delay: 3000 },
-	{ text: '對自己真正在意的事，費點力也不算什麼', x: -320, y: 220, delay: 4000 },
-	{ text: '「比起在陸地，我在海裡更能呼吸」', x: -130, y: 440, delay: 6500 },
+	{
+		text: '朋友總笑他「又下海啊」',
+		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		desktop: { x: -350, y: -240 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '這是今年第二十次',
+		mobile: { x: 0, y: -70 + r[device].b * 0 },
+		desktop: { x: -300, y: -100 + r[device].b * 0 },
+		delay: 3500,
+	},
+	{
+		text: '只要有空，他一定下海',
+		mobile: { x: 30, y: -70 + r[device].b * 1 },
+		desktop: { x: -260, y: -100 + r[device].b * 1 },
+		delay: 3000,
+	},
+	{
+		text: '清理人們遺留下的垃圾',
+		mobile: { x: -290, y: 180 + r[device].b * 0 },
+		desktop: { x: 150, y: 50 + r[device].b * 0 },
+		delay: 3000,
+	},
+	{
+		text: '抱著我不下海誰下海的心情',
+		mobile: { x: -290, y: 180 + r[device].b * 1 },
+		desktop: { x: 150, y: 50 + r[device].b * 1 },
+		delay: 3000,
+	},
+	{
+		text: '對自己真正在意的事，費點力也不算什麼',
+		mobile: { x: -290, y: 180 + r[device].b * 2 },
+		desktop: { x: 150, y: 50 + r[device].b * 2 },
+		delay: 4000,
+	},
+	{
+		text: '「比起在陸地，我在海裡更能呼吸」',
+		mobile: { x: -130, y: 460 + r[device].b * 0 },
+		desktop: { x: 60, y: 200 + r[device].b * 0 },
+		delay: 6500,
+	},
 ];
 
 export const STORY_EVCHARAGER_PAGE2 = [
-	{ text: '上岸後，順著原路回到家裡', x: -290 + 50, y: -570 + 80, delay: 0 },
-	{ text: '仍然得撐著一口氣面對自己的人生', x: -220 + 50, y: -500 + 80, delay: 4000 },
-	{ text: '但還好', x: 50, y: -430 + 80, delay: 4000 },
-	{ text: '車開了，海就到了', x: 100, y: -360 + 80, delay: 2000 },
-	{ text: '他為車子掛上充電樁', x: -240, y: -170, delay: 3000 },
-	{ text: '謝謝它', x: -240, y: -100, delay: 3000 },
-	{ text: '帶自己出發去「呼吸」了一下', x: -240, y: 330, delay: 1200 },
+	{
+		text: '上岸後，順著原路回到家裡',
+		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		desktop: { x: -350, y: -240 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '仍然得撐著一口氣面對自己的人生',
+		mobile: { x: -230, y: -440 + r[device].b * 1 },
+		desktop: { x: -320, y: -240 + r[device].b * 1 },
+		delay: 4000,
+	},
+	{
+		text: '但還好',
+		x: 50,
+		mobile: { x: 30, y: -440 + r[device].b * 2 },
+		desktop: { x: -160, y: -240 + r[device].b * 2 },
+		delay: 4000,
+	},
+	{
+		text: '車開了，海就到了',
+		mobile: { x: 60, y: -440 + r[device].b * 3 },
+		desktop: { x: -145, y: -240 + r[device].b * 3 },
+		delay: 2000,
+	},
+
+	{
+		text: '他為車子掛上充電樁',
+		mobile: { x: -210, y: -90 + r[device].b * 0 },
+		desktop: { x: -170, y: 0 + r[device].b * 0 },
+		delay: 3000,
+	},
+	{
+		text: '謝謝它',
+		mobile: { x: -210, y: -90 + r[device].b * 1 },
+		desktop: { x: -170, y: 0 + r[device].b * 1 },
+		delay: 3000,
+	},
+	{
+		text: '帶自己出發去「呼吸」了一下',
+		mobile: { x: -210, y: 290 + r[device].b * 0 },
+		desktop: { x: -80, y: 200 + r[device].b * 0 },
+		delay: 1200,
+	},
 ];
 
 export const STORY_EVCHARAGER_PAGE3 = [
