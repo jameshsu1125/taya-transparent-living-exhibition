@@ -610,41 +610,146 @@ export const STORY_PUMP_PAGE3 = [
 
 // mobile 4
 export const STORY_MOBILE_PAGE0 = [
-	{ text: '開口說我愛你的時候', x: -230, y: -400, delay: 5200 },
-	{ text: '總會有點想哭', x: -100, y: -330, delay: 2200 },
+	{
+		text: '開口說我愛你的時候',
+		mobile: { x: -240, y: -330 + r[device].b * 0 },
+		desktop: { x: -110, y: -110 + r[device].b * 0 },
+		delay: 5200,
+	},
+	{
+		text: '總會有點想哭',
+		mobile: { x: -120, y: -330 + r[device].b * 1 },
+		desktop: { x: -40, y: -110 + r[device].b * 1 },
+		delay: 2200,
+	},
 
-	{ text: '或許是習慣台北的冷久了', x: 30, y: -50, delay: 3500 },
-	{ text: '這樣的情感實在炙熱', x: 20, y: 20, delay: 3300 },
+	{
+		text: '或許是習慣台北的冷久了',
+		mobile: { x: -10, y: -50 + r[device].b * 0 },
+		desktop: { x: -20, y: -110 + r[device].b * 2 },
+		delay: 3500,
+	},
+	{
+		text: '這樣的情感實在炙熱',
+		mobile: { x: -40, y: -50 + r[device].b * 1 },
+		desktop: { x: 20, y: -110 + r[device].b * 3 },
+		delay: 3300,
+	},
 
-	{ text: '冷熱相遇所產生的水氣', x: -30, y: 190, delay: 4000 },
-	{ text: '從眼裡溢出', x: 130, y: 260, delay: 3000 },
+	{
+		text: '冷熱相遇所產生的水氣',
+		mobile: { x: -70, y: 190 + r[device].b * 0 },
+		desktop: { x: 50, y: 110 + r[device].b * 0 },
+		delay: 4000,
+	},
+	{
+		text: '從眼裡溢出',
+		mobile: { x: 100, y: 190 + r[device].b * 1 },
+		desktop: { x: 150, y: 110 + r[device].b * 1 },
+		delay: 3000,
+	},
 ];
 
 export const STORY_MOBILE_PAGE1 = [
-	{ text: '「三八啦，剛剛再見的時候不講，現在打來說」', x: -310 + 70, y: -570 + 50, delay: 0 },
-	{ text: '媽媽不好意思地說道', x: -270 + 70, y: -500 + 50, delay: 5500 },
+	{
+		text: '「三八啦，剛剛再見的時候不講，現在打來說」',
+		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		desktop: { x: -430, y: -240 + r[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '媽媽不好意思地說道',
+		mobile: { x: -250, y: -440 + r[device].b * 1 },
+		desktop: { x: -410, y: -240 + r[device].b * 1 },
+		delay: 5500,
+	},
 
-	{ text: '「有些話不隔著手機，還是有點難說出口」', x: -230, y: -390 + 50, delay: 3500 },
-	{ text: '我壓低聲音，希望她沒有發現我正在哽咽', x: -150, y: -320 + 50, delay: 7000 },
+	{
+		text: '「有些話不隔著手機，還是有點難說出口」',
+		mobile: { x: -210, y: -290 + r[device].b * 0 },
+		desktop: { x: 20, y: -110 + r[device].b * 0 },
+		delay: 3500,
+	},
+	{
+		text: '我壓低聲音，希望她沒有發現我正在哽咽',
+		mobile: { x: -170, y: -290 + r[device].b * 1 },
+		desktop: { x: 70, y: -110 + r[device].b * 1 },
+		delay: 7000,
+	},
 
-	{ text: '「好啦好啦，再講下去妳又要開始哭了，臉還會漲紅」', x: -290, y: -20, delay: 6500 },
+	{
+		text: '「好啦好啦，再講下去妳又要開始哭了，臉還會漲紅」',
+		mobile: { x: -300, y: -10 + r[device].b * 0 },
+		desktop: { x: -170, y: 0 + r[device].b * 0 },
+		delay: 6500,
+	},
 
-	{ text: '「妳又知道」我抹去淚水', x: -90, y: 220, delay: 6500 },
-	{ text: '也為她驚人的直覺感到驚訝', x: 15, y: 290, delay: 4800 },
+	{
+		text: '「妳又知道」我抹去淚水',
+		mobile: { x: -120, y: 190 + r[device].b * 0 },
+		desktop: { x: -70, y: 110 + r[device].b * 0 },
+		delay: 6500,
+	},
+	{
+		text: '也為她驚人的直覺感到驚訝',
+		mobile: { x: -20, y: 190 + r[device].b * 1 },
+		desktop: { x: -10, y: 110 + r[device].b * 1 },
+		delay: 4800,
+	},
 
-	{ text: '「妳媽媽我啊，可是你肚子裡的蛔蟲」', x: -210, y: 420, delay: 4200 },
-	{ text: '「妳很愛哭跟很愛我們，我都知道啦」', x: -130, y: 490, delay: 3500 },
+	{
+		text: '「妳媽媽我啊，可是你肚子裡的蛔蟲」',
+		mobile: { x: -220, y: 380 + r[device].b * 0 },
+		desktop: { x: -30, y: 230 + r[device].b * 0 },
+		delay: 4200,
+	},
+	{
+		text: '「妳很愛哭跟很愛我們，我都知道啦」',
+		mobile: { x: -180, y: 380 + r[device].b * 1 },
+		desktop: { x: 0, y: 230 + r[device].b * 1 },
+		delay: 3500,
+	},
 ];
 
 export const STORY_MOBILE_PAGE2 = [
-	{ text: '掛上電話', x: -310 + 70, y: -510, delay: 1000 },
-	{ text: '高鐵也正好進入隧道', x: -253 + 70, y: -440, delay: 2200 },
+	{
+		text: '掛上電話',
+		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		desktop: { x: 0, y: -200 + r[device].b * 0 },
+		delay: 1000,
+	},
+	{
+		text: '高鐵也正好進入隧道',
+		mobile: { x: -240, y: -440 + r[device].b * 1 },
+		desktop: { x: 30, y: -200 + r[device].b * 1 },
+		delay: 2200,
+	},
 
-	{ text: '我看著自己在窗戶裡的倒影覺得好笑', x: -270, y: -160, delay: 4000 },
-	{ text: '漲紅的臉還有哭花了的眼妝', x: -50, y: -90, delay: 5000 },
+	{
+		text: '我看著自己在窗戶裡的倒影覺得好笑',
+		mobile: { x: -260, y: -90 + r[device].b * 0 },
+		desktop: { x: 110, y: -50 + r[device].b * 0 },
+		delay: 4000,
+	},
+	{
+		text: '漲紅的臉還有哭花了的眼妝',
+		mobile: { x: -60, y: -90 + r[device].b * 1 },
+		desktop: { x: 230, y: -50 + r[device].b * 1 },
+		delay: 5000,
+	},
 
-	{ text: '但也很感謝自己', x: -180, y: 160, delay: 4500 },
-	{ text: '有辦法好好說出心底話', x: -90, y: 230, delay: 2300 },
+	{
+		text: '但也很感謝自己',
+		mobile: { x: -170, y: 260 + r[device].b * 0 },
+		desktop: { x: 0, y: 140 + r[device].b * 0 },
+		delay: 4500,
+	},
+	{
+		text: '有辦法好好說出心底話',
+		mobile: { x: -80, y: 260 + r[device].b * 1 },
+		desktop: { x: 50, y: 140 + r[device].b * 1 },
+		delay: 2300,
+	},
 ];
 
 export const STORY_MOBILE_PAGE3 = [
