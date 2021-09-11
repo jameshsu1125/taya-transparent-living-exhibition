@@ -49,7 +49,7 @@ const Audio = forwardRef((props, ref) => {
 	useEffect(() => {
 		switch (state) {
 			case 'bgm':
-				// setBGMState(true);
+				setBGMState(true);
 				break;
 
 			case 'motorcycle':

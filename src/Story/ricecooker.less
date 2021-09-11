@@ -40,6 +40,16 @@
 			top: 50%;
 			left: 50%;
 
+			.share {
+				position: absolute;
+				top: 120px;
+				left: -250px;
+				display: none;
+				margin-left: -490px * 0.5;
+				width: 400px;
+				height: 100px;
+			}
+
 			.product {
 				position: absolute;
 				top: 80px;
@@ -313,6 +323,36 @@
 				font-size: 36px;
 				margin-top: -250px;
 				margin-left: -460px;
+			}
+		}
+
+		.page3 {
+			.align {
+				.product {
+					top: 40px;
+					left: 300px;
+					background-image: url(@img);
+					background-size: 100%;
+					transform: scale(0.85);
+
+					@img: './img/ricecooker/product@2x.png';
+				}
+				.footer {
+					position: absolute;
+					left: -250px;
+					margin-top: 0px;
+				}
+				.share {
+					display: flex;
+					align-items: center;
+					flex-direction: row;
+					justify-content: center;
+
+					& > button {
+						margin: 0 10px;
+						width: 200px;
+					}
+				}
 			}
 		}
 	}

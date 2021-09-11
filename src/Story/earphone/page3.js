@@ -1,12 +1,15 @@
+import Click from 'lesca-click';
+import userAgent from 'lesca-user-agent';
 import { useEffect, useRef } from 'react';
 import { STORY_EARPHONE_PAGE3 } from '../../Setting/config';
 import Animation from './animation3';
 import Label from '../label';
 
+const device = userAgent.get() === 'desktop';
 const pageName = 'page3';
 
 const Page3 = (props) => {
-	const { state, fadeOut, collectTimer } = props;
+	const { state, fadeOut, collectTimer, back } = props;
 
 	const animation = useRef();
 	const page = useRef();
@@ -20,6 +23,20 @@ const Page3 = (props) => {
 		});
 
 		collectTimer(pageName, animation.current.totalTime);
+
+		Click.add('#desktop_return', () => {
+			Click.remove('#desktop_return');
+			back();
+		});
+
+		Click.add('#desktop_share', () => {
+			console.log('share');
+		});
+
+		return () => {
+			Click.remove('#desktop_return');
+			Click.remove('#desktop_share');
+		};
 	}, []);
 
 	useEffect(() => {
@@ -37,6 +54,12 @@ const Page3 = (props) => {
 					<div className='headline'>穩定的力量</div>
 					<div className='logo' />
 				</div>
+				{device && (
+					<div className='share'>
+						<button id='desktop_return'>回到選單</button>
+						<button id='desktop_share'>分享</button>
+					</div>
+				)}
 			</div>
 			<div ref={labels} className='labels'>
 				{STORY_EARPHONE_PAGE3.map((e) => (

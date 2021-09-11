@@ -26,6 +26,7 @@ export const INTRO_TITLE = [
 ];
 
 const r = { mobile: { b: 60 }, desktop: { b: 35 } };
+const p = { mobile: { b: 40 }, desktop: { b: 35 } };
 
 // Motorcycle 0
 export const STORY_MOTORCYCLE_PAGE0 = [
@@ -173,26 +174,26 @@ export const STORY_MOTORCYCLE_PAGE2 = [
 export const STORY_MOTORCYCLE_PAGE3 = [
 	{
 		text: 'EAIW、IFDW',
-		mobile: { x: -93, y: -440 + r[device].b * 0 },
-		desktop: { x: -80, y: -240 + r[device].b * 0 },
+		mobile: { x: -93, y: -440 + p[device].b * 0 },
+		desktop: { x: -490, y: -210 + p[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '不只是電動機車裡的漆包線線圈',
-		mobile: { x: -186, y: -440 + r[device].b * 1 },
-		desktop: { x: -80, y: -240 + r[device].b * 1 },
+		mobile: { x: -186, y: -440 + p[device].b * 1.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
 		delay: 3400,
 	},
 	{
 		text: '也將疲憊的自己推動向前',
-		mobile: { x: -146, y: -440 + r[device].b * 2 },
-		desktop: { x: -80, y: -240 + r[device].b * 2 },
+		mobile: { x: -146, y: -440 + p[device].b * 3 },
+		desktop: { x: -490, y: -210 + p[device].b * 3 },
 		delay: 3500,
 	},
 	{
 		text: '連結每個日常',
-		mobile: { x: -82, y: -440 + r[device].b * 3 },
-		desktop: { x: -82, y: -240 + r[device].b * 3 },
+		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
 		delay: 4000,
 	},
 ];
@@ -311,10 +312,30 @@ export const STORY_RICECOOKER_PAGE2 = [
 ];
 
 export const STORY_RICECOOKER_PAGE3 = [
-	{ text: 'CCAW', x: -42, y: -420, delay: 0 },
-	{ text: '不只是電飯鍋裡的漆包線線圈', x: -175, y: -350, delay: 2500 },
-	{ text: '也乘載溫熱的支持', x: -108, y: -280, delay: 3500 },
-	{ text: '連結每個日常', x: -82, y: -210, delay: 2500 },
+	{
+		text: 'CCAW',
+		mobile: { x: -42, y: -440 + p[device].b * 0 },
+		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '不只是電飯鍋裡的漆包線線圈',
+		mobile: { x: -175, y: -440 + p[device].b * 1.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		delay: 2500,
+	},
+	{
+		text: '也乘載溫熱的支持',
+		mobile: { x: -108, y: -440 + p[device].b * 3 },
+		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		delay: 3500,
+	},
+	{
+		text: '連結每個日常',
+		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		delay: 2500,
+	},
 ];
 
 // ear phone 2
@@ -447,10 +468,30 @@ export const STORY_EARPHONE_PAGE2 = [
 ];
 
 export const STORY_EARPHONE_PAGE3 = [
-	{ text: 'UEW', x: -34, y: -490, delay: 0 },
-	{ text: '不只是無線耳機裡的漆包線線圈', x: -175, y: -420, delay: 2000 },
-	{ text: '更讓每次播放傳遞好的開始', x: -146, y: -350, delay: 3500 },
-	{ text: '連結每個日常', x: -82, y: -280, delay: 3500 },
+	{
+		text: 'UEW',
+		mobile: { x: -34, y: -440 + p[device].b * 0 },
+		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '不只是無線耳機裡的漆包線線圈',
+		mobile: { x: -175, y: -440 + p[device].b * 1.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		delay: 2000,
+	},
+	{
+		text: '更讓每次播放傳遞好的開始',
+		mobile: { x: -146, y: -440 + p[device].b * 3 },
+		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		delay: 3500,
+	},
+	{
+		text: '連結每個日常',
+		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		delay: 3500,
+	},
 ];
 
 // pump 3
@@ -622,50 +663,70 @@ export const STORY_PUMP_PAGE2 = [
 ];
 
 export const STORY_PUMP_PAGE3 = [
-	{ text: 'PEW', x: -34, y: -490, delay: 0 },
-	{ text: '不只是家用泵浦裡的漆包線線圈', x: -187, y: -420, delay: 2000 },
-	{ text: '也為勞累的身心注滿力量', x: -146, y: -350, delay: 3000 },
-	{ text: '連結每個日常', x: -82, y: -280, delay: 3500 },
+	{
+		text: 'PEW',
+		mobile: { x: -34, y: -440 + p[device].b * 0 },
+		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '不只是家用泵浦裡的漆包線線圈',
+		mobile: { x: -187, y: -440 + p[device].b * 1.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		delay: 2000,
+	},
+	{
+		text: '也為勞累的身心注滿力量',
+		mobile: { x: -146, y: -440 + p[device].b * 3 },
+		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		delay: 3000,
+	},
+	{
+		text: '連結每個日常',
+		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		delay: 3500,
+	},
 ];
 
 // mobile 4
 export const STORY_MOBILE_PAGE0 = [
 	{
 		text: '開口說我愛你的時候',
-		mobile: { x: -240, y: -330 + r[device].b * 0 },
-		desktop: { x: -110, y: -110 + r[device].b * 0 },
+		mobile: { x: -240, y: -330 + p[device].b * 0 },
+		desktop: { x: -110, y: -110 + p[device].b * 0 },
 		delay: 5200,
 	},
 	{
 		text: '總會有點想哭',
-		mobile: { x: -120, y: -330 + r[device].b * 1 },
-		desktop: { x: -40, y: -110 + r[device].b * 1 },
+		mobile: { x: -120, y: -330 + p[device].b * 1 },
+		desktop: { x: -40, y: -110 + p[device].b * 1 },
 		delay: 2200,
 	},
 
 	{
 		text: '或許是習慣台北的冷久了',
-		mobile: { x: -10, y: -50 + r[device].b * 0 },
-		desktop: { x: -20, y: -110 + r[device].b * 2 },
+		mobile: { x: -10, y: -50 + p[device].b * 0 },
+		desktop: { x: -20, y: -110 + p[device].b * 2 },
 		delay: 3500,
 	},
 	{
 		text: '這樣的情感實在炙熱',
-		mobile: { x: -40, y: -50 + r[device].b * 1 },
-		desktop: { x: 20, y: -110 + r[device].b * 3 },
+		mobile: { x: -40, y: -50 + p[device].b * 1 },
+		desktop: { x: 20, y: -110 + p[device].b * 3 },
 		delay: 3300,
 	},
 
 	{
 		text: '冷熱相遇所產生的水氣',
-		mobile: { x: -70, y: 190 + r[device].b * 0 },
-		desktop: { x: 50, y: 110 + r[device].b * 0 },
+		mobile: { x: -70, y: 190 + p[device].b * 0 },
+		desktop: { x: 50, y: 110 + p[device].b * 0 },
 		delay: 4000,
 	},
 	{
 		text: '從眼裡溢出',
-		mobile: { x: 100, y: 190 + r[device].b * 1 },
-		desktop: { x: 150, y: 110 + r[device].b * 1 },
+		mobile: { x: 100, y: 190 + p[device].b * 1 },
+		desktop: { x: 150, y: 110 + p[device].b * 1 },
 		delay: 3000,
 	},
 ];
@@ -673,27 +734,27 @@ export const STORY_MOBILE_PAGE0 = [
 export const STORY_MOBILE_PAGE1 = [
 	{
 		text: '「三八啦，剛剛再見的時候不講，現在打來說」',
-		mobile: { x: -290, y: -440 + r[device].b * 0 },
-		desktop: { x: -430, y: -240 + r[device].b * 0 },
+		mobile: { x: -290, y: -440 + p[device].b * 0 },
+		desktop: { x: -430, y: -240 + p[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '媽媽不好意思地說道',
-		mobile: { x: -250, y: -440 + r[device].b * 1 },
-		desktop: { x: -410, y: -240 + r[device].b * 1 },
+		mobile: { x: -250, y: -440 + p[device].b * 1 },
+		desktop: { x: -410, y: -240 + p[device].b * 1 },
 		delay: 5500,
 	},
 
 	{
 		text: '「有些話不隔著手機，還是有點難說出口」',
-		mobile: { x: -210, y: -290 + r[device].b * 0 },
-		desktop: { x: 20, y: -110 + r[device].b * 0 },
+		mobile: { x: -210, y: -290 + p[device].b * 0 },
+		desktop: { x: 20, y: -110 + p[device].b * 0 },
 		delay: 3500,
 	},
 	{
 		text: '我壓低聲音，希望她沒有發現我正在哽咽',
-		mobile: { x: -170, y: -290 + r[device].b * 1 },
-		desktop: { x: 70, y: -110 + r[device].b * 1 },
+		mobile: { x: -170, y: -290 + p[device].b * 1 },
+		desktop: { x: 70, y: -110 + p[device].b * 1 },
 		delay: 7000,
 	},
 
@@ -773,10 +834,30 @@ export const STORY_MOBILE_PAGE2 = [
 ];
 
 export const STORY_MOBILE_PAGE3 = [
-	{ text: 'UEW + SB', x: -67, y: -490, delay: 1200 },
-	{ text: '不只是手機裡的漆包線線圈', x: -160, y: -420, delay: 3700 },
-	{ text: '更讓想說的話能被傳達', x: -134, y: -350, delay: 3000 },
-	{ text: '連結每個日常', x: -82, y: -280, delay: 3200 },
+	{
+		text: 'UEW + SB',
+		mobile: { x: -67, y: -440 + p[device].b * 0 },
+		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		delay: 1200,
+	},
+	{
+		text: '不只是手機裡的漆包線線圈',
+		mobile: { x: -160, y: -440 + p[device].b * 1.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		delay: 3700,
+	},
+	{
+		text: '更讓想說的話能被傳達',
+		mobile: { x: -134, y: -440 + p[device].b * 3 },
+		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		delay: 3000,
+	},
+	{
+		text: '連結每個日常',
+		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		delay: 3200,
+	},
 ];
 
 // ev charager 5
@@ -945,10 +1026,30 @@ export const STORY_EVCHARAGER_PAGE2 = [
 ];
 
 export const STORY_EVCHARAGER_PAGE3 = [
-	{ text: 'EAIW、Mainly', x: -93, y: -490, delay: 0 },
-	{ text: '不只是充電樁裡的漆包線線圈', x: -175, y: -420, delay: 3500 },
-	{ text: '更讓每一次出發充滿能量', x: -146, y: -350, delay: 3500 },
-	{ text: '連結每個日常', x: -82, y: -280, delay: 3800 },
+	{
+		text: 'EAIW、Mainly',
+		mobile: { x: -93, y: -440 + p[device].b * 0 },
+		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		delay: 0,
+	},
+	{
+		text: '不只是充電樁裡的漆包線線圈',
+		mobile: { x: -175, y: -440 + p[device].b * 1.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		delay: 3500,
+	},
+	{
+		text: '更讓每一次出發充滿能量',
+		mobile: { x: -146, y: -440 + p[device].b * 3 },
+		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		delay: 3500,
+	},
+	{
+		text: '連結每個日常',
+		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		delay: 3800,
+	},
 ];
 
 // cable 6
@@ -1113,8 +1214,28 @@ export const STORY_CABLE_PAGE2 = [
 ];
 
 export const STORY_CABLE_PAGE3 = [
-	{ text: '高壓電纜', x: -57, y: -490, delay: 800 },
-	{ text: '不只是串聯電廠的一條傳輸線', x: -175, y: -420, delay: 2000 },
-	{ text: '為偏鄉供電也穩定了信念', x: -146, y: -350, delay: 3000 },
-	{ text: '連結每個日常', x: -82, y: -280, delay: 3500 },
+	{
+		text: '高壓電纜',
+		mobile: { x: -57, y: -440 + p[device].b * 0 },
+		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		delay: 800,
+	},
+	{
+		text: '不只是串聯電廠的一條傳輸線',
+		mobile: { x: -175, y: -440 + p[device].b * 1.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		delay: 2000,
+	},
+	{
+		text: '為偏鄉供電也穩定了信念',
+		mobile: { x: -146, y: -440 + p[device].b * 3 },
+		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		delay: 3000,
+	},
+	{
+		text: '連結每個日常',
+		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
+		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		delay: 3500,
+	},
 ];

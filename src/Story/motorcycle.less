@@ -156,7 +156,6 @@
 					background-position-y: top;
 					background-size: 100%;
 					background-repeat: repeat-x;
-
 					animation: clouds 30s linear infinite;
 
 					@img: './img/motorcycle/cloud.png';
@@ -264,18 +263,18 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
+			margin-top: -450px;
 			margin-left: -290px;
 			color: #333;
 			white-space: nowrap;
 			font-size: 62px;
 			transform: scale(1, 1.1);
-			margin-top: -450px;
 
 			sub {
 				position: absolute;
 				margin: 0 -10px;
-				font-size: normal !important;
 				padding-top: 28px;
+				font-size: normal !important;
 			}
 		}
 
@@ -334,8 +333,22 @@
 	.Motorcycle {
 		.page0 {
 			.title {
-				font-size: 36px;
 				margin-top: -250px;
+				font-size: 36px;
+			}
+		}
+
+		.page3 {
+			.align {
+				.product {
+					top: 0px;
+					left: 300px;
+					background-image: url(@img);
+					background-size: 100%;
+					transform: rotate(-10deg);
+
+					@img: './img/motorcycle/product@2x.png';
+				}
 			}
 		}
 	}

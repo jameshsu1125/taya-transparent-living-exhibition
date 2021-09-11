@@ -49,6 +49,8 @@
 				height: image-height(@img);
 				background-image: url(@img);
 
+				top: 100px;
+
 				@img: './img/evcharger/product.png';
 			}
 
@@ -275,6 +277,20 @@
 				sub {
 					padding-top: 17px;
 					margin: 0 -5px;
+				}
+			}
+		}
+
+		.page3 {
+			.align {
+				.product {
+					top: 20px;
+					left: 250px;
+					background-image: url(@img);
+					background-size: 100%;
+					transform: scale(0.9);
+
+					@img: './img/evcharger/product@2x.png';
 				}
 			}
 		}
