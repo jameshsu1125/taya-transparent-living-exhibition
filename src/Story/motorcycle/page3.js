@@ -1,12 +1,15 @@
+/* eslint-disable camelcase */
 import Click from 'lesca-click';
+import Facebook from 'lesca-facebook-share';
 import UserAgent from 'lesca-user-agent';
 import { useEffect, useRef } from 'react';
-import { STORY_MOTORCYCLE_PAGE3 } from '../../Setting/config';
+import { STORY_MOTORCYCLE_PAGE3, WEBSITE_URL } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation3';
 
 const device = UserAgent.get() === 'desktop';
 const pageName = 'page3';
+const name = 'motorcycle';
 
 const Page3 = (props) => {
 	const { state, fadeOut, collectTimer, back } = props;
@@ -30,7 +33,21 @@ const Page3 = (props) => {
 		});
 
 		Click.add('#desktop_share', () => {
-			console.log('share');
+			const url =
+				window.location.hostname === 'localhost'
+					? `https://localhost:8080/${name}.html`
+					: `${WEBSITE_URL}${name}.html`;
+
+			const redirect_uri =
+				window.location.hostname === 'localhost'
+					? 'https://localhost:8080/?state=normal'
+					: `${WEBSITE_URL}?state=normal`;
+
+			Facebook.share({
+				url,
+				hashtag: '透明生活展',
+				redirect_uri,
+			});
 		});
 
 		return () => {

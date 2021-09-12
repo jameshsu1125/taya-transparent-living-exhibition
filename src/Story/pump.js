@@ -65,7 +65,6 @@ const Pump = (props) => {
 			duration,
 			onStart: () => {
 				colorBackgroundRef.current.classList.remove('fadein');
-				returnRef.current.style.display = 'none';
 				setRootState('storyEnd');
 			},
 			onUpdate: (e) => {
@@ -119,7 +118,7 @@ const Pump = (props) => {
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />
-			<div ref={returnRef} className='return' />
+			{state !== 'page3' && <div ref={returnRef} className='return' />}
 		</div>
 	);
 };

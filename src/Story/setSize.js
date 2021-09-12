@@ -21,7 +21,7 @@ export const SET_SIZE = (props) => {
 	size = scale;
 
 	const resize = () => {
-		// window.location.reload();
+		window.location.reload();
 	};
 
 	window.addEventListener('resize', resize);

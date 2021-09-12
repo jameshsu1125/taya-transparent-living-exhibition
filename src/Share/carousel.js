@@ -1,7 +1,9 @@
+/* eslint-disable camelcase */
 import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
 import Gtag from 'lesca-gtag';
 import { useEffect, useRef } from 'react';
+import { TARGETINDEX, WEBSITE_URL } from '../Setting/config';
 import './main.less';
 
 const Carousel = (props) => {
@@ -15,15 +17,29 @@ const Carousel = (props) => {
 			Click.add(`#share${index}`, () => {
 				dark.current.classList.add('on');
 				Gtag.event('分享頁', category);
+
+				const [targetName] = Object.entries(TARGETINDEX).filter((e) => {
+					const [, value] = e;
+					if (value === index) return true;
+					return false;
+				});
+				const [name] = targetName;
+
 				setTimeout(() => {
 					const url =
 						window.location.hostname === 'localhost'
-							? 'https://localhost:8080/'
-							: 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/';
+							? `https://localhost:8080/${name}.html`
+							: `${WEBSITE_URL}${name}.html`;
+
+					const redirect_uri =
+						window.location.hostname === 'localhost'
+							? 'https://localhost:8080/?state=result'
+							: `${WEBSITE_URL}?state=result`;
+
 					Facebook.share({
 						url,
 						hashtag: '透明生活展',
-						redirect_uri: url,
+						redirect_uri,
 					});
 				}, 500);
 			});

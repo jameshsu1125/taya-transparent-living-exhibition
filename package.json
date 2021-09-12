@@ -1,7 +1,7 @@
 {
-	"name": "-----------",
-	"description": "-----------",
-	"homepage": "-----------",
+	"name": "taya-transparent-living-exhibition",
+	"description": "大亞-透明生活展",
+	"homepage": "https://github.com/jameshsu1125/taya-transparent-living-exhibition",
 	"main": "index.js",
 	"scripts": {
 		"start": "webpack serve",

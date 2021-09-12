@@ -1,7 +1,7 @@
+/* eslint-disable no-lonely-if */
 import ImageOnload from 'lesca-image-onload';
 import Storage from 'lesca-local-storage';
 import QueryString from 'lesca-url-parameters';
-import userAgent from 'lesca-user-agent';
 import { useEffect, useRef, useState } from 'react';
 import Gtag from 'lesca-gtag';
 import Background from '../Background/main';
@@ -11,13 +11,15 @@ import Loading from '../Loading/main';
 import Logo from '../Logo/main';
 import Result from '../Result/main';
 import Select from '../Select/main';
-import { EXHIBITION_DATE_LINE } from '../Setting/config';
+import { EXHIBITION_DATE_LINE, TARGETINDEX } from '../Setting/config';
 import Story from '../Story/main';
 import './main.less';
 
 // todo => custom router
 const queryState = QueryString.get('state');
 const queryStoryIndex = QueryString.get('storyIndex');
+const queryShareTarget = QueryString.get('t');
+
 const queryData = {
 	normal: { intro: true, logo: true, story: false, loading: true, result: false },
 	result: { intro: false, logo: false, story: false, loading: false, result: true },
@@ -37,7 +39,7 @@ else queryInset = queryData[queryState.split('#')[0]];
 const defaultReadData = [...new Array(7).keys()].map(() => false);
 
 // ! debug
-// const defaultReadData = [false, true, true, true, true, true, true];
+// const defaultReadData = [true, true, true, true, true, true, true];
 // Storage.clear();
 
 const Index = () => {
@@ -47,7 +49,7 @@ const Index = () => {
 
 	const [commingSoon, setCommingSoon] = useState(false);
 	const [process, setProcess] = useState({});
-	const [preload, setPreload] = useState(false);
+	const [preload, setPreload] = useState(queryState === 'result');
 	const [state, setState] = useState('loading');
 	const [intro, setIntro] = useState(queryInset.intro);
 	const [logo, setLogo] = useState(queryInset.logo);
@@ -95,15 +97,23 @@ const Index = () => {
 
 		const now = new Date().getTime();
 		const exhibitionDate = EXHIBITION_DATE_LINE.getTime();
-		if (queryState === 'normal') {
-			if (userAgent.get() === 'mobile') setState('intro');
-			else setState('intro');
-		} else if (now < exhibitionDate) {
-			// to comming Soon
-			setCommingSoon(true);
+
+		if (queryShareTarget) {
+			const hasTargetIndex = TARGETINDEX[queryShareTarget];
+			if (hasTargetIndex !== undefined) {
+				setState('target');
+				selectRef.current.fadein();
+			} else setState('intro');
 		} else {
-			// 進入intro page
-			setState('intro');
+			if (queryState === 'normal') {
+				setState('intro');
+			} else if (now < exhibitionDate) {
+				// to comming Soon
+				setCommingSoon(true);
+			} else {
+				// 進入intro page
+				setState('intro');
+			}
 		}
 	};
 
@@ -143,6 +153,7 @@ const Index = () => {
 		setRead(() => [...defaultReadData]);
 		setResult(false);
 		setState('reset');
+		if (queryState === 'result') selectRef.current.fadein();
 	};
 
 	const onAudioLoaded = (e) => setAudioLoad(e);

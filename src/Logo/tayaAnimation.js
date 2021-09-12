@@ -15,6 +15,9 @@ export default class Animation {
 				this.logo.in(delay);
 				this.textRef.in();
 			},
+			out() {
+				this.logo.out();
+			},
 			textRef: {
 				color: { r: 0, g: 0, b: 0 },
 				opacity: 1,
@@ -109,6 +112,21 @@ export default class Animation {
 						})
 						.play();
 				},
+				out() {
+					const { duration, property } = this;
+					const { opacity } = property;
+					const from = { opacity };
+					const to = { opacity: 0 };
+					this.tweener
+						.add({
+							from,
+							to,
+							duration,
+							onUpdate: (e) => this.tran(e),
+							onComplete: (e) => this.tran(e),
+						})
+						.play();
+				},
 				tran(e = this.property) {
 					this.property = { ...this.property, ...e };
 					const cssText = Object.entries(this.property).map((css) => {
@@ -126,5 +144,9 @@ export default class Animation {
 
 	in(delay) {
 		this.tr.in(delay);
+	}
+
+	out() {
+		this.tr.out();
 	}
 }

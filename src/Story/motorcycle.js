@@ -64,7 +64,6 @@ const Motorcycle = (props) => {
 			duration,
 			onStart: () => {
 				colorBackgroundRef.current.classList.remove('fadein');
-				returnRef.current.style.display = 'none';
 				setRootState('storyEnd');
 			},
 			onUpdate: (e) => {
@@ -122,7 +121,7 @@ const Motorcycle = (props) => {
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />
-			<div ref={returnRef} className='return' />
+			{state !== 'page3' && <div ref={returnRef} className='return' />}
 		</div>
 	);
 };

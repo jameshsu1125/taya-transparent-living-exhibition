@@ -20,6 +20,7 @@ export default class Animation {
 				this.logo.out();
 				this.label.out(callback);
 			},
+
 			label: {
 				color: { r: 0, g: 0, b: 0 },
 				opacity: 1,

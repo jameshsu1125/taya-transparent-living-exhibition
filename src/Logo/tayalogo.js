@@ -1,9 +1,9 @@
 import Click from 'lesca-click';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import Animation from './tayaAnimation';
 import './tayalogo.less';
 
-const TayaLogo = (props) => {
+const TayaLogo = forwardRef((props, ref) => {
 	const { commingSoon } = props;
 
 	const logo = useRef();
@@ -23,11 +23,17 @@ const TayaLogo = (props) => {
 		}
 	}, [commingSoon]);
 
+	useImperativeHandle(ref, () => ({
+		out() {
+			animation.current.out();
+		},
+	}));
+
 	return (
 		<div ref={logo} className='TayaLogo'>
 			<div className='mark' />
 			<div ref={textRef} className='text' />
 		</div>
 	);
-};
+});
 export default TayaLogo;

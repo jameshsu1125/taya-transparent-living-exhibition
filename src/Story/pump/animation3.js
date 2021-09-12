@@ -1,7 +1,9 @@
 import Tweener from 'lesca-object-tweener';
 import QueryString from 'lesca-url-parameters';
+import userAgent from 'lesca-user-agent';
 
 const debug = QueryString.get('debug') === 'true';
+const device = userAgent.get() === 'desktop';
 const { parseInt } = window;
 
 export default class Animation3 {
@@ -37,6 +39,7 @@ export default class Animation3 {
 				this.product.in();
 			},
 			out() {
+				if (device) return;
 				const dom = page.current;
 				const from = { opacity: 1 };
 				const to = { opacity: 0 };

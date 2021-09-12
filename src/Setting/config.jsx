@@ -3,8 +3,17 @@ import UserAgent from 'lesca-user-agent';
 const device = UserAgent.get();
 
 export default {};
-
+export const WEBSITE_URL = 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/';
 export const EXHIBITION_DATE_LINE = new Date(2021, 9, 4, 23, 59, 59);
+export const TARGETINDEX = {
+	motorcycle: 0,
+	ricecooker: 1,
+	earphone: 2,
+	pump: 3,
+	mobile: 4,
+	evcharger: 5,
+	cable: 6,
+};
 
 export const ITEMS_SELECT = [
 	{ title: '電動機車', subtitle: 'Electric Motorcycle', category: '奈米煩惱' },
@@ -693,40 +702,40 @@ export const STORY_PUMP_PAGE3 = [
 export const STORY_MOBILE_PAGE0 = [
 	{
 		text: '開口說我愛你的時候',
-		mobile: { x: -240, y: -330 + p[device].b * 0 },
-		desktop: { x: -110, y: -110 + p[device].b * 0 },
+		mobile: { x: -240, y: -330 + r[device].b * 0 },
+		desktop: { x: -110, y: -110 + r[device].b * 0 },
 		delay: 5200,
 	},
 	{
 		text: '總會有點想哭',
-		mobile: { x: -120, y: -330 + p[device].b * 1 },
-		desktop: { x: -40, y: -110 + p[device].b * 1 },
+		mobile: { x: -120, y: -330 + r[device].b * 1 },
+		desktop: { x: -40, y: -110 + r[device].b * 1 },
 		delay: 2200,
 	},
 
 	{
 		text: '或許是習慣台北的冷久了',
-		mobile: { x: -10, y: -50 + p[device].b * 0 },
-		desktop: { x: -20, y: -110 + p[device].b * 2 },
+		mobile: { x: -10, y: -50 + r[device].b * 0 },
+		desktop: { x: -20, y: -110 + r[device].b * 2 },
 		delay: 3500,
 	},
 	{
 		text: '這樣的情感實在炙熱',
-		mobile: { x: -40, y: -50 + p[device].b * 1 },
-		desktop: { x: 20, y: -110 + p[device].b * 3 },
+		mobile: { x: -40, y: -50 + r[device].b * 1 },
+		desktop: { x: 20, y: -110 + r[device].b * 3 },
 		delay: 3300,
 	},
 
 	{
 		text: '冷熱相遇所產生的水氣',
-		mobile: { x: -70, y: 190 + p[device].b * 0 },
-		desktop: { x: 50, y: 110 + p[device].b * 0 },
+		mobile: { x: -70, y: 190 + r[device].b * 0 },
+		desktop: { x: 50, y: 110 + r[device].b * 0 },
 		delay: 4000,
 	},
 	{
 		text: '從眼裡溢出',
-		mobile: { x: 100, y: 190 + p[device].b * 1 },
-		desktop: { x: 150, y: 110 + p[device].b * 1 },
+		mobile: { x: 100, y: 190 + r[device].b * 1 },
+		desktop: { x: 150, y: 110 + r[device].b * 1 },
 		delay: 3000,
 	},
 ];
@@ -734,27 +743,27 @@ export const STORY_MOBILE_PAGE0 = [
 export const STORY_MOBILE_PAGE1 = [
 	{
 		text: '「三八啦，剛剛再見的時候不講，現在打來說」',
-		mobile: { x: -290, y: -440 + p[device].b * 0 },
-		desktop: { x: -430, y: -240 + p[device].b * 0 },
+		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		desktop: { x: -430, y: -240 + r[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '媽媽不好意思地說道',
-		mobile: { x: -250, y: -440 + p[device].b * 1 },
-		desktop: { x: -410, y: -240 + p[device].b * 1 },
+		mobile: { x: -250, y: -440 + r[device].b * 1 },
+		desktop: { x: -410, y: -240 + r[device].b * 1 },
 		delay: 5500,
 	},
 
 	{
 		text: '「有些話不隔著手機，還是有點難說出口」',
-		mobile: { x: -210, y: -290 + p[device].b * 0 },
-		desktop: { x: 20, y: -110 + p[device].b * 0 },
+		mobile: { x: -210, y: -290 + r[device].b * 0 },
+		desktop: { x: 20, y: -110 + r[device].b * 0 },
 		delay: 3500,
 	},
 	{
 		text: '我壓低聲音，希望她沒有發現我正在哽咽',
-		mobile: { x: -170, y: -290 + p[device].b * 1 },
-		desktop: { x: 70, y: -110 + p[device].b * 1 },
+		mobile: { x: -170, y: -290 + r[device].b * 1 },
+		desktop: { x: 70, y: -110 + r[device].b * 1 },
 		delay: 7000,
 	},
 
