@@ -32,7 +32,7 @@ const Instruct = (props) => {
 					from: fromA,
 					to: toA,
 					duration,
-					delay: 1000,
+					delay: 0,
 					onUpdate: (e) => set(e),
 					onComplete: (e) => set(e),
 				})
@@ -40,7 +40,7 @@ const Instruct = (props) => {
 					from: toA,
 					to: fromA,
 					duration,
-					delay: 2000,
+					delay: 3000,
 					onUpdate: (e) => set(e),
 					onComplete: (e) => {
 						set(e);

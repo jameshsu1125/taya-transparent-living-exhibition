@@ -11,7 +11,7 @@ export default class Animation3 {
 		const { page, product, labels, footer } = props;
 
 		const beginDelay = 1000;
-		const fadeOutDelay = 3000;
+		const fadeOutDelay = 2000;
 		const labelDuration = 3000;
 		const footerFadeOutDelay = 2000;
 		this.totalTime =

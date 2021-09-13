@@ -2,6 +2,7 @@ import UserAgent from 'lesca-user-agent';
 
 const isMobileDevice = UserAgent.get() === 'mobile';
 const { parseInt } = window;
+let sizeTimer = 0;
 
 export const SET_SIZE = (props) => {
 	const { width, height, img } = props;
@@ -21,13 +22,18 @@ export const SET_SIZE = (props) => {
 	size = scale;
 
 	const resize = () => {
-		window.location.reload();
+		clearTimeout(sizeTimer);
+		sizeTimer = setTimeout(() => {
+			window.location.reload();
+		}, 500);
 	};
 
 	window.addEventListener('resize', resize);
+	window.addEventListener('focus', resize);
 
 	const destory = () => {
 		window.removeEventListener('resize', resize);
+		window.removeEventListener('focus', resize);
 	};
 
 	return [destory, size];

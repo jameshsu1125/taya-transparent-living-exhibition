@@ -128,7 +128,7 @@ export default class Animation0 {
 				unit: { opacity: '' },
 				offset: {
 					mobile: { from: { left: 40, top: 0 }, to: { left: -140, top: 0 } },
-					desktop: { from: { left: 0, top: 80 }, to: { left: 0, top: -130 } },
+					desktop: { from: { left: 0, top: 80 }, to: { left: 0, top: 'b' } },
 				},
 				init() {
 					this.c = bg.current;

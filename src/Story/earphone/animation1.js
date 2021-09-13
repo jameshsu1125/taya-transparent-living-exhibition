@@ -65,7 +65,7 @@ export default class Animation1 {
 				unit: { opacity: '' },
 				offset: {
 					mobile: { from: { left: -100, top: 0 }, to: { left: 30, top: 0 } },
-					desktop: { from: { left: 0, top: 't-100' }, to: { left: 0, top: -220 } },
+					desktop: { from: { left: 0, top: 't-100' }, to: { left: 0, top: 'b-50' } },
 				},
 				init() {
 					this.c = bg.current;

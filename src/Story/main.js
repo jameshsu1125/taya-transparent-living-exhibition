@@ -6,6 +6,7 @@ import Motorcycle from './motorcycle';
 import Earphone from './earphone';
 import Mobile from './mobile';
 import Pump from './pump';
+import InnerSizeDetecter from '../Components/innerSizeDetecter';
 import Cable from './cable';
 import { ITEMS_SELECT } from '../Setting/config';
 import './main.less';
@@ -132,6 +133,7 @@ const Story = (props) => {
 		<div className='Story'>
 			{appendStore()}
 			{loading && <Loading />}
+			<InnerSizeDetecter />
 		</div>
 	);
 };

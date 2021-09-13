@@ -4,27 +4,27 @@
 	height: 100%;
 	// opacity: 0.1;
 
-	&::after {
-		position: absolute;
-		width: calc(~'100% - 168px');
-		height: calc(~'100% - 166px - 38px');
-		content: '';
-		// border: solid red 1px;
-		margin: 166px 84px;
-		pointer-events: none;
-	}
+	// &::after {
+	// 	position: absolute;
+	// 	width: calc(~'100% - 168px');
+	// 	height: calc(~'100% - 166px - 38px');
+	// 	content: '';
+	//  border: solid red 1px;
+	// 	margin: 166px 84px;
+	// 	pointer-events: none;
+	// }
 
 	.return {
 		position: absolute;
+		top: 71px;
+		left: 31px;
 		width: 65px;
 		height: 65px;
 		border-radius: 10px;
 		background-color: rgba(255, 255, 255, 0.8);
 		background-image: url('./img/arrow.svg');
-		background-repeat: no-repeat;
 		background-position: center;
-		left: 31px;
-		top: 71px;
+		background-repeat: no-repeat;
 		cursor: pointer;
 		transition: 0.2s;
 		&:hover {
@@ -49,16 +49,17 @@
 
 @media only screen and (min-width: 768px) {
 	.Story {
-		min-width: 1152px;
-		&::after {
-			width: calc(~'100% - 168px');
-			height: calc(~'100% - 80px - 38px');
-			margin: 80px 84px;
-		}
+		min-height: 650px;
+		// min-width: 1000px;
+		// &::after {
+		// 	width: calc(~'100% - 168px');
+		// 	height: calc(~'100% - 80px - 38px');
+		// 	margin: 80px 84px;
+		// }
 
 		.return {
-			left: 10px;
 			top: 30px;
+			left: 10px;
 			transform: scale(0.6);
 		}
 
@@ -78,8 +79,8 @@
 					& > button {
 						margin: 0 10px;
 						width: 200px;
-						font-size: 18px;
 						height: 45px;
+						font-size: 18px;
 						line-height: 45px;
 					}
 				}
