@@ -1,317 +1,165 @@
 .Ricecooker {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	.fadein {
-		animation: fadeIn 0.2s ease-out forwards;
-	}
-
-	.color-background {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #ccc;
-		opacity: 0;
-	}
-
-	.page {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: none;
-		width: 100%;
-		height: 100%;
-	}
-
 	.page3 {
-		.align {
+		.product {
 			position: absolute;
-			top: 50%;
-			left: 50%;
+			top: 80px;
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-			.share {
-				position: absolute;
-				top: 120px;
-				left: -250px;
-				display: none;
-				margin-left: -490px * 0.5;
-				width: 400px;
-				height: 100px;
-			}
-
-			.product {
-				position: absolute;
-				top: 80px;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
-				width: image-width(@img);
-				height: image-height(@img);
-				background-image: url(@img);
-
-				@img: './img/ricecooker/product.png';
-			}
-
-			.footer {
-				display: flex;
-				align-items: center;
-				flex-direction: row;
-				justify-content: center;
-				margin-top: 430px;
-				margin-left: -280px;
-				width: 560px;
-				height: 60px;
-
-				& > div {
-					box-sizing: border-box;
-					width: 50%;
-					height: 100%;
-				}
-
-				.headline {
-					border-right: solid 1px #000;
-					text-align: center;
-					letter-spacing: 5px;
-					font-size: 36px;
-					line-height: 60px;
-					transform: scale(1, 1.1);
-				}
-
-				.logo {
-					position: relative;
-					&::after {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						margin-top: 0 - image-height(@img) * @scale * 0.5 + 5px;
-						margin-left: 0 - image-width(@img) * @scale * 0.5;
-						width: image-width(@img) * @scale;
-						height: image-height(@img) * @scale;
-						background-image: url(@img);
-						background-size: 100%;
-						content: '';
-
-						@scale: 2.5;
-						@img: './img/logo.svg';
-					}
-				}
-			}
-		}
-
-		.labels {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			@img: './img/ricecooker/product.png';
 		}
 	}
 
 	.page2 {
-		.bg {
+		.img {
 			position: absolute;
-			top: 50%;
-			left: 50%;
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
+			transform: scale(0.82);
 
-			.img {
+			@img: './img/ricecooker/bg2.jpg';
+
+			@keyframes smoking {
+				0% {
+					opacity: 0;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			.smoke-0 {
 				position: absolute;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
+				top: 13%;
+				left: 4%;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.82);
+				transition-delay: 0s;
+				animation: smoking 3s ease-out infinite;
 
-				@img: './img/ricecooker/bg2.jpg';
-
-				@keyframes smoking {
-					0% {
-						opacity: 0;
-					}
-					50% {
-						opacity: 1;
-					}
-					100% {
-						opacity: 0;
-					}
-				}
-
-				.smoke-0 {
-					position: absolute;
-					top: 13%;
-					left: 4%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-					transition-delay: 0s;
-					animation: smoking 3s ease-out infinite;
-
-					@img: './img/ricecooker/smoke2.png';
-				}
-
-				.smoke-1 {
-					position: absolute;
-					top: 10%;
-					left: 22%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-					transition-delay: 1.5s;
-					animation: smoking 3s ease-out infinite;
-
-					@img: './img/ricecooker/smoke3.png';
-				}
+				@img: './img/ricecooker/smoke2.png';
 			}
-		}
 
-		.labels {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			.smoke-1 {
+				position: absolute;
+				top: 10%;
+				left: 22%;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
+				transition-delay: 1.5s;
+				animation: smoking 3s ease-out infinite;
+
+				@img: './img/ricecooker/smoke3.png';
+			}
 		}
 	}
 
 	.page1 {
-		.bg {
+		.img {
 			position: absolute;
-			top: 50%;
-			left: 50%;
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
+			transform: scale(0.82);
 
-			.img {
+			@img: './img/ricecooker/bg1.jpg';
+
+			@keyframes smoking {
+				0% {
+					opacity: 0;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			.smoke-0 {
 				position: absolute;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
+				top: 22%;
+				left: 17%;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
-				transform: scale(0.82);
+				transition-delay: 1.5s;
+				animation: smoking 5s ease-out infinite;
 
-				@img: './img/ricecooker/bg1.jpg';
-
-				@keyframes smoking {
-					0% {
-						opacity: 0;
-					}
-					50% {
-						opacity: 1;
-					}
-					100% {
-						opacity: 0;
-					}
-				}
-
-				.smoke-0 {
-					position: absolute;
-					top: 22%;
-					left: 17%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-					transition-delay: 1.5s;
-					animation: smoking 5s ease-out infinite;
-
-					@img: './img/ricecooker/smoke0.png';
-				}
-
-				.smoke-1 {
-					position: absolute;
-					top: 29%;
-					left: 9%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-					transition-delay: 0s;
-					animation: smoking 3s ease-out infinite;
-
-					@img: './img/ricecooker/smoke1.png';
-				}
+				@img: './img/ricecooker/smoke0.png';
 			}
-		}
 
-		.labels {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			.smoke-1 {
+				position: absolute;
+				top: 29%;
+				left: 9%;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
+				transition-delay: 0s;
+				animation: smoking 3s ease-out infinite;
+
+				@img: './img/ricecooker/smoke1.png';
+			}
 		}
 	}
 
 	.page0 {
 		.title {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			color: #333;
-			white-space: nowrap;
-			font-size: 62px;
-			transform: scale(1, 1.1);
 			margin-top: -450px;
 			margin-left: -290px;
-
-			sub {
-				position: absolute;
-				margin: 0 -10px;
-				font-size: normal !important;
-				padding-top: 28px;
-			}
 		}
 
-		.bg {
+		.img {
 			position: absolute;
-			top: 50%;
-			left: 50%;
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-			.img {
+			@img: './img/ricecooker/bg0.jpg';
+			mask-image: url('./img/ricecooker/mask.png');
+			mask-size: cover;
+
+			& > div {
 				position: absolute;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
+			}
+
+			.eyes {
+				top: 32.4%;
+				left: 40.2%;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
+				opacity: 0;
 
-				@img: './img/ricecooker/bg0.jpg';
-				mask-image: url('./img/ricecooker/mask.png');
-				mask-size: cover;
-
-				& > div {
-					position: absolute;
-				}
-
-				.eyes {
-					top: 32.4%;
-					left: 40.2%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-					opacity: 0;
-
-					@img: './img/ricecooker/eyes.png';
-				}
-
-				.sweat {
-					top: 31.2%;
-					left: 47.1%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-					opacity: 0;
-
-					@img: './img/ricecooker/sweat.png';
-				}
+				@img: './img/ricecooker/eyes.png';
 			}
-		}
 
-		.labels {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			.sweat {
+				top: 31.2%;
+				left: 47.1%;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
+				opacity: 0;
+
+				@img: './img/ricecooker/sweat.png';
+			}
 		}
 	}
 }
@@ -320,7 +168,6 @@
 	.Ricecooker {
 		.page0 {
 			.title {
-				font-size: 36px;
 				margin-top: -250px;
 				margin-left: -460px;
 			}

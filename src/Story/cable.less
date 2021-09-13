@@ -1,277 +1,135 @@
 .Cable {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	.color-background {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #ccc;
-		opacity: 1;
-	}
-
-	.fadein {
-		animation: fadeIn 0.2s ease-out forwards;
-	}
-
-	.page {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: none;
-		width: 100%;
-		height: 100%;
-	}
-
 	.page3 {
-		.align {
+		.product {
 			position: absolute;
-			top: 50%;
-			left: 50%;
+			top: 80px;
+			margin-top: 0 - image-height(@img) * 0.5 + 30px;
+			margin-left: 0 - image-width(@img) * 0.5 - 10px;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-			.product {
-				position: absolute;
-				top: 80px;
-				margin-top: 0 - image-height(@img) * 0.5 + 30px;
-				margin-left: 0 - image-width(@img) * 0.5 - 10px;
-				width: image-width(@img);
-				height: image-height(@img);
-				background-image: url(@img);
-
-				@img: './img/cable/product.png';
-			}
-
-			.footer {
-				display: flex;
-				align-items: center;
-				flex-direction: row;
-				justify-content: center;
-				margin-top: 430px;
-				margin-left: -280px;
-				width: 560px;
-				height: 60px;
-
-				& > div {
-					box-sizing: border-box;
-					width: 50%;
-					height: 100%;
-				}
-
-				.headline {
-					border-right: solid 1px #000;
-					text-align: center;
-					letter-spacing: 5px;
-					font-size: 36px;
-					line-height: 60px;
-					transform: scale(1, 1.1);
-				}
-
-				.logo {
-					position: relative;
-					&::after {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						margin-top: 0 - image-height(@img) * @scale * 0.5 + 5px;
-						margin-left: 0 - image-width(@img) * @scale * 0.5;
-						width: image-width(@img) * @scale;
-						height: image-height(@img) * @scale;
-						background-image: url(@img);
-						background-size: 100%;
-						content: '';
-
-						@scale: 2.5;
-						@img: './img/logo.svg';
-					}
-				}
-			}
-		}
-
-		.labels {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			@img: './img/cable/product.png';
 		}
 	}
 
 	.page2 {
-		.labels {
+		.img {
+			left: 0px;
 			position: absolute;
-			top: 50%;
-			left: 50%;
-		}
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-		.bg {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			@img: './img/cable/bg2.jpg';
 
-			.img {
-				left: 0px;
+			@keyframes eyes {
+				0% {
+					opacity: 0;
+				}
+				40% {
+					opacity: 0;
+				}
+				41% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 1;
+				}
+				51% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			.eyes {
 				position: absolute;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
+				@img: './img/cable/eyes.png';
+				background-image: url(@img);
 				width: image-width(@img);
 				height: image-height(@img);
-				background-image: url(@img);
+				top: 42%;
+				left: 46.5%;
 
-				@img: './img/cable/bg2.jpg';
-
-				@keyframes eyes {
-					0% {
-						opacity: 0;
-					}
-					40% {
-						opacity: 0;
-					}
-					41% {
-						opacity: 1;
-					}
-					50% {
-						opacity: 1;
-					}
-					51% {
-						opacity: 0;
-					}
-					100% {
-						opacity: 0;
-					}
-				}
-
-				.eyes {
-					position: absolute;
-					@img: './img/cable/eyes.png';
-					background-image: url(@img);
-					width: image-width(@img);
-					height: image-height(@img);
-					top: 42%;
-					left: 46.5%;
-
-					animation: eye 5s linear infinite;
-				}
+				animation: eye 5s linear infinite;
 			}
 		}
 	}
 
 	.page1 {
-		.labels {
+		.img {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-		}
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-		.bg {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			@img: './img/cable/bg1.jpg';
 
-			.img {
+			@keyframes eye {
+				0% {
+					opacity: 0;
+				}
+				40% {
+					opacity: 0;
+				}
+				41% {
+					opacity: 1;
+				}
+				50% {
+					opacity: 1;
+				}
+				51% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			.eye {
 				position: absolute;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
+				@img: './img/cable/eye.png';
+				background-image: url(@img);
 				width: image-width(@img);
 				height: image-height(@img);
-				background-image: url(@img);
+				top: 76.6%;
+				left: 64%;
 
-				@img: './img/cable/bg1.jpg';
-
-				@keyframes eye {
-					0% {
-						opacity: 0;
-					}
-					40% {
-						opacity: 0;
-					}
-					41% {
-						opacity: 1;
-					}
-					50% {
-						opacity: 1;
-					}
-					51% {
-						opacity: 0;
-					}
-					100% {
-						opacity: 0;
-					}
-				}
-
-				.eye {
-					position: absolute;
-					@img: './img/cable/eye.png';
-					background-image: url(@img);
-					width: image-width(@img);
-					height: image-height(@img);
-					top: 76.6%;
-					left: 64%;
-
-					animation: eye 5s linear infinite;
-				}
+				animation: eye 5s linear infinite;
 			}
 		}
 	}
 
 	.page0 {
 		.title {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			color: #333;
-			white-space: nowrap;
-			font-size: 62px;
-			transform: scale(1, 1.1);
 			margin-top: -450px;
 			margin-left: -290px;
-
-			sub {
-				position: absolute;
-				margin: 0 -10px;
-				font-size: normal !important;
-				padding-top: 28px;
-			}
 		}
 
-		.labels {
+		.img {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-		}
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-		.bg {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			@img: './img/cable/bg0.jpg';
 
-			.img {
+			.light {
 				position: absolute;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
+				@img: './img/cable/light0.png';
+				background-image: url(@img);
 				width: image-width(@img);
 				height: image-height(@img);
-				background-image: url(@img);
-
-				@img: './img/cable/bg0.jpg';
-
-				.light {
-					position: absolute;
-					@img: './img/cable/light0.png';
-					background-image: url(@img);
-					width: image-width(@img);
-					height: image-height(@img);
-					top: 0%;
-					left: 14%;
-				}
+				top: 0%;
+				left: 14%;
 			}
 		}
 	}
@@ -281,13 +139,8 @@
 	.Cable {
 		.page0 {
 			.title {
-				font-size: 36px;
 				margin-top: -250px;
 				margin-left: -480px;
-				sub {
-					padding-top: 17px;
-					margin: 0 -5px;
-				}
 			}
 		}
 

@@ -42,7 +42,7 @@ const Page2 = (props) => {
 
 	return (
 		<div ref={page} className='page page2'>
-			<div ref={white} className='white-color' />
+			<div ref={white} className='color-background background-white' />
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
 					<div ref={cloud} className='cloud' />

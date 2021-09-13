@@ -41,7 +41,7 @@ const Page2 = (props) => {
 
 	return (
 		<div ref={page} className='page page2'>
-			<div ref={whiteBackgroundColor} className='whiteBackgroundColor' />
+			<div ref={whiteBackgroundColor} className='color-background background-white' />
 			<div ref={bg} className='bg'>
 				<div ref={img} className='img'>
 					<div className='hit' />

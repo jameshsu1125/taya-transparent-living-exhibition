@@ -1,235 +1,99 @@
 .Evcharger {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	.color-background {
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #ccc;
-		opacity: 1;
-	}
-
-	.fadein {
-		animation: fadeIn 0.2s ease-out forwards;
-	}
-
-	.page {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: none;
-		width: 100%;
-		height: 100%;
-	}
-
 	.page3 {
-		.align {
+		.product {
 			position: absolute;
-			top: 50%;
-			left: 50%;
 
-			.product {
-				position: absolute;
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5 + 113px;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5 + 113px;
-				width: image-width(@img);
-				height: image-height(@img);
-				background-image: url(@img);
+			top: 100px;
 
-				top: 100px;
-
-				@img: './img/evcharger/product.png';
-			}
-
-			.footer {
-				display: flex;
-				align-items: center;
-				flex-direction: row;
-				justify-content: center;
-				margin-top: 430px;
-				margin-left: -280px;
-				width: 560px;
-				height: 60px;
-
-				& > div {
-					box-sizing: border-box;
-					width: 50%;
-					height: 100%;
-				}
-
-				.headline {
-					border-right: solid 1px #000;
-					text-align: center;
-					letter-spacing: 5px;
-					font-size: 36px;
-					line-height: 60px;
-					transform: scale(1, 1.1);
-				}
-
-				.logo {
-					position: relative;
-					&::after {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						margin-top: 0 - image-height(@img) * @scale * 0.5 + 5px;
-						margin-left: 0 - image-width(@img) * @scale * 0.5;
-						width: image-width(@img) * @scale;
-						height: image-height(@img) * @scale;
-						background-image: url(@img);
-						background-size: 100%;
-						content: '';
-
-						@scale: 2.5;
-						@img: './img/logo.svg';
-					}
-				}
-			}
-		}
-
-		.labels {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			@img: './img/evcharger/product.png';
 		}
 	}
 
 	.page2 {
-		.labels {
+		.img {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-		}
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-		.bg {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			@img: './img/evcharger/bg2.jpg';
 
-			.img {
+			.cloud {
 				position: absolute;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
-				width: image-width(@img);
-				height: image-height(@img);
+				top: -6%;
+				left: 0%;
+				width: 100%;
+				height: 100%;
 				background-image: url(@img);
+				background-position-x: 0px;
+				background-size: 50%;
+				background-repeat: repeat-x;
+				background-position-y: top;
 
-				@img: './img/evcharger/bg2.jpg';
-
-				.cloud {
-					position: absolute;
-					top: -6%;
-					left: 0%;
-					width: 100%;
-					height: 100%;
-					background-image: url(@img);
-					background-position-x: 0px;
-					background-size: 50%;
-					background-repeat: repeat-x;
-					background-position-y: top;
-
-					@img: './img/evcharger/cloud0.png';
-				}
+				@img: './img/evcharger/cloud0.png';
 			}
 		}
 	}
 
 	.page1 {
-		.labels {
+		.img {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-		}
+			margin-top: 0 - image-height(@img) * 0.5;
+			margin-left: 0 - image-width(@img) * 0.5;
+			width: image-width(@img);
+			height: image-height(@img);
+			background-image: url(@img);
 
-		.bg {
-			position: absolute;
-			top: 50%;
-			left: 50%;
+			@img: './img/evcharger/bg1.jpg';
 
-			.img {
+			.trash0 {
 				position: absolute;
-				margin-top: 0 - image-height(@img) * 0.5;
-				margin-left: 0 - image-width(@img) * 0.5;
+				top: 54%;
+				left: 0%;
 				width: image-width(@img);
 				height: image-height(@img);
 				background-image: url(@img);
 
-				@img: './img/evcharger/bg1.jpg';
+				@img: './img/evcharger/trash0.png';
+			}
 
-				.trash0 {
-					position: absolute;
-					top: 54%;
-					left: 0%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
+			.trash1 {
+				position: absolute;
+				top: 47%;
+				left: 55%;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
 
-					@img: './img/evcharger/trash0.png';
-				}
+				@img: './img/evcharger/trash1.png';
+			}
 
-				.trash1 {
-					position: absolute;
-					top: 47%;
-					left: 55%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
+			.trash2 {
+				position: absolute;
+				top: 62%;
+				left: 63%;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
 
-					@img: './img/evcharger/trash1.png';
-				}
-
-				.trash2 {
-					position: absolute;
-					top: 62%;
-					left: 63%;
-					width: image-width(@img);
-					height: image-height(@img);
-					background-image: url(@img);
-
-					@img: './img/evcharger/trash2.png';
-					mix-blend-mode: multiply;
-				}
+				@img: './img/evcharger/trash2.png';
+				mix-blend-mode: multiply;
 			}
 		}
 	}
 
 	.page0 {
 		.title {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			color: #333;
-			white-space: nowrap;
-			font-size: 62px;
-			transform: scale(1, 1.1);
 			margin-top: -450px;
 			margin-left: -290px;
-
-			sub {
-				position: absolute;
-				margin: 0 -10px;
-				font-size: normal !important;
-				padding-top: 28px;
-			}
-		}
-
-		.labels {
-			position: absolute;
-			top: 50%;
-			left: 50%;
 		}
 
 		.bg {
@@ -271,13 +135,8 @@
 	.Evcharger {
 		.page0 {
 			.title {
-				font-size: 36px;
 				margin-top: -250px;
 				margin-left: -340px;
-				sub {
-					padding-top: 17px;
-					margin: 0 -5px;
-				}
 			}
 		}
 
