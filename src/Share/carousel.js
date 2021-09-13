@@ -38,7 +38,7 @@ const Carousel = (props) => {
 
 					Facebook.share({
 						url,
-						hashtag: '透明生活展',
+						hashtag: '大亞電線電纜_透明生活展',
 						redirect_uri,
 					});
 				}, 500);
