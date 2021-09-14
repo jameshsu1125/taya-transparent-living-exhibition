@@ -77,29 +77,34 @@ const Pump = (props) => {
 		});
 	};
 
+	const back = () => {
+		Click.remove('.return');
+		setRootState('storyEnd');
+
+		const { current } = container;
+		new Tweener({
+			from: { opacity: 1 },
+			to: { opacity: 0 },
+			duration: 2000,
+			delay: 100,
+			onUpdate: (e) => {
+				current.style.opacity = e.opacity;
+			},
+			onComplete: (e) => {
+				current.style.opacity = e.opacity;
+				setRootState('giveUp');
+			},
+		});
+		audioRef.current.fadeout();
+	};
+
 	useEffect(() => {
 		new ImageOnload(container.current, { hideBeforeLoaded: true }).then(() => {
 			setDomReady(true);
 			setAudioState('pump');
 
 			Click.add('.return', () => {
-				Click.remove('.return');
-				setRootState('storyEnd');
-
-				const { current } = container;
-				new Tweener({
-					from: { opacity: 1 },
-					to: { opacity: 0 },
-					duration: 2000,
-					delay: 100,
-					onUpdate: (e) => {
-						current.style.opacity = e.opacity;
-					},
-					onComplete: (e) => {
-						current.style.opacity = e.opacity;
-						setRootState('giveUp');
-					},
-				});
+				back();
 			});
 		});
 		return () => {
@@ -114,7 +119,7 @@ const Pump = (props) => {
 	return (
 		<div ref={container} className='Pump'>
 			<div ref={colorBackgroundRef} className='color-background' />
-			<Page3 {...{ state, setState, fadeOut, collectTimer }} />
+			<Page3 {...{ state, setState, fadeOut, collectTimer, back }} />
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />

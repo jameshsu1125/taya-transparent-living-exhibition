@@ -95,6 +95,7 @@ const Mobile = (props) => {
 				setRootState('giveUp');
 			},
 		});
+		audioRef.current.fadeout();
 	};
 
 	useEffect(() => {

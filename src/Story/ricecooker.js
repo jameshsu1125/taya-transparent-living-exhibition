@@ -94,6 +94,7 @@ const Ricecooker = (props) => {
 				setRootState('giveUp');
 			},
 		});
+		audioRef.current.fadeout();
 	};
 
 	useEffect(() => {

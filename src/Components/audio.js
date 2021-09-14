@@ -11,7 +11,6 @@ import Pump from './sounds/pump.mp3';
 import Ricecooker from './sounds/ricecooker.mp3';
 
 const easing = Bezier.linear;
-const duration = 3000;
 const tweenPreset = { index: 0 };
 
 const Audio = forwardRef((props, ref) => {
@@ -19,6 +18,7 @@ const Audio = forwardRef((props, ref) => {
 
 	const [BGMState, setBGMState] = useState(false);
 	const [BGMVol, setBGMVol] = useState(1);
+	const [storyVol, setStoryVol] = useState(1);
 
 	const storyRef = useRef();
 
@@ -30,18 +30,23 @@ const Audio = forwardRef((props, ref) => {
 	const [EvchargerState, setEvchargerState] = useState(false);
 	const [CableState, setCableState] = useState(false);
 
-	const tweenVolume = (vol) => {
+	const tweenVolume = (tar, vol, duration = 2000) => {
+		const tarVol = tar === 'BGM' ? BGMVol : storyVol;
 		new Tweener({
-			from: { vol: BGMVol },
+			from: { vol: tarVol },
 			to: { vol },
 			duration,
 			easing,
 			onUpdate: (data) => {
 				tweenPreset.index += 1;
-				if (tweenPreset.index % 10 === 0) setBGMVol(data.vol);
+				if (tweenPreset.index % 10 === 0) {
+					if (tar === 'BGM') setBGMVol(data.vol);
+					else setStoryVol(data.vol);
+				}
 			},
 			onComplete: (data) => {
-				setBGMVol(data.vol);
+				if (tar === 'BGM') setBGMVol(data.vol);
+				else setStoryVol(data.vol);
 			},
 		});
 	};
@@ -53,37 +58,44 @@ const Audio = forwardRef((props, ref) => {
 				break;
 
 			case 'motorcycle':
-				tweenVolume(0);
+				tweenVolume('BGM', 0);
+				setStoryVol(1);
 				setMotorcycleState(true);
 				break;
 
 			case 'ricecooker':
-				tweenVolume(0);
+				tweenVolume('BGM', 0);
+				setStoryVol(1);
 				setRicecookerState(true);
 				break;
 
 			case 'earphone':
-				tweenVolume(0);
+				tweenVolume('BGM', 0);
+				setStoryVol(1);
 				setEarphoneState(true);
 				break;
 
 			case 'pump':
-				tweenVolume(0);
+				tweenVolume('BGM', 0);
+				setStoryVol(1);
 				setPumpState(true);
 				break;
 
 			case 'mobile':
-				tweenVolume(0);
+				tweenVolume('BGM', 0);
+				setStoryVol(1);
 				setMobileState(true);
 				break;
 
 			case 'evcharger':
-				tweenVolume(0);
+				tweenVolume('BGM', 0);
+				setStoryVol(1);
 				setEvchargerState(true);
 				break;
 
 			case 'cable':
-				tweenVolume(0);
+				tweenVolume('BGM', 0);
+				setStoryVol(1);
 				setCableState(true);
 				break;
 
@@ -98,7 +110,7 @@ const Audio = forwardRef((props, ref) => {
 				setCableState(false);
 
 				setBGMState(true);
-				tweenVolume(1);
+				tweenVolume('BGM', 1);
 				break;
 
 			case 'muted':
@@ -113,6 +125,9 @@ const Audio = forwardRef((props, ref) => {
 		seek(time) {
 			storyRef.current.seek(time);
 		},
+		fadeout() {
+			tweenVolume('STORY', 0, 2000);
+		},
 	}));
 
 	return (
@@ -120,65 +135,72 @@ const Audio = forwardRef((props, ref) => {
 			<ReactHowler src={BGM} playing={BGMState} volume={BGMVol} loop />
 			{MotorcycleState && (
 				<ReactHowler
-					ref={storyRef}
-					src={Motorcycle}
-					onLoad={() => onSoundsLoad('motorcycle')}
 					playing
 					loop={false}
+					ref={storyRef}
+					src={Motorcycle}
+					volume={storyVol}
+					onLoad={() => onSoundsLoad('motorcycle')}
 				/>
 			)}
 			{RicecookerState && (
 				<ReactHowler
-					ref={storyRef}
-					src={Ricecooker}
-					onLoad={() => onSoundsLoad('ricecooker')}
 					playing
 					loop={false}
+					ref={storyRef}
+					src={Ricecooker}
+					volume={storyVol}
+					onLoad={() => onSoundsLoad('ricecooker')}
 				/>
 			)}
 			{EarphoneState && (
 				<ReactHowler
-					ref={storyRef}
-					src={Earphone}
-					onLoad={() => onSoundsLoad('earphone')}
 					playing
 					loop={false}
+					ref={storyRef}
+					src={Earphone}
+					volume={storyVol}
+					onLoad={() => onSoundsLoad('earphone')}
 				/>
 			)}
 			{PumpState && (
 				<ReactHowler
-					ref={storyRef}
-					src={Pump}
-					onLoad={() => onSoundsLoad('pump')}
 					playing
 					loop={false}
+					ref={storyRef}
+					src={Pump}
+					volume={storyVol}
+					onLoad={() => onSoundsLoad('pump')}
 				/>
 			)}
 			{EvchargerState && (
 				<ReactHowler
-					ref={storyRef}
-					src={Evcharger}
-					onLoad={() => onSoundsLoad('evcharger')}
 					playing
 					loop={false}
+					ref={storyRef}
+					src={Evcharger}
+					volume={storyVol}
+					onLoad={() => onSoundsLoad('evcharger')}
 				/>
 			)}
 			{MobileState && (
 				<ReactHowler
-					ref={storyRef}
-					src={Mobile}
-					onLoad={() => onSoundsLoad('mobile')}
 					playing
 					loop={false}
+					ref={storyRef}
+					src={Mobile}
+					volume={storyVol}
+					onLoad={() => onSoundsLoad('mobile')}
 				/>
 			)}
 			{CableState && (
 				<ReactHowler
-					ref={storyRef}
-					src={Cable}
-					onLoad={() => onSoundsLoad('cable')}
 					playing
 					loop={false}
+					ref={storyRef}
+					src={Cable}
+					volume={storyVol}
+					onLoad={() => onSoundsLoad('cable')}
 				/>
 			)}
 		</>

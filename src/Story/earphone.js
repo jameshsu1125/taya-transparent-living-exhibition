@@ -95,6 +95,7 @@ const Earphone = (props) => {
 				setRootState('giveUp');
 			},
 		});
+		audioRef.current.fadeout();
 	};
 
 	useEffect(() => {

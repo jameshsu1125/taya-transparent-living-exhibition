@@ -94,6 +94,7 @@ const Motorcycle = (props) => {
 				setRootState('giveUp');
 			},
 		});
+		audioRef.current.fadeout();
 	};
 
 	useEffect(() => {
