@@ -844,8 +844,8 @@ export const STORY_MOBILE_PAGE2 = [
 
 export const STORY_MOBILE_PAGE3 = [
 	{
-		text: 'UEW + SB',
-		mobile: { x: -67, y: -440 + p[device].b * 0 },
+		text: 'UEW ＋ SB',
+		mobile: { x: -78, y: -440 + p[device].b * 0 },
 		desktop: { x: -490, y: -210 + p[device].b * 0 },
 		delay: 1200,
 	},
