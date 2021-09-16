@@ -1,4 +1,5 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
+import QueryString from 'lesca-url-parameters';
 
 export default class Animation {
 	constructor(container, callback) {
@@ -9,7 +10,7 @@ export default class Animation {
 			enable: false,
 		}));
 		this.callback = callback;
-		this.delay = 800;
+		this.delay = QueryString.get('e') === '1' ? 1000 : 800;
 		this.isqueue = false;
 		this.loadedIndex = 0;
 		this.isEndQueue = false;

@@ -1,11 +1,12 @@
 /* eslint-disable camelcase */
 import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
+import QueryString from 'lesca-url-parameters';
 import UserAgent from 'lesca-user-agent';
 import { useEffect, useRef } from 'react';
-import { STORY_PUMP_PAGE3, WEBSITE_URL } from '../../Setting/config';
-import Animation from './animation3';
+import { HASHTAG, STORY_PUMP_PAGE3 } from '../../Setting/config';
 import Label from '../label';
+import Animation from './animation3';
 
 const device = UserAgent.get() === 'desktop';
 const pageName = 'page3';
@@ -33,19 +34,13 @@ const Page3 = (props) => {
 		});
 
 		Click.add('#desktop_share', () => {
-			const url =
-				window.location.hostname === 'localhost'
-					? `https://localhost:8080/${name}.html`
-					: `${WEBSITE_URL}${name}.html`;
-
-			const redirect_uri =
-				window.location.hostname === 'localhost'
-					? 'https://localhost:8080/?state=normal'
-					: `${WEBSITE_URL}?state=normal`;
+			const root = QueryString.root();
+			const url = `${root}${name}.html`;
+			const redirect_uri = `${root}?state=result`;
 
 			Facebook.share({
 				url,
-				hashtag: '大亞電線電纜_透明生活展',
+				hashtag: HASHTAG,
 				redirect_uri,
 			});
 		});

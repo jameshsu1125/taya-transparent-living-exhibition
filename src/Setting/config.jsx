@@ -3,7 +3,7 @@ import UserAgent from 'lesca-user-agent';
 const device = UserAgent.get();
 
 export default {};
-export const WEBSITE_URL = 'https://jameshsu1125.github.io/taya-transparent-living-exhibition/';
+export const HASHTAG = '大亞電線電纜_透明生活展';
 export const EXHIBITION_DATE_LINE = new Date(2021, 9, 4, 23, 59, 59);
 export const TARGETINDEX = {
 	motorcycle: 0,
@@ -211,7 +211,7 @@ export const STORY_MOTORCYCLE_PAGE3 = [
 
 export const STORY_RICECOOKER_PAGE0 = [
 	{
-		text: '我不被理解，但我理解',
+		text: '我不被諒解，但我理解',
 		mobile: { x: -70, y: -330 + r[device].b * 0 },
 		desktop: { x: 260, y: -240 + r[device].b * 0 },
 		delay: 0,
@@ -262,7 +262,7 @@ export const STORY_RICECOOKER_PAGE0 = [
 
 export const STORY_RICECOOKER_PAGE1 = [
 	{
-		text: '冷戰兩週回家的那天',
+		text: '冷戰兩週後回家的那天',
 		mobile: { x: -250, y: -280 + r[device].b * 0 },
 		desktop: { x: 100, y: -240 + r[device].b * 0 },
 		delay: 0,
@@ -727,7 +727,7 @@ export const STORY_MOBILE_PAGE0 = [
 	},
 
 	{
-		text: '冷熱相遇所產生的水氣',
+		text: '冷熱相遇產生的水氣',
 		mobile: { x: -70, y: 190 + r[device].b * 0 },
 		desktop: { x: 50, y: 110 + r[device].b * 0 },
 		delay: 4000,
@@ -755,7 +755,7 @@ export const STORY_MOBILE_PAGE1 = [
 	},
 
 	{
-		text: '「有些話不隔著手機，還是有點難說出口」',
+		text: '「有些話不隔著手機，還是會有點難說出口嘛」',
 		mobile: { x: -210, y: -290 + r[device].b * 0 },
 		desktop: { x: 20, y: -110 + r[device].b * 0 },
 		delay: 3500,
@@ -788,7 +788,7 @@ export const STORY_MOBILE_PAGE1 = [
 	},
 
 	{
-		text: '「妳媽媽我啊，可是你肚子裡的蛔蟲」',
+		text: '「妳媽媽我喔，可是你肚子裡的蛔蟲餒」',
 		mobile: { x: -220, y: 380 + r[device].b * 0 },
 		desktop: { x: -30, y: 230 + r[device].b * 0 },
 		delay: 4200,
@@ -962,7 +962,7 @@ export const STORY_EVCHARAGER_PAGE1 = [
 		delay: 3000,
 	},
 	{
-		text: '清理人們遺留下的垃圾',
+		text: '清理人們留下的垃圾',
 		mobile: { x: -290, y: 180 + r[device].b * 0 },
 		desktop: { x: 150, y: 50 + r[device].b * 0 },
 		delay: 3000,

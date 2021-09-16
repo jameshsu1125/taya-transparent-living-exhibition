@@ -1,7 +1,6 @@
-import { useEffect, useRef } from 'react';
-import Tweener from 'lesca-object-tweener';
-
 import Click from 'lesca-click';
+import Tweener from 'lesca-object-tweener';
+import { useEffect, useRef } from 'react';
 import './instruct.less';
 
 const Instruct = (props) => {
@@ -40,7 +39,7 @@ const Instruct = (props) => {
 					from: toA,
 					to: fromA,
 					duration,
-					delay: 3000,
+					delay: 4000,
 					onUpdate: (e) => set(e),
 					onComplete: (e) => {
 						set(e);

@@ -2,8 +2,9 @@
 import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
 import Gtag from 'lesca-gtag';
+import QueryString from 'lesca-url-parameters';
 import { useEffect, useRef } from 'react';
-import { TARGETINDEX, WEBSITE_URL } from '../Setting/config';
+import { TARGETINDEX, HASHTAG } from '../Setting/config';
 import './main.less';
 
 const Carousel = (props) => {
@@ -26,19 +27,13 @@ const Carousel = (props) => {
 				const [name] = targetName;
 
 				setTimeout(() => {
-					const url =
-						window.location.hostname === 'localhost'
-							? `https://localhost:8080/${name}.html`
-							: `${WEBSITE_URL}${name}.html`;
-
-					const redirect_uri =
-						window.location.hostname === 'localhost'
-							? 'https://localhost:8080/?state=result'
-							: `${WEBSITE_URL}?state=result`;
+					const root = QueryString.root();
+					const url = `${root}${name}.html`;
+					const redirect_uri = `${root}?state=result`;
 
 					Facebook.share({
 						url,
-						hashtag: '大亞電線電纜_透明生活展',
+						hashtag: HASHTAG,
 						redirect_uri,
 					});
 				}, 500);
