@@ -181,7 +181,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-	@left: (320 / 1920) * 100%;
+	@left: 200px;
 	.Select {
 		& > .title {
 			left: @left;
@@ -205,7 +205,7 @@
 			left: @left;
 			top: 0;
 			margin-top: 250px;
-			width: 100% - @left;
+			width: calc(~'100% - 297px');
 			height: @height;
 
 			@height: 50vh;
@@ -314,7 +314,7 @@
 			}
 
 			li > button {
-				transform: scale(0.7);
+				transform: scale(0.5);
 			}
 		}
 	}

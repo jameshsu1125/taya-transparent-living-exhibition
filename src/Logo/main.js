@@ -43,7 +43,7 @@ const Logo = (props) => {
 			<TayaLogo ref={tayaLogo} commingSoon={commingSoon} />
 			{instruct && (
 				<Instruct setInstruct={setInstruct}>
-					<div>
+					<div className='do-not-push'>
 						觀展時
 						<br />
 						請勿推擠展櫃 小心安全

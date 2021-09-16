@@ -748,7 +748,7 @@ export const STORY_MOBILE_PAGE1 = [
 		delay: 0,
 	},
 	{
-		text: '媽媽不好意思地說道',
+		text: '媽媽不好意思地說',
 		mobile: { x: -250, y: -440 + r[device].b * 1 },
 		desktop: { x: -410, y: -240 + r[device].b * 1 },
 		delay: 5500,
@@ -788,7 +788,7 @@ export const STORY_MOBILE_PAGE1 = [
 	},
 
 	{
-		text: '「妳媽媽我喔，可是你肚子裡的蛔蟲餒」',
+		text: '「妳媽媽我喔，是你肚子裡的蛔蟲餒」',
 		mobile: { x: -220, y: 380 + r[device].b * 0 },
 		desktop: { x: -30, y: 230 + r[device].b * 0 },
 		delay: 4200,
