@@ -1136,7 +1136,7 @@ export const STORY_CABLE_PAGE1 = [
 		delay: 4000,
 	},
 	{
-		text: '靠自己的力量補足天生家庭功能較弱的缺欠',
+		text: '靠自己的力量補足天生家庭功能較弱的欠缺',
 		mobile: { x: -230, y: -230 + r[device].b * 2 },
 		desktop: { x: -480, y: -130 + r[device].b * 2 },
 		delay: 4400,
@@ -1202,7 +1202,7 @@ export const STORY_CABLE_PAGE2 = [
 		delay: 0,
 	},
 	{
-		text: '他的堅持還是像頭上的日光燈一般炙熱',
+		text: '他的堅持還是像頭上的日光燈一樣炙熱',
 		mobile: { x: -170, y: -410 + r[device].b * 1 },
 		desktop: { x: -500, y: -170 + r[device].b * 1 },
 		delay: 2000,

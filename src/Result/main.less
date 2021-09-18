@@ -14,7 +14,7 @@
 
 	.logo {
 		position: absolute;
-		top: 130px;
+		top: 80px - 40px;
 		left: 50%;
 		margin-left: 0 - image-width(@img) * 0.5 * @scale;
 		width: image-width(@img) * @scale;
@@ -28,7 +28,7 @@
 
 	.logo-label {
 		position: absolute;
-		top: 230px;
+		top: 180px - 40px;
 		left: 50%;
 		margin-left: 0 - image-width(@img) * 0.5 * @scale;
 		width: image-width(@img) * @scale;
@@ -43,7 +43,7 @@
 	.headline-container {
 		position: absolute;
 		top: 50%;
-		margin-top: -520px * 0.5 - 120px;
+		margin-top: calc(~'-300px - 10vh');
 		width: 100%;
 		height: 520px;
 
@@ -107,6 +107,35 @@
 		button {
 			margin: 10px 0;
 			background-color: rgba(153, 153, 153, 0.2);
+			height: 70px;
+			line-height: 70px;
+			font-size: 30px;
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.Result {
+		.logo {
+			top: 80px - 50px;
+		}
+
+		.logo-label {
+			top: 180px - 50px;
+		}
+		.headline-container {
+			margin-top: calc(~'-260px - 10vh');
+		}
+		.buttons {
+			bottom: 20px;
+			button {
+				width: 332px;
+				font-size: 20px;
+				height: @height;
+				line-height: @height;
+				border-radius: @height * 0.5;
+				@height: 54px;
+			}
 		}
 	}
 }
