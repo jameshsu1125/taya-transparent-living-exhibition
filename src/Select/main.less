@@ -184,12 +184,12 @@
 	@left: 200px;
 	.Select {
 		& > .title {
+			top: (192/1280) * 100%;
 			left: @left;
 			padding-top: 15px;
 			text-align: left;
 			letter-spacing: 5px;
 			font-size: 30px;
-			top: (192/1280) * 100%;
 
 			&::before {
 				position: absolute;
@@ -202,8 +202,8 @@
 		}
 
 		.slider-container {
-			left: @left;
 			top: 0;
+			left: @left;
 			margin-top: 250px;
 			width: calc(~'100% - 297px');
 			height: @height;
@@ -282,8 +282,8 @@
 					height: 60%;
 				}
 				.slick-headline {
-					height: 30%;
 					bottom: 10%;
+					height: 30%;
 
 					.title {
 						font-size: 20px;

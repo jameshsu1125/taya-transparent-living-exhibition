@@ -3,7 +3,7 @@ import Tweener, { Bezier } from 'lesca-object-tweener';
 export default class Animation {
 	constructor(props) {
 		const { container, glow, glowShow } = props;
-		const duration = 24000 * 2;
+		const duration = 48000;
 
 		this.tr = {
 			init() {
@@ -58,7 +58,6 @@ export default class Animation {
 						if (key === 'opacity') return `opacity:${value - this.blank - Math.random() * 0.1};`;
 						return `${key}:${value}${unit};`;
 					});
-
 					this.c.style.cssText = cssText.join('');
 				},
 			},
@@ -99,7 +98,6 @@ export default class Animation {
 						if (key === 'opacity') return `opacity:${value - this.blank - Math.random() * 0.1};`;
 						return `${key}:${value}${unit};`;
 					});
-
 					this.c.style.cssText = cssText.join('');
 				},
 			},
@@ -136,7 +134,6 @@ export default class Animation {
 				},
 			},
 		};
-
 		this.tr.init();
 	}
 

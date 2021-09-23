@@ -14,6 +14,7 @@
 		margin-left: 2.5px;
 		width: 100%;
 		letter-spacing: 5px;
+
 		user-select: none;
 
 		& > div {
@@ -42,11 +43,11 @@
 		height: 100px;
 		color: #fff;
 		text-align: center;
+		text-indent: 2.5px;
 		letter-spacing: 5px;
 		font-size: 50px;
 		line-height: 100px;
 		transform: scale(1, 1.1);
-		text-indent: 2.5px;
 	}
 
 	.arrow {
@@ -60,6 +61,7 @@
 
 		&::after {
 			position: absolute;
+			margin-left: -5%;
 			width: 45%;
 			height: 100%;
 			background-image: url(@img);
@@ -67,12 +69,12 @@
 			background-repeat: no-repeat;
 			content: '';
 			transform: scale(-0.6, 0.6);
-			margin-left: -5%;
 			animation: arrowLeft 2s ease-in-out infinite;
 		}
 
 		&::before {
 			position: absolute;
+			margin-right: -5%;
 			width: 45%;
 			height: 100%;
 			background-image: url(@img);
@@ -81,7 +83,6 @@
 			content: '';
 			transform: scale(0.6, 0.6);
 			animation: arrowRight 2s ease-in-out infinite;
-			margin-right: -5%;
 		}
 	}
 }
@@ -114,8 +115,8 @@
 	.Intro {
 		.content {
 			& > div {
-				font-size: 20px;
 				height: 45px;
+				font-size: 20px;
 			}
 		}
 

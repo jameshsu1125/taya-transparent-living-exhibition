@@ -19,13 +19,10 @@ const Instruct = (props) => {
 			const fromA = { o: 0 };
 			const toA = { o: 1 };
 			const tweener = new Tweener();
-
 			const set = (e) => {
 				container.current.style.opacity = e.o;
 			};
-
 			container.current.style.opacity = 0;
-
 			tweener
 				.add({
 					from: fromA,

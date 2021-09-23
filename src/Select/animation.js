@@ -13,7 +13,6 @@ export default class Animation {
 		this.selectedIndex = 0;
 
 		const root = this;
-
 		this.tr = {
 			init() {
 				this.select.init();

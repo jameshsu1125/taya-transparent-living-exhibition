@@ -7,24 +7,24 @@
 	background-position: calc(~'50% + 20px') calc(~'50% - 50px');
 
 	&::before {
-		content: '';
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		background-color: rgba(0, 0, 0, 0.15);
+		content: '';
 	}
 
 	.glow-slow {
 		position: absolute;
+		top: 50%;
+		left: -600px * @scale;
+		margin-top: 0 - image-height(@img) * 0.5 * @scale;
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
 		background-color: rgba(0, 0, 0, 0);
 		background-image: url(@img);
-		transform: rotate();
-		left: -600px * @scale;
 		background-size: 100%;
-		top: 50%;
-		margin-top: 0 - image-height(@img) * 0.5 * @scale;
+		transform: rotate();
 		transform-origin: 337px 283px;
 
 		@img: './img/light-glow2.png';
@@ -33,15 +33,15 @@
 
 	.glow {
 		position: absolute;
+		top: 55%;
+		left: -400px * @scale;
+		margin-top: 0 - image-height(@img) * 0.5 * @scale;
 		width: image-width(@img) * @scale;
 		height: image-height(@img) * @scale;
 		background-color: rgba(0, 0, 0, 0);
 		background-image: url(@img);
-		transform: rotate();
-		left: -400px * @scale;
 		background-size: 100%;
-		top: 55%;
-		margin-top: 0 - image-height(@img) * 0.5 * @scale;
+		transform: rotate();
 		transform-origin: 330px 250px;
 
 		@img: './img/light-glow.png';

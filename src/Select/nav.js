@@ -16,31 +16,20 @@ const Nav = () => {
 	useEffect(() => {
 		animation.current = new Animation({ hamRef, textRef, contentRef });
 
-		Click.add('#menu', () => {
-			setState((r) => !r);
-		});
-
+		Click.add('#menu', () => setState((r) => !r));
 		Click.add('#menu-offical', () => {
-			setTimeout(() => {
-				window.open('https://www.taya.com.tw/');
-			}, 300);
+			setTimeout(() => window.open('https://www.taya.com.tw/'), 300);
 			Gtag.event('結果頁', '了解大亞');
 		});
-
 		Click.add('#menu-fb', () => {
-			setTimeout(() => {
-				window.open('https://www.facebook.com/TAIWANTAYA/');
-			}, 300);
+			setTimeout(() => window.open('https://www.facebook.com/TAIWANTAYA/'), 300);
 			Gtag.event('結果頁', '大亞FB');
 		});
 	}, []);
 
 	useEffect(() => {
-		if (state) {
-			animation.current.open();
-		} else {
-			animation.current.close();
-		}
+		if (state) animation.current.open();
+		else animation.current.close();
 	}, [state]);
 
 	return (

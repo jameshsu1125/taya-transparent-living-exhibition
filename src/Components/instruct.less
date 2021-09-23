@@ -1,26 +1,24 @@
 .Instruct {
 	position: absolute;
-	width: 100%;
-	height: 100%;
 	top: 0;
-	background-color: rgba(0, 0, 0, 0.8);
-
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
 	color: #fff;
 
 	& > div {
-		pointer-events: none;
+		margin: 20px 0;
 		width: 100%;
 		text-align: center;
-		margin: 20px 0;
-		font-size: 38px;
 		letter-spacing: 3px;
+		font-size: 38px;
 		line-height: 75px;
 		transform: scale(1, 1.1);
+		pointer-events: none;
 	}
 }
 

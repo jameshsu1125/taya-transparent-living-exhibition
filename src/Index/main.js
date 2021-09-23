@@ -106,6 +106,7 @@ const Index = () => {
 			} else setState('intro');
 		} else {
 			if (queryState === 'normal') {
+				// skip time detector
 				setState('intro');
 			} else if (now < exhibitionDate) {
 				// to comming Soon
@@ -118,7 +119,7 @@ const Index = () => {
 	};
 
 	useEffect(() => {
-		// 紀錄資料到Storage
+		// save data to Storage
 		const howMuchRead = read.filter((e) => e);
 		setTimeout(() => {
 			if (state !== 'loading') setState('select');
@@ -149,7 +150,6 @@ const Index = () => {
 
 	const retry = () => {
 		// ? => result頁讀完就從新再玩
-		// todo => 重新再玩reset localStorage
 		setRead(() => [...defaultReadData]);
 		setResult(false);
 		setState('reset');

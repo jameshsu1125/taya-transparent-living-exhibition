@@ -3,11 +3,6 @@ import Tweener, { Bezier } from 'lesca-object-tweener';
 import UserAgent from 'lesca-user-agent';
 
 export default class Animation {
-	/**
-	 *
-	 * @param {object} props { DOMS }
-	 * @param {function} callback callback
-	 */
 	constructor(props, callback) {
 		const { contentRef, ctaRef, startButton, introRef, arrow, selectFadein, setAudioState } = props;
 		const MobileDevice = UserAgent.get() === 'mobile';

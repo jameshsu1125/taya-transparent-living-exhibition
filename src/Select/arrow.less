@@ -4,20 +4,19 @@
 
 	.Arrow {
 		position: absolute;
+		top: -70px - @size;
+		overflow: hidden;
+		box-sizing: border-box;
 		width: @size;
 		height: @size;
-		top: -70px - @size;
-		border-radius: 50%;
 		border: solid 1px #9c9c9c;
+		border-radius: 50%;
 		background-color: rgba(169, 169, 169, 0);
-
-		background-repeat: no-repeat;
 		background-position: center;
+		background-size: 50%;
+		background-repeat: no-repeat;
 		cursor: pointer;
 		transition: 0.2s;
-		background-size: 50%;
-		box-sizing: border-box;
-		overflow: hidden;
 
 		&:hover {
 			background-color: rgba(169, 169, 169, 0.5);
@@ -31,13 +30,14 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			content: '';
 			background-color: #000;
+			content: '';
+			transition: 0.2s;
+
 			mask-image: url('./img/arrow.svg');
 			mask-repeat: no-repeat;
 			mask-position: center;
 			mask-size: 50%;
-			transition: 0.2s;
 		}
 	}
 

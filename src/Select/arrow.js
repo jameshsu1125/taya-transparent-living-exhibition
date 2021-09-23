@@ -6,9 +6,7 @@ const Arrow = (props) => {
 	const { direct, click } = props;
 
 	useEffect(() => {
-		Click.add(`#arrows${direct}`, () => {
-			click?.();
-		});
+		Click.add(`#arrows${direct}`, () => click?.());
 	}, []);
 	return (
 		<div id={`arrows${direct}`} className={`Arrow ${direct}`}>

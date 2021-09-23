@@ -15,9 +15,7 @@ const Background = (props) => {
 		if (!commingSoon) {
 			animation.current = new Animation({ container, glow, glowShow });
 			animation.current.in();
-		} else {
-			animation.current?.stop();
-		}
+		} else animation.current?.stop();
 	}, [commingSoon]);
 
 	return (

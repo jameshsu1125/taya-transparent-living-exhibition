@@ -79,7 +79,6 @@ export default class Animation {
 					const r = Pad(Math.floor(this.color.r).toString(16), 2);
 					const g = Pad(Math.floor(this.color.g).toString(16), 2);
 					const b = Pad(Math.floor(this.color.b).toString(16), 2);
-
 					this.c.style['background-color'] = `#${r}${g}${b}`;
 					this.c.style.opacity = this.opacity;
 				},

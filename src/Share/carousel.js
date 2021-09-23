@@ -31,11 +31,7 @@ const Carousel = (props) => {
 					const url = `${root}${name}.html`;
 					const redirect_uri = `${root}?state=result`;
 
-					Facebook.share({
-						url,
-						hashtag: HASHTAG,
-						redirect_uri,
-					});
+					Facebook.share({ url, hashtag: HASHTAG, redirect_uri });
 				}, 500);
 			});
 		}, 500);

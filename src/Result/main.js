@@ -35,28 +35,20 @@ const Result = (props) => {
 		}).then(() => {
 			animation.current.in();
 
-			Click.add('#share', () => {
-				setShareDialog('open');
-			});
+			Click.add('#share', () => setShareDialog('open'));
 
 			Click.add('#back', () => {
-				animation.current.out(() => {
-					retry();
-				});
+				animation.current.out(() => retry());
 				Gtag.event('結果頁', '重新聆聽故事');
 			});
 
 			Click.add('#about', () => {
-				setTimeout(() => {
-					window.open('https://www.taya.com.tw/');
-				}, 300);
+				setTimeout(() => window.open('https://www.taya.com.tw/'), 300);
 				Gtag.event('結果頁', '了解大亞');
 			});
 
 			Click.add('#facebook', () => {
-				setTimeout(() => {
-					window.open('https://www.facebook.com/TAIWANTAYA/');
-				}, 300);
+				setTimeout(() => window.open('https://www.facebook.com/TAIWANTAYA/'), 300);
 				Gtag.event('結果頁', '大亞FB');
 			});
 
