@@ -6,17 +6,18 @@ const device = window.innerHeight / window.innerWidth > 1 ? 'mobile' : 'desktop'
 const defaultPosition = { x: 0, y: 0 };
 
 const Label = (props) => {
-	const { data } = props;
+	const { data, lastPage } = props;
 	const { text, delay } = data;
 
 	const [position, setPosition] = useState(defaultPosition);
 
 	useEffect(() => {
-		const p = data[device];
-		if (p) {
-			setPosition((d) => ({ ...d, ...p }));
-		}
-		return () => {};
+		const isWidth1000 = window.innerWidth >= 751 ? 'desktop' : 'mobile';
+		const m = lastPage ? isWidth1000 : device;
+		const p = data[m];
+
+		if (lastPage && window.innerWidth < 1000) p.y -= 25;
+		if (p) setPosition((d) => ({ ...d, ...p }));
 	}, []);
 
 	return (
