@@ -1,6 +1,3 @@
-import UserAgent from 'lesca-user-agent';
-
-const isMobileDevice = UserAgent.get() === 'mobile';
 const { parseInt } = window;
 let sizeTimer = 0;
 
@@ -12,7 +9,7 @@ export const SET_SIZE = (props) => {
 	const { innerWidth, innerHeight } = window;
 
 	let scale = 1;
-	if (isMobileDevice) {
+	if (innerHeight / innerWidth > 1) {
 		scale = innerHeight / height;
 	} else {
 		scale = innerWidth / width;
@@ -58,6 +55,11 @@ export const POSITION = (imageSize, offset) => {
 		l() {
 			const imgW = width * scale;
 			const offsetX = (imgW - innerWidth) * 0.5;
+			return offsetX;
+		},
+		r() {
+			const imgW = width * scale;
+			const offsetX = (imgW - innerWidth) * -0.5;
 			return offsetX;
 		},
 	};

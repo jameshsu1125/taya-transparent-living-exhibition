@@ -1,6 +1,5 @@
 import { Pad } from 'lesca-number';
 import Tweener, { Bezier } from 'lesca-object-tweener';
-import UserAgent from 'lesca-user-agent';
 
 export default class Animation {
 	constructor(props) {
@@ -93,7 +92,6 @@ export default class Animation {
 					this.c = logo.current;
 					this.tweener = new Tweener();
 					this.tran();
-					if (UserAgent.get() === 'desktop') this.in();
 				},
 				in(delay = this.delay) {
 					const { duration, property } = this;

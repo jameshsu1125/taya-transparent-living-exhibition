@@ -20,7 +20,6 @@ export default class Animation {
 				this.logo.out();
 				this.label.out(callback);
 			},
-
 			label: {
 				color: { r: 0, g: 0, b: 0 },
 				opacity: 1,
@@ -163,7 +162,7 @@ export default class Animation {
 				in() {
 					const { height, opacity } = this;
 					const from = { height, opacity };
-					const to = { height: 70, opacity: 1 };
+					const to = { height: 60, opacity: 1 };
 					const duration = 1200;
 					const easing = Bezier.easeInOutQuart;
 					this.tweener

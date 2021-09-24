@@ -15,8 +15,8 @@
 
 	.page2 {
 		.img {
-			left: 0px;
 			position: absolute;
+			left: 0px;
 			margin-top: 0 - image-height(@img) * 0.5;
 			margin-left: 0 - image-width(@img) * 0.5;
 			width: image-width(@img);
@@ -48,14 +48,14 @@
 
 			.eyes {
 				position: absolute;
-				@img: './img/cable/eyes.png';
-				background-image: url(@img);
-				width: image-width(@img);
-				height: image-height(@img);
 				top: 42%;
 				left: 46.5%;
-
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
 				animation: eye 5s linear infinite;
+
+				@img: './img/cable/eyes.png';
 			}
 		}
 	}
@@ -94,14 +94,14 @@
 
 			.eye {
 				position: absolute;
-				@img: './img/cable/eye.png';
-				background-image: url(@img);
-				width: image-width(@img);
-				height: image-height(@img);
 				top: 76.6%;
 				left: 64%;
-
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
 				animation: eye 5s linear infinite;
+
+				@img: './img/cable/eye.png';
 			}
 		}
 	}
@@ -124,12 +124,13 @@
 
 			.light {
 				position: absolute;
-				@img: './img/cable/light0.png';
-				background-image: url(@img);
-				width: image-width(@img);
-				height: image-height(@img);
 				top: 0%;
 				left: 14%;
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
+
+				@img: './img/cable/light0.png';
 			}
 		}
 	}

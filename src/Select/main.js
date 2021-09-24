@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import Gtag from 'lesca-gtag';
 import QueryString from 'lesca-url-parameters';
-import UserAgnet from 'lesca-user-agent';
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
@@ -15,7 +14,8 @@ import Instruct from '../Components/instruct';
 import './main.less';
 import Nav from './nav';
 
-const device = UserAgnet.get() === 'mobile';
+const device = window.innerWidth <= 750;
+
 const storyTarget = QueryString.get('t');
 
 const settings = {

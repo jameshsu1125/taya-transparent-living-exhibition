@@ -1,11 +1,10 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
 import QueryString from 'lesca-url-parameters';
-import userAgent from 'lesca-user-agent';
 import { POSITION } from '../setSize';
 
-const { parseInt } = window;
+const { parseInt, innerWidth, innerHeight } = window;
 const debug = QueryString.get('debug') === 'true';
-const device = userAgent.get();
+const device = innerHeight / innerWidth > 1 ? 'mobile' : 'desktop';
 
 export default class Animation0 {
 	constructor(props, callback) {
@@ -66,7 +65,7 @@ export default class Animation0 {
 				property: { opacity: 0, top: 0, left: 0 },
 				unit: { opacity: '' },
 				offset: {
-					mobile: { from: { left: 100, top: 0 }, to: { left: -30, top: 0 } },
+					mobile: { from: { left: 'l', top: 0 }, to: { left: -30, top: 0 } },
 					desktop: { from: { left: 0, top: 'b-80' }, to: { left: 0, top: 'b' } },
 				},
 				init() {

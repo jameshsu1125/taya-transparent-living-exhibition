@@ -43,13 +43,13 @@
 
 			.air {
 				position: absolute;
-				@img: './img/earphone/air.png';
-				background-image: url(@img);
+				left: (2400px - 1560px) * 0.5;
 				width: image-width(@img);
 				height: image-height(@img) * (1 / 3);
-				left: (2400px - 1560px) * 0.5;
-
+				background-image: url(@img);
 				animation: tail 2s steps(2) infinite;
+
+				@img: './img/earphone/air.png';
 			}
 		}
 	}
@@ -83,14 +83,14 @@
 
 			.led {
 				position: absolute;
-				@img: './img/earphone/LED.png';
-				background-image: url(@img);
-				width: image-width(@img);
-				height: image-height(@img);
 				top: 7.8%;
 				left: 30%;
-
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
 				animation: led 2s ease-in-out infinite;
+
+				@img: './img/earphone/LED.png';
 			}
 		}
 	}
@@ -131,7 +131,6 @@
 				height: image-height(@img) * (1 / 4);
 				background-image: url(@img);
 				opacity: 1;
-
 				animation: tail 3s steps(3) infinite;
 
 				@img: './img/earphone/tail.png';

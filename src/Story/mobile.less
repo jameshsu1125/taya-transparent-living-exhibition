@@ -60,14 +60,14 @@
 
 			.speed {
 				position: absolute;
-				@img: './img/mobile/speed.png';
-				background-image: url(@img);
-				width: image-width(@img);
-				height: image-height(@img);
 				top: 5.4%;
 				left: 14.2%;
-
+				width: image-width(@img);
+				height: image-height(@img);
+				background-image: url(@img);
 				animation: hightSpeed 4s linear infinite;
+
+				@img: './img/mobile/speed.png';
 			}
 		}
 	}
@@ -95,15 +95,14 @@
 
 			.rain {
 				position: absolute;
-				@img: './img/mobile/rain.png';
-				background-image: url(@img);
+				top: 0.4%;
+				right: 2%;
 				width: image-width(@img);
 				height: image-height(@img);
-
-				right: 2%;
-				top: 0.4%;
-
+				background-image: url(@img);
 				animation: rain 2s steps(5) infinite;
+
+				@img: './img/mobile/rain.png';
 			}
 		}
 	}
@@ -141,15 +140,15 @@
 
 			.tears {
 				position: absolute;
-				@img: './img/mobile/tears.png';
-				background-image: url(@img);
+				top: 54.8%;
+				left: 17%;
 				width: image-width(@img);
 				height: image-height(@img);
-				left: 17%;
-				top: 54.8%;
+				background-image: url(@img);
 				opacity: 0;
-
 				animation: tears 3s ease-out infinite;
+
+				@img: './img/mobile/tears.png';
 			}
 		}
 	}

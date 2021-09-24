@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import './label.less';
-import UserAgent from 'lesca-user-agent';
 
-const device = UserAgent.get();
+const device = window.innerHeight / window.innerWidth > 1 ? 'mobile' : 'desktop';
 
 const defaultPosition = { x: 0, y: 0 };
 

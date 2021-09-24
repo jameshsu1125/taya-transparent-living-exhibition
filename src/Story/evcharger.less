@@ -2,14 +2,13 @@
 	.page3 {
 		.product {
 			position: absolute;
-
+			top: 100px;
 			margin-top: 0 - image-height(@img) * 0.5;
 			margin-left: 0 - image-width(@img) * 0.5 + 113px;
-			width: image-width(@img);
-			height: image-height(@img);
+			width: image-width(@img) * 0.9;
+			height: image-height(@img) * 0.9;
+			background-size: 100%;
 			background-image: url(@img);
-
-			top: 100px;
 
 			@img: './img/evcharger/product.png';
 		}
@@ -34,9 +33,9 @@
 				height: 100%;
 				background-image: url(@img);
 				background-position-x: 0px;
+				background-position-y: top;
 				background-size: 50%;
 				background-repeat: repeat-x;
-				background-position-y: top;
 
 				@img: './img/evcharger/cloud0.png';
 			}

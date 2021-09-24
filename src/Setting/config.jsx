@@ -1,6 +1,4 @@
-import UserAgent from 'lesca-user-agent';
-
-const device = UserAgent.get();
+const device = window.innerHeight / window.innerWidth > 1 ? 'mobile' : 'desktop';
 
 export default {};
 export const HASHTAG = '大亞電線電纜_透明生活展';
@@ -659,13 +657,13 @@ export const STORY_PUMP_PAGE2 = [
 
 	{
 		text: '明天，繼續回到街上',
-		mobile: { x: -210, y: 420 + r[device].b * 0 },
+		mobile: { x: -210, y: 380 + r[device].b * 0 },
 		desktop: { x: 100, y: 170 + r[device].b * 0 },
 		delay: 5000,
 	},
 	{
 		text: '為動物的生存權努力',
-		mobile: { x: -210, y: 420 + r[device].b * 1 },
+		mobile: { x: -210, y: 380 + r[device].b * 1 },
 		desktop: { x: 180, y: 170 + r[device].b * 1 },
 		delay: 3500,
 	},
@@ -930,13 +928,13 @@ export const STORY_EVCHARAGER_PAGE0 = [
 	},
 	{
 		text: '溫溫的打在臉上，已經不覺得那麼冷',
-		mobile: { x: -270, y: 430 + r[device].b * 0 },
+		mobile: { x: -270, y: 380 + r[device].b * 0 },
 		desktop: { x: -60, y: 230 + r[device].b * 0 },
 		delay: 4000,
 	},
 	{
 		text: '海潮的氣味慢慢滲進鼻腔裡，到海邊了',
-		mobile: { x: -180, y: 430 + r[device].b * 1 },
+		mobile: { x: -180, y: 380 + r[device].b * 1 },
 		desktop: { x: -10, y: 230 + r[device].b * 1 },
 		delay: 4500,
 	},
@@ -981,7 +979,7 @@ export const STORY_EVCHARAGER_PAGE1 = [
 	},
 	{
 		text: '「比起在陸地，我在海裡更能呼吸」',
-		mobile: { x: -130, y: 460 + r[device].b * 0 },
+		mobile: { x: -130, y: 400 + r[device].b * 0 },
 		desktop: { x: 60, y: 200 + r[device].b * 0 },
 		delay: 6500,
 	},
@@ -1150,45 +1148,45 @@ export const STORY_CABLE_PAGE1 = [
 
 	{
 		text: '我常常懷疑自己「做這麼多究竟是為了什麼？」',
-		mobile: { x: -290, y: 80 + r[device].b * 0 },
+		mobile: { x: -290, y: 50 + r[device].b * 0 },
 		desktop: { x: -500, y: 30 + r[device].b * 0 },
 		delay: 7300,
 	},
 	{
 		text: '也不會否認腦中出現「就回家吧」的聲音',
-		mobile: { x: -170, y: 80 + r[device].b * 1 },
+		mobile: { x: -170, y: 50 + r[device].b * 1 },
 		desktop: { x: -420, y: 30 + r[device].b * 1 },
 		delay: 6500,
 	},
 
 	{
 		text: '但在抬頭看到巴奈',
-		mobile: { x: -290, y: 260 + r[device].b * 0 },
+		mobile: { x: -290, y: 210 + r[device].b * 0 },
 		desktop: { x: -140, y: 130 + r[device].b * 0 },
 		delay: 5000,
 	},
 	{
 		text: '那麼努力的嘗試解出那道數學題',
-		mobile: { x: -290, y: 260 + r[device].b * 1 },
+		mobile: { x: -290, y: 210 + r[device].b * 1 },
 		desktop: { x: -140, y: 130 + r[device].b * 1 },
 		delay: 2000,
 	},
 
 	{
 		text: '並在我問他「要不要我幫幫你？」時',
-		mobile: { x: -290, y: 420 + r[device].b * 0 },
+		mobile: { x: -290, y: 340 + r[device].b * 0 },
 		desktop: { x: -140, y: 220 + r[device].b * 0 },
 		delay: 3500,
 	},
 	{
 		text: '他回答我「再讓我試試」',
-		mobile: { x: -100, y: 420 + r[device].b * 1 },
+		mobile: { x: -100, y: 340 + r[device].b * 1 },
 		desktop: { x: -30, y: 220 + r[device].b * 1 },
 		delay: 4000,
 	},
 	{
 		text: '我就知道，這些都只是非常一時的念頭',
-		mobile: { x: -290, y: 420 + r[device].b * 2 },
+		mobile: { x: -290, y: 340 + r[device].b * 2 },
 		desktop: { x: -140, y: 220 + r[device].b * 2 },
 		delay: 4500,
 	},
