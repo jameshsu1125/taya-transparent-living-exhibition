@@ -137,13 +137,13 @@ export const STORY_MOTORCYCLE_PAGE1 = [
 
 	{
 		text: '想了一想',
-		mobile: { x: -70, y: 420 + r[device].b * 0 },
+		mobile: { x: -70, y: 320 + r[device].b * 0 },
 		desktop: { x: 150, y: 180 + r[device].b * 0 },
 		delay: 3000,
 	},
 	{
 		text: '有些事真的不是那麼重要',
-		mobile: { x: 10, y: 420 + r[device].b * 1 },
+		mobile: { x: 10, y: 320 + r[device].b * 1 },
 		desktop: { x: 200, y: 180 + r[device].b * 1 },
 		delay: 1500,
 	},
@@ -549,7 +549,7 @@ export const STORY_PUMP_PAGE0 = [
 
 	{
 		text: '深怕把家人吵醒，又是一陣沒完沒了的關心',
-		mobile: { x: -220, y: 420 + r[device].b * 0 },
+		mobile: { x: -220, y: 380 + r[device].b * 0 },
 		desktop: { x: -67, y: 170 + r[device].b * 0 },
 		delay: 4200,
 	},
@@ -650,20 +650,20 @@ export const STORY_PUMP_PAGE2 = [
 
 	{
 		text: '洗完澡，又是全新的一個人',
-		mobile: { x: -270, y: 220 + r[device].b * 0 },
+		mobile: { x: -270, y: 200 + r[device].b * 0 },
 		desktop: { x: -20, y: 90 + r[device].b * 0 },
 		delay: 4500,
 	},
 
 	{
 		text: '明天，繼續回到街上',
-		mobile: { x: -210, y: 380 + r[device].b * 0 },
+		mobile: { x: -210, y: 320 + r[device].b * 0 },
 		desktop: { x: 100, y: 170 + r[device].b * 0 },
 		delay: 5000,
 	},
 	{
 		text: '為動物的生存權努力',
-		mobile: { x: -210, y: 380 + r[device].b * 1 },
+		mobile: { x: -210, y: 320 + r[device].b * 1 },
 		desktop: { x: 180, y: 170 + r[device].b * 1 },
 		delay: 3500,
 	},
@@ -774,26 +774,26 @@ export const STORY_MOBILE_PAGE1 = [
 
 	{
 		text: '「妳又知道」我抹去淚水',
-		mobile: { x: -120, y: 190 + r[device].b * 0 },
+		mobile: { x: -120, y: 160 + r[device].b * 0 },
 		desktop: { x: -70, y: 110 + r[device].b * 0 },
 		delay: 6500,
 	},
 	{
 		text: '也為她驚人的直覺感到驚訝',
-		mobile: { x: -20, y: 190 + r[device].b * 1 },
+		mobile: { x: -20, y: 160 + r[device].b * 1 },
 		desktop: { x: -10, y: 110 + r[device].b * 1 },
 		delay: 4800,
 	},
 
 	{
 		text: '「妳媽媽我喔，是你肚子裡的蛔蟲餒」',
-		mobile: { x: -220, y: 380 + r[device].b * 0 },
+		mobile: { x: -220, y: 330 + r[device].b * 0 },
 		desktop: { x: -30, y: 230 + r[device].b * 0 },
 		delay: 4200,
 	},
 	{
 		text: '「妳很愛哭跟很愛我們，我都知道啦」',
-		mobile: { x: -180, y: 380 + r[device].b * 1 },
+		mobile: { x: -180, y: 330 + r[device].b * 1 },
 		desktop: { x: 0, y: 230 + r[device].b * 1 },
 		delay: 3500,
 	},
@@ -910,31 +910,31 @@ export const STORY_EVCHARAGER_PAGE0 = [
 
 	{
 		text: '車安靜地行駛著',
-		mobile: { x: -10, y: 140 + r[device].b * 0 },
+		mobile: { x: -10, y: 80 + r[device].b * 0 },
 		desktop: { x: -170, y: 80 + r[device].b * 0 },
 		delay: 3000,
 	},
 	{
 		text: '他搖下車窗，將冷氣轉小',
-		mobile: { x: 10, y: 140 + r[device].b * 1 },
+		mobile: { x: 10, y: 80 + r[device].b * 1 },
 		desktop: { x: -150, y: 80 + r[device].b * 1 },
 		delay: 3500,
 	},
 	{
 		text: '任春風透進車內',
-		mobile: { x: -40, y: 140 + r[device].b * 2 },
+		mobile: { x: -40, y: 80 + r[device].b * 2 },
 		desktop: { x: -180, y: 80 + r[device].b * 2 },
 		delay: 3200,
 	},
 	{
 		text: '溫溫的打在臉上，已經不覺得那麼冷',
-		mobile: { x: -270, y: 380 + r[device].b * 0 },
+		mobile: { x: -270, y: 300 + r[device].b * 0 },
 		desktop: { x: -60, y: 230 + r[device].b * 0 },
 		delay: 4000,
 	},
 	{
 		text: '海潮的氣味慢慢滲進鼻腔裡，到海邊了',
-		mobile: { x: -180, y: 380 + r[device].b * 1 },
+		mobile: { x: -180, y: 300 + r[device].b * 1 },
 		desktop: { x: -10, y: 230 + r[device].b * 1 },
 		delay: 4500,
 	},
@@ -1148,45 +1148,45 @@ export const STORY_CABLE_PAGE1 = [
 
 	{
 		text: '我常常懷疑自己「做這麼多究竟是為了什麼？」',
-		mobile: { x: -290, y: 50 + r[device].b * 0 },
+		mobile: { x: -290, y: 20 + r[device].b * 0 },
 		desktop: { x: -500, y: 30 + r[device].b * 0 },
 		delay: 7300,
 	},
 	{
 		text: '也不會否認腦中出現「就回家吧」的聲音',
-		mobile: { x: -170, y: 50 + r[device].b * 1 },
+		mobile: { x: -170, y: 20 + r[device].b * 1 },
 		desktop: { x: -420, y: 30 + r[device].b * 1 },
 		delay: 6500,
 	},
 
 	{
 		text: '但在抬頭看到巴奈',
-		mobile: { x: -290, y: 210 + r[device].b * 0 },
+		mobile: { x: -290, y: 170 + r[device].b * 0 },
 		desktop: { x: -140, y: 130 + r[device].b * 0 },
 		delay: 5000,
 	},
 	{
 		text: '那麼努力的嘗試解出那道數學題',
-		mobile: { x: -290, y: 210 + r[device].b * 1 },
+		mobile: { x: -290, y: 170 + r[device].b * 1 },
 		desktop: { x: -140, y: 130 + r[device].b * 1 },
 		delay: 2000,
 	},
 
 	{
 		text: '並在我問他「要不要我幫幫你？」時',
-		mobile: { x: -290, y: 340 + r[device].b * 0 },
+		mobile: { x: -290, y: 310 + r[device].b * 0 },
 		desktop: { x: -140, y: 220 + r[device].b * 0 },
 		delay: 3500,
 	},
 	{
 		text: '他回答我「再讓我試試」',
-		mobile: { x: -100, y: 340 + r[device].b * 1 },
+		mobile: { x: -100, y: 310 + r[device].b * 1 },
 		desktop: { x: -30, y: 220 + r[device].b * 1 },
 		delay: 4000,
 	},
 	{
 		text: '我就知道，這些都只是非常一時的念頭',
-		mobile: { x: -290, y: 340 + r[device].b * 2 },
+		mobile: { x: -290, y: 310 + r[device].b * 2 },
 		desktop: { x: -140, y: 220 + r[device].b * 2 },
 		delay: 4500,
 	},

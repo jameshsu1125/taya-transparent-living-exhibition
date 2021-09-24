@@ -63,7 +63,7 @@ export const POSITION = (imageSize, offset) => {
 			return offsetX;
 		},
 	};
-	const direct = { b: 1, l: 1, r: -1, t: -1 };
+	const direct = { b: 1, l: -1, r: -1, t: -1 };
 
 	Object.entries(from).forEach((e) => {
 		const [key, value] = e;

@@ -2,13 +2,12 @@
 import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
 import QueryString from 'lesca-url-parameters';
-import userAgent from 'lesca-user-agent';
 import { useEffect, useRef } from 'react';
 import { HASHTAG, STORY_EARPHONE_PAGE3 } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation3';
 
-const device = userAgent.get() === 'desktop';
+const device = window.innerWidth >= 751;
 const pageName = 'page3';
 const name = 'earphone';
 
@@ -75,7 +74,7 @@ const Page3 = (props) => {
 			</div>
 			<div ref={labels} className='labels'>
 				{STORY_EARPHONE_PAGE3.map((e) => (
-					<Label key={e.text} data={e} />
+					<Label key={e.text} data={e} lastPage />
 				))}
 			</div>
 			{/* <div
