@@ -1,15 +1,17 @@
-import { useState } from 'react';
 import Loading from 'lesca-react-loading';
-import Ricecooker from './ricecooker';
-import Evcharger from './evcharger';
-import Motorcycle from './motorcycle';
-import Earphone from './earphone';
-import Mobile from './mobile';
-import Pump from './pump';
-import InnerSizeDetecter from '../Components/innerSizeDetecter';
-import Cable from './cable';
+import QueryString from 'lesca-url-parameters';
+import { useState } from 'react';
 import { ITEMS_SELECT } from '../Setting/config';
+import Cable from './cable';
+import Earphone from './earphone';
+import Evcharger from './evcharger';
 import './main.less';
+import Mobile from './mobile';
+import Motorcycle from './motorcycle';
+import Pump from './pump';
+import Ricecooker from './ricecooker';
+
+const debug = QueryString.get('debug');
 
 const Story = (props) => {
 	const { index, setStory, setState, setAudioState, audioLoad, audioRef } = props;
@@ -132,8 +134,8 @@ const Story = (props) => {
 	return (
 		<div className='Story'>
 			{appendStore()}
+			{debug && <div className='ipad8SavetyArea' />}
 			{loading && <Loading />}
-			<InnerSizeDetecter />
 		</div>
 	);
 };

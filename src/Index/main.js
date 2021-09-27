@@ -1,11 +1,12 @@
 /* eslint-disable no-lonely-if */
+import Gtag from 'lesca-gtag';
 import ImageOnload from 'lesca-image-onload';
 import Storage from 'lesca-local-storage';
 import QueryString from 'lesca-url-parameters';
 import { useEffect, useRef, useState } from 'react';
-import Gtag from 'lesca-gtag';
 import Background from '../Background/main';
 import Audio from '../Components/audio';
+import InnerSizeDetecter from '../Components/innerSizeDetecter';
 import Intro from '../Intro/main';
 import Loading from '../Loading/main';
 import Logo from '../Logo/main';
@@ -189,6 +190,7 @@ const Index = () => {
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
 			{result && <Result retry={retry} />}
 			<Audio ref={audioRef} state={audioState} onload={onAudioLoaded} />
+			<InnerSizeDetecter />
 		</div>
 	);
 };
