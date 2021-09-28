@@ -177,7 +177,7 @@ export const STORY_MOTORCYCLE_PAGE2 = [
 		delay: 2000,
 	},
 ];
-// x: -82, y: -280,
+
 export const STORY_MOTORCYCLE_PAGE3 = [
 	{
 		text: 'EAIW、IFDW',
@@ -209,7 +209,7 @@ export const STORY_MOTORCYCLE_PAGE3 = [
 
 export const STORY_RICECOOKER_PAGE0 = [
 	{
-		text: '我不被諒解，但我理解',
+		text: '我不被理解，但我理解',
 		mobile: { x: -70, y: -330 + r[device].b * 0 },
 		desktop: { x: 260, y: -240 + r[device].b * 0 },
 		delay: 0,
@@ -871,7 +871,7 @@ export const STORY_MOBILE_PAGE3 = [
 
 export const STORY_EVCHARAGER_PAGE0 = [
 	{
-		text: '呼吸，是主要生命徵象之一',
+		text: '呼吸，是主要生命象徵之一',
 		mobile: { x: -290, y: -340 + r[device].b * 0 },
 		desktop: { x: -100, y: -230 + r[device].b * 0 },
 		delay: 0,
@@ -1134,7 +1134,7 @@ export const STORY_CABLE_PAGE1 = [
 		delay: 4000,
 	},
 	{
-		text: '靠自己的力量補足天生家庭功能較弱的欠缺',
+		text: '靠自己的力量補足天生家庭功能較弱的缺欠',
 		mobile: { x: -230, y: -230 + r[device].b * 2 },
 		desktop: { x: -480, y: -130 + r[device].b * 2 },
 		delay: 4400,
