@@ -284,7 +284,7 @@ export const STORY_RICECOOKER_PAGE1 = [
 		delay: 6000,
 	},
 	{
-		text: '是從小到大喜歡的偏硬口感',
+		text: '是我從小到大喜歡的偏硬口感',
 		mobile: { x: -150, y: 50 + r[device].b * 1 },
 		desktop: { x: 147, y: 50 + r[device].b * 1 },
 		delay: 2000,
@@ -786,7 +786,7 @@ export const STORY_MOBILE_PAGE1 = [
 	},
 
 	{
-		text: '「妳媽媽我喔，是你肚子裡的蛔蟲餒」',
+		text: '「妳媽媽我喔，是妳肚子裡的蛔蟲餒」',
 		mobile: { x: -220, y: 330 + r[device].b * 0 },
 		desktop: { x: -30, y: 230 + r[device].b * 0 },
 		delay: 4200,
@@ -1081,7 +1081,7 @@ export const STORY_CABLE_PAGE0 = [
 	},
 
 	{
-		text: '「老師，你是不是很累了？」他抬頭問我',
+		text: '「老師，妳是不是很累了？」他抬頭問我',
 		mobile: { x: -260, y: 120 + r[device].b * 0 },
 		desktop: { x: -390, y: 60 + r[device].b * 0 },
 		delay: 4100,
