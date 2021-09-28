@@ -20,6 +20,7 @@ import './main.less';
 const queryState = QueryString.get('state');
 const queryStoryIndex = QueryString.get('storyIndex');
 const queryShareTarget = QueryString.get('t');
+const queryIsExhibition = QueryString.get('e');
 
 const queryData = {
 	normal: { intro: true, logo: true, story: false, loading: true, result: false },
@@ -188,7 +189,7 @@ const Index = () => {
 			)}
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
-			{result && !queryShareTarget && <Result retry={retry} />}
+			{result && queryIsExhibition === '1' && <Result retry={retry} />}
 			<Audio ref={audioRef} state={audioState} onload={onAudioLoaded} />
 			<InnerSizeDetecter />
 		</div>
