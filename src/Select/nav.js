@@ -35,10 +35,10 @@ const Nav = () => {
 	return (
 		<div className='Nav'>
 			<div ref={contentRef} className='menu-content'>
-				<div id='menu-offical'>大亞電纜官方網站</div>
+				<div id='menu-offical'>大亞電線電纜 官方網站</div>
 				<div id='menu-fb'>
-					大亞電纜
-					<span>Facebook</span>
+					大亞電線電纜
+					<span> Facebook</span>
 				</div>
 				<div className='logo' />
 			</div>

@@ -17,6 +17,7 @@ const Label = (props) => {
 		const p = data[m];
 
 		if (lastPage && window.innerWidth < 1000) p.y -= 25;
+		if (lastPage && window.innerWidth > 750) p.size = '18px';
 		if (p) setPosition((d) => ({ ...d, ...p }));
 	}, []);
 
@@ -24,7 +25,7 @@ const Label = (props) => {
 		<div
 			data-delay={delay}
 			className='Label'
-			style={{ top: `${position.y}px`, left: `${position.x}px` }}
+			style={{ top: `${position.y}px`, left: `${position.x}px`, fontSize: position.size }}
 		>
 			{text}
 		</div>

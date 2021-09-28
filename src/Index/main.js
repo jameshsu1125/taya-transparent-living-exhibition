@@ -188,7 +188,7 @@ const Index = () => {
 			)}
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
-			{result && <Result retry={retry} />}
+			{result && !queryShareTarget && <Result retry={retry} />}
 			<Audio ref={audioRef} state={audioState} onload={onAudioLoaded} />
 			<InnerSizeDetecter />
 		</div>

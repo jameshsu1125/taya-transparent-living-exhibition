@@ -182,25 +182,25 @@ export const STORY_MOTORCYCLE_PAGE3 = [
 	{
 		text: 'EAIW、IFDW',
 		mobile: { x: -93, y: -440 + p[device].b * 0 },
-		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		desktop: { x: -495, y: -210 + p[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '不只是電動機車裡的漆包線線圈',
 		mobile: { x: -186, y: -440 + p[device].b * 1.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 1.5 },
 		delay: 3400,
 	},
 	{
 		text: '也將疲憊的自己推動向前',
 		mobile: { x: -146, y: -440 + p[device].b * 3 },
-		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		desktop: { x: -495, y: -210 + p[device].b * 3 },
 		delay: 3500,
 	},
 	{
 		text: '連結每個日常',
 		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 4.5 },
 		delay: 4000,
 	},
 ];
@@ -322,25 +322,25 @@ export const STORY_RICECOOKER_PAGE3 = [
 	{
 		text: 'CCAW',
 		mobile: { x: -42, y: -440 + p[device].b * 0 },
-		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		desktop: { x: -495, y: -210 + p[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '不只是電飯鍋裡的漆包線線圈',
 		mobile: { x: -175, y: -440 + p[device].b * 1.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 1.5 },
 		delay: 2500,
 	},
 	{
 		text: '也乘載溫熱的支持',
 		mobile: { x: -108, y: -440 + p[device].b * 3 },
-		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		desktop: { x: -495, y: -210 + p[device].b * 3 },
 		delay: 3500,
 	},
 	{
 		text: '連結每個日常',
 		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 4.5 },
 		delay: 2500,
 	},
 ];
@@ -478,25 +478,25 @@ export const STORY_EARPHONE_PAGE3 = [
 	{
 		text: 'UEW',
 		mobile: { x: -34, y: -440 + p[device].b * 0 },
-		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		desktop: { x: -495, y: -210 + p[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '不只是無線耳機裡的漆包線線圈',
 		mobile: { x: -175, y: -440 + p[device].b * 1.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 1.5 },
 		delay: 2000,
 	},
 	{
 		text: '更讓每次播放傳遞好的開始',
 		mobile: { x: -146, y: -440 + p[device].b * 3 },
-		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		desktop: { x: -495, y: -210 + p[device].b * 3 },
 		delay: 3500,
 	},
 	{
 		text: '連結每個日常',
 		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 4.5 },
 		delay: 3500,
 	},
 ];
@@ -673,25 +673,25 @@ export const STORY_PUMP_PAGE3 = [
 	{
 		text: 'PEW',
 		mobile: { x: -34, y: -440 + p[device].b * 0 },
-		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		desktop: { x: -495, y: -210 + p[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '不只是家用泵浦裡的漆包線線圈',
 		mobile: { x: -187, y: -440 + p[device].b * 1.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 1.5 },
 		delay: 2000,
 	},
 	{
 		text: '也為勞累的身心注滿力量',
 		mobile: { x: -146, y: -440 + p[device].b * 3 },
-		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		desktop: { x: -495, y: -210 + p[device].b * 3 },
 		delay: 3000,
 	},
 	{
 		text: '連結每個日常',
 		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 4.5 },
 		delay: 3500,
 	},
 ];
@@ -844,25 +844,25 @@ export const STORY_MOBILE_PAGE3 = [
 	{
 		text: 'UEW ＋ SB',
 		mobile: { x: -78, y: -440 + p[device].b * 0 },
-		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		desktop: { x: -495, y: -210 + p[device].b * 0 },
 		delay: 1200,
 	},
 	{
 		text: '不只是手機裡的漆包線線圈',
 		mobile: { x: -160, y: -440 + p[device].b * 1.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 1.5 },
 		delay: 3700,
 	},
 	{
 		text: '更讓想說的話能被傳達',
 		mobile: { x: -134, y: -440 + p[device].b * 3 },
-		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		desktop: { x: -495, y: -210 + p[device].b * 3 },
 		delay: 3000,
 	},
 	{
 		text: '連結每個日常',
 		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 4.5 },
 		delay: 3200,
 	},
 ];
@@ -1036,25 +1036,25 @@ export const STORY_EVCHARAGER_PAGE3 = [
 	{
 		text: 'EAIW、Mainly',
 		mobile: { x: -93, y: -440 + p[device].b * 0 },
-		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		desktop: { x: -495, y: -210 + p[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '不只是充電樁裡的漆包線線圈',
 		mobile: { x: -175, y: -440 + p[device].b * 1.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 1.5 },
 		delay: 3500,
 	},
 	{
 		text: '更讓每一次出發充滿能量',
 		mobile: { x: -146, y: -440 + p[device].b * 3 },
-		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		desktop: { x: -495, y: -210 + p[device].b * 3 },
 		delay: 3500,
 	},
 	{
 		text: '連結每個日常',
 		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 4.5 },
 		delay: 3800,
 	},
 ];
@@ -1224,25 +1224,25 @@ export const STORY_CABLE_PAGE3 = [
 	{
 		text: '高壓電纜',
 		mobile: { x: -57, y: -440 + p[device].b * 0 },
-		desktop: { x: -490, y: -210 + p[device].b * 0 },
+		desktop: { x: -495, y: -210 + p[device].b * 0 },
 		delay: 800,
 	},
 	{
 		text: '不只是串聯電廠的一條傳輸線',
 		mobile: { x: -175, y: -440 + p[device].b * 1.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 1.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 1.5 },
 		delay: 2000,
 	},
 	{
 		text: '為偏鄉供電也穩定了信念',
 		mobile: { x: -146, y: -440 + p[device].b * 3 },
-		desktop: { x: -490, y: -210 + p[device].b * 3 },
+		desktop: { x: -495, y: -210 + p[device].b * 3 },
 		delay: 3000,
 	},
 	{
 		text: '連結每個日常',
 		mobile: { x: -82, y: -440 + p[device].b * 4.5 },
-		desktop: { x: -490, y: -210 + p[device].b * 4.5 },
+		desktop: { x: -495, y: -210 + p[device].b * 4.5 },
 		delay: 3500,
 	},
 ];

@@ -141,6 +141,9 @@ const Audio = forwardRef((props, ref) => {
 					src={Motorcycle}
 					volume={storyVol}
 					onLoad={() => onSoundsLoad('motorcycle')}
+					onEnd={() => {
+						setStoryVol(() => 0);
+					}}
 				/>
 			)}
 			{RicecookerState && (
@@ -151,6 +154,9 @@ const Audio = forwardRef((props, ref) => {
 					src={Ricecooker}
 					volume={storyVol}
 					onLoad={() => onSoundsLoad('ricecooker')}
+					onEnd={() => {
+						setStoryVol(() => 0);
+					}}
 				/>
 			)}
 			{EarphoneState && (
@@ -161,6 +167,9 @@ const Audio = forwardRef((props, ref) => {
 					src={Earphone}
 					volume={storyVol}
 					onLoad={() => onSoundsLoad('earphone')}
+					onEnd={() => {
+						setStoryVol(() => 0);
+					}}
 				/>
 			)}
 			{PumpState && (
@@ -171,6 +180,9 @@ const Audio = forwardRef((props, ref) => {
 					src={Pump}
 					volume={storyVol}
 					onLoad={() => onSoundsLoad('pump')}
+					onEnd={() => {
+						setStoryVol(() => 0);
+					}}
 				/>
 			)}
 			{EvchargerState && (
@@ -181,6 +193,9 @@ const Audio = forwardRef((props, ref) => {
 					src={Evcharger}
 					volume={storyVol}
 					onLoad={() => onSoundsLoad('evcharger')}
+					onEnd={() => {
+						setStoryVol(() => 0);
+					}}
 				/>
 			)}
 			{MobileState && (
@@ -191,6 +206,9 @@ const Audio = forwardRef((props, ref) => {
 					src={Mobile}
 					volume={storyVol}
 					onLoad={() => onSoundsLoad('mobile')}
+					onEnd={() => {
+						setStoryVol(() => 0);
+					}}
 				/>
 			)}
 			{CableState && (
@@ -201,6 +219,9 @@ const Audio = forwardRef((props, ref) => {
 					src={Cable}
 					volume={storyVol}
 					onLoad={() => onSoundsLoad('cable')}
+					onEnd={() => {
+						setStoryVol(() => 0);
+					}}
 				/>
 			)}
 		</>

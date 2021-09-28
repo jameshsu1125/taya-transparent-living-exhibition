@@ -1,5 +1,3 @@
-import UserAgent from 'lesca-user-agent';
-
 const { parseInt } = window;
 let sizeTimer = 0;
 
@@ -21,7 +19,6 @@ export const SET_SIZE = (props) => {
 	size = scale;
 
 	const resize = () => {
-		if (UserAgent.get() === 'desktop') return;
 		clearTimeout(sizeTimer);
 		sizeTimer = setTimeout(() => {
 			window.location.reload();
