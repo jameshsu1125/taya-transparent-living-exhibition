@@ -40,7 +40,7 @@ const Intro = (props) => {
 				))}
 			</div>
 			<button className='startButton' ref={startButton}>
-				開始聆聽故事
+				開始閱聽故事
 			</button>
 			<div ref={ctaRef} className='cta'>
 				請左右滑動

@@ -77,7 +77,7 @@ const Result = (props) => {
 			<div ref={logoLabel} className='logo-label' />
 			<div ref={buttons} className='buttons'>
 				<button id='share'>分享</button>
-				<button id='back'>重新聆聽故事</button>
+				<button id='back'>重新閱聽故事</button>
 				<button id='about'>了解大亞</button>
 				<button id='facebook'>大亞FB</button>
 			</div>
