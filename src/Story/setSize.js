@@ -26,11 +26,11 @@ export const SET_SIZE = (props) => {
 	};
 
 	window.addEventListener('resize', resize);
-	window.addEventListener('focus', resize);
+	// window.addEventListener('focus', resize);
 
 	const destory = () => {
 		window.removeEventListener('resize', resize);
-		window.removeEventListener('focus', resize);
+		// window.removeEventListener('focus', resize);
 	};
 
 	return [destory, size];

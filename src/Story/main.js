@@ -1,5 +1,4 @@
 import Loading from 'lesca-react-loading';
-import QueryString from 'lesca-url-parameters';
 import { useState } from 'react';
 import { ITEMS_SELECT } from '../Setting/config';
 import Cable from './cable';
@@ -10,8 +9,6 @@ import Mobile from './mobile';
 import Motorcycle from './motorcycle';
 import Pump from './pump';
 import Ricecooker from './ricecooker';
-
-const debug = QueryString.get('debug');
 
 const Story = (props) => {
 	const { index, setStory, setState, setAudioState, audioLoad, audioRef } = props;
@@ -134,7 +131,6 @@ const Story = (props) => {
 	return (
 		<div className='Story'>
 			{appendStore()}
-			{debug && <div className='ipad8SavetyArea' />}
 			{loading && <Loading />}
 		</div>
 	);

@@ -42,7 +42,6 @@
 	},
 	"dependencies": {
 		"howler": "^2.2.3",
-		"i": "^0.3.6",
 		"lesca-click": "^2.1.0",
 		"lesca-facebook-share": "^1.0.3",
 		"lesca-gtag": "^1.0.2",
@@ -52,7 +51,7 @@
 		"lesca-object-tweener": "^2.0.8",
 		"lesca-react-landscape": "^1.0.1",
 		"lesca-react-loading": "^1.0.1",
-		"lesca-url-parameters": "^1.0.0",
+		"lesca-url-parameters": "^2.0.0",
 		"lesca-user-agent": "^1.0.1",
 		"npm": "^7.20.3",
 		"react": "^17.0.2",

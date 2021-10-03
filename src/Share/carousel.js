@@ -29,7 +29,7 @@ const Carousel = (props) => {
 				setTimeout(() => {
 					const root = QueryString.root();
 					const url = `${root}${name}.html`;
-					const redirect_uri = `${root}?state=result`;
+					const redirect_uri = `${root}?state=result&e=1`;
 
 					Facebook.share({ url, hashtag: HASHTAG, redirect_uri });
 				}, 500);
