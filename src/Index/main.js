@@ -58,7 +58,7 @@ const Index = () => {
 	const [story, setStory] = useState(queryInset.story);
 	const [loading, setLoading] = useState(queryInset.loading);
 	const [result, setResult] = useState(queryInset.result);
-	const [audioState, setAudioState] = useState('muted');
+	const [audioState, setAudioState] = useState(queryState === 'result' ? 'bgm' : 'muted');
 	const [audioLoad, setAudioLoad] = useState(false);
 
 	// todo => [讀取紀錄功能]之後改localStorage
