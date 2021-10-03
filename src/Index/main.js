@@ -190,8 +190,8 @@ const Index = () => {
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
 			{result && queryIsExhibition === '1' && <Result retry={retry} />}
-			<Audio ref={audioRef} state={audioState} onload={onAudioLoaded} />
-			<InnerSizeDetecter />
+			{preload && <Audio ref={audioRef} state={audioState} onload={onAudioLoaded} />}
+			{preload && <InnerSizeDetecter />}
 		</div>
 	);
 };
