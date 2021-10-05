@@ -9,7 +9,7 @@ export const SET_SIZE = (props) => {
 	const { innerWidth, innerHeight } = window;
 
 	let scale = 1;
-	if (innerHeight / innerWidth > 1) {
+	if (innerHeight / innerWidth > height / width) {
 		scale = innerHeight / height;
 	} else {
 		scale = innerWidth / width;

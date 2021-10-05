@@ -63,7 +63,7 @@ export default class Animation2 {
 				property: { opacity: 0, top: 0, left: 0 },
 				unit: { opacity: '' },
 				offset: {
-					mobile: { from: { left: 'r', top: 0 }, to: { left: -30, top: 0 } },
+					mobile: { from: { left: 'r', top: 0 }, to: { left: 'l', top: 0 } },
 					desktop: { from: { left: 0, top: 't-20' }, to: { left: 0, top: 'b-20' } },
 				},
 				init() {

@@ -98,26 +98,26 @@ export const STORY_MOTORCYCLE_PAGE0 = [
 export const STORY_MOTORCYCLE_PAGE1 = [
 	{
 		text: '這個世界好大',
-		mobile: { x: -290, y: -430 },
+		mobile: { x: -290, y: -400 },
 		desktop: { x: -80, y: -240 },
 		delay: 0,
 	},
 	{
 		text: '好多事還沒做過，好多地方還沒去過',
-		mobile: { x: -290, y: -430 + r[device].b },
+		mobile: { x: -290, y: -400 + r[device].b },
 		desktop: { x: -80, y: -240 + r[device].b },
 		delay: 3000,
 	},
 
 	{
 		text: '這個世界好大',
-		mobile: { x: -140, y: -280 },
+		mobile: { x: -140, y: -270 },
 		desktop: { x: 20, y: -240 + r[device].b * 2 },
 		delay: 7500,
 	},
 	{
 		text: '我好小，在我裡面的煩惱又更小',
-		mobile: { x: -140, y: -280 + r[device].b },
+		mobile: { x: -140, y: -270 + r[device].b },
 		desktop: { x: 20, y: -240 + r[device].b * 3 },
 		delay: 2200,
 	},
@@ -152,7 +152,7 @@ export const STORY_MOTORCYCLE_PAGE1 = [
 export const STORY_MOTORCYCLE_PAGE2 = [
 	{
 		text: '然後我開始往家的方向騎',
-		mobile: { x: -140, y: -430 },
+		mobile: { x: -140, y: -410 },
 		desktop: { x: -80, y: -240 },
 		delay: 1000,
 	},
@@ -424,13 +424,13 @@ export const STORY_EARPHONE_PAGE1 = [
 export const STORY_EARPHONE_PAGE2 = [
 	{
 		text: '從煩雜的狀態抽離',
-		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		mobile: { x: -290, y: -400 + r[device].b * 0 },
 		desktop: { x: -350, y: -230 + r[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '讓音樂傳進耳朵，歌詞佔據思緒',
-		mobile: { x: -230, y: -440 + r[device].b * 1 },
+		mobile: { x: -230, y: -400 + r[device].b * 1 },
 		desktop: { x: -350, y: -230 + r[device].b * 1 },
 		delay: 3000,
 	},
@@ -558,19 +558,19 @@ export const STORY_PUMP_PAGE0 = [
 export const STORY_PUMP_PAGE1 = [
 	{
 		text: '這時天還未亮',
-		mobile: { x: -200, y: -440 + r[device].b * 0 },
+		mobile: { x: -200, y: -400 + r[device].b * 0 },
 		desktop: { x: -380, y: -190 + r[device].b * 0 },
 		delay: 500,
 	},
 	{
 		text: '隔壁賣菜的一家子已經擠在發財車上',
-		mobile: { x: -170, y: -440 + r[device].b * 1 },
+		mobile: { x: -170, y: -400 + r[device].b * 1 },
 		desktop: { x: -360, y: -190 + r[device].b * 1 },
 		delay: 3500,
 	},
 	{
 		text: '準備前往市場',
-		mobile: { x: 100, y: -440 + r[device].b * 2 },
+		mobile: { x: 100, y: -400 + r[device].b * 2 },
 		desktop: { x: -200, y: -190 + r[device].b * 2 },
 		delay: 4500,
 	},
@@ -618,13 +618,13 @@ export const STORY_PUMP_PAGE1 = [
 export const STORY_PUMP_PAGE2 = [
 	{
 		text: '撐到天快亮時，她才去洗澡',
-		mobile: { x: -200, y: -440 + r[device].b * 0 },
+		mobile: { x: -200, y: -400 + r[device].b * 0 },
 		desktop: { x: -130, y: -190 + r[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '泵浦馬達運轉響起陣陣抽水聲',
-		mobile: { x: -80, y: -440 + r[device].b * 1 },
+		mobile: { x: -80, y: -400 + r[device].b * 1 },
 		desktop: { x: -60, y: -190 + r[device].b * 1 },
 		delay: 4500,
 	},
@@ -741,26 +741,26 @@ export const STORY_MOBILE_PAGE0 = [
 export const STORY_MOBILE_PAGE1 = [
 	{
 		text: '「三八啦，剛剛再見的時候不講，現在打來說」',
-		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		mobile: { x: -290, y: -400 + r[device].b * 0 },
 		desktop: { x: -430, y: -240 + r[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '媽媽不好意思地說',
-		mobile: { x: -250, y: -440 + r[device].b * 1 },
+		mobile: { x: -250, y: -400 + r[device].b * 1 },
 		desktop: { x: -410, y: -240 + r[device].b * 1 },
 		delay: 5500,
 	},
 
 	{
 		text: '「有些話不隔著手機，還是會有點難說出口嘛」',
-		mobile: { x: -210, y: -290 + r[device].b * 0 },
+		mobile: { x: -210, y: -270 + r[device].b * 0 },
 		desktop: { x: 20, y: -110 + r[device].b * 0 },
 		delay: 3500,
 	},
 	{
 		text: '我壓低聲音，希望她沒有發現我正在哽咽',
-		mobile: { x: -170, y: -290 + r[device].b * 1 },
+		mobile: { x: -170, y: -270 + r[device].b * 1 },
 		desktop: { x: 70, y: -110 + r[device].b * 1 },
 		delay: 7000,
 	},
@@ -802,13 +802,13 @@ export const STORY_MOBILE_PAGE1 = [
 export const STORY_MOBILE_PAGE2 = [
 	{
 		text: '掛上電話',
-		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		mobile: { x: -290, y: -400 + r[device].b * 0 },
 		desktop: { x: 0, y: -200 + r[device].b * 0 },
 		delay: 1000,
 	},
 	{
 		text: '高鐵也正好進入隧道',
-		mobile: { x: -240, y: -440 + r[device].b * 1 },
+		mobile: { x: -240, y: -400 + r[device].b * 1 },
 		desktop: { x: 30, y: -200 + r[device].b * 1 },
 		delay: 2200,
 	},
@@ -943,7 +943,7 @@ export const STORY_EVCHARAGER_PAGE0 = [
 export const STORY_EVCHARAGER_PAGE1 = [
 	{
 		text: '朋友總笑他「又下海啊」',
-		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		mobile: { x: -290, y: -400 + r[device].b * 0 },
 		desktop: { x: -350, y: -240 + r[device].b * 0 },
 		delay: 0,
 	},
@@ -988,26 +988,26 @@ export const STORY_EVCHARAGER_PAGE1 = [
 export const STORY_EVCHARAGER_PAGE2 = [
 	{
 		text: '上岸後，順著原路回到家裡',
-		mobile: { x: -290, y: -440 + r[device].b * 0 },
+		mobile: { x: -290, y: -400 + r[device].b * 0 },
 		desktop: { x: -350, y: -240 + r[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '仍然得撐著一口氣面對自己的人生',
-		mobile: { x: -230, y: -440 + r[device].b * 1 },
+		mobile: { x: -230, y: -400 + r[device].b * 1 },
 		desktop: { x: -320, y: -240 + r[device].b * 1 },
 		delay: 4000,
 	},
 	{
 		text: '但還好',
 		x: 50,
-		mobile: { x: 30, y: -440 + r[device].b * 2 },
+		mobile: { x: 30, y: -400 + r[device].b * 2 },
 		desktop: { x: -160, y: -240 + r[device].b * 2 },
 		delay: 4000,
 	},
 	{
 		text: '車開了，海就到了',
-		mobile: { x: 60, y: -440 + r[device].b * 3 },
+		mobile: { x: 60, y: -400 + r[device].b * 3 },
 		desktop: { x: -145, y: -240 + r[device].b * 3 },
 		delay: 2000,
 	},
@@ -1104,19 +1104,19 @@ export const STORY_CABLE_PAGE0 = [
 export const STORY_CABLE_PAGE1 = [
 	{
 		text: '但是，累嗎？',
-		mobile: { x: -250, y: -440 + r[device].b * 0 },
+		mobile: { x: -250, y: -420 + r[device].b * 0 },
 		desktop: { x: -500, y: -250 + r[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '不必多問自己，內心也早有答案',
-		mobile: { x: -190, y: -440 + r[device].b * 1 },
+		mobile: { x: -190, y: -420 + r[device].b * 1 },
 		desktop: { x: -470, y: -250 + r[device].b * 1 },
 		delay: 2500,
 	},
 	{
 		text: '跟在都市不同',
-		mobile: { x: 70, y: -440 + r[device].b * 2 },
+		mobile: { x: 70, y: -420 + r[device].b * 2 },
 		desktop: { x: -310, y: -250 + r[device].b * 2 },
 		delay: 4500,
 	},
@@ -1161,32 +1161,32 @@ export const STORY_CABLE_PAGE1 = [
 
 	{
 		text: '但在抬頭看到巴奈',
-		mobile: { x: -290, y: 170 + r[device].b * 0 },
+		mobile: { x: -290, y: 160 + r[device].b * 0 },
 		desktop: { x: -140, y: 130 + r[device].b * 0 },
 		delay: 5000,
 	},
 	{
 		text: '那麼努力的嘗試解出那道數學題',
-		mobile: { x: -290, y: 170 + r[device].b * 1 },
+		mobile: { x: -290, y: 160 + r[device].b * 1 },
 		desktop: { x: -140, y: 130 + r[device].b * 1 },
 		delay: 2000,
 	},
 
 	{
 		text: '並在我問他「要不要我幫幫你？」時',
-		mobile: { x: -290, y: 310 + r[device].b * 0 },
+		mobile: { x: -290, y: 160 + r[device].b * 2 },
 		desktop: { x: -140, y: 220 + r[device].b * 0 },
 		delay: 3500,
 	},
 	{
 		text: '他回答我「再讓我試試」',
-		mobile: { x: -100, y: 310 + r[device].b * 1 },
+		mobile: { x: -100, y: 160 + r[device].b * 3 },
 		desktop: { x: -30, y: 220 + r[device].b * 1 },
 		delay: 4000,
 	},
 	{
 		text: '我就知道，這些都只是非常一時的念頭',
-		mobile: { x: -290, y: 310 + r[device].b * 2 },
+		mobile: { x: -290, y: 160 + r[device].b * 4 },
 		desktop: { x: -140, y: 220 + r[device].b * 2 },
 		delay: 4500,
 	},
@@ -1195,13 +1195,13 @@ export const STORY_CABLE_PAGE1 = [
 export const STORY_CABLE_PAGE2 = [
 	{
 		text: '即使不容易',
-		mobile: { x: -220, y: -410 + r[device].b * 0 },
+		mobile: { x: -220, y: -400 + r[device].b * 0 },
 		desktop: { x: -500, y: -170 + r[device].b * 0 },
 		delay: 0,
 	},
 	{
 		text: '他的堅持還是像頭上的日光燈一樣炙熱',
-		mobile: { x: -170, y: -410 + r[device].b * 1 },
+		mobile: { x: -170, y: -400 + r[device].b * 1 },
 		desktop: { x: -500, y: -170 + r[device].b * 1 },
 		delay: 2000,
 	},

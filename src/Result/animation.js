@@ -1,7 +1,7 @@
 import Tweener, { Bezier } from 'lesca-object-tweener';
-import UserAgent from 'lesca-user-agent';
 
-const device = UserAgent.get();
+const { innerHeight, innerWidth } = window;
+const device = innerHeight / innerWidth > 1 ? 'mobile' : 'desktop';
 
 export default class Animation {
 	constructor(props) {
@@ -54,7 +54,7 @@ export default class Animation {
 					const { opacity, scale } = property;
 					const from = { opacity, scale };
 					const radio = window.innerHeight / window.innerWidth;
-					const nScale = device === 'mobile' ? radio - 0.6 : window.innerHeight / 1231;
+					const nScale = device ? radio - 0.5 : window.innerHeight / 1131;
 					const to = { opacity: 1, scale: nScale };
 					const easing = Bezier.easeOutBack;
 					this.tweener

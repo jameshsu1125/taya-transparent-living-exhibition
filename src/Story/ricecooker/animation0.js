@@ -126,7 +126,7 @@ export default class Animation0 {
 				property: { opacity: 0, top: 0, left: 0 },
 				unit: { opacity: '' },
 				offset: {
-					mobile: { from: { left: 40, top: 0 }, to: { left: -140, top: 0 } },
+					mobile: { from: { left: 'l', top: 0 }, to: { left: 'r', top: 0 } },
 					desktop: { from: { left: 0, top: 80 }, to: { left: 0, top: 'b' } },
 				},
 				init() {
