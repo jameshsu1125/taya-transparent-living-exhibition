@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useShallowCompareEffect } from 'react-use';
+
 import './InnerSizeDetecter.less';
 
 const InnerSizeDetecter = () => {
@@ -12,8 +13,10 @@ const InnerSizeDetecter = () => {
 
 	useEffect(() => {
 		const setSize = () => {
-			const { innerWidth: width, innerHeight: height } = window;
-			setInnerSize({ width, height });
+			setTimeout(() => {
+				const { innerWidth: width, innerHeight: height } = window;
+				setInnerSize({ width, height });
+			}, 300);
 		};
 
 		setSize();
@@ -26,8 +29,8 @@ const InnerSizeDetecter = () => {
 
 	useShallowCompareEffect(() => {
 		const { width, height } = innerSize;
-		if (width < 750) setState(true);
-		else if (width === 750 && height < 880) setState(false);
+		if (width < 749) setState(true);
+		else if (width <= 750 && height < 880) setState(true);
 		else setState(false);
 	}, [innerSize]);
 
