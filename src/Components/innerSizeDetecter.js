@@ -27,7 +27,7 @@ const InnerSizeDetecter = () => {
 	useShallowCompareEffect(() => {
 		const { width, height } = innerSize;
 		if (width < 750) setState(true);
-		else if (width === 750 && height < 950) setState(false);
+		else if (width === 750 && height < 880) setState(false);
 		else setState(false);
 	}, [innerSize]);
 
@@ -38,7 +38,7 @@ const InnerSizeDetecter = () => {
 					<div>
 						為了確保您能夠有完整的體驗，
 						<br />
-						請將瀏覽器縮放至大於750x950以上。
+						請將瀏覽器縮放至大於750x880以上。
 					</div>
 				</div>
 			)}
