@@ -64,13 +64,9 @@ const Result = (props) => {
 				<div className='text'>
 					分享你最喜歡的一則故事
 					<br />
-					即可獲得限量扭蛋
+					即可獲得扭蛋與明信片
 					<br />
-					<span>
-						*請於分享後出示頁面給工作人員確認資格
-						<br />
-						*扭蛋數量有限 送完改贈故事明信片
-					</span>
+					<span>*請於分享後出示頁面給工作人員確認資格</span>
 				</div>
 			</div>
 			<div ref={logo} className='logo' />
