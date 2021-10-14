@@ -4,6 +4,7 @@ import ImageOnload from 'lesca-image-onload';
 import Storage from 'lesca-local-storage';
 import QueryString from 'lesca-url-parameters';
 import { useEffect, useRef, useState } from 'react';
+import UserAgent from 'lesca-user-agent';
 import Background from '../Background/main';
 import Audio from '../Components/audio';
 import InnerSizeDetecter from '../Components/innerSizeDetecter';
@@ -21,6 +22,7 @@ const queryState = QueryString.get('state');
 const queryStoryIndex = QueryString.get('storyIndex');
 const queryShareTarget = QueryString.get('t');
 const queryIsExhibition = QueryString.get('e');
+const userDevice = UserAgent.get() === 'mobile';
 
 const queryData = {
 	normal: { intro: true, logo: true, story: false, loading: true, result: false },
@@ -189,7 +191,7 @@ const Index = () => {
 			)}
 			{loading && <Loading process={process} onComplete={loadingComplete} />}
 			{logo && <Logo commingSoon={commingSoon} state={state} setLogo={setLogo} />}
-			{result && queryIsExhibition === '1' && <Result retry={retry} />}
+			{result && queryIsExhibition === '1' && userDevice && <Result retry={retry} />}
 			{preload && <Audio ref={audioRef} state={audioState} onload={onAudioLoaded} />}
 			{preload && <InnerSizeDetecter />}
 		</div>
