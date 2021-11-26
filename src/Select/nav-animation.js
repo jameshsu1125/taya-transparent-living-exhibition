@@ -1,11 +1,13 @@
 /* eslint-disable prefer-destructuring */
 import Tweener, { Bezier } from 'lesca-object-tweener';
 
+const device = window.innerWidth <= 750;
+
 export default class Animation {
 	constructor(props) {
 		const { hamRef, textRef, contentRef } = props;
 
-		const offsetY = 7;
+		const offsetY = device ? 10 : 7;
 		const duration = 300;
 
 		this.tr = {

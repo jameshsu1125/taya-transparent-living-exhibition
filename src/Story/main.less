@@ -81,6 +81,7 @@
 			white-space: nowrap;
 			font-size: 62px;
 			transform: scale(1, 1.1);
+
 			sub {
 				position: absolute;
 				margin: 0 -10px;
@@ -110,6 +111,26 @@
 
 	.page3 {
 		.align {
+			.btns {
+				position: absolute;
+				width: 600px;
+				height: auto;
+				top: 330px;
+				margin-left: -300px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				& > button {
+					margin: 12px 0;
+					width: 400px;
+					height: 50px;
+					font-size: 20px;
+					line-height: 50px;
+				}
+			}
+
 			.share {
 				position: absolute;
 				top: 120px;
@@ -125,10 +146,11 @@
 				align-items: center;
 				flex-direction: row;
 				justify-content: center;
-				margin-top: 430px;
+				margin-top: -230px;
 				margin-left: -280px;
 				width: 560px;
 				height: 60px;
+				transform: scale(0.8);
 
 				& > div {
 					box-sizing: border-box;
@@ -240,11 +262,22 @@
 		}
 
 		.footer {
-			margin-top: 380px !important;
+			margin-top: -220px !important;
+			transform: scale(0.8);
 		}
 
 		.page3 {
 			transform: scale(0.9);
+
+			.btns {
+				& > button {
+					margin: 10px 0;
+					width: 350px;
+					height: 45px;
+					font-size: 18px;
+					line-height: 45px;
+				}
+			}
 
 			.align {
 				.footer {

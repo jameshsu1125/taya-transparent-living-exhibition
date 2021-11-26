@@ -83,7 +83,7 @@ export default class Animation3 {
 							onUpdate: (e) => this.tran(e),
 							onComplete: (e) => {
 								this.tran(e);
-								root.tr.out();
+								// root.tr.out();
 							},
 						})
 						.play();
