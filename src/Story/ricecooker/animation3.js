@@ -48,7 +48,7 @@ export default class Animation3 {
 					from,
 					to,
 					duration,
-					delay: footerFadeOutDelay,
+					// delay: footerFadeOutDelay,
 					onUpdate: (e) => {
 						dom.style.opacity = e.opacity;
 					},

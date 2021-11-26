@@ -28,7 +28,10 @@ const Page3 = (props) => {
 
 		Click.add('#desktop_return', () => {
 			Click.remove('#desktop_return');
-			setTimeout(() => back(), 500);
+			setTimeout(() => {
+				if (device) back();
+				else animation.current.tr.out();
+			}, 500);
 		});
 
 		Click.add('#desktop_share', () => {
