@@ -7,10 +7,11 @@ const device = innerHeight / innerWidth > 1 ? 'mobile' : 'desktop';
 
 export default class Animation3 {
 	constructor(props, callback) {
-		const { page, product, labels, footer } = props;
+		const { page, product, labels, footer, shareRef, returnRef } = props;
 
 		const beginDelay = 1000;
 		const fadeOutDelay = 2000;
+
 		const labelDuration = 3000;
 		const footerFadeOutDelay = 2000;
 		this.totalTime =
@@ -32,6 +33,8 @@ export default class Animation3 {
 				this.labels.init();
 				this.product.init();
 				this.footer.init();
+				this.share.init();
+				this.return.init();
 			},
 			in() {
 				this.labels.in();
@@ -59,6 +62,78 @@ export default class Animation3 {
 					},
 				});
 			},
+			return: {
+				duration: 3000,
+				delay: 0,
+				property: { opacity: 0 },
+				unit: { opacity: '' },
+				init() {
+					this.c = returnRef.current;
+					this.tweener = new Tweener();
+					this.tran();
+				},
+				in() {
+					const { duration, property, delay } = this;
+					const { opacity } = property;
+					const from = { opacity };
+					const to = { opacity: 1 };
+					this.tweener
+						.add({
+							from,
+							to,
+							delay,
+							duration,
+							onUpdate: (e) => this.tran(e),
+							onComplete: (e) => this.tran(e),
+						})
+						.play();
+				},
+				tran(e = this.property) {
+					this.property = { ...this.property, ...e };
+					const cssText = Object.entries(this.property).map((css) => {
+						const [key, value] = css;
+						const unit = this.unit[key] || '';
+						return `${key}:${value}${unit};`;
+					});
+					this.c.style.cssText = cssText.join('');
+				},
+			},
+			share: {
+				duration: 3000,
+				delay: 0,
+				property: { opacity: 0 },
+				unit: { opacity: '' },
+				init() {
+					this.c = shareRef.current;
+					this.tweener = new Tweener();
+					this.tran();
+				},
+				in() {
+					const { duration, property, delay } = this;
+					const { opacity } = property;
+					const from = { opacity };
+					const to = { opacity: 1 };
+					this.tweener
+						.add({
+							from,
+							to,
+							delay,
+							duration,
+							onUpdate: (e) => this.tran(e),
+							onComplete: (e) => this.tran(e),
+						})
+						.play();
+				},
+				tran(e = this.property) {
+					this.property = { ...this.property, ...e };
+					const cssText = Object.entries(this.property).map((css) => {
+						const [key, value] = css;
+						const unit = this.unit[key] || '';
+						return `${key}:${value}${unit};`;
+					});
+					this.c.style.cssText = cssText.join('');
+				},
+			},
 			footer: {
 				duration: 3000,
 				delay: 0,
@@ -83,6 +158,8 @@ export default class Animation3 {
 							onUpdate: (e) => this.tran(e),
 							onComplete: (e) => {
 								this.tran(e);
+								root.tr.share.in();
+								root.tr.return.in();
 								// root.tr.out();
 							},
 						})

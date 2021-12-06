@@ -19,11 +19,16 @@ const Page3 = (props) => {
 	const labels = useRef();
 	const product = useRef();
 	const footer = useRef();
+	const shareRef = useRef();
+	const returnRef = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, labels, product, footer }, () => {
-			fadeOut();
-		});
+		animation.current = new Animation(
+			{ page, labels, product, footer, shareRef, returnRef },
+			() => {
+				fadeOut();
+			},
+		);
 		collectTimer(pageName, animation.current.totalTime);
 
 		Click.add('#desktop_return', () => {
@@ -69,8 +74,12 @@ const Page3 = (props) => {
 				</div>
 				{!device && (
 					<div className='btns'>
-						<button id='desktop_share'>分享故事 獲得限量小禮</button>
-						<button id='desktop_return'>繼續閱聽故事</button>
+						<button ref={shareRef} id='desktop_share'>
+							分享故事 獲得限量小禮
+						</button>
+						<button ref={returnRef} id='desktop_return'>
+							繼續閱聽故事
+						</button>
 					</div>
 				)}
 				{device && (
