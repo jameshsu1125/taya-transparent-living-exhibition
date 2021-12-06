@@ -43,7 +43,7 @@ else queryInset = queryData[queryState.split('#')[0]];
 const defaultReadData = [...new Array(7).keys()].map(() => false);
 
 // ! debug
-// const defaultReadData = [true, true, true, true, true, true, true];
+// const defaultReadData = [true, true, true, true, true, true, false];
 // Storage.clear();
 
 const Index = () => {
@@ -124,10 +124,10 @@ const Index = () => {
 
 	useEffect(() => {
 		// save data to Storage
-		const howMuchRead = read.filter((e) => e);
+		// const howMuchRead = read.filter((e) => e);
 		setTimeout(() => {
 			if (state !== 'loading') setState('select');
-			if (howMuchRead.length === read.length) setResult(true);
+			// if (howMuchRead.length === read.length) setResult(true);
 			Storage.set('readData', { read });
 		}, 500);
 	}, [read]);

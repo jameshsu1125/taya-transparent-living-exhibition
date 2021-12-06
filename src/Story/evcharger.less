@@ -3,12 +3,13 @@
 		.product {
 			position: absolute;
 			top: 100px;
-			margin-top: 0 - image-height(@img) * 0.5;
+			margin-top: 0 - image-height(@img) * 0.5 + 10px;
 			margin-left: 0 - image-width(@img) * 0.5 + 113px;
 			width: image-width(@img) * 0.9;
 			height: image-height(@img) * 0.9;
 			background-size: 100%;
 			background-image: url(@img);
+			transform: scale(0.9);
 
 			@img: './img/evcharger/product.png';
 		}

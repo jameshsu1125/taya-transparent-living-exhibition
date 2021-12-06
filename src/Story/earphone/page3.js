@@ -19,27 +19,37 @@ const Page3 = (props) => {
 	const labels = useRef();
 	const product = useRef();
 	const footer = useRef();
+	const shareRef = useRef();
+	const returnRef = useRef();
 
 	useEffect(() => {
-		animation.current = new Animation({ page, labels, product, footer }, () => {
-			fadeOut();
-		});
+		animation.current = new Animation(
+			{ page, labels, product, footer, shareRef, returnRef },
+			() => {
+				fadeOut();
+			},
+		);
 
 		collectTimer(pageName, animation.current.totalTime);
 
 		Click.add('#desktop_return', () => {
 			Click.remove('#desktop_return');
-			back();
+			setTimeout(() => {
+				if (device) back();
+				else animation.current.tr.out();
+			}, 500);
 		});
 
 		Click.add('#desktop_share', () => {
 			const root = QueryString.root();
 			const url = `${root}${name}.html`;
 
-			Facebook.share({
-				url,
-				hashtag: HASHTAG,
-			});
+			setTimeout(() => {
+				Facebook.share({
+					url,
+					hashtag: HASHTAG,
+				});
+			}, 500);
 		});
 
 		return () => {
@@ -63,6 +73,16 @@ const Page3 = (props) => {
 					<div className='headline'>穩定的力量</div>
 					<div className='logo' />
 				</div>
+				{!device && (
+					<div className='btns'>
+						<button ref={shareRef} id='desktop_share'>
+							分享故事 獲得限量小禮
+						</button>
+						<button ref={returnRef} id='desktop_return'>
+							繼續閱聽故事
+						</button>
+					</div>
+				)}
 				{device && (
 					<div className='share'>
 						<button id='desktop_return'>回到選單</button>

@@ -4,6 +4,8 @@ import Click from 'lesca-click';
 import Animation from './nav-animation';
 import './nav.less';
 
+const device = window.innerWidth <= 750;
+
 const Nav = () => {
 	const menuRef = useRef();
 	const hamRef = useRef();
@@ -18,11 +20,19 @@ const Nav = () => {
 
 		Click.add('#menu', () => setState((r) => !r));
 		Click.add('#menu-offical', () => {
-			setTimeout(() => window.open('https://www.taya.com.tw/'), 300);
+			setTimeout(() => window.open('https://www.taya.com.tw/'), 500);
+			if (device) {
+				const t = document.getElementById('menu-offical');
+				t.classList.add('hover');
+			}
 			Gtag.event('結果頁', '了解大亞');
 		});
 		Click.add('#menu-fb', () => {
-			setTimeout(() => window.open('https://www.facebook.com/TAIWANTAYA/'), 300);
+			setTimeout(() => window.open('https://www.facebook.com/TAIWANTAYA/'), 500);
+			if (device) {
+				const t = document.getElementById('menu-fb');
+				t.classList.add('hover');
+			}
 			Gtag.event('結果頁', '大亞FB');
 		});
 	}, []);

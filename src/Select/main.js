@@ -5,28 +5,30 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 're
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
+import Instruct from '../Components/instruct';
 import { ITEMS_SELECT, TARGETINDEX } from '../Setting/config';
 import Animation from './animation';
 import Arrow from './arrow';
 import Carousel from './carousel';
-import Instruct from '../Components/instruct';
-
 import './main.less';
 import Nav from './nav';
 
 const device = window.innerWidth <= 750;
 
 const storyTarget = QueryString.get('t');
+const sliderSteps = QueryString.get('s');
 
 const settings = {
 	dots: true,
 	infinite: true,
-	speed: 500,
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	arrows: false,
 	initialSlide: -1,
 };
+
+const defaultSpeed = 500;
+const fadeInSpeed = 300;
 
 if (storyTarget) {
 	const index = TARGETINDEX[storyTarget];
@@ -46,6 +48,7 @@ const Select = forwardRef((props, ref) => {
 
 	const [updateSelected, setUpdateSelected] = useState(true);
 	const [instruct, setInstruct] = useState(false);
+	const [speed, setSpeed] = useState(defaultSpeed);
 
 	useEffect(() => {
 		animation.current = new Animation({
@@ -105,7 +108,21 @@ const Select = forwardRef((props, ref) => {
 			isFadein.current = true;
 
 			setUpdateSelected(false);
-			if (device && !storyTarget) sliderRef.current.slickNext();
+			if (device && !storyTarget && !sliderSteps) {
+				sliderRef.current.slickNext();
+			}
+
+			const steps = window.parseInt(sliderSteps);
+
+			if (device && sliderSteps !== false && typeof steps === 'number') {
+				setSpeed(fadeInSpeed * steps);
+				setTimeout(() => {
+					setSpeed(defaultSpeed);
+				}, fadeInSpeed * steps);
+
+				sliderRef.current.slickGoTo(steps);
+			}
+
 			animation.current.addEvent();
 			animation.current.titleIn();
 		},
@@ -119,7 +136,7 @@ const Select = forwardRef((props, ref) => {
 	return (
 		<div ref={selectRef} className='Select'>
 			<div className='slider-container'>
-				<Slider ref={sliderRef} {...settings}>
+				<Slider ref={sliderRef} {...settings} speed={speed}>
 					{ITEMS_SELECT.map((data, index) => (
 						<Carousel
 							key={data.title}
@@ -133,7 +150,7 @@ const Select = forwardRef((props, ref) => {
 			<div ref={titleRef} className='title'>
 				選擇故事
 			</div>
-			{!device && <Nav />}
+			<Nav />
 			{instruct && (
 				<Instruct click={insClick}>
 					<div>

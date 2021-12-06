@@ -14,9 +14,6 @@ module.exports = () => {
 		// webpack5之後需要設定mode
 		mode: NODE_ENV || 'development',
 
-		// webpack bug: 設定了browserlistrc後hot就失效了 => https://youtu.be/TOb1c39m64A?t=2293
-		target: NODE_ENV !== 'production' ? 'web' : 'browserslist',
-
 		// 需要更多頁面時可以新增
 		entry: {
 			index: './src/index.js',
@@ -120,12 +117,12 @@ module.exports = () => {
 		 * https: 要測FB等app可以用https 但是要略過安全性畫面
 		 */
 		devServer: {
-			contentBase: './dist',
-			disableHostCheck: true,
+			// contentBase: './dist',
+			// disableHostCheck: true,
 			port: 8080,
-			hot: true,
+			// hot: true,
 			host: '0.0.0.0',
-			https: false,
+			// https: false,
 		},
 
 		/**

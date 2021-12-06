@@ -47,7 +47,7 @@ export default class Animation2 {
 					to,
 					duration,
 					delay: fadeOutDelay,
-					easing: Bezier['ease-out'],
+					easing: Bezier.easeOut,
 					onUpdate: (e) => {
 						dom.style.opacity = e.opacity;
 					},
