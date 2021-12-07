@@ -32,8 +32,10 @@ export default class Animation3 {
 				this.labels.init();
 				this.product.init();
 				this.footer.init();
-				this.share.init();
-				this.return.init();
+				if (device === 'mobile') {
+					this.share.init();
+					this.return.init();
+				}
 			},
 			in() {
 				this.labels.in();
@@ -158,8 +160,10 @@ export default class Animation3 {
 							onUpdate: (e) => this.tran(e),
 							onComplete: (e) => {
 								this.tran(e);
-								root.tr.share.in();
-								root.tr.return.in();
+								if (device === 'mobile') {
+									root.tr.share.in();
+									root.tr.return.in();
+								}
 								// root.tr.out();
 							},
 						})
