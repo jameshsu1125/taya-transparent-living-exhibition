@@ -19,6 +19,14 @@
 		<link href="<%= htmlWebpackPlugin.options.url %>img/favicon.ico" rel="icon" type="image/x-icon" />
 		<meta name="apple-mobile-web-app-capable" content="no" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<script type="text/javascript" src="https://gdpr.urb2b.com/gdpr.js"></script>
+		<script type="text/javascript" src="https://gdpr.urb2b.com/gdpr.init.js"></script>
+		<script type="text/javascript">
+				tarteaucitron.user.gtagUa = 'UA-46480735-25';
+				tarteaucitron.user.gtagMore = function () { /* add here your optionnal gtag() */ };
+				(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+		</script>
 	</head>
 	<body>
 		<div id="app"></div>
