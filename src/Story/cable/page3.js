@@ -12,7 +12,7 @@ const pageName = 'page3';
 const name = 'cable';
 
 const Page3 = (props) => {
-	const { state, fadeOut, collectTimer, back } = props;
+	const { state, fadeOut, collectTimer, back, setRootState } = props;
 
 	const animation = useRef();
 	const page = useRef();
@@ -43,13 +43,13 @@ const Page3 = (props) => {
 		Click.add('#desktop_share', () => {
 			const root = QueryString.root();
 			const url = `${root}${name}.html`;
-
+			setRootState('storage');
 			setTimeout(() => {
 				Facebook.share({
 					url,
 					hashtag: HASHTAG,
 				});
-			}, 500);
+			}, 600);
 		});
 
 		return () => {

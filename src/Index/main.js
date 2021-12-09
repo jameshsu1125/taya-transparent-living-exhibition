@@ -134,6 +134,11 @@ const Index = () => {
 
 	useEffect(() => {
 		switch (state) {
+			case 'storage':
+				read[story] = true;
+				setRead((data) => [...data]);
+				break;
+
 			case 'back':
 				read[story] = true;
 				setRead((data) => [...data]);

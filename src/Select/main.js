@@ -24,7 +24,7 @@ const settings = {
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	arrows: false,
-	initialSlide: -1,
+	initialSlide: sliderSteps === '0' ? 0 : -1,
 };
 
 const defaultSpeed = 500;
@@ -115,12 +115,13 @@ const Select = forwardRef((props, ref) => {
 			const steps = window.parseInt(sliderSteps);
 
 			if (device && sliderSteps !== false && typeof steps === 'number') {
+				if (steps !== 0) {
+					sliderRef.current.slickGoTo(steps);
+				}
 				setSpeed(fadeInSpeed * steps);
 				setTimeout(() => {
 					setSpeed(defaultSpeed);
 				}, fadeInSpeed * steps);
-
-				sliderRef.current.slickGoTo(steps);
 			}
 
 			animation.current.addEvent();

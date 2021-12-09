@@ -118,7 +118,7 @@ const Cable = (props) => {
 	return (
 		<div ref={container} className='Cable'>
 			<div ref={colorBackgroundRef} className='color-background' />
-			<Page3 {...{ state, setState, fadeOut, collectTimer, back }} />
+			<Page3 {...{ state, setState, fadeOut, collectTimer, back, setRootState }} />
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />

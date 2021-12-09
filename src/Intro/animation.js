@@ -1,6 +1,9 @@
 import Click from 'lesca-click';
 import Tweener, { Bezier } from 'lesca-object-tweener';
 import UserAgent from 'lesca-user-agent';
+import QueryString from 'lesca-url-parameters';
+
+const qureyStringStart = QueryString.get('s');
 
 export default class Animation {
 	constructor(props, callback) {
@@ -254,7 +257,7 @@ export default class Animation {
 						root.tr.content.out();
 						setAudioState('bgm');
 
-						if (MobileDevice) {
+						if (MobileDevice && qureyStringStart === false) {
 							root.tr.ctaRef.in();
 							root.tr.arrow.in();
 						}
@@ -309,7 +312,7 @@ export default class Animation {
 							onUpdate: (p) => this.setOutStyle(e, p),
 							onComplete: (p) => {
 								this.setOutStyle(e, p);
-								if (!MobileDevice) {
+								if (!MobileDevice || qureyStringStart !== false) {
 									selectFadein?.();
 									callback();
 								}
