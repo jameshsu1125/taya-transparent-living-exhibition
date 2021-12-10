@@ -43,11 +43,16 @@ const Page3 = (props) => {
 		Click.add('#desktop_share', () => {
 			const root = QueryString.root();
 			const url = `${root}${name}.html`;
+
+			const sliderSteps = QueryString.get('s');
+			let redirect_uri = root;
+			if (sliderSteps) redirect_uri += '?s=1';
 			setRootState('storage');
 			setTimeout(() => {
 				Facebook.share({
 					url,
 					hashtag: HASHTAG,
+					redirect_uri,
 				});
 			}, 600);
 		});

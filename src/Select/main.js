@@ -17,6 +17,7 @@ const device = window.innerWidth <= 750;
 
 const storyTarget = QueryString.get('t');
 const sliderSteps = QueryString.get('s');
+const hashFromFacebook = window.location.hash === '#_=_';
 
 const settings = {
 	dots: true,
@@ -24,7 +25,7 @@ const settings = {
 	slidesToShow: 1,
 	slidesToScroll: 1,
 	arrows: false,
-	initialSlide: sliderSteps === '0' ? 0 : -1,
+	initialSlide: 0,
 };
 
 const defaultSpeed = 500;
@@ -35,6 +36,10 @@ if (storyTarget) {
 	if (index !== undefined) {
 		settings.initialSlide = index;
 	}
+}
+
+if (hashFromFacebook) {
+	settings.initialSlide = window.parseInt(sliderSteps || 0);
 }
 
 const Select = forwardRef((props, ref) => {
@@ -108,20 +113,21 @@ const Select = forwardRef((props, ref) => {
 			isFadein.current = true;
 
 			setUpdateSelected(false);
-			if (device && !storyTarget && !sliderSteps) {
-				sliderRef.current.slickNext();
-			}
 
-			const steps = window.parseInt(sliderSteps);
-
-			if (device && sliderSteps !== false && typeof steps === 'number') {
-				if (steps !== 0) {
-					sliderRef.current.slickGoTo(steps);
+			if (device) {
+				// mobile only
+				if (sliderSteps !== false) {
+					const steps = window.parseInt(sliderSteps);
+					if (steps !== 0) {
+						if (!hashFromFacebook) {
+							setSpeed(fadeInSpeed * steps);
+							setTimeout(() => {
+								setSpeed(defaultSpeed);
+							}, fadeInSpeed * steps);
+							sliderRef.current.slickGoTo(steps);
+						}
+					}
 				}
-				setSpeed(fadeInSpeed * steps);
-				setTimeout(() => {
-					setSpeed(defaultSpeed);
-				}, fadeInSpeed * steps);
 			}
 
 			animation.current.addEvent();
