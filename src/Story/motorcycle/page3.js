@@ -82,7 +82,7 @@ const Page3 = (props) => {
 				{!device && (
 					<div className='btns'>
 						<button ref={shareRef} id='desktop_share'>
-							分享故事 獲得限量小禮
+							分享
 						</button>
 						<button ref={returnRef} id='desktop_return'>
 							繼續閱聽故事
