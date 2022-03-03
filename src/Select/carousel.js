@@ -28,7 +28,7 @@ const Carousel = (props) => {
 					lighterRef.current.style.opacity = e.opacity;
 					headline.current.style.opacity = 1 - e.opacity;
 				},
-			});
+			}).play();
 		}
 	}, [lighter, updateSelected]);
 

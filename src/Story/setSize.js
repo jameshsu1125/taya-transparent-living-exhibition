@@ -3,6 +3,8 @@ import UserAgent from 'lesca-user-agent';
 const { parseInt } = window;
 let sizeTimer = 0;
 
+const device = UserAgent.get() === 'mobile';
+
 export const SET_SIZE = (props) => {
 	const { width, height, img } = props;
 
@@ -10,11 +12,13 @@ export const SET_SIZE = (props) => {
 
 	const { innerWidth, innerHeight } = window;
 
+	const scaling = innerWidth / (device ? 750 : innerWidth);
+
 	let scale = 1;
 	if (innerHeight / innerWidth > height / width) {
-		scale = innerHeight / height;
+		scale = innerHeight / height / scaling;
 	} else {
-		scale = innerWidth / width;
+		scale = innerWidth / width / scaling;
 	}
 
 	img.current.style.transform = `scale(${scale})`;
@@ -44,26 +48,28 @@ export const POSITION = (imageSize, offset) => {
 	const { from, to } = offset;
 	const { innerWidth, innerHeight } = window;
 
+	const scaling = innerWidth / (device ? 750 : innerWidth);
+
 	const getSize = {
 		b() {
 			const imgH = height * scale;
 			const offsetY = (innerHeight - imgH) * 0.5;
-			return offsetY;
+			return offsetY * scaling;
 		},
 		t() {
 			const imgH = height * scale;
 			const offsetY = (innerHeight - imgH) * -0.5;
-			return offsetY;
+			return offsetY * scaling;
 		},
 		l() {
 			const imgW = width * scale;
 			const offsetX = (imgW - innerWidth) * 0.5;
-			return offsetX;
+			return offsetX * scaling;
 		},
 		r() {
 			const imgW = width * scale;
 			const offsetX = (imgW - innerWidth) * -0.5;
-			return offsetX;
+			return offsetX * scaling;
 		},
 	};
 	const direct = { b: 1, l: -1, r: -1, t: -1 };

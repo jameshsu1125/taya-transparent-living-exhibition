@@ -59,7 +59,7 @@ export default class Animation0 {
 						dom.style.display = 'none';
 					},
 					onStart: () => callback?.(),
-				});
+				}).play();
 			},
 			bg: {
 				delay: 0,
@@ -91,7 +91,7 @@ export default class Animation0 {
 						duration: 3000,
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
-					});
+					}).play();
 					new Tweener({
 						from: fromLeft,
 						to: toLeft,
@@ -100,7 +100,7 @@ export default class Animation0 {
 						easing,
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
-					});
+					}).play();
 				},
 				tran(data = this.property) {
 					this.property = { ...this.property, ...data };
@@ -172,7 +172,7 @@ export default class Animation0 {
 									root.tr.out();
 								}
 							},
-						});
+						}).play();
 					});
 				},
 				tran(data = this.property) {

@@ -48,7 +48,7 @@ const Audio = forwardRef((props, ref) => {
 				if (tar === 'BGM') setBGMVol(data.vol);
 				else setStoryVol(data.vol);
 			},
-		});
+		}).play();
 	};
 
 	useEffect(() => {

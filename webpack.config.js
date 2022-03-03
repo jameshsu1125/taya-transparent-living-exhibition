@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Meta = require('./template/template.meta');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { HotModuleReplacementPlugin } = require('webpack');
 
 const Folder = 'bundle'; // 自動產生檔案的folder
 const { NODE_ENV } = process.env;
@@ -18,6 +17,7 @@ module.exports = () => {
 		entry: {
 			index: './src/index.js',
 			redirect: './src/redirect.js',
+			iframe: './src/iframe.js',
 		},
 
 		module: {
@@ -86,7 +86,6 @@ module.exports = () => {
 		 * HotModuleReplacementPlugin : 就算編譯出錯仍然保持hot
 		 */
 		plugins: [
-			new HotModuleReplacementPlugin(),
 			new Dotenv({
 				path: path.resolve(__dirname, '.env'), // use .env variable as the local dev environment
 				allowEmptyValues: true, // allow empty variables (e.g. `FOO=`) (treat it as empty string, rather than missing)

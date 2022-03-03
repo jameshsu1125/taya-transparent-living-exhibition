@@ -74,7 +74,7 @@ const Cable = (props) => {
 				dom.style.opacity = e.opacity;
 				setRootState(stateString);
 			},
-		});
+		}).play();
 	};
 	const back = () => {
 		Click.remove('.return');
@@ -93,7 +93,7 @@ const Cable = (props) => {
 				current.style.opacity = e.opacity;
 				setRootState('giveUp');
 			},
-		});
+		}).play();
 		audioRef.current.fadeout();
 	};
 

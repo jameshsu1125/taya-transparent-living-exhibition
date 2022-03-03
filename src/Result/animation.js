@@ -38,7 +38,7 @@ export default class Animation {
 						target.style.opacity = data.opacity;
 						cb();
 					},
-				});
+				}).play();
 			},
 			headline: {
 				duration: 1200,
@@ -100,7 +100,7 @@ export default class Animation {
 							duration,
 							onUpdate: (data) => this.tranEach(e, data, index),
 							onComplete: (data) => this.tranEach(e, data, index),
-						});
+						}).play();
 					});
 				},
 				tranEach(dom, data, index) {

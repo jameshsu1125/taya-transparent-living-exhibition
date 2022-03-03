@@ -74,7 +74,7 @@ const Pump = (props) => {
 				dom.style.opacity = e.opacity;
 				setRootState(stateString);
 			},
-		});
+		}).play();
 	};
 
 	const back = () => {
@@ -94,7 +94,7 @@ const Pump = (props) => {
 				current.style.opacity = e.opacity;
 				setRootState('giveUp');
 			},
-		});
+		}).play();
 		audioRef.current.fadeout();
 	};
 

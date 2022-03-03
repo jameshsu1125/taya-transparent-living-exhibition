@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useShallowCompareEffect } from 'react-use';
-
+import QueryString from 'lesca-url-parameters';
 import './InnerSizeDetecter.less';
 
 const InnerSizeDetecter = () => {
@@ -29,7 +29,9 @@ const InnerSizeDetecter = () => {
 
 	useShallowCompareEffect(() => {
 		const { width, height } = innerSize;
-		if (width < 749) setState(true);
+
+		if (QueryString.file() === 'iframe.html') setState(false);
+		else if (width < 749) setState(true);
 		else if (width <= 750 && height < 880) setState(true);
 		else setState(false);
 	}, [innerSize]);

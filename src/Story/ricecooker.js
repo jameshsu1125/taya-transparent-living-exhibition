@@ -73,7 +73,7 @@ const Ricecooker = (props) => {
 				dom.style.opacity = e.opacity;
 				setRootState(stateString);
 			},
-		});
+		}).play();
 	};
 
 	const back = () => {
@@ -93,7 +93,7 @@ const Ricecooker = (props) => {
 				current.style.opacity = e.opacity;
 				setRootState('giveUp');
 			},
-		});
+		}).play();
 		audioRef.current.fadeout();
 	};
 

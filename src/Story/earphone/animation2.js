@@ -57,7 +57,7 @@ export default class Animation2 {
 						dom.style.display = 'none';
 					},
 					onStart: () => callback?.(),
-				});
+				}).play();
 			},
 			bg: {
 				delay: 0,
@@ -91,7 +91,7 @@ export default class Animation2 {
 						easing,
 						onUpdate: (e) => this.tranOffset(e),
 						onComplete: (e) => this.tranOffset(e),
-					});
+					}).play();
 				},
 				tweenOpacity() {
 					const { property, delay } = this;
@@ -105,7 +105,7 @@ export default class Animation2 {
 						duration: 3000,
 						onUpdate: (e) => this.tran(e),
 						onComplete: (e) => this.tran(e),
-					});
+					}).play();
 				},
 				tran(data = this.property) {
 					this.property = { ...this.property, ...data };
@@ -146,7 +146,7 @@ export default class Animation2 {
 									root.tr.out();
 								}
 							},
-						});
+						}).play();
 					});
 				},
 				tran(data = this.property) {

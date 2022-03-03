@@ -61,7 +61,7 @@ export default class Animation3 {
 						dom.style.display = 'none';
 						callback?.();
 					},
-				});
+				}).play();
 			},
 			return: {
 				duration: 3000,
@@ -238,7 +238,7 @@ export default class Animation3 {
 									root.tr.footer.in();
 								}
 							},
-						});
+						}).play();
 					});
 				},
 				tran(data = this.property) {

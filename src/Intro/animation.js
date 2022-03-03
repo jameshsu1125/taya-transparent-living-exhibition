@@ -11,6 +11,7 @@ export default class Animation {
 		const MobileDevice = UserAgent.get() === 'mobile';
 
 		const root = this;
+
 		this.tr = {
 			init() {
 				this.content.init();
@@ -61,7 +62,7 @@ export default class Animation {
 								root.tr.out();
 							}, 2000);
 						},
-					});
+					}).play();
 				},
 				out() {
 					const { opacity, duration } = this;
@@ -81,7 +82,7 @@ export default class Animation {
 							this.opacity = data.opacity;
 							this.tran();
 						},
-					});
+					}).play();
 				},
 				tran() {
 					this.c.style.opacity = this.opacity;
@@ -115,7 +116,7 @@ export default class Animation {
 							this.opacity = data.opacity;
 							this.tran();
 						},
-					});
+					}).play();
 				},
 				out() {
 					const { opacity, duration } = this;
@@ -136,7 +137,7 @@ export default class Animation {
 							this.opacity = data.opacity;
 							this.tran();
 						},
-					});
+					}).play();
 				},
 				tran() {
 					this.c.style.opacity = this.opacity;
@@ -169,7 +170,7 @@ export default class Animation {
 							this.opacity = data.opacity;
 							this.tran();
 						},
-					});
+					}).play();
 				},
 				out() {
 					const { opacity, delay, duration } = this;
@@ -191,7 +192,7 @@ export default class Animation {
 							this.tran();
 							callback?.();
 						},
-					});
+					}).play();
 				},
 				tran() {
 					this.c.style.opacity = this.opacity;
@@ -225,7 +226,7 @@ export default class Animation {
 							this.tran();
 							this.evt();
 						},
-					});
+					}).play();
 				},
 				out() {
 					const { opacity, duration } = this;
@@ -245,7 +246,7 @@ export default class Animation {
 							this.opacity = data.opacity;
 							this.tran();
 						},
-					});
+					}).play();
 				},
 				tran() {
 					this.c.style.opacity = this.opacity;
@@ -293,7 +294,7 @@ export default class Animation {
 							duration,
 							onUpdate: (data) => this.setStyle(e, data),
 							onComplete: (data) => this.setStyle(e, data),
-						});
+						}).play();
 					});
 				},
 				out() {
@@ -317,7 +318,7 @@ export default class Animation {
 									callback();
 								}
 							},
-						});
+						}).play();
 					});
 				},
 				tran() {
