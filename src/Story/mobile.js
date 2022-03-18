@@ -4,6 +4,7 @@ import ImageOnload from 'lesca-image-onload';
 import Tweener from 'lesca-object-tweener';
 import QueryString from 'lesca-url-parameters';
 import { useEffect, useRef, useState } from 'react';
+import { VR_URL } from '../Setting/config';
 import './mobile.less';
 import Page0 from './mobile/page0';
 import Page1 from './mobile/page1';
@@ -12,6 +13,7 @@ import Page3 from './mobile/page3';
 
 const { parseInt } = window;
 const pageNumber = QueryString.get('page');
+const queryIsVR = QueryString.get('vr');
 
 const Mobile = (props) => {
 	const {
@@ -106,6 +108,10 @@ const Mobile = (props) => {
 			Click.add('.return', () => {
 				back();
 			});
+
+			Click.add('#vr', () => {
+				window.location.href = VR_URL.mobile;
+			});
 		});
 		return () => {
 			Click.remove('.return');
@@ -123,7 +129,9 @@ const Mobile = (props) => {
 			<Page2 {...{ state, setState, collectTimer }} />
 			<Page1 {...{ state, setState, collectTimer }} />
 			<Page0 {...{ state, setState, categroyName, collectTimer }} />
-			{state !== 'page3' && <div ref={returnRef} className='return' />}
+			{state !== 'page3' && (
+				<div id={queryIsVR === '1' ? 'vr' : ''} ref={returnRef} className='return' />
+			)}
 		</div>
 	);
 };

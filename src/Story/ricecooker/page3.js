@@ -3,13 +3,14 @@ import Click from 'lesca-click';
 import Facebook from 'lesca-facebook-share';
 import QueryString from 'lesca-url-parameters';
 import { useEffect, useRef } from 'react';
-import { HASHTAG, STORY_RICECOOKER_PAGE3 } from '../../Setting/config';
+import { HASHTAG, STORY_RICECOOKER_PAGE3, VR_URL } from '../../Setting/config';
 import Label from '../label';
 import Animation from './animation3';
 
 const device = window.innerWidth >= 751;
 const pageName = 'page3';
 const name = 'ricecooker';
+const queryIsVR = QueryString.get('vr');
 
 const Page3 = (props) => {
 	const { state, fadeOut, collectTimer, back, setRootState } = props;
@@ -34,6 +35,7 @@ const Page3 = (props) => {
 
 		Click.add('#desktop_return', () => {
 			Click.remove('#desktop_return');
+			if (queryIsVR === '1') window.location.href = VR_URL.ricecooker;
 			setTimeout(() => {
 				if (device) back();
 				else animation.current.tr.out();
@@ -84,13 +86,13 @@ const Page3 = (props) => {
 							分享
 						</button>
 						<button ref={returnRef} id='desktop_return'>
-							繼續閱聽故事
+							{queryIsVR === '1' ? '返回展場' : '繼續閱聽故事'}
 						</button>
 					</div>
 				)}
 				{device && (
 					<div className='share'>
-						<button id='desktop_return'>回到選單</button>
+						<button id='desktop_return'>{queryIsVR === '1' ? '返回展場' : '回到選單'}</button>
 						<button id='desktop_share'>分享</button>
 					</div>
 				)}
