@@ -4,6 +4,7 @@ import QueryString from 'lesca-url-parameters';
 const { parseInt, innerWidth, innerHeight } = window;
 const debug = QueryString.get('debug') === 'true';
 const device = innerHeight / innerWidth > 1 ? 'mobile' : 'desktop';
+const queryIsVR = QueryString.get('vr');
 
 export default class Animation3 {
 	constructor(props, callback) {
@@ -33,7 +34,7 @@ export default class Animation3 {
 				this.product.init();
 				this.footer.init();
 
-				if (device === 'mobile') {
+				if (device === 'mobile' && queryIsVR !== '1') {
 					this.share.init();
 					this.return.init();
 				}

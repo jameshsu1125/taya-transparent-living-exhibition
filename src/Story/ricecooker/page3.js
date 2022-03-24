@@ -49,6 +49,9 @@ const Page3 = (props) => {
 			const sliderSteps = QueryString.get('s');
 			let redirect_uri = root;
 			if (sliderSteps) redirect_uri += '?s=1';
+			if (queryIsVR === '1') {
+				redirect_uri = VR_URL.ricecooker;
+			}
 			setRootState('storage');
 			setTimeout(() => {
 				Facebook.share({

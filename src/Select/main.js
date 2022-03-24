@@ -18,6 +18,7 @@ const device = window.innerWidth <= 750;
 const storyTarget = QueryString.get('t');
 const sliderSteps = QueryString.get('s');
 const hashFromFacebook = window.location.hash === '#_=_';
+const queryIsVR = QueryString.get('vr');
 
 const settings = {
 	dots: true,
@@ -168,7 +169,8 @@ const Select = forwardRef((props, ref) => {
 					<div>
 						為了更沉浸地感受
 						<br />
-						請輕觸螢幕播放故事朗讀
+						請輕觸螢幕播放故事
+						{queryIsVR ? '' : '朗讀'}
 					</div>
 				</Instruct>
 			)}
