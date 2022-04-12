@@ -34,7 +34,10 @@ const Page3 = (props) => {
 
 		Click.add('#desktop_return', () => {
 			Click.remove('#desktop_return');
-			if (queryIsVR === '1') window.location.href = VR_URL.evcharger;
+			if (queryIsVR === '1') {
+				window.location.href = VR_URL.evcharger;
+				return;
+			}
 			setTimeout(() => {
 				if (device) back();
 				else animation.current.tr.out();
