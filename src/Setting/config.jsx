@@ -36,13 +36,13 @@ const r = { mobile: { b: 60 }, desktop: { b: 35 } };
 const p = { mobile: { b: 40 }, desktop: { b: 35 } };
 
 export const VR_URL = {
-	motorcycle: 'https://livetour.istaging.com/bdd72944-69a0-4185-a8a2-46d656b31c20?index=3',
-	pump: 'https://livetour.istaging.com/bdd72944-69a0-4185-a8a2-46d656b31c20?index=4',
-	mobile: 'https://livetour.istaging.com/bdd72944-69a0-4185-a8a2-46d656b31c20?index=5',
-	earphone: 'https://livetour.istaging.com/bdd72944-69a0-4185-a8a2-46d656b31c20?index=6',
-	cable: 'https://livetour.istaging.com/bdd72944-69a0-4185-a8a2-46d656b31c20?index=7',
-	evcharger: 'https://livetour.istaging.com/bdd72944-69a0-4185-a8a2-46d656b31c20?index=8',
-	ricecooker: 'https://livetour.istaging.com/bdd72944-69a0-4185-a8a2-46d656b31c20?index=9',
+	motorcycle: 'https://livetour.istaging.com/76f424d2-5132-4639-ada5-0cfc5e978a75?index=2',
+	pump: 'https://livetour.istaging.com/76f424d2-5132-4639-ada5-0cfc5e978a75?index=3',
+	mobile: 'https://livetour.istaging.com/76f424d2-5132-4639-ada5-0cfc5e978a75?index=4',
+	earphone: 'https://livetour.istaging.com/76f424d2-5132-4639-ada5-0cfc5e978a75?index=5',
+	cable: 'https://livetour.istaging.com/76f424d2-5132-4639-ada5-0cfc5e978a75?index=6',
+	evcharger: 'https://livetour.istaging.com/76f424d2-5132-4639-ada5-0cfc5e978a75?index=7',
+	ricecooker: 'https://livetour.istaging.com/76f424d2-5132-4639-ada5-0cfc5e978a75?index=8',
 };
 
 // Motorcycle 0
